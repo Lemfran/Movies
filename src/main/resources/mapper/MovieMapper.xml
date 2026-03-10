@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.cuit.yingpingsxitong.Dao.MovieDao">
+
+    <!-- 插入电影 -->
+    <insert id="insertMovie" parameterType="edu.cuit.yingpingsxitong.Entity.Movie">
+        INSERT INTO movies (movieid, title, description, releasedate, runtime, posterimage)
+        VALUES (#{movieId}, #{title}, #{description}, #{releaseDate}, #{runtime}, #{posterImage})
+    </insert>
+
+    <!-- 根据ID查找电影 -->
+    <select id="findMovieById" parameterType="java.lang.Integer" resultType="edu.cuit.yingpingsxitong.Entity.Movie">
+        SELECT * FROM movies WHERE movieid = #{movieId}
+    </select>
+
+    <update id="updateAverageScore" parameterType="java.lang.Integer">
+        UPDATE movies
+        SET averageScore = (
+            SELECT ROUND(AVG(score), 1)
+            FROM reviews
+            WHERE movieId = #{movieId}
+        )
+        WHERE movieId = #{movieId}
+    </update>
+
+    <!-- 查找所有电影 -->
+    <select id="findAllMovies" resultType="edu.cuit.yingpingsxitong.Entity.Movie">
+        SELECT m.*, ROUND(AVG(score), 1) AS averageScore
+        FROM movies m
+                 left JOIN reviews r ON m.movieId = r.movieId
+        GROUP BY m.movieId
+        ORDER BY averageScore DESC
+    </select>
+
+    <!--模糊查询-->
+    <select id="getSearchList" resultType="edu.cuit.yingpingsxitong.Entity.Movie">
+        SELECT * FROM movies
+        WHERE title LIKE CONCAT('%', #{title}, '%')
+        ORDER BY averageScore DESC
+    </select>
+
+    <!-- 更新电影 -->
+    <update id="updateMovie" parameterType="edu.cuit.yingpingsxitong.Entity.Movie">
+        UPDATE movies
+        SET
+            title = #{title},
+            description = #{description},
+            releasedate = #{releaseDate},
+            runtime = #{runtime},
+            posterimage = #{posterImage}
+        WHERE movieid = #{movieId}
+    </update>
+
+    <!-- 删除电影 -->
+    <delete id="deleteMovie" parameterType="java.lang.Integer">
+        DELETE FROM movies WHERE movieid = #{movieId}
+    </delete>
+
+</mapper>

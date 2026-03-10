@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>注册</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(-45deg, 
+                #b8e2ff,  /* 中等浅蓝 */
+                #ffd6e6,  /* 中等浅粉 */
+                #c9ffe5,  /* 中等浅绿 */
+                #ffe1c4,  /* 中等浅橙 */
+                #e2d6ff   /* 中等浅紫 */
+            );
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .register-container {
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 320px;
+            transition: all 0.3s ease;
+        }
+
+        .register-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-size: 24px;
+            text-align: center;
+            border-bottom: 3px solid #8ec5e8;
+            padding-bottom: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            color: #34495e;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="email"]:focus {
+            border-color: #8ec5e8;
+            outline: none;
+            box-shadow: 0 0 5px rgba(142, 197, 232, 0.3);
+        }
+
+        button {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        button[type="submit"] {
+            background: linear-gradient(45deg, #8ec5e8, #7fcac0);
+            color: white;
+        }
+
+        button[type="submit"]:hover {
+            background: linear-gradient(45deg, #7fcac0, #8ec5e8);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .back-to-login {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .back-to-login a {
+            color: #8ec5e8;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-login a:hover {
+            color: #7fcac0;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h2>注册账号</h2>
+        <form action="/regist1" method="POST">
+            <label for="username">用户名:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">密码:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="email">邮箱:</label>
+            <input type="email" id="email" name="email" required>
+
+            <button type="submit">注册</button>
+        </form>
+        <div class="back-to-login">
+            <a href="/">已有账号？返回登录</a>
+        </div>
+    </div>
+</body>
+</html>

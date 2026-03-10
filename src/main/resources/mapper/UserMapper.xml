@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper元素是MyBatis映射文件的根元素，用于定义SQL映射 -->
+<mapper namespace="edu.cuit.yingpingsxitong.Dao.UserDao">
+
+    <!-- 插入用户 -->
+    <insert id="insertUser" parameterType="edu.cuit.yingpingsxitong.Entity.User">
+        insert into users (username, password, email) values (#{username}, #{password}, #{email})
+    </insert>
+
+    <!-- 根据用户名查询用户 -->
+    <select id="findUserByUsername" parameterType="java.lang.String" resultType="edu.cuit.yingpingsxitong.Entity.User">
+        select * from users where username = #{username}
+    </select>
+
+    <!-- 更新用户 -->
+    <update id="updateUser" parameterType="edu.cuit.yingpingsxitong.Entity.User">
+        update users set username = #{username}, password = #{password}, email = #{email} where userId = #{userId}
+    </update>
+
+    <update id="updatePermission" parameterType="edu.cuit.yingpingsxitong.Entity.User">
+        update users set permission =#{permission} where userId=#{userId}
+    </update>
+
+    <update id="updateManager" parameterType="edu.cuit.yingpingsxitong.Entity.User">
+        update users set manager =#{manager} where userId=#{userId}
+    </update>
+
+    <!-- 删除用户 -->
+    <delete id="deleteUser" parameterType="java.lang.Integer">
+        delete from users where userId = #{userId}
+    </delete>
+
+    <select id="findUserById" parameterType="java.lang.Integer" resultType="edu.cuit.yingpingsxitong.Entity.User">
+        select * from users where userId = #{userId}
+    </select>
+
+    <select id="findAllUsers" resultType="edu.cuit.yingpingsxitong.Entity.User">
+        select * from users
+    </select>
+
+
+
+</mapper>

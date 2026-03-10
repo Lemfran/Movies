@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>cuit影评</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(-45deg, 
+                #b8e2ff,
+                #ffd6e6,
+                #c9ffe5,
+                #ffe1c4,
+                #e2d6ff
+            );
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            margin: 0;
+            padding: 0;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+            border-right: 1px solid rgba(255, 255, 255, 0.5);
+            z-index: 1;
+        }
+
+        .sidebar h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 24px;
+            border-bottom: 3px solid #8ec5e8;
+            padding-bottom: 10px;
+        }
+
+        .sidebar a {
+            display: block;
+            margin-bottom: 15px;
+            padding: 12px 20px;
+            color: #2c3e50;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .sidebar a:hover {
+            background: linear-gradient(45deg, #8ec5e8, #7fcac0);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .success-box {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .success-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .success-message {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #8ec5e8;
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        .return-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #8ec5e8, #7fcac0);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        .return-button:hover {
+            background: linear-gradient(45deg, #7fcac0, #8ec5e8);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(142, 197, 232, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                padding: 20px;
+            }
+            .success-box {
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="sidebar">
+        <h2>cuit影评</h2>
+        <a th:href="@{/movielist(userId=${user.userId})}">电影列表</a>
+        <a th:href="@{/reviews(userId=${user.userId})}">评论列表</a>
+        <a href="/">退出</a>
+    </div>
+    <div class="main-content">
+        <div class="success-box">
+            <h1 class="success-message">评论提交成功</h1>
+            <a th:href="@{/movielist(userId=${user.userId})}" class="return-button">返回电影列表</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

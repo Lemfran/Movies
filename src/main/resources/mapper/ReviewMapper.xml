@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.cuit.yingpingsxitong.Dao.ReviewDao">
+
+    <!-- 插入评论 -->
+    <insert id="insertReview" parameterType="edu.cuit.yingpingsxitong.Entity.Review">
+        INSERT INTO reviews (movieid, userid, content, score, createdat)
+        VALUES (#{movieId}, #{userId}, #{content}, #{score}, #{createdAt})
+    </insert>
+
+    <!-- 根据ID查找评论 -->
+    <select id="findReviewById" parameterType="java.lang.Integer" resultType="edu.cuit.yingpingsxitong.Entity.Review">
+        SELECT r.reviewid, r.movieid, m.title, r.userid, u.username, r.content, r.score, r.createdat
+        FROM reviews r
+                 JOIN movies m ON r.movieid = m.movieid
+                 JOIN users u ON r.userid = u.userid
+        WHERE r.reviewid = #{reviewId}
+    </select>
+
+    <!-- 根据电影ID查找评论列表 -->
+    <select id="findReviewsByMovieId" parameterType="java.lang.Integer" resultType="edu.cuit.yingpingsxitong.Entity.Review">
+        SELECT r.reviewid, r.movieid, m.title, r.userid, u.username, r.content, r.score, r.createdat
+        FROM reviews r
+                 JOIN movies m ON r.movieid = m.movieid
+                 JOIN users u ON r.userid = u.userid
+        WHERE r.movieid = #{movieId} order by r.createdat desc
+    </select>
+
+    <select id="findAllReviews" resultType="edu.cuit.yingpingsxitong.Entity.Review">
+        select * from reviews order by createdat desc
+    </select>
+
+    <!-- 根据用户ID查找评论列表 -->
+    <select id="findReviewsByUserId" parameterType="java.lang.Integer" resultType="edu.cuit.yingpingsxitong.Entity.Review">
+        SELECT r.reviewid, r.movieid, m.title, r.userid, u.username, r.content, r.score, r.createdat
+        FROM reviews r
+                 JOIN movies m ON r.movieid = m.movieid
+                 JOIN users u ON r.userid = u.userid
+        WHERE r.userid = #{userId}
+    </select>
+
+    <!-- 更新评论 -->
+    <update id="updateReview" parameterType="edu.cuit.yingpingsxitong.Entity.Review">
+        UPDATE reviews
+        SET
+            movieid = #{movieId},
+            userid = #{userId},
+            content = #{content},
+            score = #{score},
+            createdat = #{createdAt}
+        WHERE reviewid = #{reviewId}
+    </update>
+
+    <!-- 删除评论 -->
+    <delete id="deleteReview" parameterType="java.lang.Integer">
+        DELETE FROM reviews WHERE reviewid = #{reviewId}
+    </delete>
+
+</mapper>

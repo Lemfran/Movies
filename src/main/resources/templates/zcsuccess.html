@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>注册成功</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(-45deg, 
+                #b8e2ff,
+                #ffd6e6,
+                #c9ffe5,
+                #ffe1c4,
+                #e2d6ff
+            );
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .success-box {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .success-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .success-message {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #8ec5e8;
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        .return-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #8ec5e8, #7fcac0);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        .return-button:hover {
+            background: linear-gradient(45deg, #7fcac0, #8ec5e8);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(142, 197, 232, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .success-box {
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="success-box">
+        <h1 class="success-message">注册成功</h1>
+        <a href="/login" class="return-button">返回登录</a>
+    </div>
+</body>
+</html>
