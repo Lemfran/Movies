@@ -40,4 +40,8 @@ public class ReviewService {
     public List<Review> findAllReviews() {
         return reviewDao.findAllReviews();
     }
+
+    public int countReviews() {
+        return reviewDao.countReviews();
+    }
 }

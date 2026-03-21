@@ -1,139 +1,229 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>cuit影评</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录 - CUIT影评</title>
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(-45deg, 
-          #b8e2ff,  /* 中等浅蓝 */
-          #ffd6e6,  /* 中等浅粉 */
-          #c9ffe5,  /* 中等浅绿 */
-          #ffe1c4,  /* 中等浅橙 */
-          #e2d6ff   /* 中等浅紫 */
-      );
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      animation: gradientBG 15s ease infinite;
-      background-size: 400% 400%;
+      padding: 20px;
     }
 
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .login-container {
-      background-color: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(10px);
-      padding: 35px;
+    .login-wrapper {
+      display: flex;
+      background: white;
       border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-      width: 320px;
-      transition: all 0.3s ease;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      max-width: 900px;
+      width: 100%;
+      min-height: 500px;
     }
 
-    .login-container:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    }
-
-    h2 {
-      color: #2c3e50;
-      margin-bottom: 25px;
-      font-size: 24px;
-      text-align: center;
-      border-bottom: 3px solid #8ec5e8;
-      padding-bottom: 10px;
-    }
-
-    form {
+    .login-left {
+      flex: 1;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 60px 40px;
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
     }
 
-    label {
-      margin-bottom: 8px;
-      color: #34495e;
-      font-weight: 500;
+    .login-left::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+      background-size: 20px 20px;
+      opacity: 0.3;
     }
 
-    input[type="text"],
-    input[type="password"] {
-      padding: 12px;
+    .login-left h1 {
+      font-size: 2.5rem;
       margin-bottom: 20px;
-      border: 2px solid #e0e0e0;
-      border-radius: 8px;
-      font-size: 16px;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+    }
+
+    .login-left p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+
+    .login-right {
+      flex: 1;
+      padding: 60px 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .login-header {
+      margin-bottom: 40px;
+    }
+
+    .login-header h2 {
+      font-size: 2rem;
+      color: #1a202c;
+      margin-bottom: 10px;
+    }
+
+    .login-header p {
+      color: #718096;
+      font-size: 0.95rem;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #4a5568;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      font-size: 1rem;
       transition: all 0.3s ease;
+      background: #f7fafc;
     }
 
-    input[type="text"]:focus,
-    input[type="password"]:focus {
-      border-color: #8ec5e8;
+    .form-group input:focus {
       outline: none;
-      box-shadow: 0 0 5px rgba(142, 197, 232, 0.3);
+      border-color: #667eea;
+      background: white;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
     }
 
-    button {
-      padding: 12px;
+    .btn {
+      width: 100%;
+      padding: 14px;
       border: none;
       border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
       cursor: pointer;
-      font-size: 16px;
-      font-weight: 500;
-      margin-bottom: 15px;
       transition: all 0.3s ease;
-      width: 100%;
-      letter-spacing: 1px;
     }
 
-    button[type="submit"] {
-      background: linear-gradient(45deg, #8ec5e8, #7fcac0);
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
-      margin-top: 10px;
+      margin-bottom: 15px;
     }
 
-    button[type="submit"]:hover {
-      background: linear-gradient(45deg, #7fcac0, #8ec5e8);
+    .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(142, 197, 232, 0.4);
+      box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
     }
 
-    .register-button {
-      background: linear-gradient(45deg, #ffd6e6, #e2d6ff);
-      color: #2c3e50;
+    .btn-secondary {
+      background: #f7fafc;
+      color: #4a5568;
+      border: 2px solid #e2e8f0;
     }
 
-    .register-button:hover {
-      background: linear-gradient(45deg, #e2d6ff, #ffd6e6);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(255, 214, 230, 0.4);
+    .btn-secondary:hover {
+      background: #edf2f7;
+      border-color: #cbd5e0;
     }
 
-    button:active {
-      transform: translateY(0);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 25px 0;
+      color: #a0aec0;
+      font-size: 0.85rem;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e2e8f0;
+    }
+
+    .divider span {
+      padding: 0 15px;
+    }
+
+    @media (max-width: 768px) {
+      .login-wrapper {
+        flex-direction: column;
+      }
+
+      .login-left {
+        padding: 40px 30px;
+        text-align: center;
+      }
+
+      .login-left h1 {
+        font-size: 2rem;
+      }
+
+      .login-right {
+        padding: 40px 30px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="login-container">
-    <form action="/index" method="POST">
-      <h2>登录</h2>
-      <label for="username">用户名:</label>
-      <input type="text" id="username" name="username" required>
-
-      <label for="password">密码:</label>
-      <input type="password" id="password" name="password" required>
-      <button type="submit">登录</button>
-    </form>
-    <button class="register-button" onclick="location.href='/register';">注册</button>
+  <div class="login-wrapper">
+    <div class="login-left">
+      <h1>CUIT影评</h1>
+      <p>发现好电影，分享你的观影体验。加入我们的社区，与影迷们一起探讨精彩影片。</p>
+    </div>
+    <div class="login-right">
+      <div class="login-header">
+        <h2>欢迎回来</h2>
+        <p>请登录你的账号继续</p>
+      </div>
+      <form action="/index" method="POST">
+        <div class="form-group">
+          <label for="username">用户名</label>
+          <input type="text" id="username" name="username" placeholder="请输入用户名" required>
+        </div>
+        <div class="form-group">
+          <label for="password">密码</label>
+          <input type="password" id="password" name="password" placeholder="请输入密码" required>
+        </div>
+        <button type="submit" class="btn btn-primary">登录</button>
+      </form>
+      <div class="divider">
+        <span>还没有账号？</span>
+      </div>
+      <button class="btn btn-secondary" onclick="location.href='/register';">立即注册</button>
+    </div>
   </div>
 </body>
 </html>

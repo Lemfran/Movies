@@ -24,4 +24,8 @@ public class LogService {
     public List<Log> findAllLog(){
         return logDao.findAllLog();
     }
+
+    public int countLogs() {
+        return logDao.countLogs();
+    }
 }

@@ -44,4 +44,8 @@ public class MovieService {
     public void updateAverageScore(Integer movieId){
         movieDao.updateAverageScore(movieId);
     };
+
+    public int countMovies() {
+        return movieDao.countMovies();
+    }
 }

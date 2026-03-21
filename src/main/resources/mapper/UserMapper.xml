@@ -41,6 +41,9 @@
         select * from users
     </select>
 
-
+    <!-- 统计用户数量 -->
+    <select id="countUsers" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM users
+    </select>
 
 </mapper>

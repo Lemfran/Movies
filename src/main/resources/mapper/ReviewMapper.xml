@@ -56,4 +56,8 @@
         DELETE FROM reviews WHERE reviewid = #{reviewId}
     </delete>
 
+    <!-- 统计评论数量 -->
+    <select id="countReviews" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM reviews
+    </select>
 </mapper>

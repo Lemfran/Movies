@@ -9,4 +9,5 @@ import java.util.List;
 public interface LogDao {
     void saveLog(String methodName,String userName);
     List<Log> findAllLog();
+    int countLogs();
 }

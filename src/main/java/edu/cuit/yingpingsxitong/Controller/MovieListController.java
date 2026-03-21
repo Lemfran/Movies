@@ -25,27 +25,34 @@ public class MovieListController {
     @Autowired
     private ReviewService reviewService;
 
+    private User getUserFromSession(HttpSession session, Model model) {
+        User user = (User) session.getAttribute("user");
+        if (user != null) {
+            model.addAttribute("user", user);
+        }
+        return user;
+    }
+
     @RequestMapping("/search")
-    public String searchMovies(@RequestParam("userId") Integer userId, @RequestParam("title") String title, Model model) {
+    public String searchMovies(@RequestParam("title") String title, HttpSession session, Model model) {
         // 根据title搜索电影
         List<Movie> movies = movieService.getSearchList(title);
         model.addAttribute("movies", movies);
-        model.addAttribute("user",userService.findUserById(userId));
+        getUserFromSession(session, model);
         return "movielist"; // 返回到Thymeleaf模板
     }
 
     @GetMapping("/movielist")
-    public String listMovies(@RequestParam("userId") Integer userId,Model model) {
+    public String listMovies(HttpSession session, Model model) {
         List<Movie> movies;
         movies = movieService.findAllMovies();
-        User user = userService.findUserById(userId);
         model.addAttribute("movies", movies);
-        model.addAttribute("user", user);
+        getUserFromSession(session, model);
         return "movielist"; // 返回到Thymeleaf模板的名称
     }
 
     @GetMapping("/getmovie")
-    public String getmovie(@RequestParam("movieId") Integer movieId,@RequestParam("userId") Integer userId, HttpSession session, Model model) {
+    public String getmovie(@RequestParam("movieId") Integer movieId, HttpSession session, Model model) {
         Movie movie = movieService.findMovieById(movieId);
         List<Review> reviews =reviewService.findReviewsByMovieId(movieId);
         User user1 = new User();
@@ -56,7 +63,7 @@ public class MovieListController {
         if (movie != null) {
             model.addAttribute("movie", movie);
             model.addAttribute("reviews", reviews);
-            model.addAttribute("user", userService.findUserById(userId));
+            getUserFromSession(session, model);
             return "review";
         }
         return "error";

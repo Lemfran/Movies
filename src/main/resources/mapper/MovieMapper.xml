@@ -56,4 +56,9 @@
         DELETE FROM movies WHERE movieid = #{movieId}
     </delete>
 
+    <!-- 统计电影数量 -->
+    <select id="countMovies" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM movies
+    </select>
+
 </mapper>

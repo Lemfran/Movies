@@ -14,4 +14,9 @@
         select * from logs l order by l.timestamp desc
     </select>
 
+    <!-- 统计日志数量 -->
+    <select id="countLogs" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM logs
+    </select>
+
 </mapper>

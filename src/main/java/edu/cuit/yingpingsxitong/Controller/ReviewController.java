@@ -19,7 +19,6 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
-
 public class ReviewController {
     @Autowired
     private MovieService movieService;
@@ -30,10 +29,21 @@ public class ReviewController {
     @Autowired
     private UserService userService;
 
+    private User getUserFromSession(HttpSession session, Model model) {
+        User user = (User) session.getAttribute("user");
+        if (user != null) {
+            model.addAttribute("user", user);
+        }
+        return user;
+    }
 
     @RequestMapping("/reviews")
-    public String review(@RequestParam("userId") Integer userId,Model model) {
-        User user = userService.findUserById(userId);
+    public String review(HttpSession session, Model model) {
+        User user = getUserFromSession(session, model);
+        if (user == null) {
+            model.addAttribute("error", "请先登录");
+            return "error";
+        }
         List<Review> reviews = reviewService.findAllReviews();
         User user1 = new User();
         Movie movie1 = new Movie();
@@ -44,30 +54,34 @@ public class ReviewController {
             reviews.get(i).setTitle(movie1.getTitle());
         }
         model.addAttribute("reviews", reviews);
-        model.addAttribute("user", user);
         return "reviews";
     }
 
     @RequestMapping("/addreview")
-    public String addreview(@RequestParam("movieId") Integer movieId,@RequestParam("userId") Integer userId, Model model) {
+    public String addreview(@RequestParam("movieId") Integer movieId, HttpSession session, Model model) {
+        User user = getUserFromSession(session, model);
+        if (user == null) {
+            model.addAttribute("error", "请先登录");
+            return "error";
+        }
         Movie movie = movieService.findMovieById(movieId);
-        User user = userService.findUserById(userId);
         model.addAttribute("movie", movie);
-        model.addAttribute("user", user);
         return "addreview";
     }
 
     @RequestMapping("/submitreview")
-    public String submitreview(@RequestParam("movieId") Integer movieId,@RequestParam("userId") Integer userId,@RequestParam("score") Integer score,@RequestParam("content") String content, Model model) {
+    public String submitreview(@RequestParam("movieId") Integer movieId, @RequestParam("score") Integer score, @RequestParam("content") String content, HttpSession session, Model model) {
+        User user = getUserFromSession(session, model);
+        if (user == null) {
+            model.addAttribute("error", "请先登录");
+            return "error";
+        }
         Movie movie = movieService.findMovieById(movieId);
-        User user = userService.findUserById(userId);
         Date createdAt= new Date();
-        Review review = new Review(movieId,userId,content,score,createdAt);
+        Review review = new Review(movieId, user.getUserId(), content, score, createdAt);
         reviewService.insertReview(review);
         movieService.updateAverageScore(movieId);
         model.addAttribute("review", review);
-        model.addAttribute("user", user);
         return "rvsuccess";
     }
-
 }

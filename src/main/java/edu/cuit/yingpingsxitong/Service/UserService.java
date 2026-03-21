@@ -40,11 +40,16 @@ public class UserService{
     public List<User> findAllUsers() {
         return userDao.findAllUsers();
     }
+
+    public int countUsers() {
+        return userDao.countUsers();
+    }
+
     public void updatePermission(Integer userId,Boolean permission) {
         userDao.updatePermission(userId,permission);
     }
+
     public void updateManager(Integer userId,Boolean manager) {
         userDao.updateManager(userId,manager);
     }
 }
-

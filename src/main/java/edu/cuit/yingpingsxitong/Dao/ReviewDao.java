@@ -14,4 +14,5 @@ public interface ReviewDao {
     void updateReview(Review review);
     void deleteReview(Integer reviewId);
     List<Review> findAllReviews();
+    int countReviews();
 }

@@ -15,4 +15,5 @@ public interface MovieDao {
     void updateMovie(Movie movie);
     void deleteMovie(Integer movieId);
     void updateAverageScore(Integer movieId);
+    int countMovies();
 }

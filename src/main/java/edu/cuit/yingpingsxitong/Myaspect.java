@@ -1,5 +1,6 @@
 package edu.cuit.yingpingsxitong;
 
+import edu.cuit.yingpingsxitong.Entity.User;
 import edu.cuit.yingpingsxitong.Service.LogService;
 import edu.cuit.yingpingsxitong.Service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -19,19 +20,26 @@ public class Myaspect {
     @Autowired
     private UserService userService;
 
-    //@After(value = "execution(* edu.cuit.yingpingsxitong.Service.*..*(..)) && !execution(* edu.cuit.yingpingsxitong.Service.LogService.*(..))")
+    // 处理其他 Controller（非 IndexController 和 UserController）
+    // 从 Session 获取用户名
     @After(value = "execution(* edu.cuit.yingpingsxitong.Controller.*..*(..))&& !execution(* edu.cuit.yingpingsxitong.Controller.IndexController.*(..))&& !execution(* edu.cuit.yingpingsxitong.Controller.UserController.*(..))")
     public void after(JoinPoint joinPoint){
         RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
         assert requestAttributes != null;
         HttpServletRequest request =(HttpServletRequest)requestAttributes.resolveReference(RequestAttributes.REFERENCE_REQUEST);
         assert request != null;
-        Integer userId = Integer.valueOf(request.getParameter("userId"));
+
+        // 从 Session 获取用户
+        User user = (User) request.getSession().getAttribute("user");
         String methodName = joinPoint.getSignature().getName(); // 获取目标方法名
-        logService.saveLog(methodName,userService.findUserById(userId).getUsername());
+
+        if (user != null && user.getUsername() != null) {
+            logService.saveLog(methodName, user.getUsername());
+        }
     }
 
-    @After(value = "execution(* edu.cuit.yingpingsxitong.Controller.IndexController.*(..))")
+    // 处理 IndexController 的 login 方法
+    @After(value = "execution(* edu.cuit.yingpingsxitong.Controller.IndexController.login(..))")
     public void after2(JoinPoint joinPoint){
         RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
         assert requestAttributes != null;
@@ -39,6 +47,24 @@ public class Myaspect {
         assert request != null;
         String username = request.getParameter("username");
         String methodName = joinPoint.getSignature().getName(); // 获取目标方法名
-        logService.saveLog(methodName,username);
+        if (username != null && !username.isEmpty()) {
+            logService.saveLog(methodName, username);
+        }
+    }
+
+    // 处理 IndexController 的 home 方法
+    @After(value = "execution(* edu.cuit.yingpingsxitong.Controller.IndexController.home(..))")
+    public void after3(JoinPoint joinPoint){
+        RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
+        assert requestAttributes != null;
+        HttpServletRequest request =(HttpServletRequest)requestAttributes.resolveReference(RequestAttributes.REFERENCE_REQUEST);
+        assert request != null;
+        String methodName = joinPoint.getSignature().getName(); // 获取目标方法名
+
+        // 从 Session 获取用户名
+        User user = (User) request.getSession().getAttribute("user");
+        if (user != null && user.getUsername() != null) {
+            logService.saveLog(methodName, user.getUsername());
+        }
     }
 }

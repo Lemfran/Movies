@@ -27,4 +27,6 @@ public interface UserDao {
     void updateManager(Integer userId,Boolean manager);
 
     List<User> findAllUsers();
+
+    int countUsers();
 }

@@ -1,252 +1,427 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>cuit影评</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(-45deg, 
-        #b8e2ff,
-        #ffd6e6,
-        #c9ffe5,
-        #ffe1c4,
-        #e2d6ff
-      );
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUIT影评 - 添加评论</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+        }
 
-    .container {
-      display: flex;
-      min-height: 100vh;
-    }
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
 
-    .sidebar {
-      width: 250px;
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(10px);
-      padding: 30px;
-      box-shadow: 5px 0 15px rgba(0,0,0,0.1);
-      border-right: 1px solid rgba(255, 255, 255, 0.5);
-      z-index: 1;
-    }
+        /* 侧边栏样式 */
+        .sidebar {
+            width: 260px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            padding: 30px 20px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 100;
+        }
 
-    .sidebar h2 {
-      color: #2c3e50;
-      margin-bottom: 30px;
-      font-size: 24px;
-      border-bottom: 3px solid #8ec5e8;
-      padding-bottom: 10px;
-    }
+        .sidebar-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
 
-    .sidebar a {
-      display: block;
-      margin-bottom: 15px;
-      padding: 12px 20px;
-      color: #2c3e50;
-      text-decoration: none;
-      border-radius: 12px;
-      transition: all 0.3s ease;
-      background: rgba(255, 255, 255, 0.5);
-    }
+        .sidebar-header h2 {
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+        }
 
-    .sidebar a:hover {
-      background: linear-gradient(45deg, #8ec5e8, #7fcac0);
-      color: white;
-      transform: translateX(5px);
-    }
+        .sidebar-header p {
+            color: rgba(255,255,255,0.7);
+            font-size: 12px;
+            margin-top: 5px;
+        }
 
-    .main-content {
-      flex: 1;
-      padding: 30px;
-      background: rgba(255, 255, 255, 0.3);
-      backdrop-filter: blur(5px);
-    }
+        .nav-menu {
+            list-style: none;
+        }
 
-    .movie-box {
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(10px);
-      padding: 25px;
-      border-radius: 15px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-    }
+        .nav-item {
+            margin-bottom: 8px;
+        }
 
-    .movie-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 14px 18px;
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            font-size: 15px;
+        }
 
-    .movie-box h1 {
-      color: #2c3e50;
-      margin-bottom: 20px;
-      font-size: 28px;
-      border-bottom: 3px solid #8ec5e8;
-      padding-bottom: 10px;
-      display: inline-block;
-    }
+        .nav-link:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateX(5px);
+        }
 
-    .movie-box img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      border-radius: 12px 12px 0 0;
-      margin: 0;
-    }
+        .nav-icon {
+            width: 22px;
+            height: 22px;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
 
-    .movie-info {
-      padding: 20px;
-    }
+        .nav-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
 
-    .movie-info p {
-      margin: 10px 0;
-      color: #2c3e50;
-      font-size: 16px;
-      line-height: 1.6;
-    }
+        .nav-section-title {
+            color: rgba(255,255,255,0.5);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            padding-left: 18px;
+        }
 
-    .movie-info strong {
-      color: #34495e;
-      margin-right: 10px;
-    }
+        /* 主内容区域 */
+        .main-content {
+            flex: 1;
+            margin-left: 260px;
+            padding: 30px 40px;
+        }
 
-    .review-form {
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(10px);
-      padding: 30px;
-      border-radius: 15px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-    }
+        /* 头部 */
+        .header {
+            background: white;
+            padding: 25px 30px;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
 
-    .review-form:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
+        .header h1 {
+            color: #2d3748;
+            font-size: 28px;
+            font-weight: 700;
+        }
 
-    .review-form h2 {
-      color: #2c3e50;
-      margin-bottom: 25px;
-      font-size: 24px;
-      border-bottom: 3px solid #8ec5e8;
-      padding-bottom: 10px;
-      display: inline-block;
-    }
+        .header p {
+            color: #718096;
+            margin-top: 8px;
+            font-size: 14px;
+        }
 
-    label {
-      font-weight: 500;
-      margin-bottom: 8px;
-      display: block;
-      color: #2c3e50;
-    }
+        /* 内容网格 */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
 
-    select, textarea {
-      width: 100%;
-      padding: 12px;
-      border: 2px solid #e0e0e0;
-      border-radius: 12px;
-      margin-bottom: 20px;
-      font-size: 16px;
-      transition: all 0.3s ease;
-      background: rgba(255, 255, 255, 0.9);
-    }
+        /* 电影信息卡片 */
+        .movie-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
 
-    select:focus, textarea:focus {
-      border-color: #8ec5e8;
-      outline: none;
-      box-shadow: 0 0 5px rgba(142, 197, 232, 0.3);
-    }
+        .movie-poster {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
 
-    input[type="submit"] {
-      width: 100%;
-      padding: 12px;
-      background: linear-gradient(45deg, #8ec5e8, #7fcac0);
-      color: white;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: 500;
-      letter-spacing: 1px;
-      transition: all 0.3s ease;
-    }
+        .movie-info {
+            padding: 24px;
+        }
 
-    input[type="submit"]:hover {
-      background: linear-gradient(45deg, #7fcac0, #8ec5e8);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(142, 197, 232, 0.4);
-    }
+        .movie-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 16px;
+        }
 
-    input[type="submit"]:active {
-      transform: translateY(0);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
+        .movie-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
 
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-      }
-      .sidebar {
-        width: 100%;
-        padding: 20px;
-      }
-    }
-  </style>
+        .meta-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: #f7fafc;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #4a5568;
+        }
+
+        .movie-description {
+            color: #718096;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .score-display {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 16px;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* 评论表单 */
+        .review-form-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            height: fit-content;
+        }
+
+        .form-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 10px;
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 15px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .form-textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 15px;
+            resize: vertical;
+            min-height: 150px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        /* 评分星星 */
+        .star-rating {
+            display: flex;
+            gap: 8px;
+            font-size: 28px;
+        }
+
+        .star {
+            cursor: pointer;
+            color: #e2e8f0;
+            transition: all 0.2s ease;
+        }
+
+        .star:hover,
+        .star.active {
+            color: #f6ad55;
+        }
+
+        /* 响应式 */
+        @media (max-width: 1024px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-  <div class="sidebar">
-    <h2>cuit影评</h2>
-    <a th:href="@{/movielist(userId=${user.userId})}">电影列表</a>
-    <a th:href="@{/reviews(userId=${user.userId})}">评论列表</a>
-    <a href="/">退出</a>
-  </div>
-  <div class="main-content">
-    <div class="movie-box">
-      <h1 th:text="${movie.title}">Movie Title</h1>
-<br>
-      <img th:src="${movie.posterImage}" alt="Movie Poster" style="width: 100%; max-height: 400px; object-fit: cover;">
-      <div class="movie-info" style="margin-top: 20px;">
-        
-        <p><strong>描述:</strong> <span th:text="${movie.description}"></span></p>
-        <p><strong>上映时间:</strong> <span th:text="${movie.releaseDate}"></span></p>
-        <p><strong>时长:</strong> <span th:text="${movie.runtime}"></span> 分钟</p>
-        <p><strong>评分：</strong><span th:text="${movie.averageScore}"></span> 分</p>
-      </div>
+    <div class="container">
+        <!-- 侧边栏 -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>CUIT影评</h2>
+                <p>发现好电影</p>
+            </div>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a th:href="@{/home}" class="nav-link">
+                            <span class="nav-icon">🏠</span>
+                            首页
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a th:href="@{/movielist}" class="nav-link">
+                            <span class="nav-icon">🎬</span>
+                            电影列表
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a th:href="@{/reviews}" class="nav-link">
+                            <span class="nav-icon">💬</span>
+                            评论列表
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">账户</div>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link">
+                                <span class="nav-icon">🚪</span>
+                                退出登录
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- 主内容 -->
+        <main class="main-content">
+            <!-- 头部 -->
+            <div class="header">
+                <h1>添加评论</h1>
+                <p>分享你对这部电影的看法</p>
+            </div>
+
+            <!-- 内容网格 -->
+            <div class="content-grid">
+                <!-- 电影信息 -->
+                <div class="movie-card">
+                    <img class="movie-poster" th:src="${movie.posterImage}" alt="电影海报">
+                    <div class="movie-info">
+                        <h2 class="movie-title" th:text="${movie.title}">电影标题</h2>
+                        <div class="movie-meta">
+                            <span class="meta-tag">📅 <span th:text="${movie.releaseDate}">2024</span></span>
+                            <span class="meta-tag">⏱️ <span th:text="${movie.runtime}">120</span>分钟</span>
+                        </div>
+                        <p class="movie-description" th:text="${movie.description}">电影简介...</p>
+                        <div class="score-display">
+                            ⭐ <span th:text="${movie.averageScore}">0.0</span> 分
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 评论表单 -->
+                <div class="review-form-card">
+                    <h3 class="form-title">📝 写评论</h3>
+                    <form th:action="@{/submitreview(movieId=${movie.movieId})}" method="POST">
+                        <input type="hidden" name="movieId" th:value="${movie.movieId}">
+                        
+                        <div class="form-group">
+                            <label class="form-label">评分</label>
+                            <select id="score" name="score" class="form-select" required>
+                                <option value="">请选择评分</option>
+                                <option value="5">⭐⭐⭐⭐⭐ (5分 - 力荐)</option>
+                                <option value="4">⭐⭐⭐⭐ (4分 - 推荐)</option>
+                                <option value="3">⭐⭐⭐ (3分 - 还行)</option>
+                                <option value="2">⭐⭐ (2分 - 较差)</option>
+                                <option value="1">⭐ (1分 - 很差)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="content">评论内容</label>
+                            <textarea id="content" name="content" class="form-textarea" 
+                                placeholder="写下你的观影感受..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">✨ 提交评论</button>
+                    </form>
+                </div>
+            </div>
+        </main>
     </div>
-
-    <div class="review-form">
-      <h2>Add a Review</h2>
-      <form th:action="@{/submitreview(movieId=${movie.movieId},userId=${user.userId})}" method="POST">
-        <input type="hidden" name="movieId" th:value="${movie.movieId}">
-        <label for="score">评分:</label>
-        <select id="score" name="score" required>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-
-        <label for="content">评论:</label>
-        <textarea id="content" name="content" rows="4" required></textarea>
-
-        <input type="submit" value="提交">
-      </form>
-    </div>
-  </div>
-</div>
 </body>
 </html>
