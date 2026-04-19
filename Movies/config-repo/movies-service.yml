@@ -1,0 +1,60 @@
+# 通用配置（所有环境共享）
+spring:
+  application:
+    name: movies-service
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  aop:
+    auto: true
+    proxy-target-class: true
+  web:
+    resources:
+      static-locations: classpath:/static/, classpath:/public/
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: edu.cuit.yingpingxitong.Dao
+
+# Eureka Client 配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    hostname: localhost
+
+# Actuator 配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+    env:
+      show-values: ALWAYS
+
+# 动态刷新演示配置
+app:
+  version: 2.0.0
+
+# 应用信息
+info:
+  app:
+    name: movies-service
+    description: 影评系统 - 电影服务提供者
+    version: 2.0.0
+
+# Feign 配置
+feign:
+  client:
+    config:
+      default:
+        logger-level: full
+        connect-timeout: 5000
+        read-timeout: 5000
+        max-attempts: 3

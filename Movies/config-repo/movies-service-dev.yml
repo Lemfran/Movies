@@ -1,0 +1,10 @@
+# 开发环境配置
+server:
+  port: 8081
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/yingpingxitong?useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: '123456'
