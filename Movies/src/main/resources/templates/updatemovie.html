@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUIT影评 - 编辑电影</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* 侧边栏样式 */
+        .sidebar {
+            width: 260px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            padding: 30px 20px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .sidebar-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .sidebar-header h2 {
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .sidebar-header p {
+            color: rgba(255,255,255,0.7);
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 8px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 14px 18px;
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            font-size: 15px;
+        }
+
+        .nav-link:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateX(5px);
+        }
+
+        .nav-link.active {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .nav-icon {
+            width: 22px;
+            height: 22px;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .nav-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-section-title {
+            color: rgba(255,255,255,0.5);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            padding-left: 18px;
+        }
+
+        /* 主内容区域 */
+        .main-content {
+            flex: 1;
+            margin-left: 260px;
+            padding: 30px 40px;
+        }
+
+        .header {
+            background: white;
+            padding: 25px 30px;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #2d3748;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .header p {
+            color: #718096;
+            margin-top: 8px;
+            font-size: 14px;
+        }
+
+        /* 内容网格 */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+        }
+
+        /* 海报预览 */
+        .poster-preview {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            height: fit-content;
+        }
+
+        .poster-preview h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 16px;
+        }
+
+        .poster-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        /* 表单卡片 */
+        .form-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 10px;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 12px;
+        }
+
+        .submit-btn {
+            flex: 1;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .cancel-btn {
+            flex: 1;
+            padding: 16px;
+            background: #e2e8f0;
+            color: #4a5568;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .cancel-btn:hover {
+            background: #cbd5e0;
+        }
+
+        /* 响应式 */
+        @media (max-width: 1024px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .poster-preview {
+                order: -1;
+            }
+
+            .poster-image {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 侧边栏 -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>CUIT影评</h2>
+                <p>管理控制台</p>
+            </div>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a th:href="@{/home}" class="nav-link">
+                            <span class="nav-icon">🏠</span>
+                            首页
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">功能管理</div>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a th:href="@{/manager}" class="nav-link">
+                                <span class="nav-icon">👥</span>
+                                用户管理
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{/movieManage}" class="nav-link active">
+                                <span class="nav-icon">🎬</span>
+                                电影管理
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{/reviewsManage}" class="nav-link">
+                                <span class="nav-icon">💬</span>
+                                评论管理
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{/logList}" class="nav-link">
+                                <span class="nav-icon">📋</span>
+                                系统日志
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">账户</div>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link">
+                                <span class="nav-icon">🚪</span>
+                                退出登录
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- 主内容 -->
+        <main class="main-content">
+            <!-- 头部 -->
+            <div class="header">
+                <h1>编辑电影</h1>
+                <p>修改电影信息</p>
+            </div>
+
+            <!-- 内容网格 -->
+            <div class="content-grid">
+                <!-- 海报预览 -->
+                <div class="poster-preview">
+                    <h3>🎬 海报预览</h3>
+                    <img class="poster-image" th:src="${movie.posterImage}" alt="电影海报">
+                </div>
+
+                <!-- 表单卡片 -->
+                <div class="form-card">
+                    <form th:action="@{/updateMovie(movieId=${movie.movieId})}" method="post">
+                        <input type="hidden" name="movieId" th:value="${movie.movieId}" />
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="title">电影标题</label>
+                            <input type="text" class="form-input" id="title" name="title" th:value="${movie.title}" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="posterImage">海报图片URL</label>
+                            <input type="text" class="form-input" id="posterImage" name="posterImage" th:value="${movie.posterImage}" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="description">电影简介</label>
+                            <textarea class="form-textarea" id="description" name="description" rows="4" th:text="${movie.description}" required></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="releaseDate">上映日期</label>
+                                <input type="date" class="form-input" id="releaseDate" name="releaseDate" th:value="${movie.releaseDate}" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="runtime">时长（分钟）</label>
+                                <input type="number" class="form-input" id="runtime" name="runtime" th:value="${movie.runtime}" required>
+                            </div>
+                        </div>
+
+                        <div class="button-group">
+                            <a th:href="@{/movieManage}" class="cancel-btn">↩️ 返回</a>
+                            <button type="submit" class="submit-btn">💾 保存更改</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

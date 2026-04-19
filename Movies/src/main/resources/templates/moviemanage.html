@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUIT影评 - 电影管理</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* 侧边栏样式 */
+        .sidebar {
+            width: 260px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            padding: 30px 20px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .sidebar-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .sidebar-header h2 {
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .sidebar-header p {
+            color: rgba(255,255,255,0.7);
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 8px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 14px 18px;
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            font-size: 15px;
+        }
+
+        .nav-link:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateX(5px);
+        }
+
+        .nav-link.active {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .nav-icon {
+            width: 22px;
+            height: 22px;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .nav-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-section-title {
+            color: rgba(255,255,255,0.5);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            padding-left: 18px;
+        }
+
+        /* 主内容区域 */
+        .main-content {
+            flex: 1;
+            margin-left: 260px;
+            padding: 30px 40px;
+        }
+
+        .header {
+            background: white;
+            padding: 25px 30px;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #2d3748;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .header p {
+            color: #718096;
+            margin-top: 8px;
+            font-size: 14px;
+        }
+
+        /* 搜索栏 */
+        .search-container {
+            background: white;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+
+        .search-form {
+            display: flex;
+            gap: 12px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 14px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .search-btn {
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        /* 电影网格 - 更紧凑的布局 */
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .movie-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .movie-poster {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .movie-info {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .movie-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .movie-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            font-size: 12px;
+            color: #718096;
+        }
+
+        .movie-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .score-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .movie-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: auto;
+            padding-top: 12px;
+        }
+
+        .action-btn {
+            flex: 1;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .action-btn.edit {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .action-btn.delete {
+            background: #fed7d7;
+            color: #c53030;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* 添加电影卡片 */
+        .add-movie-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 280px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .add-movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .add-movie-content {
+            text-align: center;
+            color: white;
+        }
+
+        .add-movie-icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .add-movie-text {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .movie-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 16px;
+            }
+
+            .movie-poster {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 侧边栏 -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>CUIT影评</h2>
+                <p>管理控制台</p>
+            </div>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a th:href="@{/home}" class="nav-link">
+                            <span class="nav-icon">🏠</span>
+                            首页
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">功能管理</div>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a th:href="@{/manager}" class="nav-link">
+                                <span class="nav-icon">👥</span>
+                                用户管理
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{/movieManage}" class="nav-link active">
+                                <span class="nav-icon">🎬</span>
+                                电影管理
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{/reviewsManage}" class="nav-link">
+                                <span class="nav-icon">💬</span>
+                                评论管理
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{/logList}" class="nav-link">
+                                <span class="nav-icon">📋</span>
+                                系统日志
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">用户端预览</div>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a th:href="@{/movielist}" class="nav-link" target="_blank">
+                                <span class="nav-icon">🎬</span>
+                                电影列表
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{/reviews}" class="nav-link" target="_blank">
+                                <span class="nav-icon">💬</span>
+                                评论列表
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">账户</div>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link">
+                                <span class="nav-icon">🚪</span>
+                                退出登录
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- 主内容 -->
+        <main class="main-content">
+            <!-- 头部 -->
+            <div class="header">
+                <h1>电影管理</h1>
+                <p>管理电影信息，添加、编辑或删除电影</p>
+            </div>
+
+            <!-- 搜索栏 -->
+            <div class="search-container">
+                <form th:action="@{/msearch}" method="post" class="search-form">
+                    <input type="text" name="title" class="search-input" placeholder="搜索电影名称...">
+                    <button type="submit" class="search-btn">🔍 搜索</button>
+                </form>
+            </div>
+
+            <!-- 电影网格 -->
+            <div class="movie-grid">
+                <div class="movie-card" th:each="movie : ${movies}">
+                    <img class="movie-poster" th:src="${movie.posterImage}" alt="电影海报">
+                    <div class="movie-info">
+                        <div class="movie-title" th:text="${movie.title}">电影标题</div>
+                        <div class="movie-meta">
+                            <span>📅 <span th:text="${movie.releaseDate}">2024</span></span>
+                            <span>⏱️ <span th:text="${movie.runtime}">120</span>分钟</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span class="score-badge">⭐ <span th:text="${movie.averageScore}">0.0</span></span>
+                        </div>
+                        
+                        <div class="movie-actions">
+                            <a th:href="@{/editMovie(movieId=${movie.movieId})}" class="action-btn edit">✏️ 编辑</a>
+                            <form th:action="@{/deleteMovie(movieId=${movie.movieId})}" method="post" style="flex: 1;">
+                                <button type="submit" class="action-btn delete">🗑️ 删除</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 添加新电影 -->
+                <a th:href="@{/addMovie}" class="add-movie-card">
+                    <div class="add-movie-content">
+                        <div class="add-movie-icon">➕</div>
+                        <div class="add-movie-text">添加新电影</div>
+                    </div>
+                </a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

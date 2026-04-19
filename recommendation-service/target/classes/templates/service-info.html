@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务信息 - Eureka 服务发现</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .info-table th,
+        .info-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .info-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .badge-success {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .badge-primary {
+            background: #cce5ff;
+            color: #004085;
+        }
+
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            padding: 30px;
+            flex-wrap: wrap;
+        }
+
+        .flow-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            text-align: center;
+            min-width: 150px;
+        }
+
+        .flow-box .name {
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .flow-box .detail {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        .flow-arrow {
+            font-size: 2em;
+            color: #667eea;
+        }
+
+        .code-block {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #333;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← 返回首页</a>
+        
+        <div class="header">
+            <h1>🔧 服务信息</h1>
+            <p>Eureka 服务注册与发现详情</p>
+        </div>
+
+        <!-- 服务调用链路 -->
+        <div class="section">
+            <h2>服务调用链路</h2>
+            <div class="flow-diagram">
+                <div class="flow-box">
+                    <div class="name">recommendation-service</div>
+                    <div class="detail">当前服务<br>端口: 8083</div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-box">
+                    <div class="name">Eureka Server</div>
+                    <div class="detail">服务注册中心<br>端口: 8761</div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-box">
+                    <div class="name">movies-service</div>
+                    <div class="detail" th:if="${moviesServiceInfo['service'] != null}">
+                        数据提供方<br>端口: <span th:text="${moviesServiceInfo['port']}">8081</span>
+                    </div>
+                    <div class="detail" th:if="${moviesServiceInfo['service'] == null}">未连接</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- movies-service 信息 -->
+        <div class="section">
+            <h2>📡 movies-service 信息</h2>
+            <table class="info-table" th:if="${moviesServiceInfo.error == null}">
+                <tr>
+                    <th>属性</th>
+                    <th>值</th>
+                </tr>
+                <tr th:each="entry : ${moviesServiceInfo}">
+                    <td th:text="${entry.key}">key</td>
+                    <td th:text="${entry.value}">value</td>
+                </tr>
+            </table>
+            <div th:if="${moviesServiceInfo.error != null}" style="color: #e74c3c; padding: 20px;">
+                <strong>连接失败：</strong><span th:text="${moviesServiceInfo.message}">错误信息</span>
+            </div>
+        </div>
+
+        <!-- Eureka 实例信息 -->
+        <div class="section">
+            <h2>📋 Eureka 注册实例</h2>
+            <table class="info-table" th:if="${not #lists.isEmpty(instances)}">
+                <tr>
+                    <th>服务名</th>
+                    <th>主机</th>
+                    <th>端口</th>
+                    <th>实例 ID</th>
+                    <th>状态</th>
+                </tr>
+                <tr th:each="instance : ${instances}">
+                    <td th:text="${instance.serviceId}">movies-service</td>
+                    <td th:text="${instance.host}">localhost</td>
+                    <td th:text="${instance.port}">8081</td>
+                    <td th:text="${instance.instanceId}" style="font-size: 0.85em; color: #666;">instance-id</td>
+                    <td><span class="badge badge-success">UP</span></td>
+                </tr>
+            </table>
+            <div th:if="${#lists.isEmpty(instances)}" style="color: #e74c3c; padding: 20px;">
+                <strong>未找到实例：</strong>movies-service 可能未注册到 Eureka
+            </div>
+        </div>
+
+        <!-- 所有注册的服务 -->
+        <div class="section">
+            <h2>🌐 所有注册的服务</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                <span th:each="service : ${allServices}" 
+                      class="badge badge-primary" 
+                      th:text="${service}"
+                      style="font-size: 1em; padding: 8px 15px;">
+                    service-name
+                </span>
+            </div>
+            <div th:if="${#lists.isEmpty(allServices)}" style="color: #666; padding: 10px;">
+                暂无注册的服务
+            </div>
+        </div>
+
+        <!-- 技术说明 -->
+        <div class="section">
+            <h2>💡 技术说明</h2>
+            <p><strong>服务发现流程：</strong></p>
+            <div class="code-block">
+                1. <span class="highlight">@EnableDiscoveryClient</span> - 开启服务发现功能
+                2. <span class="highlight">@LoadBalanced</span> - 赋予 RestTemplate 负载均衡能力
+                3. <span class="highlight">"http://movies-service"</span> - 使用服务名而非 IP 地址
+                4. Eureka 自动解析服务名为真实地址（如 localhost:8081）
+            </div>
+            <p style="margin-top: 15px;"><strong>负载均衡效果：</strong></p>
+            <p style="color: #666;">如果启动多个 movies-service 实例（如 8081、8082），请求会自动轮询分配到不同实例，实现负载均衡。</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title} + ' - 电影推荐'">推荐列表</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .movie-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .movie-poster {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4em;
+        }
+
+        .movie-info {
+            padding: 20px;
+        }
+
+        .movie-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .movie-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .movie-score {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #f39c12;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px;
+            color: white;
+        }
+
+        .empty-state .icon {
+            font-size: 5em;
+            margin-bottom: 20px;
+        }
+
+        .count-badge {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← 返回首页</a>
+        
+        <div class="header">
+            <h1 th:text="${title}">推荐列表</h1>
+            <p th:text="${description}">推荐描述</p>
+            <span class="count-badge" th:text="'共 ' + ${#lists.size(movies)} + ' 部'">共 0 部</span>
+        </div>
+
+        <div class="movie-grid" th:if="${not #lists.isEmpty(movies)}">
+            <div class="movie-card" th:each="movie : ${movies}">
+                <div class="movie-poster"><img th:src="${'http://localhost:8081/' + movie['posterImage']}" th:alt="${movie['title']}" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.innerHTML='🎬'" /></div>
+                <div class="movie-info">
+                    <div class="movie-title" th:text="${movie['title']}">电影标题</div>
+                    <div class="movie-meta">
+                        <span th:text="${movie['releaseDate']}">2024</span>
+                        <div class="movie-score">
+                            <span>⭐</span>
+                            <span th:text="${movie['averageScore'] != null ? movie['averageScore'] : '暂无'}">4.5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="empty-state" th:if="${#lists.isEmpty(movies)}">
+            <div class="icon">📭</div>
+            <h2>暂无数据</h2>
+            <p>请确保 movies-service 已启动并注册到 Eureka</p>
+        </div>
+    </div>
+</body>
+</html>

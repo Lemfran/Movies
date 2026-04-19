@@ -1,0 +1,3 @@
+edu/cuit/moviesconsumer/controller/ConsumerController.class
+edu/cuit/moviesconsumer/config/RestTemplateConfig.class
+edu/cuit/moviesconsumer/MoviesConsumerApplication.class

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>服务消费者 - Eureka 演示</title>
+    <style>
+        body { font-family: "Microsoft YaHei", sans-serif; margin: 30px; background: #f5f5f5; }
+        .card { background: white; padding: 20px; border-radius: 8px; margin: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #3498db; padding-bottom: 8px; }
+        .badge { display: inline-block; background: #27ae60; color: white; padding: 3px 10px; border-radius: 12px; font-size: 13px; }
+        .badge-blue { background: #3498db; }
+        .instance-item { padding: 10px; border-left: 4px solid #3498db; margin: 8px 0; background: #ecf0f1; }
+        .nav { margin: 20px 0; }
+        .nav a { display: inline-block; margin-right: 10px; padding: 8px 16px; background: #3498db; color: white; text-decoration: none; border-radius: 4px; }
+        .nav a:hover { background: #2980b9; }
+        table { width: 100%; border-collapse: collapse; }
+        td, th { padding: 8px 12px; border: 1px solid #ddd; text-align: left; }
+        th { background: #3498db; color: white; }
+    </style>
+</head>
+<body>
+
+<h1>服务消费者（movies-consumer）</h1>
+<p>端口：<strong>8082</strong> &nbsp;|&nbsp; 注册中心：<a href="http://localhost:8761" target="_blank">http://localhost:8761</a></p>
+
+<div class="card">
+    <h2>已注册到 Eureka 的所有服务</h2>
+    <div th:if="${allServices != null and !allServices.isEmpty()}">
+        <span th:each="svc : ${allServices}"
+              class="badge" th:classappend="${svc == 'movies-consumer'} ? '' : ' badge-blue'"
+              th:text="${svc}"
+              style="margin-right:8px;"></span>
+    </div>
+    <p th:if="${allServices == null or allServices.isEmpty()}" style="color:red;">暂无服务注册</p>
+</div>
+
+<div class="card">
+    <h2>movies-service 实例列表</h2>
+    <p>通过 <code>DiscoveryClient.getInstances("movies-service")</code> 查询到以下实例：</p>
+    <div th:if="${instances != null and !instances.isEmpty()}">
+        <div class="instance-item" th:each="inst : ${instances}">
+            <span class="badge">UP</span>
+            &nbsp; 主机：<strong th:text="${inst.host}"></strong>
+            &nbsp; 端口：<strong th:text="${inst.port}"></strong>
+            &nbsp; 服务ID：<code th:text="${inst.serviceId}"></code>
+        </div>
+    </div>
+    <p th:if="${instances == null or instances.isEmpty()}" style="color:#e74c3c;">
+        未发现 movies-service 实例，请先启动服务提供者
+    </p>
+</div>
+
+<div class="card">
+    <h2>功能演示</h2>
+    <div class="nav">
+        <a href="/movies">获取全部电影列表</a>
+        <a href="/movies/1">获取电影详情（ID=1）</a>
+        <a href="/search">搜索电影</a>
+        <a href="/service-info">服务信息（JSON）</a>
+    </div>
+</div>
+
+</body>
+</html>

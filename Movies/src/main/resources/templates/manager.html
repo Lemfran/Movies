@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUIT影评 - 用户管理</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* 侧边栏样式 */
+        .sidebar {
+            width: 260px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            padding: 30px 20px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .sidebar-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .sidebar-header h2 {
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .sidebar-header p {
+            color: rgba(255,255,255,0.7);
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 8px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 14px 18px;
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            font-size: 15px;
+        }
+
+        .nav-link:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateX(5px);
+        }
+
+        .nav-link.active {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .nav-icon {
+            width: 22px;
+            height: 22px;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .nav-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-section-title {
+            color: rgba(255,255,255,0.5);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            padding-left: 18px;
+        }
+
+        /* 主内容区域 */
+        .main-content {
+            flex: 1;
+            margin-left: 260px;
+            padding: 30px 40px;
+        }
+
+        .header {
+            background: white;
+            padding: 25px 30px;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #2d3748;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .header p {
+            color: #718096;
+            margin-top: 8px;
+            font-size: 14px;
+        }
+
+        /* 管理功能卡片 */
+        .feature-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            border-color: #667eea;
+        }
+
+        .feature-card.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .feature-card.active .feature-text {
+            color: white;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .feature-card.active .feature-icon {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .feature-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        /* 用户表格样式 */
+        .table-container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        th {
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        td {
+            padding: 16px 18px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        tbody tr:hover {
+            background: #f7fafc;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .user-name {
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .user-email {
+            font-size: 13px;
+            color: #718096;
+            margin-top: 2px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .status-badge.yes {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+
+        .status-badge.no {
+            background: #fed7d7;
+            color: #742a2a;
+        }
+
+        .action-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .action-btn.grant {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .action-btn.revoke {
+            background: #fed7d7;
+            color: #c53030;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            th, td {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 侧边栏 -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>CUIT影评</h2>
+                <p>管理控制台</p>
+            </div>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a th:href="@{/home}" class="nav-link">
+                            <span class="nav-icon">🏠</span>
+                            首页
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">功能管理</div>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a th:href="@{/manager}" class="nav-link active">
+                                <span class="nav-icon">👥</span>
+                                用户管理
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{/movieManage}" class="nav-link">
+                                <span class="nav-icon">🎬</span>
+                                电影管理
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{/reviewsManage}" class="nav-link">
+                                <span class="nav-icon">💬</span>
+                                评论管理
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{/logList}" class="nav-link">
+                                <span class="nav-icon">📋</span>
+                                系统日志
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">用户端预览</div>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a th:href="@{/movielist}" class="nav-link" target="_blank">
+                                <span class="nav-icon">🎬</span>
+                                电影列表
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{/reviews}" class="nav-link" target="_blank">
+                                <span class="nav-icon">💬</span>
+                                评论列表
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">账户</div>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link">
+                                <span class="nav-icon">🚪</span>
+                                退出登录
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- 主内容 -->
+        <main class="main-content">
+            <!-- 头部 -->
+            <div class="header">
+                <h1>用户管理</h1>
+                <p>管理系统用户权限和角色分配</p>
+            </div>
+
+            <!-- 用户表格 -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>用户信息</th>
+                            <th>审核许可</th>
+                            <th>管理员</th>
+                            <th>权限操作</th>
+                            <th>角色操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="upuser : ${users}">
+                            <td>
+                                <div class="user-info">
+                                    <div class="user-avatar" th:text="${#strings.substring(upuser.username,0,1).toUpperCase()}">U</div>
+                                    <div>
+                                        <div class="user-name" th:text="${upuser.username}">用户名</div>
+                                        <div class="user-email" th:text="${upuser.email}">邮箱</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="status-badge" th:classappend="${upuser.permission} ? 'yes' : 'no'" th:text="${upuser.permission} ? '已授权' : '未授权'">许可</span>
+                            </td>
+                            <td>
+                                <span class="status-badge" th:classappend="${upuser.manager} ? 'yes' : 'no'" th:text="${upuser.manager} ? '是' : '否'">管理员</span>
+                            </td>
+                            <td>
+                                <form th:action="@{/updatePermission(upuserId=${upuser.userId})}" method="post" style="display: inline;">
+                                    <input type="hidden" name="permission" th:value="${upuser.permission}" />
+                                    <button type="submit" class="action-btn" th:classappend="${upuser.permission} ? 'revoke' : 'grant'" th:text="${upuser.permission} ? '撤销权限' : '授予权限'">Grant</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form th:action="@{/updateManager(upuserId=${upuser.userId})}" method="post" style="display: inline;">
+                                    <input type="hidden" name="manager" th:value="${upuser.manager}" />
+                                    <button type="submit" class="action-btn" th:classappend="${upuser.manager} ? 'revoke' : 'grant'" th:text="${upuser.manager} ? '撤销管理' : '设为管理'">Grant</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

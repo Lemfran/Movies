@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper元素是MyBatis映射文件的根元素，用于定义SQL映射 -->
+<mapper namespace="edu.cuit.yingpingsxitong.Dao.LogDao">
+
+    <!-- 插入用户 -->
+    <insert id="saveLog" parameterType="java.lang.String">
+        insert into logs (methodName,userName) values (#{methodName},#{userName})
+    </insert>
+
+    <select id="findAllLog" resultType="edu.cuit.yingpingsxitong.Entity.Log">
+        select * from logs l order by l.timestamp desc
+    </select>
+
+    <!-- 统计日志数量 -->
+    <select id="countLogs" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM logs
+    </select>
+
+</mapper>
