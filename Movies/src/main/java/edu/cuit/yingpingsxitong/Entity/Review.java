@@ -12,6 +12,9 @@ public class Review {
     private Movie movie;
     private String username;
     private String title;
+    private String avatar;
+    private String nickname;
+    private String moviePoster;
     // Constructors
     public Review() {}
 
@@ -100,5 +103,29 @@ public class Review {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public String getMoviePoster() {
+        return moviePoster;
+    }
+
+    public void setMoviePoster(String moviePoster) {
+        this.moviePoster = moviePoster;
     }
 }

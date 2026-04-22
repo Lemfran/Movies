@@ -6,8 +6,9 @@ PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # 服务配置: 目录名:端口:服务名 (关闭顺序与启动相反)
 SERVICES=(
+  "gateway-service:8080:API网关"
   "recommendation-service:8083:推荐服务"
-  "movies-consumer:8082:电影消费者"
+  "user-portal-service:8082:用户门户服务"
   "Movies:8081:电影核心服务"
   "Movies/config-server:8888:配置中心"
   "eureka-server:8761:Eureka注册中心"

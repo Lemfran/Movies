@@ -208,7 +208,7 @@
         <h2>欢迎回来</h2>
         <p>请登录你的账号继续</p>
       </div>
-      <form action="/index" method="POST">
+      <form action="/admin/index" method="POST">
         <div class="form-group">
           <label for="username">用户名</label>
           <input type="text" id="username" name="username" placeholder="请输入用户名" required>
@@ -219,10 +219,9 @@
         </div>
         <button type="submit" class="btn btn-primary">登录</button>
       </form>
-      <div class="divider">
-        <span>还没有账号？</span>
+      <div style="text-align:center; margin-top:15px; font-size:0.85rem; color:#a0aec0;">
+        <a href="/user/login" style="color:#718096; text-decoration:none;">用户端入口</a>
       </div>
-      <button class="btn btn-secondary" onclick="location.href='/register';">立即注册</button>
     </div>
   </div>
 </body>

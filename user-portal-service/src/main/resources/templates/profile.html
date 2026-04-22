@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人中心 - CUIT影评</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            padding: 24px 16px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            text-align: center;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .sidebar-header h2 {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .sidebar-header p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.8rem;
+            margin-top: 4px;
+        }
+
+        .nav-menu {
+            list-style: none;
+            flex: 1;
+        }
+
+        .nav-item {
+            margin-bottom: 4px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 10px 14px;
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.25s ease;
+            font-weight: 500;
+            font-size: 0.92rem;
+        }
+
+        .nav-link:hover {
+            background: rgba(255,255,255,0.12);
+            color: white;
+            transform: translateX(3px);
+        }
+
+        .nav-link.active {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .nav-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        /* Bottom User Bar */
+        .user-bar {
+            margin-top: auto;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            position: relative;
+        }
+
+        .user-bar-trigger {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+        }
+
+        .user-bar-trigger:hover {
+            background: rgba(255,255,255,0.12);
+        }
+
+        .user-bar-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .user-bar-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .user-bar-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .user-bar-name {
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .user-bar-chevron {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.8rem;
+            transition: transform 0.25s ease;
+        }
+
+        .user-bar.open .user-bar-chevron {
+            transform: rotate(180deg);
+        }
+
+        .user-dropdown {
+            position: absolute;
+            bottom: calc(100% + 8px);
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            padding: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: all 0.25s ease;
+            z-index: 200;
+        }
+
+        .user-bar.open .user-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            border-radius: 8px;
+            color: #4a5568;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .dropdown-item:hover {
+            background: #f7fafc;
+            color: #667eea;
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: #e2e8f0;
+            margin: 6px 0;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: 260px;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .content-wrapper {
+            width: 100%;
+            max-width: 680px;
+        }
+
+        .header {
+            background: white;
+            padding: 24px 28px;
+            border-radius: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            margin-bottom: 24px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .header h1 {
+            color: #1a202c;
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        .header p {
+            color: #718096;
+            margin-top: 6px;
+            font-size: 0.9rem;
+        }
+
+        /* Profile Card */
+        .profile-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 2.2rem;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(102,126,234,0.3);
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 6px;
+        }
+
+        .profile-username {
+            color: #718096;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+
+        /* Form Card */
+        .form-card {
+            background: white;
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            border: 1px solid #e2e8f0;
+        }
+
+        .form-card h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 8px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            transition: all 0.25s ease;
+            font-family: inherit;
+            background: #fafbfc;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
+        }
+
+        .form-input[readonly] {
+            background: #f1f3f5;
+            color: #a0aec0;
+            cursor: not-allowed;
+        }
+
+        .form-hint {
+            font-size: 0.8rem;
+            color: #a0aec0;
+            margin-top: 6px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102,126,234,0.3);
+        }
+
+        /* File Upload */
+        .file-upload {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-upload input[type="file"] {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .file-upload-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 16px;
+            border: 2px dashed #e2e8f0;
+            border-radius: 12px;
+            background: #fafbfc;
+            color: #718096;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.25s ease;
+            width: 100%;
+        }
+
+        .file-upload:hover .file-upload-btn {
+            border-color: #667eea;
+            color: #667eea;
+            background: white;
+        }
+
+        .avatar-preview {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 12px;
+        }
+
+        .avatar-preview-img {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .avatar-preview-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .form-card, .profile-card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 侧边栏 -->
+        <aside th:replace="~{fragments :: sidebar('')}"></aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="header">
+                    <h1>个人中心</h1>
+                    <p>管理你的个人信息和账户设置</p>
+                </div>
+
+                <!-- Profile Info Card -->
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <img th:if="${user.avatar != null and user.avatar != ''}" th:src="${user.avatar}" alt="avatar">
+                        <span th:unless="${user.avatar != null and user.avatar != ''}" th:text="${#strings.substring(user.username,0,1)}">U</span>
+                    </div>
+                    <div class="profile-name" th:text="${user.nickname != null and user.nickname != ''} ? ${user.nickname} : ${user.username}">昵称</div>
+                    <div class="profile-username" th:text="'@' + ${user.username}">@username</div>
+                </div>
+
+                <!-- Edit Form -->
+                <div class="form-card">
+                    <h2>✏️ 编辑资料</h2>
+                    <form th:action="@{/user/profile/update}" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label class="form-label">昵称</label>
+                            <input type="text" name="nickname" class="form-input"
+                                   th:value="${user.nickname}"
+                                   placeholder="设置你的昵称">
+                            <p class="form-hint">昵称将显示在评论和个人资料中</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">头像</label>
+                            <div class="file-upload">
+                                <input type="file" name="avatarFile" id="avatarFile" accept="image/*" onchange="previewAvatar(this)">
+                                <div class="file-upload-btn">
+                                    <span>📁</span>
+                                    <span>点击选择图片上传</span>
+                                </div>
+                            </div>
+                            <p class="form-hint">支持 JPG、PNG 格式，建议尺寸 200x200</p>
+                            <div class="avatar-preview">
+                                <div class="avatar-preview-img">
+                                    <img id="previewImg" th:if="${user.avatar != null and user.avatar != ''}" th:src="${user.avatar}" alt="preview">
+                                    <span id="previewText" th:unless="${user.avatar != null and user.avatar != ''}" th:text="${#strings.substring(user.username,0,1)}">U</span>
+                                </div>
+                                <span style="color: #a0aec0; font-size: 0.85rem;">当前头像预览</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">邮箱</label>
+                            <input type="email" name="email" class="form-input"
+                                   th:value="${user.email}"
+                                   placeholder="your@email.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">用户名</label>
+                            <input type="text" class="form-input" th:value="${user.username}" readonly>
+                            <p class="form-hint">用户名不可修改</p>
+                        </div>
+
+                        <button type="submit" class="btn-primary">💾 保存修改</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script th:replace="~{fragments :: userBarScript}"></script>
+    <script>
+        function previewAvatar(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const previewImg = document.getElementById('previewImg');
+                    const previewText = document.getElementById('previewText');
+                    if (previewImg) {
+                        previewImg.src = e.target.result;
+                        previewImg.style.display = 'block';
+                    } else {
+                        const img = document.createElement('img');
+                        img.id = 'previewImg';
+                        img.src = e.target.result;
+                        img.style.width = '100%';
+                        img.style.height = '100%';
+                        img.style.objectFit = 'cover';
+                        previewText.parentNode.appendChild(img);
+                    }
+                    if (previewText) previewText.style.display = 'none';
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</body>
+</html>

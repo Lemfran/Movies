@@ -3,6 +3,8 @@ package edu.cuit.yingpingsxitong.Entity;
 public class User {
     private Integer userId;
     private String username;
+    private String nickname;
+    private String avatar;
     private String password;
     private String email;
     private Boolean manager;
@@ -24,6 +26,22 @@ public class User {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 
     public String getUsername() {

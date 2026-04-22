@@ -49,10 +49,10 @@ public class IndexController {
         User user = result.getData();
         if (user != null && user.getPassword().equals(password) && user.getPermission() && user.getManager()) {
             model.addAttribute("user", user);
-            return "redirect:/home";
-        } else if (user != null && user.getPassword().equals(password)&& user.getPermission()){
-            model.addAttribute("user", user);
-            return "redirect:/home";
+            return "redirect:/admin/home";
+        } else if (user != null && user.getPassword().equals(password) && user.getPermission() && !user.getManager()) {
+            model.addAttribute("error", "普通用户请通过用户端入口访问");
+            return "error";
         } else if (user != null && user.getPassword().equals(password) && !user.getPermission()){
             model.addAttribute("error", "No Permission");
             return "error";
@@ -79,10 +79,9 @@ public class IndexController {
             model.addAttribute("user", freshUser);
             addStatistics(model);
             return "indexmanager";
-        } else if (freshUser != null && freshUser.getPermission()){
-            model.addAttribute("user", freshUser);
-            addStatistics(model);
-            return "index";
+        } else if (freshUser != null && freshUser.getPermission() && !freshUser.getManager()) {
+            model.addAttribute("error", "普通用户请通过用户端入口访问");
+            return "error";
         } else {
             model.addAttribute("error", "No Permission");
             return "error";

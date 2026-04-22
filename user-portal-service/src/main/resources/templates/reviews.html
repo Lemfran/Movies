@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>影评列表 - CUIT影评</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f5f7fa; min-height: 100vh; }
+        .container { display: flex; min-height: 100vh; }
+
+        /* 侧边栏 */
+        .sidebar { width: 260px; background: linear-gradient(180deg, #667eea 0%, #764ba2 100%); padding: 24px 16px; position: fixed; height: 100vh; overflow-y: auto; z-index: 100; display: flex; flex-direction: column; }
+        .sidebar-header { text-align: center; margin-bottom: 32px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.15); }
+        .sidebar-header h2 { color: white; font-size: 1.4rem; font-weight: 600; }
+        .sidebar-header p { color: rgba(255,255,255,0.6); font-size: 0.8rem; margin-top: 4px; }
+        .nav-menu { list-style: none; flex: 1; }
+        .nav-item { margin-bottom: 4px; }
+        .nav-link { display: flex; align-items: center; padding: 10px 14px; color: rgba(255,255,255,0.85); text-decoration: none; border-radius: 10px; transition: all 0.25s ease; font-weight: 500; font-size: 0.92rem; }
+        .nav-link:hover { background: rgba(255,255,255,0.12); color: white; transform: translateX(3px); }
+        .nav-link.active { background: rgba(255,255,255,0.2); color: white; }
+        .nav-icon { width: 20px; height: 20px; margin-right: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+        .user-bar { margin-top: auto; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.15); position: relative; }
+        .user-bar-trigger { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 10px; cursor: pointer; transition: all 0.25s ease; user-select: none; }
+        .user-bar-trigger:hover { background: rgba(255,255,255,0.12); }
+        .user-bar-avatar { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 0.9rem; flex-shrink: 0; overflow: hidden; }
+        .user-bar-avatar img { width: 100%; height: 100%; object-fit: cover; }
+        .user-bar-info { flex: 1; min-width: 0; }
+        .user-bar-name { color: white; font-weight: 600; font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .user-bar-chevron { color: rgba(255,255,255,0.6); font-size: 0.8rem; transition: transform 0.25s ease; }
+        .user-bar.open .user-bar-chevron { transform: rotate(180deg); }
+        .user-dropdown { position: absolute; bottom: calc(100% + 8px); left: 0; right: 0; background: white; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); padding: 8px; opacity: 0; visibility: hidden; transform: translateY(8px); transition: all 0.25s ease; z-index: 200; }
+        .user-bar.open .user-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-item { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 8px; color: #4a5568; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.2s ease; cursor: pointer; }
+        .dropdown-item:hover { background: #f7fafc; color: #667eea; }
+        .dropdown-divider { height: 1px; background: #e2e8f0; margin: 6px 0; }
+
+        /* 主内容 */
+        .main-content { flex: 1; margin-left: 260px; padding: 30px; }
+        .header { background: white; padding: 25px 30px; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); margin-bottom: 30px; }
+        .header h1 { color: #1a202c; font-size: 1.8rem; font-weight: 600; }
+
+        /* 评论卡片 */
+        .reviews-container { display: flex; flex-direction: column; gap: 24px; }
+        .review-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: all 0.35s ease; text-decoration: none; color: inherit; display: flex; }
+        .review-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.12); }
+        .review-poster { width: 180px; min-height: 240px; flex-shrink: 0; position: relative; }
+        .review-poster img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .review-poster-overlay { position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); color: white; padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+        .review-body { flex: 1; padding: 24px 28px; display: flex; flex-direction: column; }
+        .review-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+        .review-movie-title { font-size: 1.3rem; font-weight: 700; color: #1a202c; margin-bottom: 6px; }
+        .review-date { color: #a0aec0; font-size: 0.85rem; }
+        .review-stars { display: flex; gap: 3px; font-size: 1.1rem; }
+        .review-star { color: #fbbf24; }
+        .review-star.empty { color: #e2e8f0; }
+
+        /* 小数星级 */
+        .star-bar { display: inline-flex; gap: 1px; font-size: 1.1rem; }
+        .star-fill {
+            background: linear-gradient(90deg, #fbbf24 var(--pct), #e2e8f0 var(--pct));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .review-content { color: #4a5568; font-size: 1rem; line-height: 1.7; margin-bottom: 20px; flex: 1; }
+        .review-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; border-top: 1px solid #edf2f7; }
+        .review-user { display: flex; align-items: center; gap: 10px; }
+        .user-avatar { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 0.85rem; overflow: hidden; flex-shrink: 0; }
+        .user-avatar img { width: 100%; height: 100%; object-fit: cover; }
+        .user-name { font-weight: 600; color: #2d3748; font-size: 0.95rem; }
+        .review-badge { display: inline-flex; align-items: center; gap: 4px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 8px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+
+        /* 空状态 */
+        .empty-state { text-align: center; padding: 80px 20px; color: #a0aec0; background: white; border-radius: 20px; }
+        .empty-state-icon { font-size: 4rem; margin-bottom: 20px; }
+        .empty-state h3 { font-size: 1.4rem; color: #4a5568; margin-bottom: 10px; }
+        .empty-state p { font-size: 1rem; }
+
+        @media (max-width: 1024px) { .review-poster { width: 140px; min-height: 200px; } }
+        @media (max-width: 768px) {
+            .sidebar { width: 100%; position: relative; height: auto; }
+            .main-content { margin-left: 0; padding: 20px; }
+            .container { flex-direction: column; }
+            .review-card { flex-direction: column; }
+            .review-poster { width: 100%; height: 200px; min-height: auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside th:replace="~{fragments :: sidebar('reviews')}"></aside>
+
+        <main class="main-content">
+            <div class="header">
+                <h1 th:text="${pageTitle} ?: '影评列表'">影评列表</h1>
+            </div>
+
+            <div class="reviews-container">
+                <a th:each="review : ${reviews}" th:href="@{/user/getmovie(movieId=${review.movieId})}" class="review-card">
+                    <div class="review-poster">
+                        <img th:src="${review.moviePoster}" alt="电影海报">
+                        <div class="review-poster-overlay" th:text="${review.releaseDate} ?: ''">2024</div>
+                    </div>
+                    <div class="review-body">
+                        <div class="review-top">
+                            <div>
+                                <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+                                    <div class="review-movie-title" th:text="${review.title}">电影标题</div>
+                                    <span class="movie-avg-score" th:if="${review.averageScore != null}">
+                                        <span class="star-bar" style="font-size:0.85rem;">
+                                            <span th:each="i : ${#numbers.sequence(1, 5)}"
+                                                  class="star-fill"
+                                                  th:style="'--pct:' + ${(review.averageScore >= i) ? 100 : (review.averageScore > (i - 1) ? (review.averageScore - i + 1) * 100 : 0)} + '%'">★</span>
+                                        </span>
+                                        <span style="color:#f59e0b;font-size:0.8rem;font-weight:600;" th:text="${#numbers.formatDecimal(review.averageScore, 1, 1)}">0.0</span>
+                                    </span>
+                                </div>
+                                <div class="review-date" th:text="${#dates.format(review.createdAt, 'yyyy-MM-dd HH:mm')}">日期</div>
+                            </div>
+                            <div class="review-stars">
+                                <span class="star-bar">
+                                    <span th:each="i : ${#numbers.sequence(1, 5)}"
+                                          class="star-fill"
+                                          th:style="'--pct:' + ${(review.score >= i) ? 100 : 0} + '%'">★</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="review-content" th:text="${review.content}">评论内容...</div>
+                        <div class="review-footer">
+                            <div class="review-user">
+                                <div class="user-avatar">
+                                    <img th:if="${review.avatar != null and review.avatar != ''}" th:src="${review.avatar}" alt="avatar">
+                                    <span th:unless="${review.avatar != null and review.avatar != ''}" th:text="${#strings.substring(review.username,0,1)}">U</span>
+                                </div>
+                                <span class="user-name" th:text="${review.nickname != null and review.nickname != ''} ? ${review.nickname} : ${review.username}">用户名</span>
+                            </div>
+                            <span class="review-badge">查看详情 →</span>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="empty-state" th:if="${#lists.isEmpty(reviews)}">
+                    <div class="empty-state-icon">📝</div>
+                    <h3>暂无评论</h3>
+                    <p>去电影列表选择一部喜欢的电影，写下你的第一条评论吧！</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script th:replace="~{fragments :: userBarScript}"></script>
+</body>
+</html>

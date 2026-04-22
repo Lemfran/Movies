@@ -13,8 +13,9 @@ SERVICES=(
   "eureka-server:8761:Eureka注册中心"
   "Movies/config-server:8888:配置中心"
   "Movies:8081:电影核心服务"
-  "movies-consumer:8082:电影消费者"
+  "user-portal-service:8082:用户门户服务"
   "recommendation-service:8083:推荐服务"
+  "gateway-service:8080:API网关"
 )
 
 # 颜色输出
@@ -111,7 +112,7 @@ echo ""
 echo "服务访问地址:"
 echo "  Eureka 控制台: http://localhost:8761"
 echo "  电影核心服务:  http://localhost:8081"
-echo "  电影消费者:    http://localhost:8082"
+echo "  用户门户服务:  http://localhost:8082"
 echo "  推荐服务:      http://localhost:8083"
 echo "  配置中心:      http://localhost:8888"
 echo ""

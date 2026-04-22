@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册 - CUIT影评</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .register-wrapper {
+            display: flex;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            max-width: 900px;
+            width: 100%;
+            min-height: 550px;
+        }
+
+        .register-left {
+            flex: 1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .register-left::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+        }
+
+        .register-left h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .register-left p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .register-right {
+            flex: 1;
+            padding: 60px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .register-header {
+            margin-bottom: 35px;
+        }
+
+        .register-header h2 {
+            font-size: 2rem;
+            color: #1a202c;
+            margin-bottom: 10px;
+        }
+
+        .register-header p {
+            color: #718096;
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #4a5568;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f7fafc;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .back-to-login {
+            text-align: center;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        .back-to-login a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-login a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .register-wrapper {
+                flex-direction: column;
+            }
+
+            .register-left {
+                padding: 40px 30px;
+                text-align: center;
+            }
+
+            .register-left h1 {
+                font-size: 2rem;
+            }
+
+            .register-right {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="register-wrapper">
+        <div class="register-left">
+            <h1>加入CUIT影评</h1>
+            <p>创建账号，开始你的观影之旅。发现精彩电影，分享独特见解，与志同道合的影迷交流。</p>
+        </div>
+        <div class="register-right">
+            <div class="register-header">
+                <h2>创建账号</h2>
+                <p>填写以下信息完成注册</p>
+            </div>
+            <form action="/user/regist1" method="POST">
+                <div class="form-group">
+                    <label for="username">用户名</label>
+                    <input type="text" id="username" name="username" placeholder="请输入用户名" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <input type="password" id="password" name="password" placeholder="请输入密码" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">邮箱</label>
+                    <input type="email" id="email" name="email" placeholder="请输入邮箱" required>
+                </div>
+                <button type="submit" class="btn btn-primary">立即注册</button>
+            </form>
+            <div class="back-to-login">
+                已有账号？<a href="/user/">返回登录</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

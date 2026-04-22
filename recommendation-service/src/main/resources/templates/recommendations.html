@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title th:text="${title} + ' - 电影推荐'">推荐列表</title>
+    <title th:text="${title} + ' - CUIT影评'">推荐列表</title>
     <style>
         * {
             margin: 0;
@@ -12,154 +12,390 @@
         }
 
         body {
-            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #f5f7fa;
             min-height: 100vh;
-            padding: 20px;
+            color: #333;
+            line-height: 1.6;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            padding: 30px 20px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .sidebar-header h2 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .sidebar-header p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.85rem;
+            margin-top: 5px;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 8px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 14px 18px;
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .nav-link.active {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .nav-icon {
+            width: 22px;
+            height: 22px;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .logout-btn {
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: 260px;
+            padding: 30px;
         }
 
         .header {
-            text-align: center;
-            color: white;
+            background: white;
+            padding: 25px 30px;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
             margin-bottom: 30px;
-            padding: 20px;
         }
 
         .header h1 {
-            font-size: 2em;
-            margin-bottom: 10px;
+            color: #1a202c;
+            font-size: 1.8rem;
+            font-weight: 600;
         }
 
         .header p {
-            opacity: 0.9;
+            color: #718096;
+            margin-top: 8px;
+            font-size: 0.95rem;
         }
 
-        .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
+        /* Section */
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border: 1px solid #edf2f7;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #edf2f7;
+        }
+
+        .section-title {
+            font-size: 1.4em;
+            color: #2d3748;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+        }
+
+        .section-title .icon {
+            font-size: 1.2em;
+        }
+
+        .count-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            text-decoration: none;
-            font-size: 1.1em;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
         }
 
-        .back-link:hover {
-            text-decoration: underline;
-        }
-
+        /* Movie Grid */
         .movie-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
         }
 
         .movie-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
 
         .movie-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
+            border-color: #667eea;
+            box-shadow: 0 12px 30px rgba(102,126,234,0.15);
         }
 
         .movie-poster {
             width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 4em;
+            height: 280px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e0 100%);
+        }
+
+        .movie-poster img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .movie-card:hover .movie-poster img {
+            transform: scale(1.05);
+        }
+
+        .movie-poster .fallback {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3.5em;
+            opacity: 0.4;
         }
 
         .movie-info {
-            padding: 20px;
+            padding: 15px;
         }
 
         .movie-title {
-            font-size: 1.2em;
             font-weight: 600;
-            color: #333;
-            margin-bottom: 10px;
+            color: #2d3748;
+            margin-bottom: 8px;
+            font-size: 1em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .movie-meta {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            color: #666;
-            font-size: 0.9em;
         }
 
         .movie-score {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
             color: #f39c12;
-            font-weight: 600;
-            font-size: 1.1em;
+            font-weight: 700;
+            font-size: 1em;
         }
 
+        .movie-year {
+            color: #a0aec0;
+            font-size: 0.85em;
+        }
+
+        /* Empty State */
         .empty-state {
             text-align: center;
-            padding: 60px;
-            color: white;
+            padding: 50px;
+            color: #a0aec0;
         }
 
         .empty-state .icon {
-            font-size: 5em;
-            margin-bottom: 20px;
+            font-size: 4em;
+            margin-bottom: 15px;
+            opacity: 0.5;
         }
 
-        .count-badge {
-            background: rgba(255,255,255,0.2);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            margin-left: 10px;
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .movie-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 12px;
+            }
+
+            .movie-poster {
+                height: 200px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="/" class="back-link">← 返回首页</a>
-        
-        <div class="header">
-            <h1 th:text="${title}">推荐列表</h1>
-            <p th:text="${description}">推荐描述</p>
-            <span class="count-badge" th:text="'共 ' + ${#lists.size(movies)} + ' 部'">共 0 部</span>
-        </div>
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>CUIT影评</h2>
+                <p>智能推荐</p>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="/recommend/" class="nav-link">
+                            <span class="nav-icon">🏠</span>
+                            推荐首页
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/recommend/hot" class="nav-link" th:classappend="${title == '热门推荐'} ? 'active' : ''">
+                            <span class="nav-icon">🔥</span>
+                            热门推荐
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/recommend/high-score" class="nav-link" th:classappend="${title == '高分推荐'} ? 'active' : ''">
+                            <span class="nav-icon">⭐</span>
+                            高分推荐
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/recommend/personalized" class="nav-link" th:classappend="${title == '为你推荐'} ? 'active' : ''">
+                            <span class="nav-icon">💡</span>
+                            为你推荐
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/recommend/service-info" class="nav-link">
+                            <span class="nav-icon">🔧</span>
+                            服务信息
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="logout-btn">
+                <a href="/user/home" class="nav-link">
+                    <span class="nav-icon">🏠</span>
+                    返回用户端
+                </a>
+            </div>
+        </aside>
 
-        <div class="movie-grid" th:if="${not #lists.isEmpty(movies)}">
-            <div class="movie-card" th:each="movie : ${movies}">
-                <div class="movie-poster"><img th:src="${'http://localhost:8081/' + movie['posterImage']}" th:alt="${movie['title']}" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.innerHTML='🎬'" /></div>
-                <div class="movie-info">
-                    <div class="movie-title" th:text="${movie['title']}">电影标题</div>
-                    <div class="movie-meta">
-                        <span th:text="${movie['releaseDate']}">2024</span>
-                        <div class="movie-score">
-                            <span>⭐</span>
-                            <span th:text="${movie['averageScore'] != null ? movie['averageScore'] : '暂无'}">4.5</span>
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="header">
+                <h1 th:text="${title}">推荐列表</h1>
+                <p th:text="${description}">推荐描述</p>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="icon" th:text="${icon}">📋</span>
+                        <span th:text="${title}">推荐列表</span>
+                    </h2>
+                    <span class="count-badge" th:text="'共 ' + ${#lists.size(movies)} + ' 部'">共 0 部</span>
+                </div>
+
+                <div class="movie-grid" th:if="${not #lists.isEmpty(movies)}">
+                    <div class="movie-card" th:each="movie : ${movies}">
+                        <div class="movie-poster">
+                            <img th:src="${movie['posterImage']}"
+                                 th:alt="${movie['title']}"
+                                 onerror="this.style.display='none'; this.parentElement.querySelector('.fallback').style.display='block'">
+                            <div class="fallback" style="display:none">🎬</div>
+                        </div>
+                        <div class="movie-info">
+                            <div class="movie-title" th:text="${movie['title']}">电影标题</div>
+                            <div class="movie-meta">
+                                <span class="movie-year" th:text="${movie['releaseDate'] != null ? movie['releaseDate'].toString().substring(0, 4) : ''}">2024</span>
+                                <div class="movie-score">
+                                    <span>★</span>
+                                    <span th:text="${movie['averageScore'] != null ? movie['averageScore'] : '暂无'}">4.5</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="empty-state" th:if="${#lists.isEmpty(movies)}">
-            <div class="icon">📭</div>
-            <h2>暂无数据</h2>
-            <p>请确保 movies-service 已启动并注册到 Eureka</p>
-        </div>
+                <div class="empty-state" th:if="${#lists.isEmpty(movies)}">
+                    <div class="icon">📭</div>
+                    <p>暂无推荐数据</p>
+                </div>
+            </div>
+        </main>
     </div>
 </body>
 </html>

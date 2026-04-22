@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<!-- Sidebar Fragment -->
+<aside th:fragment="sidebar(activeMenu)" class="sidebar">
+    <div class="sidebar-header">
+        <h2>CUIT影评</h2>
+        <p>发现好电影</p>
+    </div>
+    <nav>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a th:href="@{/user/home}" th:class="${activeMenu} == 'home' ? 'nav-link active' : 'nav-link'">
+                    <span class="nav-icon">🏠</span>
+                    首页
+                </a>
+            </li>
+            <li class="nav-item">
+                <a th:href="@{/user/movielist}" th:class="${activeMenu} == 'movielist' ? 'nav-link active' : 'nav-link'">
+                    <span class="nav-icon">🎬</span>
+                    电影列表
+                </a>
+            </li>
+            <li class="nav-item">
+                <a th:href="@{/user/reviews}" th:class="${activeMenu} == 'reviews' ? 'nav-link active' : 'nav-link'">
+                    <span class="nav-icon">💬</span>
+                    评论列表
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/recommend/" class="nav-link" target="_blank">
+                    <span class="nav-icon">⭐</span>
+                    智能推荐
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- Bottom User Bar -->
+    <div class="user-bar" id="userBar">
+        <div class="user-dropdown">
+            <a href="/user/profile" class="dropdown-item">
+                <span>⚙️</span>
+                <span>个人信息设置</span>
+            </a>
+            <a href="/user/myreviews" class="dropdown-item">
+                <span>📝</span>
+                <span>我的评论</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="/user/" class="dropdown-item">
+                <span>🚪</span>
+                <span>退出登录</span>
+            </a>
+        </div>
+        <div class="user-bar-trigger" onclick="toggleUserBar()">
+            <div class="user-bar-avatar">
+                <img th:if="${user != null and user.avatar != null and user.avatar != ''}" th:src="${user.avatar}" alt="avatar">
+                <span th:unless="${user != null and user.avatar != null and user.avatar != ''}" th:text="${user != null} ? ${#strings.substring(user.username,0,1)} : 'U'">U</span>
+            </div>
+            <div class="user-bar-info">
+                <div class="user-bar-name" th:text="${user != null and user.nickname != null and user.nickname != ''} ? ${user.nickname} : (${user != null} ? ${user.username} : '用户')">用户名</div>
+            </div>
+            <span class="user-bar-chevron">▼</span>
+        </div>
+    </div>
+</aside>
+
+<!-- User Bar Script Fragment -->
+<script th:fragment="userBarScript">
+    function toggleUserBar() {
+        document.getElementById('userBar').classList.toggle('open');
+    }
+
+    document.addEventListener('click', function(e) {
+        const userBar = document.getElementById('userBar');
+        if (userBar && !userBar.contains(e.target)) {
+            userBar.classList.remove('open');
+        }
+    });
+</script>
+
+</body>
+</html>

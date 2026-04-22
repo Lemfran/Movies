@@ -220,7 +220,7 @@
             <nav>
                 <ul class="nav-menu">
                     <li class="nav-item">
-                        <a th:href="@{/home}" class="nav-link">
+                        <a th:href="@{/admin/home}" class="nav-link">
                             <span class="nav-icon">🏠</span>
                             首页
                         </a>
@@ -231,25 +231,25 @@
                     <div class="nav-section-title">功能管理</div>
                     <ul class="nav-menu">
                         <li class="nav-item">
-                            <a th:href="@{/manager}" class="nav-link">
+                            <a th:href="@{/admin/manager}" class="nav-link">
                                 <span class="nav-icon">👥</span>
                                 用户管理
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a th:href="@{/movieManage}" class="nav-link active">
+                            <a th:href="@{/admin/movieManage}" class="nav-link active">
                                 <span class="nav-icon">🎬</span>
                                 电影管理
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a th:href="@{/reviewsManage}" class="nav-link">
+                            <a th:href="@{/admin/reviewsManage}" class="nav-link">
                                 <span class="nav-icon">💬</span>
                                 评论管理
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a th:href="@{/logList}" class="nav-link">
+                            <a th:href="@{/admin/logList}" class="nav-link">
                                 <span class="nav-icon">📋</span>
                                 系统日志
                             </a>
@@ -261,7 +261,7 @@
                     <div class="nav-section-title">账户</div>
                     <ul class="nav-menu">
                         <li class="nav-item">
-                            <a href="/" class="nav-link">
+                            <a href="/admin/" class="nav-link">
                                 <span class="nav-icon">🚪</span>
                                 退出登录
                             </a>
@@ -278,7 +278,7 @@
                 <h1 class="success-title">修改成功</h1>
                 <p class="success-message">电影信息已成功更新。</p>
                 <div class="button-group">
-                    <a th:href="@{/movieManage}" class="btn btn-primary">↩️ 返回电影管理</a>
+                    <a th:href="@{/admin/movieManage}" class="btn btn-primary">↩️ 返回电影管理</a>
                 </div>
             </div>
         </main>

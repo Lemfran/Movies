@@ -1,0 +1,66 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.1)
+
+2026-04-21T16:45:49.364+08:00  INFO 1074 --- [user-portal-service] [           main] e.cuit.userportal.UserPortalApplication  : Starting UserPortalApplication v0.0.1-SNAPSHOT using Java 25.0.1 with PID 1074 (/Users/fanjinchen/工程实践/Movies/user-portal-service/target/user-portal-service-0.0.1-SNAPSHOT.jar started by fanjinchen in /Users/fanjinchen/工程实践/Movies/user-portal-service)
+2026-04-21T16:45:49.365+08:00  INFO 1074 --- [user-portal-service] [           main] e.cuit.userportal.UserPortalApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-04-21T16:45:49.698+08:00  INFO 1074 --- [user-portal-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=4083687e-d506-3f72-921f-7460497dbd45
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (jar:nested:/Users/fanjinchen/工程实践/Movies/user-portal-service/target/user-portal-service-0.0.1-SNAPSHOT.jar/!BOOT-INF/lib/tomcat-embed-core-10.1.34.jar!/)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+2026-04-21T16:45:49.813+08:00  INFO 1074 --- [user-portal-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2026-04-21T16:45:49.824+08:00  INFO 1074 --- [user-portal-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-21T16:45:49.824+08:00  INFO 1074 --- [user-portal-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-04-21T16:45:49.836+08:00  INFO 1074 --- [user-portal-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-21T16:45:49.836+08:00  INFO 1074 --- [user-portal-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 438 ms
+2026-04-21T16:45:49.937+08:00  INFO 1074 --- [user-portal-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
+2026-04-21T16:45:49.968+08:00  INFO 1074 --- [user-portal-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
+2026-04-21T16:45:49.978+08:00  INFO 1074 --- [user-portal-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
+2026-04-21T16:45:49.994+08:00  INFO 1074 --- [user-portal-service] [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-04-21T16:45:50.167+08:00  INFO 1074 --- [user-portal-service] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-04-21T16:45:50.175+08:00  WARN 1074 --- [user-portal-service] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-04-21T16:45:50.186+08:00  INFO 1074 --- [user-portal-service] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-04-21T16:45:50.196+08:00  INFO 1074 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-04-21T16:45:50.197+08:00  INFO 1074 --- [user-portal-service] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-21T16:45:50.200+08:00  INFO 1074 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-04-21T16:45:50.200+08:00  INFO 1074 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-04-21T16:45:50.200+08:00  INFO 1074 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-04-21T16:45:50.200+08:00  INFO 1074 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-04-21T16:45:50.200+08:00  INFO 1074 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-04-21T16:45:50.200+08:00  INFO 1074 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-04-21T16:45:50.200+08:00  INFO 1074 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-04-21T16:45:50.352+08:00  INFO 1074 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-04-21T16:45:50.352+08:00  INFO 1074 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-04-21T16:45:50.353+08:00  INFO 1074 --- [user-portal-service] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-04-21T16:45:50.353+08:00  INFO 1074 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1776761150353 with initial instances count: 3
+2026-04-21T16:45:50.355+08:00  INFO 1074 --- [user-portal-service] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application USER-PORTAL-SERVICE with eureka with status UP
+2026-04-21T16:45:50.355+08:00  INFO 1074 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1776761150355, current=UP, previous=STARTING]
+2026-04-21T16:45:50.355+08:00  INFO 1074 --- [user-portal-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-PORTAL-SERVICE/mac:user-portal-service:8082: registering service...
+2026-04-21T16:45:50.360+08:00  INFO 1074 --- [user-portal-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2026-04-21T16:45:50.361+08:00  INFO 1074 --- [user-portal-service] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
+2026-04-21T16:45:50.369+08:00  INFO 1074 --- [user-portal-service] [           main] e.cuit.userportal.UserPortalApplication  : Started UserPortalApplication in 1.189 seconds (process running for 1.414)
+2026-04-21T16:45:50.369+08:00  INFO 1074 --- [user-portal-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-PORTAL-SERVICE/mac:user-portal-service:8082 - registration status: 204
+2026-04-21T16:45:52.952+08:00  INFO 1074 --- [user-portal-service] [nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-21T16:45:52.952+08:00  INFO 1074 --- [user-portal-service] [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-21T16:45:52.953+08:00  INFO 1074 --- [user-portal-service] [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-04-21T16:50:50.208+08:00  INFO 1074 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-21T16:55:50.215+08:00  INFO 1074 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-21T17:00:50.232+08:00  INFO 1074 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-21T17:04:26.257+08:00  INFO 1074 --- [user-portal-service] [ionShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application USER-PORTAL-SERVICE with eureka with status DOWN
+2026-04-21T17:04:26.258+08:00  INFO 1074 --- [user-portal-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1776762266258, current=DOWN, previous=UP]
+2026-04-21T17:04:26.258+08:00  INFO 1074 --- [user-portal-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-PORTAL-SERVICE/mac:user-portal-service:8082: registering service...
+2026-04-21T17:04:26.261+08:00  INFO 1074 --- [user-portal-service] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-21T17:04:26.262+08:00  INFO 1074 --- [user-portal-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-PORTAL-SERVICE/mac:user-portal-service:8082 - registration status: 204
+2026-04-21T17:04:26.263+08:00  INFO 1074 --- [user-portal-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-04-21T17:04:26.267+08:00  INFO 1074 --- [user-portal-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-04-21T17:04:29.273+08:00  INFO 1074 --- [user-portal-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-04-21T17:04:29.277+08:00  INFO 1074 --- [user-portal-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-PORTAL-SERVICE/mac:user-portal-service:8082 - deregister  status: 200
+2026-04-21T17:04:29.277+08:00  INFO 1074 --- [user-portal-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

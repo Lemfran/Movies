@@ -77,6 +77,7 @@ public class RecommendationController {
         model.addAttribute("movies", movies);
         model.addAttribute("title", "热门推荐");
         model.addAttribute("description", "基于用户评分的最受欢迎电影");
+        model.addAttribute("icon", "🔥");
         return "recommendations";
     }
 
@@ -90,6 +91,7 @@ public class RecommendationController {
         model.addAttribute("movies", movies);
         model.addAttribute("title", "高分推荐");
         model.addAttribute("description", "评分 4.0 以上的优质电影");
+        model.addAttribute("icon", "⭐");
         return "recommendations";
     }
 
@@ -103,6 +105,7 @@ public class RecommendationController {
         model.addAttribute("movies", movies);
         model.addAttribute("title", "为你推荐");
         model.addAttribute("description", "根据您的观影偏好智能推荐");
+        model.addAttribute("icon", "💡");
         return "recommendations";
     }
 

@@ -7,7 +7,7 @@
 
     <!-- 插入用户 -->
     <insert id="insertUser" parameterType="edu.cuit.yingpingsxitong.Entity.User">
-        insert into users (username, password, email) values (#{username}, #{password}, #{email})
+        insert into users (username, nickname, avatar, password, email) values (#{username}, #{nickname}, #{avatar}, #{password}, #{email})
     </insert>
 
     <!-- 根据用户名查询用户 -->
@@ -17,7 +17,7 @@
 
     <!-- 更新用户 -->
     <update id="updateUser" parameterType="edu.cuit.yingpingsxitong.Entity.User">
-        update users set username = #{username}, password = #{password}, email = #{email} where userId = #{userId}
+        update users set username = #{username}, nickname = #{nickname}, avatar = #{avatar}, password = #{password}, email = #{email} where userId = #{userId}
     </update>
 
     <update id="updatePermission" parameterType="edu.cuit.yingpingsxitong.Entity.User">

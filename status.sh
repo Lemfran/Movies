@@ -13,8 +13,9 @@ SERVICES=(
   "8761:Eureka注册中心:http://localhost:8761"
   "8888:配置中心:http://localhost:8888/movies-service/dev"
   "8081:电影核心服务:http://localhost:8081"
-  "8082:电影消费者:http://localhost:8082"
+  "8082:用户门户服务:http://localhost:8082"
   "8083:推荐服务:http://localhost:8083"
+  "8080:API网关:http://localhost:8080"
 )
 
 echo "========================================"

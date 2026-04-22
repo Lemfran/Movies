@@ -4,8 +4,11 @@ import edu.cuit.yingpingsxitong.Entity.Movie;
 import edu.cuit.yingpingsxitong.Service.MovieService;
 import edu.cuit.yingpingsxitong.client.Result;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 电影服务RPC控制器 - 提供电影相关的RPC接口
@@ -16,6 +19,18 @@ public class MovieRpcController {
 
     @Autowired
     private MovieService movieService;
+
+    @Value("${server.port}")
+    private String serverPort;
+
+    @GetMapping("/info")
+    public Result<Map<String, String>> info() {
+        Map<String, String> map = new HashMap<>();
+        map.put("service", "movies-service");
+        map.put("port", serverPort);
+        map.put("timestamp", String.valueOf(System.currentTimeMillis()));
+        return Result.success(map);
+    }
 
     @PostMapping("/insert")
     public Result<Void> insertMovie(@RequestBody Movie movie) {

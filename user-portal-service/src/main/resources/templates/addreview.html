@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUIT影评 - 添加评论</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* 侧边栏样式 */
+        .sidebar {
+            width: 260px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            padding: 24px 16px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            text-align: center;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .sidebar-header h2 {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .sidebar-header p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.8rem;
+            margin-top: 4px;
+        }
+
+        .nav-menu {
+            list-style: none;
+            flex: 1;
+        }
+
+        .nav-item {
+            margin-bottom: 4px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 10px 14px;
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.25s ease;
+            font-weight: 500;
+            font-size: 0.92rem;
+        }
+
+        .nav-link:hover {
+            background: rgba(255,255,255,0.12);
+            color: white;
+            transform: translateX(3px);
+        }
+
+        .nav-link.active {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .nav-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        /* 主内容区域 */
+        .main-content {
+            flex: 1;
+            margin-left: 260px;
+            padding: 30px 40px;
+        }
+
+        /* 头部 */
+        .header {
+            background: white;
+            padding: 25px 30px;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #2d3748;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .header p {
+            color: #718096;
+            margin-top: 8px;
+            font-size: 14px;
+        }
+
+        /* 内容网格 */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        /* 电影信息卡片 */
+        .movie-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        .movie-poster {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .movie-info {
+            padding: 24px;
+        }
+
+        .movie-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 16px;
+        }
+
+        .movie-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .meta-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: #f7fafc;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #4a5568;
+        }
+
+        .movie-description {
+            color: #718096;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .score-display {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 16px;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* 小数星级 */
+        .star-bar { display: inline-flex; gap: 1px; font-size: 0.85rem; }
+        .star-fill {
+            background: linear-gradient(90deg, #fff var(--pct), rgba(255,255,255,0.4) var(--pct));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* 评论表单 */
+        .review-form-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            height: fit-content;
+        }
+
+        .form-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 10px;
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 15px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .form-textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 15px;
+            resize: vertical;
+            min-height: 150px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        /* 评分星星 */
+        .star-rating {
+            display: flex;
+            gap: 8px;
+            font-size: 28px;
+        }
+
+        .star {
+            cursor: pointer;
+            color: #e2e8f0;
+            transition: all 0.2s ease;
+        }
+
+        .star:hover,
+        .star.active {
+            color: #f6ad55;
+        }
+
+        /* 响应式 */
+        @media (max-width: 1024px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 侧边栏 -->
+        <aside th:replace="~{fragments :: sidebar('')}"></aside>
+
+        <!-- 主内容 -->
+        <main class="main-content">
+            <!-- 头部 -->
+            <div class="header">
+                <h1>添加评论</h1>
+                <p>分享你对这部电影的看法</p>
+            </div>
+
+            <!-- 内容网格 -->
+            <div class="content-grid">
+                <!-- 电影信息 -->
+                <div class="movie-card">
+                    <img class="movie-poster" th:src="${movie.posterImage}" alt="电影海报">
+                    <div class="movie-info">
+                        <h2 class="movie-title" th:text="${movie.title}">电影标题</h2>
+                        <div class="movie-meta">
+                            <span class="meta-tag">📅 <span th:text="${movie.releaseDate}">2024</span></span>
+                            <span class="meta-tag">⏱️ <span th:text="${movie.runtime}">120</span>分钟</span>
+                        </div>
+                        <p class="movie-description" th:text="${movie.description}">电影简介...</p>
+                        <div class="score-display">
+                            <span class="star-bar">
+                                <span th:each="i : ${#numbers.sequence(1, 5)}"
+                                      class="star-fill"
+                                      th:style="'--pct:' + ${(movie.averageScore >= i) ? 100 : (movie.averageScore > (i - 1) ? (movie.averageScore - i + 1) * 100 : 0)} + '%'">★</span>
+                            </span>
+                            <span th:text="${#numbers.formatDecimal(movie.averageScore, 1, 1)}">0.0</span> 分
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 评论表单 -->
+                <div class="review-form-card">
+                    <h3 class="form-title">📝 写评论</h3>
+                    <form th:action="@{/user/submitreview(movieId=${movie.movieId})}" method="POST">
+                        <input type="hidden" name="movieId" th:value="${movie.movieId}">
+                        
+                        <div class="form-group">
+                            <label class="form-label">评分</label>
+                            <select id="score" name="score" class="form-select" required>
+                                <option value="">请选择评分</option>
+                                <option value="5">⭐⭐⭐⭐⭐ (5分 - 力荐)</option>
+                                <option value="4">⭐⭐⭐⭐ (4分 - 推荐)</option>
+                                <option value="3">⭐⭐⭐ (3分 - 还行)</option>
+                                <option value="2">⭐⭐ (2分 - 较差)</option>
+                                <option value="1">⭐ (1分 - 很差)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="content">评论内容</label>
+                            <textarea id="content" name="content" class="form-textarea" 
+                                placeholder="写下你的观影感受..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">✨ 提交评论</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script th:replace="~{fragments :: userBarScript}"></script>
+</body>
+</html>

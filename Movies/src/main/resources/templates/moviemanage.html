@@ -358,7 +358,7 @@
             <nav>
                 <ul class="nav-menu">
                     <li class="nav-item">
-                        <a th:href="@{/home}" class="nav-link">
+                        <a th:href="@{/admin/home}" class="nav-link">
                             <span class="nav-icon">🏠</span>
                             首页
                         </a>
@@ -369,25 +369,25 @@
                     <div class="nav-section-title">功能管理</div>
                     <ul class="nav-menu">
                         <li class="nav-item">
-                            <a th:href="@{/manager}" class="nav-link">
+                            <a th:href="@{/admin/manager}" class="nav-link">
                                 <span class="nav-icon">👥</span>
                                 用户管理
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a th:href="@{/movieManage}" class="nav-link active">
+                            <a th:href="@{/admin/movieManage}" class="nav-link active">
                                 <span class="nav-icon">🎬</span>
                                 电影管理
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a th:href="@{/reviewsManage}" class="nav-link">
+                            <a th:href="@{/admin/reviewsManage}" class="nav-link">
                                 <span class="nav-icon">💬</span>
                                 评论管理
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a th:href="@{/logList}" class="nav-link">
+                            <a th:href="@{/admin/logList}" class="nav-link">
                                 <span class="nav-icon">📋</span>
                                 系统日志
                             </a>
@@ -399,13 +399,13 @@
                     <div class="nav-section-title">用户端预览</div>
                     <ul class="nav-menu">
                         <li class="nav-item">
-                            <a th:href="@{/movielist}" class="nav-link" target="_blank">
+                            <a th:href="@{/user/movielist}" class="nav-link" target="_blank">
                                 <span class="nav-icon">🎬</span>
                                 电影列表
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a th:href="@{/reviews}" class="nav-link" target="_blank">
+                            <a th:href="@{/user/reviews}" class="nav-link" target="_blank">
                                 <span class="nav-icon">💬</span>
                                 评论列表
                             </a>
@@ -417,7 +417,7 @@
                     <div class="nav-section-title">账户</div>
                     <ul class="nav-menu">
                         <li class="nav-item">
-                            <a href="/" class="nav-link">
+                            <a href="/admin/" class="nav-link">
                                 <span class="nav-icon">🚪</span>
                                 退出登录
                             </a>
@@ -437,7 +437,7 @@
 
             <!-- 搜索栏 -->
             <div class="search-container">
-                <form th:action="@{/msearch}" method="post" class="search-form">
+                <form th:action="@{/admin/msearch}" method="post" class="search-form">
                     <input type="text" name="title" class="search-input" placeholder="搜索电影名称...">
                     <button type="submit" class="search-btn">🔍 搜索</button>
                 </form>
@@ -458,8 +458,8 @@
                         </div>
                         
                         <div class="movie-actions">
-                            <a th:href="@{/editMovie(movieId=${movie.movieId})}" class="action-btn edit">✏️ 编辑</a>
-                            <form th:action="@{/deleteMovie(movieId=${movie.movieId})}" method="post" style="flex: 1;">
+                            <a th:href="@{/admin/editMovie(movieId=${movie.movieId})}" class="action-btn edit">✏️ 编辑</a>
+                            <form th:action="@{/admin/deleteMovie(movieId=${movie.movieId})}" method="post" style="flex: 1;">
                                 <button type="submit" class="action-btn delete">🗑️ 删除</button>
                             </form>
                         </div>
@@ -467,7 +467,7 @@
                 </div>
 
                 <!-- 添加新电影 -->
-                <a th:href="@{/addMovie}" class="add-movie-card">
+                <a th:href="@{/admin/addMovie}" class="add-movie-card">
                     <div class="add-movie-content">
                         <div class="add-movie-icon">➕</div>
                         <div class="add-movie-text">添加新电影</div>
