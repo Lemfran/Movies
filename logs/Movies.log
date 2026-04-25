@@ -8,69 +8,340 @@
 
  :: Spring Boot ::                (v3.4.1)
 
-2026-04-23T01:57:58.975+08:00  INFO 13082 --- [movies-service] [           main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2026-04-23T01:57:59.059+08:00  INFO 13082 --- [movies-service] [           main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=movies-service, profiles=[dev], label=main, version=null, state=null
-2026-04-23T01:57:59.059+08:00  INFO 13082 --- [movies-service] [           main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}]
-2026-04-23T01:57:59.062+08:00  INFO 13082 --- [movies-service] [           main] e.c.y.YingpingsxitongApplication         : No active profile set, falling back to 1 default profile: "default"
-2026-04-23T01:57:59.514+08:00  INFO 13082 --- [movies-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=6eb64f47-4bf5-389e-b588-1fd05b55b916
+2026-04-23T14:36:15.050+08:00  INFO 34364 --- [movies-service] [           main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2026-04-23T14:36:15.202+08:00  INFO 34364 --- [movies-service] [           main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=movies-service, profiles=[dev], label=main, version=null, state=null
+2026-04-23T14:36:15.203+08:00  INFO 34364 --- [movies-service] [           main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}]
+2026-04-23T14:36:15.206+08:00  INFO 34364 --- [movies-service] [           main] e.c.y.YingpingsxitongApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-23T14:36:15.629+08:00  INFO 34364 --- [movies-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=6eb64f47-4bf5-389e-b588-1fd05b55b916
 WARNING: A restricted method in java.lang.System has been called
 WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (jar:nested:/Users/fanjinchen/工程实践/Movies/Movies/target/yingpingsxitong-0.0.1-SNAPSHOT.jar/!BOOT-INF/lib/tomcat-embed-core-10.1.34.jar!/)
 WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
 WARNING: Restricted methods will be blocked in a future release unless native access is enabled
 
-2026-04-23T01:57:59.815+08:00  INFO 13082 --- [movies-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2026-04-23T01:57:59.822+08:00  INFO 13082 --- [movies-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-04-23T01:57:59.822+08:00  INFO 13082 --- [movies-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
-2026-04-23T01:57:59.841+08:00  INFO 13082 --- [movies-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-04-23T01:57:59.841+08:00  INFO 13082 --- [movies-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 772 ms
-2026-04-23T01:58:00.197+08:00  INFO 13082 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
-2026-04-23T01:58:00.236+08:00  INFO 13082 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
-2026-04-23T01:58:00.246+08:00  INFO 13082 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
-2026-04-23T01:58:00.255+08:00  INFO 13082 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
-2026-04-23T01:58:00.296+08:00  WARN 13082 --- [movies-service] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+2026-04-23T14:36:15.910+08:00  INFO 34364 --- [movies-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-04-23T14:36:15.917+08:00  INFO 34364 --- [movies-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-23T14:36:15.917+08:00  INFO 34364 --- [movies-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-04-23T14:36:15.930+08:00  INFO 34364 --- [movies-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-23T14:36:15.931+08:00  INFO 34364 --- [movies-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 717 ms
+2026-04-23T14:36:16.247+08:00  INFO 34364 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
+2026-04-23T14:36:16.278+08:00  INFO 34364 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
+2026-04-23T14:36:16.288+08:00  INFO 34364 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
+2026-04-23T14:36:16.296+08:00  INFO 34364 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
+2026-04-23T14:36:16.331+08:00  WARN 34364 --- [movies-service] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: e7914521-ecdb-4908-bfaa-5d6f60e9b444
+Using generated security password: d23e8b01-4ef4-474a-a99b-c8f73ea192c9
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2026-04-23T01:58:00.300+08:00  INFO 13082 --- [movies-service] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2026-04-23T01:58:00.558+08:00  INFO 13082 --- [movies-service] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 17 endpoints beneath base path '/actuator'
-2026-04-23T01:58:00.776+08:00  INFO 13082 --- [movies-service] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2026-04-23T01:58:00.799+08:00  WARN 13082 --- [movies-service] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-04-23T01:58:00.827+08:00  INFO 13082 --- [movies-service] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2026-04-23T01:58:00.837+08:00  INFO 13082 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2026-04-23T01:58:00.839+08:00  INFO 13082 --- [movies-service] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-23T01:58:00.843+08:00  INFO 13082 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2026-04-23T01:58:00.843+08:00  INFO 13082 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2026-04-23T01:58:00.843+08:00  INFO 13082 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2026-04-23T01:58:00.843+08:00  INFO 13082 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2026-04-23T01:58:00.843+08:00  INFO 13082 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2026-04-23T01:58:00.843+08:00  INFO 13082 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2026-04-23T01:58:00.843+08:00  INFO 13082 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2026-04-23T01:58:00.989+08:00  INFO 13082 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2026-04-23T01:58:00.990+08:00  INFO 13082 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2026-04-23T01:58:00.991+08:00  INFO 13082 --- [movies-service] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-04-23T01:58:00.991+08:00  INFO 13082 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1776880680991 with initial instances count: 4
-2026-04-23T01:58:00.994+08:00  INFO 13082 --- [movies-service] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MOVIES-SERVICE with eureka with status UP
-2026-04-23T01:58:00.994+08:00  INFO 13082 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1776880680994, current=UP, previous=STARTING]
-2026-04-23T01:58:00.995+08:00  INFO 13082 --- [movies-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/mac:movies-service:8081: registering service...
-2026-04-23T01:58:01.003+08:00  INFO 13082 --- [movies-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
-2026-04-23T01:58:01.003+08:00  INFO 13082 --- [movies-service] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8081
-2026-04-23T01:58:01.019+08:00  INFO 13082 --- [movies-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/mac:movies-service:8081 - registration status: 204
-2026-04-23T01:58:01.019+08:00  INFO 13082 --- [movies-service] [           main] e.c.y.YingpingsxitongApplication         : Started YingpingsxitongApplication in 2.424 seconds (process running for 2.621)
-2026-04-23T01:58:46.030+08:00  INFO 13082 --- [movies-service] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-04-23T01:58:46.030+08:00  INFO 13082 --- [movies-service] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-04-23T01:58:46.031+08:00  INFO 13082 --- [movies-service] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2026-04-23T01:58:46.062+08:00  INFO 13082 --- [movies-service] [nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-04-23T01:58:46.125+08:00  INFO 13082 --- [movies-service] [nio-8081-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5011e903
-2026-04-23T01:58:46.127+08:00  INFO 13082 --- [movies-service] [nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-04-23T02:03:00.853+08:00  INFO 13082 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-23T02:08:00.869+08:00  INFO 13082 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-23T02:13:00.881+08:00  INFO 13082 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-23T02:18:00.899+08:00  INFO 13082 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-23T02:23:00.909+08:00  INFO 13082 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-23T02:28:00.921+08:00  INFO 13082 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-23T02:33:00.934+08:00  INFO 13082 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-23T02:38:00.946+08:00  INFO 13082 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-23T02:43:00.961+08:00  INFO 13082 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-23T02:48:00.975+08:00  INFO 13082 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-23T14:36:16.337+08:00  INFO 34364 --- [movies-service] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-23T14:36:16.572+08:00  INFO 34364 --- [movies-service] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 17 endpoints beneath base path '/actuator'
+2026-04-23T14:36:16.806+08:00  INFO 34364 --- [movies-service] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-04-23T14:36:16.825+08:00  WARN 34364 --- [movies-service] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-04-23T14:36:16.858+08:00  INFO 34364 --- [movies-service] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-04-23T14:36:16.868+08:00  INFO 34364 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-04-23T14:36:16.870+08:00  INFO 34364 --- [movies-service] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-23T14:36:16.872+08:00  INFO 34364 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-04-23T14:36:16.872+08:00  INFO 34364 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-04-23T14:36:16.873+08:00  INFO 34364 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-04-23T14:36:16.873+08:00  INFO 34364 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-04-23T14:36:16.873+08:00  INFO 34364 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-04-23T14:36:16.873+08:00  INFO 34364 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-04-23T14:36:16.873+08:00  INFO 34364 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-04-23T14:36:17.036+08:00  INFO 34364 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-04-23T14:36:17.036+08:00  INFO 34364 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-04-23T14:36:17.037+08:00  INFO 34364 --- [movies-service] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-04-23T14:36:17.037+08:00  INFO 34364 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1776926177037 with initial instances count: 0
+2026-04-23T14:36:17.041+08:00  INFO 34364 --- [movies-service] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MOVIES-SERVICE with eureka with status UP
+2026-04-23T14:36:17.041+08:00  INFO 34364 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1776926177041, current=UP, previous=STARTING]
+2026-04-23T14:36:17.042+08:00  INFO 34364 --- [movies-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/10.27.6.29:movies-service:8081: registering service...
+2026-04-23T14:36:17.049+08:00  INFO 34364 --- [movies-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2026-04-23T14:36:17.050+08:00  INFO 34364 --- [movies-service] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8081
+2026-04-23T14:36:17.064+08:00  INFO 34364 --- [movies-service] [           main] e.c.y.YingpingsxitongApplication         : Started YingpingsxitongApplication in 2.366 seconds (process running for 2.598)
+2026-04-23T14:36:17.102+08:00  INFO 34364 --- [movies-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/10.27.6.29:movies-service:8081 - registration status: 204
+2026-04-23T14:36:47.042+08:00  INFO 34364 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-04-23T14:36:47.043+08:00  INFO 34364 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-04-23T14:36:47.043+08:00  INFO 34364 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-04-23T14:36:47.044+08:00  INFO 34364 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-04-23T14:36:47.044+08:00  INFO 34364 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-04-23T14:36:47.044+08:00  INFO 34364 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2026-04-23T14:36:47.044+08:00  INFO 34364 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-04-23T14:36:47.062+08:00  INFO 34364 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-04-23T14:37:27.915+08:00  INFO 34364 --- [movies-service] [nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-23T14:37:27.915+08:00  INFO 34364 --- [movies-service] [nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-23T14:37:27.916+08:00  INFO 34364 --- [movies-service] [nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-04-23T14:37:32.697+08:00  INFO 34364 --- [movies-service] [nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-23T14:37:32.767+08:00  INFO 34364 --- [movies-service] [nio-8081-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7785b5ba
+2026-04-23T14:37:32.768+08:00  INFO 34364 --- [movies-service] [nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-23T14:41:16.888+08:00  INFO 34364 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-23T14:44:57.365+08:00  INFO 34364 --- [movies-service] [nio-8081-exec-4] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x020x8b0x080x000x040x060x0bwup_version0x160x033.00x060x0dTYPE_COMPRESS0x160x0120x060x09encr_type0x160x07rsapost0x060x07bea_key0x160xaccbPKu4VX+ACNnkQh34VR0zKUzy32nEMewi0Ac6KztZdESyGcnZgq/ZMgc9k+X9krPEzAPX6Fwf2ihgc36Eq4bqFFVq7ORfsfLxaYtf3XfdciSlRzIYGCNGMViHZB/EWLJ0oqr1wC+FAAIBliIi2Vwz+dRfSrqYj97dd8bpLG7yY=0x1d0x000x010x010x900xdagk0x9d0x17+0xed]IHg0xdc#0xac#0xa2X0x090xc30x840x810xc80xf80xd4\0x02*0xcf0xd40xf8*0xdcT0xe30x0cQ80xcaq0xe30xaf0xd70xcbO0xe5e0xefMtF0xb2$"0x1e0xa5?0xb50xa40x850xdc0x96g0x060x02MUJ+0xcf0x7f0x0f0x130xa30x0b0xbc0xf20xbe0x9e0xaaY0xd70xccz0xf30x020x9b0xdb0xd5v0xb70xc30xb20x01|ZQ0xdc\0xcb0xa0S0xccBE0x0bd0xd20x000x930xf8{)A0xa0SpU0x080xa00xcbX0x140x8d0xdc0x8d"0xd70x0e0xef0xa8Ph`0xb3u0x95O?0xdf0x940xd60xec0xf4^W0xdd0xe10xcc0x1b0xc80xe80xd70xe20xa6Y`0x0b0x12j0xff0xb90xb9(0xe80xb40xf40x9d1y9'0xefnXD0xb710xe40x0c0xae|0xea0xa70xfe0xbb0x8e0x080xf0Ax0xbf0xf6X90xc70xad0xf80x100x860x92wv0xd6r0x890xcb0xa2r0xf70xc80xbe0xc800xf7mT0x1d0x91qz0xbbP#m0xe4Qa0xbd0xf280x80)0xce0xfb0xe50xa1q0x1a0x7f0xf1Nr0x100x940xd80xd30xdf^0x7fS0xd20x810x8a0xec0x040x10l0xbc0x880xb0N]0xce\0xd0Q?0xc5m0x030x190xa70xec0xbb0xbb0xe10x130x87[0x9aO0xd40x0f0xffv0xb40xde0xbae0x87630xd64F0x9aG90x06_'0xf4#0x9c0x99J(0xbep0x140xd8^0xb20x1b0xb6j0x9c0xe40x8a}yjR0xd9)0x150xddS0xe30xc800xfd0xf10xd70x8f_0x9a0xc10xf00x0f0xd8k[90xdd0xad0x100xe80xb10xa80xb390xba+A0x8b0xe3~\0x130x190xabzZ0xffo0xee0xe10x880xf70x120xa00xbd0xbbVJ0x17u0x9c0xfa0xedr0x140x040xde0xe80xcb^0x040x8b0xc90x910x100xce0xf50xc20x030xdc0xb50xa00x0d0x0a...]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:406) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:270) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
+
+2026-04-23T14:44:57.365+08:00  INFO 34364 --- [movies-service] [nio-8081-exec-3] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x020x8b0x080x000x040x060x0bwup_version0x160x033.00x060x0dTYPE_COMPRESS0x160x0120x060x09encr_type0x160x07rsapost0x060x07bea_key0x160xaccbPKu4VX+ACNnkQh34VR0zKUzy32nEMewi0Ac6KztZdESyGcnZgq/ZMgc9k+X9krPEzAPX6Fwf2ihgc36Eq4bqFFVq7ORfsfLxaYtf3XfdciSlRzIYGCNGMViHZB/EWLJ0oqr1wC+FAAIBliIi2Vwz+dRfSrqYj97dd8bpLG7yY=0x1d0x000x010x010x900x880x040x92a0xb10x9f0x100xa3b0x150x040xc30x8b0xa40xd70x12m50xcc(b0x9a0x14Hg0xe7y0x88]B0x1a0xf80x8bdF0xd6Zhyi]0xe1W0xaeW0xfbb%0xf20xaf0x0c0x870xdf0xe1Y0xa70xdeTN"0xf110xdf0x9d0xd90xdb0x8c0x8f0xdbWQ0x85\0x8aX0xaauQM0xf30xbcMZ-;q0xd3s0xd90xeb0xfc0x990xfb.0x8d0xa1,5E[0x120xa40xaf0x08+0x1d0xadW0xa10x15<&90xeb%<0x0f0xecr0xe3K10xfbx0x06<L0xdfZ0xd90x8cF0xefzJZ0xc30x840x02x0x1b00xb4LW0x88Cd0x840xe6<0xbe}0xc6'0x940xf90x95!0xddplr0xd4d0xe70xba0xf1B0xb50xd1%%0x89QN0xdb0xc40xa30xfc;0xac0xc90xfc50xd80x99~0x01hV,0x8e0x1f0xb70xa1N0xb00xea0xaa0x920xfd0xb30xd8s#f0x1d0x8aq&@0xb460x130xc2*!a#0x8f0xa1`X0xcf0xc6&0xd00xc7^F0x160x15}0x180x8d0x100xd0Ny0xe80xc30x97zk0xf60xb7|,0xbbW0x910xd4L0xdd0xb60xc80xa50xd00x13A0xb20x070x9a0x900xdf+f|0xd90x8c0xf30x930xdehy?b0xc00xafb0xc1L)60xa4`LS0x04q%20x050xe40xb2'0x9a0xe5;30xe20xdf0xf90xbaT!0x100x9b0x930xad0x810x9a0x8b(0xb1`0xd70xe1^0xc50x95<=r0x000xa30xa20x810xd80xdd0x02]0x1cP0xfb0x1f0xc2XH0xdf0xf00xc60xc90xd70xba0xcdBU40xdf0x17s0xf10x8c_[0x8e6V'0xb4u0xe80x9520x0e0x9f0xfa0x180xa30xb00x980x0b0x1e?0xacm0xa30x87JC0xc410x0740x9560xd5f0xbb~0xf50x18<U0x10-w0x060x0d0x0a...]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:406) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:270) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
+
+2026-04-23T14:44:57.365+08:00  INFO 34364 --- [movies-service] [nio-8081-exec-1] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x02{0x080x000x040x060x0bwup_version0x160x033.00x060x0dTYPE_COMPRESS0x160x0120x060x09encr_type0x160x07rsapost0x060x07bea_key0x160xaccbPKu4VX+ACNnkQh34VR0zKUzy32nEMewi0Ac6KztZdESyGcnZgq/ZMgc9k+X9krPEzAPX6Fwf2ihgc36Eq4bqFFVq7ORfsfLxaYtf3XfdciSlRzIYGCNGMViHZB/EWLJ0oqr1wC+FAAIBliIi2Vwz+dRfSrqYj97dd8bpLG7yY=0x1d0x000x010x010x80B0xaf0xcc0xa30xces0xca`0x020x1c2+"0xd30xad0x860x890xbc0xe30xeaF0xb2y$0x9c0xab<0xf60x01ToEO0xc4S9p0x030x820x97J0xa3}0x0d0xcau0xa1R0xd70x9f0xa20x170xe9+0xb40xdc0xd60x13M0x0a_x0x1a0x0c0x9490x8b0x1e0xff0xa90x0bc0xa2k0xd7W0xaav0xb10xab0x890xc0;t0xd00x9c0xd30xcd0x05[0xf50x890xbdI0xbe0xaf0xe30xc8y0xd5s0x15R0xbb0xc50x85]%0xca0x890x8c0x8f0xae0x02r0x9d0xb40xe00x030x9d*0x02#G0xb4"}0x020x8eASZ0xea0x990xdeV0xfc0x810xc5\0xda&0xe4n0xb70xb60xcf0x9dc0xe60xfb0xcf0xb30x950xb90xd17!0xe60x1a0x920xf8]0x9a0x190xc80x050x01$0x9aQ&0x820xfb0xd1B0x1c0xe6W+0xcf0xd10xa0Ac0xc10xb20x900xc2lf0x180xcb0x8b0xe70x0b$0x9e.0x830xbfy0xc10xcbC0xea0x0a0xc8+0xb80xf80x060x160xfe0x970xd9F0xf50x150xbd0x1b0xac0x87Vn0xc9R0xe20x9a0xb40xcd0xce0x12o&0xa5V0xf5(nAV@0x95y=60xe8%0xba0x040x8b&+0xf1I_o0xfd0xb40x040x07b0xdcer0xaa0x890x8b#0xda0xddB0xee0x820x120xacFRF<m0xbe0xe891n80xc40x110x990xb80x9d0xd80x1eC0xa00xb2,0xa70xcaVZ0xb70xc30x800xba20xf90x03`gZf0x870xfa0xdf@:0xd10xb20xb7+,?0xa30x980xe4qe0xe7v0xb60xbfk0x1e+0xc5~P\0xbbP0x0f0xf60xea`0x99F0x1e0xebw0xac0xdd0x940xc0g0xa40xde0xd70xe60x8d0x9e0xe7w0xf70x180x010xf10xbc0xba0x010xbd0xb30xf2d0xbf0xc70x170x830xcb0x850xc5Y0x0d0x0a...]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:406) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:270) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
+
+2026-04-23T14:44:57.365+08:00  INFO 34364 --- [movies-service] [nio-8081-exec-7] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x02{0x080x000x040x060x0bwup_version0x160x033.00x060x0dTYPE_COMPRESS0x160x0120x060x09encr_type0x160x07rsapost0x060x07bea_key0x160xaccbPKu4VX+ACNnkQh34VR0zKUzy32nEMewi0Ac6KztZdESyGcnZgq/ZMgc9k+X9krPEzAPX6Fwf2ihgc36Eq4bqFFVq7ORfsfLxaYtf3XfdciSlRzIYGCNGMViHZB/EWLJ0oqr1wC+FAAIBliIi2Vwz+dRfSrqYj97dd8bpLG7yY=0x1d0x000x010x010x8070x85;-0xbfc0xa30x1e0x85:]0xdc0x040x7f90xb5Q0xec0x900xca0xe40xc7_0xe60xb20x9d0x800xd70x15;0xe10x870xe10x030xf40x990xcd0xec0x070xe4DX0xb70xb50xccw0x880xea0x9ea0x8a(0xd30xe190x1c0x9aH0x9f0x170x170xe2I]D0xd90x9e0xb3<0xfeg/0xc1H0x830xa10xa80xc60x9a0x880xad0x190xc9N0xc90xafI0x050x91C0xa80x8d0xe20x9f0x8d0x950xe90xf70xca30x880xf9|0x920xe70xce0xb70xabJ0xd4a0x1a0x11T0xc6x0x08O0xaf0x17&bs0x940x180x0d0x960xa60x850xb9B80xc7b0xdb0x06:0x9b0x130x140x8eIj0xf10xd30xd80x07F,r0x13{0xba0x920xc90xdc0xa60x850xb9;0x05{0x1b0xc20xc60xe80xd2!!0xeb0x9ef0x883a0xc90x8a0x070xf50xcbE0x1f0x08r0xe50xe80xb60xf90xe1w30xae0xca,tJRl0x03)0x0e(0xb20xd3u0xae0xd30xf00x16<0xfb0x8c0xf30xeeht0xb0zn0xa20x9240x968v0xea0x0f0x9e0x970x100x8f0xc50xd2[3H0xee0xa30xf80x02E0xb90xad0xc10xa60xc2O"0xa8,0xacN0xdfU0xf5<s0xcc0xf5^0x94#0x81a#0x99,"0xa30x000xfc0x0e0xf8N[0x040xd1A0xc70xf3Z0xa720x890xe3q0xab{0xe70xe90x17E0xef0xf2)0xfd0xb50x93|0xf40xe3=0xd5?0x900x8b0xf70xd10xdaFQ!0xc6J0xf40xb50x8a0x8a0x9eq0xa3_;-0x910xe40xe2H0xc30x9a0x7f<`eo0xf8b0x92G0xd54,9W0xa80x110x83O0x88x0x0dI0x00S0xc80xdf0xd9g<H0xd70xe60xdd0xc6cW|0x9c0x10;0xa4Dm0xb90xa20xabU0x930xd50xe8{0x980xf5'0x0d0x0a...]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:406) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:270) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
+
+2026-04-23T14:46:16.902+08:00  INFO 34364 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-23T14:51:16.865+08:00  INFO 34364 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-23T14:56:16.876+08:00  INFO 34364 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-23T15:01:16.886+08:00  INFO 34364 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-23T15:06:16.895+08:00  INFO 34364 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-23T15:11:16.899+08:00  INFO 34364 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-23T15:16:16.907+08:00  INFO 34364 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-23T15:21:16.913+08:00  INFO 34364 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-23T15:26:16.920+08:00  INFO 34364 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-23T15:31:16.927+08:00  INFO 34364 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-23T15:34:23.268+08:00  INFO 34364 --- [movies-service] [ionShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MOVIES-SERVICE with eureka with status DOWN
+2026-04-23T15:34:23.269+08:00  INFO 34364 --- [movies-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1776929663269, current=DOWN, previous=UP]
+2026-04-23T15:34:23.269+08:00  INFO 34364 --- [movies-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/10.27.6.29:movies-service:8081: registering service...
+2026-04-23T15:34:23.271+08:00  INFO 34364 --- [movies-service] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-23T15:34:23.273+08:00  INFO 34364 --- [movies-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/10.27.6.29:movies-service:8081 - registration status: 204
+2026-04-23T15:34:23.277+08:00  INFO 34364 --- [movies-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-04-23T15:34:23.286+08:00  INFO 34364 --- [movies-service] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-23T15:34:23.288+08:00  INFO 34364 --- [movies-service] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-23T15:34:23.289+08:00  INFO 34364 --- [movies-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-04-23T15:34:26.293+08:00  INFO 34364 --- [movies-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-04-23T15:34:26.300+08:00  INFO 34364 --- [movies-service] [ionShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/MOVIES-SERVICE/10.27.6.29:movies-service:8081": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/MOVIES-SERVICE/10.27.6.29:movies-service:8081": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:926)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:906)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:841)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:702)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:100)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:668)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:625)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1368)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:584)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1361)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1219)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1126)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:147)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:639)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:550)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:216)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:490)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:150)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:174)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:71)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:117)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:141)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:900)
+	... 37 more
+
+2026-04-23T15:34:26.301+08:00  WARN 34364 --- [movies-service] [ionShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/MOVIES-SERVICE/10.27.6.29:movies-service:8081": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+2026-04-23T15:34:26.304+08:00  INFO 34364 --- [movies-service] [ionShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/MOVIES-SERVICE/10.27.6.29:movies-service:8081": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/MOVIES-SERVICE/10.27.6.29:movies-service:8081": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:926)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:906)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:841)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:702)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:100)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:668)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:625)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1368)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:584)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1361)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1219)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1126)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:147)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:639)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:550)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:216)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:490)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:150)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:174)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:71)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:117)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:141)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:900)
+	... 38 more
+
+2026-04-23T15:34:26.304+08:00  WARN 34364 --- [movies-service] [ionShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/MOVIES-SERVICE/10.27.6.29:movies-service:8081": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+2026-04-23T15:34:26.304+08:00 ERROR 34364 --- [movies-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/10.27.6.29:movies-service:8081 - de-registration failedCannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.4.jar!/:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.4.jar!/:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-2.0.4.jar!/:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76) ~[eureka-client-2.0.4.jar!/:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.4.jar!/:2.0.4]
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919) ~[eureka-client-2.0.4.jar!/:2.0.4]
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900) ~[eureka-client-2.0.4.jar!/:2.0.4]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.2.1.jar!/:6.2.1]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415) ~[spring-beans-6.2.1.jar!/:6.2.1]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239) ~[spring-beans-6.2.1.jar!/:6.2.1]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202) ~[spring-beans-6.2.1.jar!/:6.2.1]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195) ~[spring-beans-6.2.1.jar!/:6.2.1]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389) ~[spring-cloud-context-4.2.0.jar!/:4.2.0]
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136) ~[spring-cloud-context-4.2.0.jar!/:4.2.0]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211) ~[spring-beans-6.2.1.jar!/:6.2.1]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:668) ~[spring-beans-6.2.1.jar!/:6.2.1]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:625) ~[spring-beans-6.2.1.jar!/:6.2.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1368) ~[spring-beans-6.2.1.jar!/:6.2.1]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:584) ~[spring-beans-6.2.1.jar!/:6.2.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1361) ~[spring-beans-6.2.1.jar!/:6.2.1]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1219) ~[spring-context-6.2.1.jar!/:6.2.1]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1180) ~[spring-context-6.2.1.jar!/:6.2.1]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174) ~[spring-boot-3.4.1.jar!/:3.4.1]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1126) ~[spring-context-6.2.1.jar!/:6.2.1]
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:147) ~[spring-boot-3.4.1.jar!/:3.4.1]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116) ~[spring-boot-3.4.1.jar!/:3.4.1]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
+
+2026-04-23T15:34:26.305+08:00  INFO 34364 --- [movies-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

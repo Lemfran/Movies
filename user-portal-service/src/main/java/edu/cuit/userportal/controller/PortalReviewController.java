@@ -96,7 +96,7 @@ public class PortalReviewController {
         return "addreview";
     }
 
-    @RequestMapping("/submitreview")
+    @PostMapping("/submitreview")
     public String submitreview(@RequestParam("movieId") Integer movieId, @RequestParam("score") Integer score, @RequestParam("content") String content, HttpSession session, Model model) {
         User user = getUserFromSession(session, model);
         if (user == null) {
@@ -107,7 +107,12 @@ public class PortalReviewController {
         Review review = new Review(movieId, user.getUserId(), content, score, createdAt);
         reviewClient.insertReview(review);
         movieClient.updateAverageScore(movieId);
-        model.addAttribute("review", review);
+        return "redirect:/user/reviewsuccess";
+    }
+
+    @GetMapping("/reviewsuccess")
+    public String reviewSuccess(HttpSession session, Model model) {
+        getUserFromSession(session, model);
         return "rvsuccess";
     }
 }

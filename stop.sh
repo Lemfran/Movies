@@ -1,15 +1,17 @@
 #!/bin/bash
-# 影评系统微服务一键关闭脚本
+# 影评系统微服务一键关闭脚本（支持多实例）
 # 用法: ./stop.sh
 
 PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-# 服务配置: 目录名:端口:服务名 (关闭顺序与启动相反)
-SERVICES=(
+# 关闭顺序与启动相反
+INSTANCES=(
   "gateway-service:8080:API网关"
   "recommendation-service:8083:推荐服务"
-  "user-portal-service:8082:用户门户服务"
-  "Movies:8081:电影核心服务"
+  "user-portal-service:8085:用户门户服务-2"
+  "user-portal-service:8082:用户门户服务-1"
+  "Movies:8084:电影核心服务-2"
+  "Movies:8081:电影核心服务-1"
   "Movies/config-server:8888:配置中心"
   "eureka-server:8761:Eureka注册中心"
 )
@@ -44,8 +46,8 @@ echo "      影评系统微服务关闭脚本"
 echo "========================================"
 echo ""
 
-for svc in "${SERVICES[@]}"; do
-  IFS=':' read -r dir port name <<< "$svc"
+for instance in "${INSTANCES[@]}"; do
+  IFS=':' read -r dir port name <<< "$instance"
 
   PID=$(lsof -Pi :$port -sTCP:LISTEN -t 2>/dev/null | head -1)
 
@@ -73,3 +75,18 @@ echo ""
 echo "========================================"
 log_info "所有服务已关闭"
 echo "========================================"
+echo ""
+
+# 关闭 Redis
+REDIS_PID=$(pgrep -f "redis-server" | head -1)
+if [ -n "$REDIS_PID" ]; then
+  log_info "正在关闭 Redis (PID: $REDIS_PID) ..."
+  kill -15 $REDIS_PID 2>/dev/null
+  sleep 1
+  if pgrep -f "redis-server" >/dev/null 2>&1; then
+    kill -9 $REDIS_PID 2>/dev/null || true
+  fi
+  log_info "Redis 已关闭 ✓"
+else
+  log_warn "Redis 未在运行，跳过"
+fi

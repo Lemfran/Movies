@@ -1,0 +1,426 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.1)
+
+2026-04-23T16:25:08.365+08:00  INFO 56301 --- [gateway-service] [           main] edu.cuit.gateway.GatewayApplication      : Starting GatewayApplication v0.0.1-SNAPSHOT using Java 25.0.1 with PID 56301 (/Users/fanjinchen/工程实践/Movies/gateway-service/target/gateway-service-0.0.1-SNAPSHOT.jar started by fanjinchen in /Users/fanjinchen/工程实践/Movies)
+2026-04-23T16:25:08.366+08:00 DEBUG 56301 --- [gateway-service] [           main] edu.cuit.gateway.GatewayApplication      : Running with Spring Boot v3.4.1, Spring v6.2.1
+2026-04-23T16:25:08.366+08:00  INFO 56301 --- [gateway-service] [           main] edu.cuit.gateway.GatewayApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-04-23T16:25:08.737+08:00  INFO 56301 --- [gateway-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8891d2ed-7a38-35bc-8894-ba20cff79d5d
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::allocateMemory has been called by io.netty.util.internal.PlatformDependent0$2 (jar:nested:/Users/fanjinchen/工程实践/Movies/gateway-service/target/gateway-service-0.0.1-SNAPSHOT.jar/!BOOT-INF/lib/netty-common-4.1.116.Final.jar!/)
+WARNING: Please consider reporting this to the maintainers of class io.netty.util.internal.PlatformDependent0$2
+WARNING: sun.misc.Unsafe::allocateMemory will be removed in a future release
+2026-04-23T16:25:09.109+08:00  INFO 56301 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2026-04-23T16:25:09.109+08:00  INFO 56301 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2026-04-23T16:25:09.109+08:00  INFO 56301 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2026-04-23T16:25:09.109+08:00  INFO 56301 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2026-04-23T16:25:09.109+08:00  INFO 56301 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2026-04-23T16:25:09.109+08:00  INFO 56301 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2026-04-23T16:25:09.109+08:00  INFO 56301 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2026-04-23T16:25:09.109+08:00  INFO 56301 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2026-04-23T16:25:09.109+08:00  INFO 56301 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2026-04-23T16:25:09.109+08:00  INFO 56301 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2026-04-23T16:25:09.109+08:00  INFO 56301 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2026-04-23T16:25:09.109+08:00  INFO 56301 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2026-04-23T16:25:09.109+08:00  INFO 56301 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2026-04-23T16:25:09.109+08:00  INFO 56301 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2026-04-23T16:25:09.203+08:00  INFO 56301 --- [gateway-service] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-04-23T16:25:09.214+08:00  WARN 56301 --- [gateway-service] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-04-23T16:25:09.227+08:00  INFO 56301 --- [gateway-service] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-04-23T16:25:09.242+08:00  INFO 56301 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-04-23T16:25:09.244+08:00  INFO 56301 --- [gateway-service] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-23T16:25:09.248+08:00  INFO 56301 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-04-23T16:25:09.248+08:00  INFO 56301 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-04-23T16:25:09.248+08:00  INFO 56301 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-04-23T16:25:09.248+08:00  INFO 56301 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-04-23T16:25:09.248+08:00  INFO 56301 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-04-23T16:25:09.248+08:00  INFO 56301 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-04-23T16:25:09.248+08:00  INFO 56301 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-04-23T16:25:09.416+08:00  INFO 56301 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-04-23T16:25:09.416+08:00  INFO 56301 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-04-23T16:25:09.417+08:00  INFO 56301 --- [gateway-service] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-04-23T16:25:09.418+08:00  INFO 56301 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1776932709417 with initial instances count: 3
+2026-04-23T16:25:09.419+08:00  INFO 56301 --- [gateway-service] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application GATEWAY-SERVICE with eureka with status UP
+2026-04-23T16:25:09.419+08:00  INFO 56301 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1776932709419, current=UP, previous=STARTING]
+2026-04-23T16:25:09.420+08:00  INFO 56301 --- [gateway-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/10.27.6.29:gateway-service:8080: registering service...
+2026-04-23T16:25:09.437+08:00  INFO 56301 --- [gateway-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 - registration status: 204
+2026-04-23T16:25:09.493+08:00  INFO 56301 --- [gateway-service] [           main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2026-04-23T16:25:09.493+08:00  INFO 56301 --- [gateway-service] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
+2026-04-23T16:25:09.510+08:00  INFO 56301 --- [gateway-service] [           main] edu.cuit.gateway.GatewayApplication      : Started GatewayApplication in 1.391 seconds (process running for 1.675)
+[Gateway日志] 2026-04-23 16:26:08 | 0:0:0:0:0:0:0:1 | GET /user/index
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::loadLibrary has been called by io.netty.util.internal.NativeLibraryUtil in an unnamed module (jar:nested:/Users/fanjinchen/工程实践/Movies/gateway-service/target/gateway-service-0.0.1-SNAPSHOT.jar/!BOOT-INF/lib/netty-common-4.1.116.Final.jar!/)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+2026-04-23T16:26:08.087+08:00 ERROR 56301 --- [gateway-service] [ctor-http-nio-2] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+[Gateway日志] 响应状态: 405 | 耗时: 143ms
+2026-04-23T16:30:09.256+08:00  INFO 56301 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+[Gateway日志] 2026-04-23 16:34:54 | 0:0:0:0:0:0:0:1 | GET /user/
+[Gateway日志] 响应状态: 200 | 耗时: 105ms
+[Gateway日志] 2026-04-23 16:34:59 | 0:0:0:0:0:0:0:1 | POST /user/index
+[Gateway日志] 响应状态: 302 | 耗时: 506ms
+[Gateway日志] 2026-04-23 16:35:00 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 527ms
+[Gateway日志] 2026-04-23 16:35:06 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 103ms
+[Gateway日志] 2026-04-23 16:35:07 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+[Gateway日志] 响应状态: 200 | 耗时: 69ms
+[Gateway日志] 2026-04-23 16:35:08 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 31ms
+2026-04-23T16:35:09.270+08:00  INFO 56301 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+[Gateway日志] 2026-04-23 16:35:09 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 63ms
+[Gateway日志] 2026-04-23 16:35:09 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 11ms
+[Gateway日志] 2026-04-23 16:35:10 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+[Gateway日志] 响应状态: 200 | 耗时: 51ms
+[Gateway日志] 2026-04-23 16:36:19 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 74ms
+[Gateway日志] 2026-04-23 16:37:00 | 0:0:0:0:0:0:0:1 | GET /user/myreviews
+[Gateway日志] 响应状态: 200 | 耗时: 103ms
+[Gateway日志] 2026-04-23 16:37:02 | 0:0:0:0:0:0:0:1 | GET /user/getmovie
+[Gateway日志] 响应状态: 200 | 耗时: 70ms
+[Gateway日志] 2026-04-23 16:38:21 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+[Gateway日志] 响应状态: 200 | 耗时: 87ms
+[Gateway日志] 2026-04-23 16:38:22 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 46ms
+[Gateway日志] 2026-04-23 16:38:26 | 0:0:0:0:0:0:0:1 | GET /user/getmovie
+[Gateway日志] 响应状态: 200 | 耗时: 35ms
+[Gateway日志] 2026-04-23 16:38:29 | 0:0:0:0:0:0:0:1 | GET /user/addreview
+[Gateway日志] 响应状态: 200 | 耗时: 34ms
+[Gateway日志] 2026-04-23 16:38:37 | 0:0:0:0:0:0:0:1 | POST /user/submitreview
+[Gateway日志] 响应状态: 200 | 耗时: 72ms
+[Gateway日志] 2026-04-23 16:38:47 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+[Gateway日志] 响应状态: 200 | 耗时: 67ms
+[Gateway日志] 2026-04-23 16:38:52 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 29ms
+2026-04-23T16:40:09.278+08:00  INFO 56301 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-23T16:45:09.287+08:00  INFO 56301 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+[Gateway日志] 2026-04-23 16:45:13 | 0:0:0:0:0:0:0:1 | POST /user/submitreview
+[Gateway日志] 响应状态: 200 | 耗时: 57ms
+[Gateway日志] 2026-04-23 16:45:20 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+[Gateway日志] 响应状态: 200 | 耗时: 95ms
+[Gateway日志] 2026-04-23 16:45:21 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 9ms
+[Gateway日志] 2026-04-23 16:45:23 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+[Gateway日志] 响应状态: 200 | 耗时: 66ms
+[Gateway日志] 2026-04-23 16:45:26 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 11ms
+[Gateway日志] 2026-04-23 16:45:31 | 0:0:0:0:0:0:0:1 | GET /user/getmovie
+[Gateway日志] 响应状态: 200 | 耗时: 34ms
+[Gateway日志] 2026-04-23 16:45:33 | 0:0:0:0:0:0:0:1 | GET /user/addreview
+[Gateway日志] 响应状态: 200 | 耗时: 23ms
+[Gateway日志] 2026-04-23 16:45:44 | 0:0:0:0:0:0:0:1 | POST /user/submitreview
+[Gateway日志] 响应状态: 200 | 耗时: 58ms
+[Gateway日志] 2026-04-23 16:45:48 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+[Gateway日志] 响应状态: 200 | 耗时: 67ms
+[Gateway日志] 2026-04-23 16:45:54 | 0:0:0:0:0:0:0:1 | GET /
+[Gateway日志] 响应状态: 302 | 耗时: 0ms
+[Gateway日志] 2026-04-23 16:45:54 | 0:0:0:0:0:0:0:1 | GET /user/login
+[Gateway日志] 响应状态: 200 | 耗时: 12ms
+[Gateway日志] 2026-04-23 16:45:59 | 0:0:0:0:0:0:0:1 | POST /user/index
+[Gateway日志] 响应状态: 302 | 耗时: 35ms
+[Gateway日志] 2026-04-23 16:45:59 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 84ms
+[Gateway日志] 2026-04-23 16:46:01 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+[Gateway日志] 响应状态: 200 | 耗时: 46ms
+[Gateway日志] 2026-04-23 16:46:06 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 23ms
+[Gateway日志] 2026-04-23 16:46:07 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 76ms
+[Gateway日志] 2026-04-23 16:46:18 | 0:0:0:0:0:0:0:1 | GET /user/getmovie
+[Gateway日志] 响应状态: 200 | 耗时: 41ms
+[Gateway日志] 2026-04-23 16:46:25 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 28ms
+[Gateway日志] 2026-04-23 16:48:39 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 36ms
+[Gateway日志] 2026-04-23 16:48:41 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+[Gateway日志] 响应状态: 200 | 耗时: 75ms
+[Gateway日志] 2026-04-23 16:48:42 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 15ms
+[Gateway日志] 2026-04-23 16:48:46 | 0:0:0:0:0:0:0:1 | GET /user/getmovie
+[Gateway日志] 响应状态: 200 | 耗时: 34ms
+[Gateway日志] 2026-04-23 16:48:48 | 0:0:0:0:0:0:0:1 | GET /user/addreview
+[Gateway日志] 响应状态: 200 | 耗时: 23ms
+[Gateway日志] 2026-04-23 16:48:52 | 0:0:0:0:0:0:0:1 | GET /user/getmovie
+[Gateway日志] 响应状态: 200 | 耗时: 32ms
+[Gateway日志] 2026-04-23 16:48:54 | 0:0:0:0:0:0:0:1 | GET /user/addreview
+[Gateway日志] 响应状态: 200 | 耗时: 22ms
+[Gateway日志] 2026-04-23 16:49:05 | 0:0:0:0:0:0:0:1 | POST /user/submitreview
+[Gateway日志] 响应状态: 200 | 耗时: 44ms
+2026-04-23T16:50:09.297+08:00  INFO 56301 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+[Gateway日志] 2026-04-23 16:53:38 | 0:0:0:0:0:0:0:1 | GET /user/
+[Gateway日志] 响应状态: 200 | 耗时: 277ms
+[Gateway日志] 2026-04-23 16:53:44 | 0:0:0:0:0:0:0:1 | POST /user/index
+[Gateway日志] 响应状态: 302 | 耗时: 267ms
+[Gateway日志] 2026-04-23 16:53:44 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 147ms
+[Gateway日志] 2026-04-23 16:53:46 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 90ms
+[Gateway日志] 2026-04-23 16:54:04 | 0:0:0:0:0:0:0:1 | GET /user/getmovie
+[Gateway日志] 响应状态: 200 | 耗时: 38ms
+[Gateway日志] 2026-04-23 16:54:08 | 0:0:0:0:0:0:0:1 | GET /user/addreview
+[Gateway日志] 响应状态: 200 | 耗时: 32ms
+[Gateway日志] 2026-04-23 16:54:16 | 0:0:0:0:0:0:0:1 | POST /user/submitreview
+[Gateway日志] 响应状态: 200 | 耗时: 33ms
+[Gateway日志] 2026-04-23 16:54:39 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 43ms
+[Gateway日志] 2026-04-23 16:54:43 | 0:0:0:0:0:0:0:1 | GET /user/getmovie
+[Gateway日志] 响应状态: 200 | 耗时: 41ms
+[Gateway日志] 2026-04-23 16:54:53 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+[Gateway日志] 响应状态: 200 | 耗时: 79ms
+[Gateway日志] 2026-04-23 16:54:57 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 15ms
+[Gateway日志] 2026-04-23 16:55:00 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 20ms
+[Gateway日志] 2026-04-23 16:55:01 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 25ms
+[Gateway日志] 2026-04-23 16:55:03 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 15ms
+[Gateway日志] 2026-04-23 16:55:05 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 24ms
+[Gateway日志] 2026-04-23 16:55:07 | 0:0:0:0:0:0:0:1 | GET /user/getmovie
+[Gateway日志] 响应状态: 200 | 耗时: 40ms
+[Gateway日志] 2026-04-23 16:55:08 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 25ms
+2026-04-23T16:55:09.296+08:00  INFO 56301 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-23T17:00:09.303+08:00  INFO 56301 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+[Gateway日志] 2026-04-23 17:02:11 | 0:0:0:0:0:0:0:1 | GET /user/getmovie
+[Gateway日志] 响应状态: 200 | 耗时: 360ms
+[Gateway日志] 2026-04-23 17:02:13 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 315ms
+[Gateway日志] 2026-04-23 17:02:29 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 32ms
+[Gateway日志] 2026-04-23 17:02:29 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 31ms
+[Gateway日志] 2026-04-23 17:02:29 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 29ms
+[Gateway日志] 2026-04-23 17:02:31 | 0:0:0:0:0:0:0:1 | GET /user/getmovie
+[Gateway日志] 响应状态: 200 | 耗时: 52ms
+[Gateway日志] 2026-04-23 17:02:31 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 32ms
+[Gateway日志] 2026-04-23 17:02:32 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 107ms
+[Gateway日志] 2026-04-23 17:02:32 | 0:0:0:0:0:0:0:1 | GET /user/
+[Gateway日志] 响应状态: 200 | 耗时: 7ms
+[Gateway日志] 2026-04-23 17:02:34 | 0:0:0:0:0:0:0:1 | GET /user/getmovie
+[Gateway日志] 响应状态: 200 | 耗时: 25ms
+[Gateway日志] 2026-04-23 17:02:35 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 24ms
+[Gateway日志] 2026-04-23 17:02:35 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 15ms
+[Gateway日志] 2026-04-23 17:02:36 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 86ms
+[Gateway日志] 2026-04-23 17:02:36 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 10ms
+[Gateway日志] 2026-04-23 17:02:41 | 0:0:0:0:0:0:0:1 | GET /
+[Gateway日志] 响应状态: 302 | 耗时: 0ms
+[Gateway日志] 2026-04-23 17:02:41 | 0:0:0:0:0:0:0:1 | GET /user/login
+[Gateway日志] 响应状态: 200 | 耗时: 4ms
+[Gateway日志] 2026-04-23 17:02:48 | 0:0:0:0:0:0:0:1 | POST /user/index
+[Gateway日志] 响应状态: 302 | 耗时: 30ms
+[Gateway日志] 2026-04-23 17:02:48 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 71ms
+[Gateway日志] 2026-04-23 17:02:51 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+[Gateway日志] 响应状态: 200 | 耗时: 56ms
+[Gateway日志] 2026-04-23 17:02:54 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 26ms
+[Gateway日志] 2026-04-23 17:02:59 | 0:0:0:0:0:0:0:1 | GET /user/getmovie
+[Gateway日志] 响应状态: 200 | 耗时: 32ms
+[Gateway日志] 2026-04-23 17:03:00 | 0:0:0:0:0:0:0:1 | GET /user/addreview
+[Gateway日志] 响应状态: 200 | 耗时: 20ms
+[Gateway日志] 2026-04-23 17:03:10 | 0:0:0:0:0:0:0:1 | POST /user/submitreview
+[Gateway日志] 响应状态: 200 | 耗时: 37ms
+2026-04-23T17:05:09.312+08:00  INFO 56301 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-23T17:10:09.322+08:00  INFO 56301 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+[Gateway日志] 2026-04-23 17:10:42 | 0:0:0:0:0:0:0:1 | GET /
+[Gateway日志] 响应状态: 302 | 耗时: 0ms
+[Gateway日志] 2026-04-23 17:10:42 | 0:0:0:0:0:0:0:1 | GET /user/login
+[Gateway日志] 响应状态: 200 | 耗时: 303ms
+[Gateway日志] 2026-04-23 17:10:48 | 0:0:0:0:0:0:0:1 | POST /user/index
+[Gateway日志] 响应状态: 302 | 耗时: 266ms
+[Gateway日志] 2026-04-23 17:10:48 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 111ms
+[Gateway日志] 2026-04-23 17:10:58 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 76ms
+[Gateway日志] 2026-04-23 17:11:02 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 86ms
+[Gateway日志] 2026-04-23 17:11:08 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 32ms
+[Gateway日志] 2026-04-23 17:11:08 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+[Gateway日志] 响应状态: 200 | 耗时: 77ms
+[Gateway日志] 2026-04-23 17:11:09 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 29ms
+[Gateway日志] 2026-04-23 17:11:10 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 67ms
+[Gateway日志] 2026-04-23 17:11:11 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 12ms
+[Gateway日志] 2026-04-23 17:11:12 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+[Gateway日志] 响应状态: 200 | 耗时: 58ms
+[Gateway日志] 2026-04-23 17:11:13 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 20ms
+[Gateway日志] 2026-04-23 17:11:13 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 69ms
+[Gateway日志] 2026-04-23 17:11:14 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 8ms
+[Gateway日志] 2026-04-23 17:11:14 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+[Gateway日志] 响应状态: 200 | 耗时: 72ms
+[Gateway日志] 2026-04-23 17:11:15 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 10ms
+[Gateway日志] 2026-04-23 17:11:16 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 74ms
+[Gateway日志] 2026-04-23 17:11:16 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 11ms
+[Gateway日志] 2026-04-23 17:11:16 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+[Gateway日志] 响应状态: 200 | 耗时: 70ms
+[Gateway日志] 2026-04-23 17:11:17 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 11ms
+[Gateway日志] 2026-04-23 17:11:18 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 72ms
+[Gateway日志] 2026-04-23 17:11:18 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 12ms
+[Gateway日志] 2026-04-23 17:11:19 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+[Gateway日志] 响应状态: 200 | 耗时: 101ms
+[Gateway日志] 2026-04-23 17:11:19 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 11ms
+[Gateway日志] 2026-04-23 17:11:20 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 70ms
+[Gateway日志] 2026-04-23 17:11:20 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 24ms
+[Gateway日志] 2026-04-23 17:11:31 | 0:0:0:0:0:0:0:1 | GET /user/getmovie
+[Gateway日志] 响应状态: 200 | 耗时: 11ms
+[Gateway日志] 2026-04-23 17:11:33 | 0:0:0:0:0:0:0:1 | GET /user/addreview
+[Gateway日志] 响应状态: 200 | 耗时: 25ms
+[Gateway日志] 2026-04-23 17:11:46 | 0:0:0:0:0:0:0:1 | POST /user/submitreview
+[Gateway日志] 响应状态: 302 | 耗时: 50ms
+[Gateway日志] 2026-04-23 17:11:46 | 0:0:0:0:0:0:0:1 | GET /user/reviewsuccess
+[Gateway日志] 响应状态: 200 | 耗时: 6ms
+[Gateway日志] 2026-04-23 17:11:48 | 0:0:0:0:0:0:0:1 | GET /user/reviewsuccess
+[Gateway日志] 响应状态: 200 | 耗时: 15ms
+[Gateway日志] 2026-04-23 17:11:49 | 0:0:0:0:0:0:0:1 | GET /user/reviewsuccess
+[Gateway日志] 响应状态: 200 | 耗时: 14ms
+[Gateway日志] 2026-04-23 17:11:49 | 0:0:0:0:0:0:0:1 | GET /user/reviewsuccess
+[Gateway日志] 响应状态: 200 | 耗时: 4ms
+[Gateway日志] 2026-04-23 17:11:49 | 0:0:0:0:0:0:0:1 | GET /user/reviewsuccess
+[Gateway日志] 响应状态: 200 | 耗时: 4ms
+[Gateway日志] 2026-04-23 17:11:49 | 0:0:0:0:0:0:0:1 | GET /user/reviewsuccess
+[Gateway日志] 响应状态: 200 | 耗时: 7ms
+[Gateway日志] 2026-04-23 17:11:49 | 0:0:0:0:0:0:0:1 | GET /user/reviewsuccess
+[Gateway日志] 响应状态: 200 | 耗时: 14ms
+[Gateway日志] 2026-04-23 17:11:49 | 0:0:0:0:0:0:0:1 | GET /user/reviewsuccess
+[Gateway日志] 响应状态: 200 | 耗时: 15ms
+[Gateway日志] 2026-04-23 17:11:50 | 0:0:0:0:0:0:0:1 | GET /user/reviewsuccess
+[Gateway日志] 响应状态: 200 | 耗时: 15ms
+[Gateway日志] 2026-04-23 17:11:53 | 0:0:0:0:0:0:0:1 | GET /user/reviewsuccess
+[Gateway日志] 响应状态: 200 | 耗时: 14ms
+[Gateway日志] 2026-04-23 17:11:53 | 0:0:0:0:0:0:0:1 | GET /user/reviewsuccess
+[Gateway日志] 响应状态: 200 | 耗时: 7ms
+[Gateway日志] 2026-04-23 17:11:58 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 26ms
+[Gateway日志] 2026-04-23 17:12:07 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+[Gateway日志] 响应状态: 200 | 耗时: 91ms
+[Gateway日志] 2026-04-23 17:12:07 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 46ms
+[Gateway日志] 2026-04-23 17:12:08 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 25ms
+[Gateway日志] 2026-04-23 17:12:09 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 64ms
+[Gateway日志] 2026-04-23 17:12:18 | 0:0:0:0:0:0:0:1 | GET /user/myreviews
+[Gateway日志] 响应状态: 200 | 耗时: 62ms
+[Gateway日志] 2026-04-23 17:12:29 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+[Gateway日志] 响应状态: 200 | 耗时: 48ms
+[Gateway日志] 2026-04-23 17:12:47 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 60ms
+[Gateway日志] 2026-04-23 17:12:48 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 22ms
+[Gateway日志] 2026-04-23 17:12:49 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+[Gateway日志] 响应状态: 200 | 耗时: 65ms
+[Gateway日志] 2026-04-23 17:12:49 | 0:0:0:0:0:0:0:1 | GET /recommend/
+[Gateway日志] 响应状态: 200 | 耗时: 253ms
+[Gateway日志] 2026-04-23 17:12:56 | 0:0:0:0:0:0:0:1 | GET /recommend/
+[Gateway日志] 响应状态: 200 | 耗时: 28ms
+[Gateway日志] 2026-04-23 17:13:02 | 0:0:0:0:0:0:0:1 | GET /recommend/hot
+[Gateway日志] 响应状态: 200 | 耗时: 12ms
+[Gateway日志] 2026-04-23 17:13:50 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 33ms
+[Gateway日志] 2026-04-23 17:13:52 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+[Gateway日志] 响应状态: 200 | 耗时: 66ms
+[Gateway日志] 2026-04-23 17:14:08 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 25ms
+[Gateway日志] 2026-04-23 17:14:23 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 60ms
+[Gateway日志] 2026-04-23 17:14:38 | 0:0:0:0:0:0:0:1 | GET /user/profile
+[Gateway日志] 响应状态: 200 | 耗时: 24ms
+[Gateway日志] 2026-04-23 17:14:49 | 0:0:0:0:0:0:0:1 | POST /user/profile/update
+[Gateway日志] 响应状态: 302 | 耗时: 48ms
+[Gateway日志] 2026-04-23 17:14:49 | 0:0:0:0:0:0:0:1 | GET /user/profile
+[Gateway日志] 响应状态: 200 | 耗时: 8ms
+[Gateway日志] 2026-04-23 17:14:51 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 58ms
+[Gateway日志] 2026-04-23 17:14:57 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 21ms
+[Gateway日志] 2026-04-23 17:14:59 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 63ms
+[Gateway日志] 2026-04-23 17:15:00 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 7ms
+[Gateway日志] 2026-04-23 17:15:03 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+[Gateway日志] 响应状态: 200 | 耗时: 65ms
+[Gateway日志] 2026-04-23 17:15:05 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 55ms
+2026-04-23T17:15:09.335+08:00  INFO 56301 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+[Gateway日志] 2026-04-23 17:15:44 | 0:0:0:0:0:0:0:1 | GET /user/myreviews
+[Gateway日志] 响应状态: 200 | 耗时: 97ms
+2026-04-23T17:20:09.343+08:00  INFO 56301 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-23T17:25:09.343+08:00  INFO 56301 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-23T17:30:09.352+08:00  INFO 56301 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-23T17:34:11.918+08:00  INFO 56301 --- [gateway-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 - Re-registering apps/GATEWAY-SERVICE
+2026-04-23T17:34:11.918+08:00  INFO 56301 --- [gateway-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/10.27.6.29:gateway-service:8080: registering service...
+2026-04-23T17:34:11.922+08:00  INFO 56301 --- [gateway-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 - registration status: 204
+2026-04-23T21:33:35.736+08:00  INFO 56301 --- [gateway-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 - Re-registering apps/GATEWAY-SERVICE
+2026-04-23T21:33:35.738+08:00  INFO 56301 --- [gateway-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/10.27.6.29:gateway-service:8080: registering service...
+2026-04-23T21:33:35.745+08:00  INFO 56301 --- [gateway-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 - registration status: 204
+2026-04-24T02:31:45.797+08:00  INFO 56301 --- [gateway-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 - Re-registering apps/GATEWAY-SERVICE
+2026-04-24T02:31:45.798+08:00  INFO 56301 --- [gateway-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/10.27.6.29:gateway-service:8080: registering service...
+2026-04-24T02:31:45.804+08:00  INFO 56301 --- [gateway-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 - registration status: 204
+2026-04-24T03:39:36.922+08:00  INFO 56301 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-24T14:29:42.148+08:00  INFO 56301 --- [gateway-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 - Re-registering apps/GATEWAY-SERVICE
+2026-04-24T14:29:42.149+08:00  INFO 56301 --- [gateway-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/10.27.6.29:gateway-service:8080: registering service...
+2026-04-24T14:29:42.154+08:00  INFO 56301 --- [gateway-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 - registration status: 204
+2026-04-24T15:39:15.657+08:00  INFO 56301 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-24T23:17:27.900+08:00  INFO 56301 --- [gateway-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 - Re-registering apps/GATEWAY-SERVICE
+2026-04-24T23:17:27.900+08:00  INFO 56301 --- [gateway-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/10.27.6.29:gateway-service:8080: registering service...
+2026-04-24T23:17:27.903+08:00  INFO 56301 --- [gateway-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 - registration status: 204
+2026-04-25T03:11:37.709+08:00  INFO 56301 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T13:24:27.490+08:00  INFO 56301 --- [gateway-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 - Re-registering apps/GATEWAY-SERVICE
+2026-04-25T13:24:27.491+08:00  INFO 56301 --- [gateway-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/10.27.6.29:gateway-service:8080: registering service...
+2026-04-25T13:24:27.493+08:00  INFO 56301 --- [gateway-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 - registration status: 204
+[Gateway日志] 2026-04-25 14:02:22 | 0:0:0:0:0:0:0:1 | GET /user/home
+2026-04-25T14:02:22.563+08:00  WARN 56301 --- [gateway-service] [ctor-http-nio-3] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: user-portal-service
+2026-04-25T14:03:04.320+08:00  INFO 56301 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+[Gateway日志] 2026-04-25 14:05:20 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 304ms
+[Gateway日志] 2026-04-25 14:05:21 | 0:0:0:0:0:0:0:1 | GET /user/
+[Gateway日志] 响应状态: 200 | 耗时: 278ms
+[Gateway日志] 2026-04-25 14:05:27 | 0:0:0:0:0:0:0:1 | POST /user/index
+[Gateway日志] 响应状态: 302 | 耗时: 143ms
+[Gateway日志] 2026-04-25 14:05:27 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 129ms
+[Gateway日志] 2026-04-25 14:05:27 | 0:0:0:0:0:0:0:1 | GET /uploads/avatars/b926fb3d-023a-40a0-a19a-6b263a2b870b.jpg
+[Gateway日志] 响应状态: 304 | 耗时: 13ms
+[Gateway日志] 2026-04-25 14:05:45 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 27ms
+[Gateway日志] 2026-04-25 14:07:24 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+[Gateway日志] 响应状态: 200 | 耗时: 109ms
+[Gateway日志] 2026-04-25 14:07:24 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 39ms
+[Gateway日志] 2026-04-25 14:07:26 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+[Gateway日志] 响应状态: 200 | 耗时: 67ms
+2026-04-25T14:08:04.326+08:00  INFO 56301 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T14:13:04.329+08:00  INFO 56301 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

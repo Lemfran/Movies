@@ -2,7 +2,10 @@ package edu.cuit.yingpingsxitong.Entity;
 
 import java.sql.Timestamp;
 
-public class Log {
+import java.io.Serializable;
+
+public class Log implements Serializable {
+    private static final long serialVersionUID = 1L;
     Integer id;
     String methodName;
     String userName;

@@ -1,0 +1,335 @@
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.1)
+
+2026-04-23T16:24:36.218+08:00  INFO 56030 --- [eureka-server] [           main] e.c.e.EurekaServerApplication            : Starting EurekaServerApplication v0.0.1-SNAPSHOT using Java 25.0.1 with PID 56030 (/Users/fanjinchen/工程实践/Movies/eureka-server/target/eureka-server-0.0.1-SNAPSHOT.jar started by fanjinchen in /Users/fanjinchen/工程实践/Movies)
+2026-04-23T16:24:36.220+08:00  INFO 56030 --- [eureka-server] [           main] e.c.e.EurekaServerApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-04-23T16:24:36.641+08:00  INFO 56030 --- [eureka-server] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=6686b3d2-de92-38fe-8a3e-732c656658f0
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (jar:nested:/Users/fanjinchen/工程实践/Movies/eureka-server/target/eureka-server-0.0.1-SNAPSHOT.jar/!BOOT-INF/lib/tomcat-embed-core-10.1.34.jar!/)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+2026-04-23T16:24:36.797+08:00  INFO 56030 --- [eureka-server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8761 (http)
+2026-04-23T16:24:36.804+08:00  INFO 56030 --- [eureka-server] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-23T16:24:36.804+08:00  INFO 56030 --- [eureka-server] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-04-23T16:24:36.820+08:00  INFO 56030 --- [eureka-server] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-23T16:24:36.820+08:00  INFO 56030 --- [eureka-server] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 570 ms
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+2026-04-23T16:24:37.195+08:00  INFO 56030 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2026-04-23T16:24:37.195+08:00  INFO 56030 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by com.thoughtworks.xstream.converters.reflection.SunUnsafeReflectionProvider (jar:nested:/Users/fanjinchen/工程实践/Movies/eureka-server/target/eureka-server-0.0.1-SNAPSHOT.jar/!BOOT-INF/lib/xstream-1.4.20.jar!/)
+WARNING: Please consider reporting this to the maintainers of class com.thoughtworks.xstream.converters.reflection.SunUnsafeReflectionProvider
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+2026-04-23T16:24:37.295+08:00  INFO 56030 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2026-04-23T16:24:37.295+08:00  INFO 56030 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2026-04-23T16:24:37.360+08:00  INFO 56030 --- [eureka-server] [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-04-23T16:24:37.640+08:00  WARN 56030 --- [eureka-server] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-04-23T16:24:37.652+08:00  INFO 56030 --- [eureka-server] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-04-23T16:24:37.658+08:00  INFO 56030 --- [eureka-server] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-04-23T16:24:37.658+08:00  INFO 56030 --- [eureka-server] [           main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+2026-04-23T16:24:37.659+08:00  INFO 56030 --- [eureka-server] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1776932677659 with initial instances count: 0
+2026-04-23T16:24:37.673+08:00  INFO 56030 --- [eureka-server] [           main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
+2026-04-23T16:24:37.673+08:00  INFO 56030 --- [eureka-server] [           main] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:8761/eureka/]
+2026-04-23T16:24:37.727+08:00  INFO 56030 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2026-04-23T16:24:37.727+08:00  INFO 56030 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2026-04-23T16:24:37.727+08:00  INFO 56030 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2026-04-23T16:24:37.727+08:00  INFO 56030 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2026-04-23T16:24:37.742+08:00  INFO 56030 --- [eureka-server] [           main] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:8761/eureka/
+2026-04-23T16:24:37.746+08:00  INFO 56030 --- [eureka-server] [           main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
+2026-04-23T16:24:37.746+08:00  INFO 56030 --- [eureka-server] [           main] c.n.eureka.DefaultEurekaServerContext    : Initialized
+2026-04-23T16:24:37.751+08:00  INFO 56030 --- [eureka-server] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-04-23T16:24:37.772+08:00  INFO 56030 --- [eureka-server] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVER with eureka with status UP
+2026-04-23T16:24:37.777+08:00  INFO 56030 --- [eureka-server] [       Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
+2026-04-23T16:24:37.778+08:00  INFO 56030 --- [eureka-server] [       Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
+2026-04-23T16:24:37.778+08:00  INFO 56030 --- [eureka-server] [       Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
+2026-04-23T16:24:37.778+08:00  INFO 56030 --- [eureka-server] [       Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
+2026-04-23T16:24:37.778+08:00  INFO 56030 --- [eureka-server] [       Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
+2026-04-23T16:24:37.779+08:00  INFO 56030 --- [eureka-server] [       Thread-9] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
+2026-04-23T16:24:37.791+08:00  INFO 56030 --- [eureka-server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8761 (http) with context path '/'
+2026-04-23T16:24:37.792+08:00  INFO 56030 --- [eureka-server] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
+2026-04-23T16:24:37.804+08:00  INFO 56030 --- [eureka-server] [           main] e.c.e.EurekaServerApplication            : Started EurekaServerApplication in 1.934 seconds (process running for 2.166)
+2026-04-23T16:24:48.008+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-23T16:24:48.009+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-23T16:24:48.009+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-04-23T16:24:48.128+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance MOVIES-SERVICE/10.27.6.29:movies-service:8081 with status UP (replication=false)
+2026-04-23T16:24:48.708+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance MOVIES-SERVICE/10.27.6.29:movies-service:8081 with status UP (replication=true)
+2026-04-23T16:24:52.877+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance MOVIES-SERVICE/10.27.6.29:movies-service:8084 with status UP (replication=false)
+2026-04-23T16:24:53.387+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance MOVIES-SERVICE/10.27.6.29:movies-service:8084 with status UP (replication=true)
+2026-04-23T16:24:57.013+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8082 with status UP (replication=false)
+2026-04-23T16:24:57.521+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8082 with status UP (replication=true)
+2026-04-23T16:25:01.109+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8085 with status UP (replication=false)
+2026-04-23T16:25:01.617+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8085 with status UP (replication=true)
+2026-04-23T16:25:05.571+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance RECOMMENDATION-SERVICE/10.27.6.29:recommendation-service:8083 with status UP (replication=false)
+2026-04-23T16:25:06.076+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance RECOMMENDATION-SERVICE/10.27.6.29:recommendation-service:8083 with status UP (replication=true)
+2026-04-23T16:25:09.436+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 with status UP (replication=false)
+2026-04-23T16:25:09.940+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 with status UP (replication=true)
+2026-04-23T16:25:37.784+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2026-04-23T16:26:37.790+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2026-04-23T16:27:37.795+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2026-04-23T16:28:37.805+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
+2026-04-23T16:29:37.813+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
+2026-04-23T16:30:37.822+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 8ms
+2026-04-23T16:31:37.828+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2026-04-23T16:32:37.835+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 6ms
+2026-04-23T16:33:37.845+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 8ms
+2026-04-23T16:34:37.851+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2026-04-23T16:35:37.862+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
+2026-04-23T16:36:37.865+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2026-04-23T16:37:37.866+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2026-04-23T16:38:37.872+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2026-04-23T16:39:37.756+08:00  INFO 56030 --- [eureka-server] [hresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 0
+2026-04-23T16:39:37.877+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2026-04-23T16:40:37.883+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2026-04-23T16:41:37.884+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2026-04-23T16:42:37.886+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2026-04-23T16:43:37.892+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2026-04-23T16:44:37.897+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2026-04-23T16:45:37.897+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2026-04-23T16:46:37.899+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2026-04-23T16:47:37.905+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2026-04-23T16:48:37.907+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2026-04-23T16:49:37.909+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2026-04-23T16:50:37.910+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2026-04-23T16:50:55.369+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8082 with status DOWN (replication=false)
+2026-04-23T16:50:55.392+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8085 with status DOWN (replication=false)
+2026-04-23T16:50:55.879+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8082 with status DOWN (replication=true)
+2026-04-23T16:50:55.880+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8085 with status DOWN (replication=true)
+2026-04-23T16:51:37.915+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2026-04-23T16:52:37.916+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 8ms
+2026-04-23T16:52:37.916+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=2, evictionLimit=1)
+2026-04-23T16:52:37.917+08:00  WARN 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8085
+2026-04-23T16:52:37.917+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8085 (replication=false)
+2026-04-23T16:52:55.083+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8082 with status UP (replication=false)
+2026-04-23T16:52:55.586+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8082 with status UP (replication=true)
+2026-04-23T16:52:57.015+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8085 with status UP (replication=false)
+2026-04-23T16:52:57.527+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8085 with status UP (replication=true)
+2026-04-23T16:53:37.918+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2026-04-23T16:54:37.757+08:00  INFO 56030 --- [eureka-server] [hresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 0
+2026-04-23T16:54:37.922+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2026-04-23T16:55:37.924+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2026-04-23T16:56:37.925+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2026-04-23T16:57:37.929+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2026-04-23T16:58:37.934+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2026-04-23T16:59:37.938+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2026-04-23T17:00:10.369+08:00  INFO 56030 --- [eureka-server] [io-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8082 with status DOWN (replication=false)
+2026-04-23T17:00:10.391+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8085 with status DOWN (replication=false)
+2026-04-23T17:00:10.716+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8082 with status DOWN (replication=true)
+2026-04-23T17:00:10.716+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8085 with status DOWN (replication=true)
+2026-04-23T17:00:37.944+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2026-04-23T17:01:04.139+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8082 with status UP (replication=false)
+2026-04-23T17:01:04.648+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8082 with status UP (replication=true)
+2026-04-23T17:01:06.013+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8085 with status UP (replication=false)
+2026-04-23T17:01:06.520+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8085 with status UP (replication=true)
+2026-04-23T17:01:37.949+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2026-04-23T17:02:37.956+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 6ms
+2026-04-23T17:03:37.960+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2026-04-23T17:04:37.964+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2026-04-23T17:05:37.968+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2026-04-23T17:06:37.972+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2026-04-23T17:07:37.977+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2026-04-23T17:08:37.980+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2026-04-23T17:09:12.406+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8082 with status DOWN (replication=false)
+2026-04-23T17:09:12.429+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8085 with status DOWN (replication=false)
+2026-04-23T17:09:12.916+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8082 with status DOWN (replication=true)
+2026-04-23T17:09:12.916+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8085 with status DOWN (replication=true)
+2026-04-23T17:09:37.764+08:00  INFO 56030 --- [eureka-server] [hresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 0
+2026-04-23T17:09:37.982+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2026-04-23T17:09:51.630+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8082 with status UP (replication=false)
+2026-04-23T17:09:52.144+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8082 with status UP (replication=true)
+2026-04-23T17:09:53.534+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8085 with status UP (replication=false)
+2026-04-23T17:09:54.046+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8085 with status UP (replication=true)
+2026-04-23T17:10:37.993+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
+2026-04-23T17:11:37.995+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2026-04-23T17:12:37.997+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2026-04-23T17:13:38.002+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2026-04-23T17:14:38.004+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2026-04-23T17:15:38.009+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2026-04-23T17:16:38.015+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2026-04-23T17:17:38.019+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2026-04-23T17:18:38.020+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2026-04-23T17:19:38.023+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2026-04-23T17:20:38.029+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2026-04-23T17:21:38.034+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2026-04-23T17:22:38.039+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2026-04-23T17:23:38.044+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2026-04-23T17:24:37.771+08:00  INFO 56030 --- [eureka-server] [hresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 0
+2026-04-23T17:24:38.044+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
+2026-04-23T17:25:38.048+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2026-04-23T17:26:38.049+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2026-04-23T17:27:38.054+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2026-04-23T17:28:38.059+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2026-04-23T17:29:38.062+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2026-04-23T17:30:24.535+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8082 with status DOWN (replication=false)
+2026-04-23T17:30:24.552+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8085 with status DOWN (replication=false)
+2026-04-23T17:30:25.044+08:00  INFO 56030 --- [eureka-server] [io-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8082 with status DOWN (replication=true)
+2026-04-23T17:30:25.045+08:00  INFO 56030 --- [eureka-server] [io-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8085 with status DOWN (replication=true)
+2026-04-23T17:34:09.044+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2026-04-23T17:34:09.045+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=5, evictionLimit=1)
+2026-04-23T17:34:09.045+08:00  WARN 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for GATEWAY-SERVICE/10.27.6.29:gateway-service:8080
+2026-04-23T17:34:09.045+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 (replication=false)
+2026-04-23T17:34:11.895+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: GATEWAY-SERVICE - 10.27.6.29:gateway-service:8080
+2026-04-23T17:34:11.896+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-3] c.n.eureka.resources.InstanceResource    : Not Found (Renew): GATEWAY-SERVICE - 10.27.6.29:gateway-service:8080
+2026-04-23T17:34:11.922+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 with status UP (replication=false)
+2026-04-23T17:34:12.432+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 with status UP (replication=true)
+2026-04-23T19:36:04.687+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 6ms
+2026-04-23T19:36:04.688+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=5, evictionLimit=1)
+2026-04-23T19:36:04.688+08:00  WARN 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8082
+2026-04-23T19:36:04.688+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8082 (replication=false)
+2026-04-23T21:33:32.744+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
+2026-04-23T21:33:32.746+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=5, evictionLimit=1)
+2026-04-23T21:33:32.746+08:00  WARN 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for GATEWAY-SERVICE/10.27.6.29:gateway-service:8080
+2026-04-23T21:33:32.747+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 (replication=false)
+2026-04-23T21:33:35.728+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: GATEWAY-SERVICE - 10.27.6.29:gateway-service:8080
+2026-04-23T21:33:35.728+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-5] c.n.eureka.resources.InstanceResource    : Not Found (Renew): GATEWAY-SERVICE - 10.27.6.29:gateway-service:8080
+2026-04-23T21:33:35.745+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 with status UP (replication=false)
+2026-04-23T21:33:36.255+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 with status UP (replication=true)
+2026-04-23T23:51:02.427+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2026-04-23T23:51:02.428+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=5, evictionLimit=1)
+2026-04-23T23:51:02.428+08:00  WARN 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for RECOMMENDATION-SERVICE/10.27.6.29:recommendation-service:8083
+2026-04-23T23:51:02.428+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance RECOMMENDATION-SERVICE/10.27.6.29:recommendation-service:8083 (replication=false)
+2026-04-24T01:11:47.015+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: RECOMMENDATION-SERVICE - 10.27.6.29:recommendation-service:8083
+2026-04-24T01:11:47.016+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-1] c.n.eureka.resources.InstanceResource    : Not Found (Renew): RECOMMENDATION-SERVICE - 10.27.6.29:recommendation-service:8083
+2026-04-24T01:11:47.028+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance RECOMMENDATION-SERVICE/10.27.6.29:recommendation-service:8083 with status UP (replication=false)
+2026-04-24T01:11:47.536+08:00  INFO 56030 --- [eureka-server] [io-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance RECOMMENDATION-SERVICE/10.27.6.29:recommendation-service:8083 with status UP (replication=true)
+2026-04-24T02:15:24.040+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
+2026-04-24T02:15:24.042+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=4, evictionLimit=1)
+2026-04-24T02:15:24.042+08:00  WARN 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for GATEWAY-SERVICE/10.27.6.29:gateway-service:8080
+2026-04-24T02:15:24.043+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 (replication=false)
+2026-04-24T02:31:45.796+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: GATEWAY-SERVICE - 10.27.6.29:gateway-service:8080
+2026-04-24T02:31:45.796+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-4] c.n.eureka.resources.InstanceResource    : Not Found (Renew): GATEWAY-SERVICE - 10.27.6.29:gateway-service:8080
+2026-04-24T02:31:45.801+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 with status UP (replication=false)
+2026-04-24T02:31:46.313+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 with status UP (replication=true)
+2026-04-24T05:01:43.565+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
+2026-04-24T05:01:43.566+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=4, evictionLimit=1)
+2026-04-24T05:01:43.566+08:00  WARN 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for MOVIES-SERVICE/10.27.6.29:movies-service:8081
+2026-04-24T05:01:43.566+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance MOVIES-SERVICE/10.27.6.29:movies-service:8081 (replication=false)
+2026-04-24T05:32:36.700+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: MOVIES-SERVICE - 10.27.6.29:movies-service:8081
+2026-04-24T05:32:36.702+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-7] c.n.eureka.resources.InstanceResource    : Not Found (Renew): MOVIES-SERVICE - 10.27.6.29:movies-service:8081
+2026-04-24T05:32:36.727+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance MOVIES-SERVICE/10.27.6.29:movies-service:8081 with status UP (replication=false)
+2026-04-24T05:32:37.242+08:00  INFO 56030 --- [eureka-server] [io-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance MOVIES-SERVICE/10.27.6.29:movies-service:8081 with status UP (replication=true)
+2026-04-24T07:32:21.222+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 6ms
+2026-04-24T07:32:21.225+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=4, evictionLimit=1)
+2026-04-24T07:32:21.225+08:00  WARN 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8085
+2026-04-24T07:32:21.226+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance USER-PORTAL-SERVICE/10.27.6.29:user-portal-service:8085 (replication=false)
+2026-04-24T09:33:13.900+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
+2026-04-24T09:33:13.900+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=4, evictionLimit=1)
+2026-04-24T09:33:13.900+08:00  WARN 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for MOVIES-SERVICE/10.27.6.29:movies-service:8084
+2026-04-24T09:33:13.901+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance MOVIES-SERVICE/10.27.6.29:movies-service:8084 (replication=false)
+2026-04-24T09:56:37.268+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: MOVIES-SERVICE - 10.27.6.29:movies-service:8084
+2026-04-24T09:56:37.268+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-1] c.n.eureka.resources.InstanceResource    : Not Found (Renew): MOVIES-SERVICE - 10.27.6.29:movies-service:8084
+2026-04-24T09:56:37.284+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance MOVIES-SERVICE/10.27.6.29:movies-service:8084 with status UP (replication=false)
+2026-04-24T11:50:52.286+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2026-04-24T11:50:52.288+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=3, evictionLimit=1)
+2026-04-24T11:50:52.288+08:00  WARN 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for MOVIES-SERVICE/10.27.6.29:movies-service:8084
+2026-04-24T11:50:52.288+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance MOVIES-SERVICE/10.27.6.29:movies-service:8084 (replication=false)
+2026-04-24T12:36:18.984+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: MOVIES-SERVICE - 10.27.6.29:movies-service:8084
+2026-04-24T12:36:18.984+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-8] c.n.eureka.resources.InstanceResource    : Not Found (Renew): MOVIES-SERVICE - 10.27.6.29:movies-service:8084
+2026-04-24T12:36:18.988+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance MOVIES-SERVICE/10.27.6.29:movies-service:8084 with status UP (replication=false)
+2026-04-24T12:36:19.506+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance MOVIES-SERVICE/10.27.6.29:movies-service:8084 with status UP (replication=true)
+2026-04-24T14:11:43.263+08:00  INFO 56030 --- [eureka-server] [hresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 0
+2026-04-24T14:11:43.624+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
+2026-04-24T14:11:43.624+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=2, evictionLimit=1)
+2026-04-24T14:11:43.625+08:00  WARN 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for GATEWAY-SERVICE/10.27.6.29:gateway-service:8080
+2026-04-24T14:11:43.625+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 (replication=false)
+2026-04-24T14:29:42.141+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: GATEWAY-SERVICE - 10.27.6.29:gateway-service:8080
+2026-04-24T14:29:42.141+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-9] c.n.eureka.resources.InstanceResource    : Not Found (Renew): GATEWAY-SERVICE - 10.27.6.29:gateway-service:8080
+2026-04-24T14:29:42.154+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 with status UP (replication=false)
+2026-04-24T14:29:42.656+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 with status UP (replication=true)
+2026-04-24T16:33:35.911+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
+2026-04-24T16:33:35.912+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=3, evictionLimit=1)
+2026-04-24T16:33:35.912+08:00  WARN 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for MOVIES-SERVICE/10.27.6.29:movies-service:8081
+2026-04-24T16:33:35.913+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance MOVIES-SERVICE/10.27.6.29:movies-service:8081 (replication=false)
+2026-04-24T16:34:41.142+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: MOVIES-SERVICE - 10.27.6.29:movies-service:8081
+2026-04-24T16:34:41.143+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-4] c.n.eureka.resources.InstanceResource    : Not Found (Renew): MOVIES-SERVICE - 10.27.6.29:movies-service:8081
+2026-04-24T16:34:41.160+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance MOVIES-SERVICE/10.27.6.29:movies-service:8081 with status UP (replication=false)
+2026-04-24T16:34:41.669+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance MOVIES-SERVICE/10.27.6.29:movies-service:8081 with status UP (replication=true)
+2026-04-24T17:56:48.920+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
+2026-04-24T17:56:48.922+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=3, evictionLimit=1)
+2026-04-24T17:56:48.923+08:00  WARN 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for MOVIES-SERVICE/10.27.6.29:movies-service:8081
+2026-04-24T17:56:48.923+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance MOVIES-SERVICE/10.27.6.29:movies-service:8081 (replication=false)
+2026-04-24T18:24:55.861+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: MOVIES-SERVICE - 10.27.6.29:movies-service:8081
+2026-04-24T18:24:55.861+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-4] c.n.eureka.resources.InstanceResource    : Not Found (Renew): MOVIES-SERVICE - 10.27.6.29:movies-service:8081
+2026-04-24T18:24:55.871+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance MOVIES-SERVICE/10.27.6.29:movies-service:8081 with status UP (replication=false)
+2026-04-24T18:24:56.380+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance MOVIES-SERVICE/10.27.6.29:movies-service:8081 with status UP (replication=true)
+2026-04-24T20:13:47.724+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
+2026-04-24T20:13:47.725+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=3, evictionLimit=1)
+2026-04-24T20:13:47.725+08:00  WARN 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for MOVIES-SERVICE/10.27.6.29:movies-service:8084
+2026-04-24T20:13:47.726+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance MOVIES-SERVICE/10.27.6.29:movies-service:8084 (replication=false)
+2026-04-24T21:00:55.834+08:00  WARN 56030 --- [eureka-server] [io-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: MOVIES-SERVICE - 10.27.6.29:movies-service:8084
+2026-04-24T21:00:55.834+08:00  WARN 56030 --- [eureka-server] [io-8761-exec-10] c.n.eureka.resources.InstanceResource    : Not Found (Renew): MOVIES-SERVICE - 10.27.6.29:movies-service:8084
+2026-04-24T21:00:55.850+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance MOVIES-SERVICE/10.27.6.29:movies-service:8084 with status UP (replication=false)
+2026-04-24T21:00:56.360+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance MOVIES-SERVICE/10.27.6.29:movies-service:8084 with status UP (replication=true)
+2026-04-24T23:02:25.846+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
+2026-04-24T23:02:25.848+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=3, evictionLimit=1)
+2026-04-24T23:02:25.848+08:00  WARN 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for GATEWAY-SERVICE/10.27.6.29:gateway-service:8080
+2026-04-24T23:02:25.849+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 (replication=false)
+2026-04-24T23:17:27.898+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: GATEWAY-SERVICE - 10.27.6.29:gateway-service:8080
+2026-04-24T23:17:27.899+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-9] c.n.eureka.resources.InstanceResource    : Not Found (Renew): GATEWAY-SERVICE - 10.27.6.29:gateway-service:8080
+2026-04-24T23:17:27.902+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 with status UP (replication=false)
+2026-04-24T23:17:28.417+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 with status UP (replication=true)
+2026-04-25T01:49:15.925+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
+2026-04-25T01:49:15.927+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=3, evictionLimit=1)
+2026-04-25T01:49:15.927+08:00  WARN 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for MOVIES-SERVICE/10.27.6.29:movies-service:8084
+2026-04-25T01:49:15.927+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance MOVIES-SERVICE/10.27.6.29:movies-service:8084 (replication=false)
+2026-04-25T02:22:34.025+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: MOVIES-SERVICE - 10.27.6.29:movies-service:8084
+2026-04-25T02:22:34.025+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-3] c.n.eureka.resources.InstanceResource    : Not Found (Renew): MOVIES-SERVICE - 10.27.6.29:movies-service:8084
+2026-04-25T02:22:34.034+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance MOVIES-SERVICE/10.27.6.29:movies-service:8084 with status UP (replication=false)
+2026-04-25T02:22:34.549+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance MOVIES-SERVICE/10.27.6.29:movies-service:8084 with status UP (replication=true)
+2026-04-25T04:29:49.692+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 16ms
+2026-04-25T04:29:49.693+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=3, evictionLimit=1)
+2026-04-25T04:29:49.693+08:00  WARN 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for MOVIES-SERVICE/10.27.6.29:movies-service:8084
+2026-04-25T04:29:49.694+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance MOVIES-SERVICE/10.27.6.29:movies-service:8084 (replication=false)
+2026-04-25T05:22:22.685+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: MOVIES-SERVICE - 10.27.6.29:movies-service:8084
+2026-04-25T05:22:22.687+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-7] c.n.eureka.resources.InstanceResource    : Not Found (Renew): MOVIES-SERVICE - 10.27.6.29:movies-service:8084
+2026-04-25T05:22:22.696+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance MOVIES-SERVICE/10.27.6.29:movies-service:8084 with status UP (replication=false)
+2026-04-25T05:22:23.207+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance MOVIES-SERVICE/10.27.6.29:movies-service:8084 with status UP (replication=true)
+2026-04-25T07:31:33.065+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
+2026-04-25T07:31:33.068+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=3, evictionLimit=1)
+2026-04-25T07:31:33.068+08:00  WARN 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for MOVIES-SERVICE/10.27.6.29:movies-service:8081
+2026-04-25T07:31:33.069+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance MOVIES-SERVICE/10.27.6.29:movies-service:8081 (replication=false)
+2026-04-25T08:05:54.703+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: MOVIES-SERVICE - 10.27.6.29:movies-service:8081
+2026-04-25T08:05:54.703+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-5] c.n.eureka.resources.InstanceResource    : Not Found (Renew): MOVIES-SERVICE - 10.27.6.29:movies-service:8081
+2026-04-25T08:05:54.710+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance MOVIES-SERVICE/10.27.6.29:movies-service:8081 with status UP (replication=false)
+2026-04-25T10:22:11.872+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
+2026-04-25T10:22:11.873+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=3, evictionLimit=1)
+2026-04-25T10:22:11.873+08:00  WARN 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for MOVIES-SERVICE/10.27.6.29:movies-service:8084
+2026-04-25T10:22:11.873+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance MOVIES-SERVICE/10.27.6.29:movies-service:8084 (replication=false)
+2026-04-25T11:07:39.199+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: MOVIES-SERVICE - 10.27.6.29:movies-service:8084
+2026-04-25T11:07:39.200+08:00  WARN 56030 --- [eureka-server] [nio-8761-exec-3] c.n.eureka.resources.InstanceResource    : Not Found (Renew): MOVIES-SERVICE - 10.27.6.29:movies-service:8084
+2026-04-25T11:07:39.210+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance MOVIES-SERVICE/10.27.6.29:movies-service:8084 with status UP (replication=false)
+2026-04-25T11:07:39.717+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance MOVIES-SERVICE/10.27.6.29:movies-service:8084 with status UP (replication=true)
+2026-04-25T13:08:17.391+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
+2026-04-25T13:08:17.393+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=3, evictionLimit=1)
+2026-04-25T13:08:17.394+08:00  WARN 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for GATEWAY-SERVICE/10.27.6.29:gateway-service:8080
+2026-04-25T13:08:17.394+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 (replication=false)
+2026-04-25T13:24:27.489+08:00  WARN 56030 --- [eureka-server] [io-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: GATEWAY-SERVICE - 10.27.6.29:gateway-service:8080
+2026-04-25T13:24:27.489+08:00  WARN 56030 --- [eureka-server] [io-8761-exec-10] c.n.eureka.resources.InstanceResource    : Not Found (Renew): GATEWAY-SERVICE - 10.27.6.29:gateway-service:8080
+2026-04-25T13:24:27.493+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 with status UP (replication=false)
+2026-04-25T13:24:28.003+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/10.27.6.29:gateway-service:8080 with status UP (replication=true)
+2026-04-25T14:02:33.106+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2026-04-25T14:03:33.111+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2026-04-25T14:03:52.153+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/mac:user-portal-service:8082 with status UP (replication=false)
+2026-04-25T14:03:52.667+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/mac:user-portal-service:8082 with status UP (replication=true)
+2026-04-25T14:03:53.805+08:00  INFO 56030 --- [eureka-server] [io-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/mac:user-portal-service:8085 with status UP (replication=false)
+2026-04-25T14:03:54.316+08:00  INFO 56030 --- [eureka-server] [nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-PORTAL-SERVICE/mac:user-portal-service:8085 with status UP (replication=true)
+2026-04-25T14:04:33.114+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2026-04-25T14:05:33.115+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2026-04-25T14:06:33.120+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2026-04-25T14:07:32.653+08:00  INFO 56030 --- [eureka-server] [hresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 0
+2026-04-25T14:07:33.124+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2026-04-25T14:08:33.127+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2026-04-25T14:09:33.128+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2026-04-25T14:10:33.132+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2026-04-25T14:11:33.136+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2026-04-25T14:12:33.141+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2026-04-25T14:13:33.142+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2026-04-25T14:14:33.146+08:00  INFO 56030 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms

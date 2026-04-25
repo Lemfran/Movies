@@ -78,7 +78,7 @@ public class PortalIndexController {
             List<Review> allReviews = reviewClient.findAllReviews().getData();
             if (allReviews != null) {
                 allReviews.sort((a, b) -> b.getCreatedAt().compareTo(a.getCreatedAt()));
-                int recentCount = Math.min(6, allReviews.size());
+                int recentCount = Math.min(4, allReviews.size());
                 List<Review> recentReviews = allReviews.subList(0, recentCount);
                 for (Review r : recentReviews) {
                     User u = userClient.findUserById(r.getUserId()).getData();
@@ -101,7 +101,7 @@ public class PortalIndexController {
                 if (myReviewCount > 0) {
                     myAvgScore = myReviews.stream().mapToInt(Review::getScore).average().orElse(0);
                     myReviews.sort((a, b) -> b.getCreatedAt().compareTo(a.getCreatedAt()));
-                    int myCount = Math.min(3, myReviews.size());
+                    int myCount = Math.min(4, myReviews.size());
                     recentMyReviews = myReviews.subList(0, myCount);
                     for (Review r : recentMyReviews) {
                         Movie m = movieClient.findMovieById(r.getMovieId()).getData();

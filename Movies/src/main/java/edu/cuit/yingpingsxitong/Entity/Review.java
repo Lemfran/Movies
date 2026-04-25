@@ -1,6 +1,9 @@
 package edu.cuit.yingpingsxitong.Entity;
 
-public class Review {
+import java.io.Serializable;
+
+public class Review implements Serializable {
+    private static final long serialVersionUID = 1L;
     private Integer reviewId;
     private Integer movieId;
     private Integer userId;

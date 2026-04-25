@@ -1,6 +1,9 @@
 package edu.cuit.userportal.entity;
 
-public class Movie {
+import java.io.Serializable;
+
+public class Movie implements Serializable {
+    private static final long serialVersionUID = 1L;
     private Integer movieId;
     private String title;
     private String description;

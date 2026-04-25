@@ -12,9 +12,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 @Controller
 public class ManagerController {
@@ -26,6 +33,31 @@ public class ManagerController {
     private ReviewClient reviewClient;
     @Autowired
     private LogClient logClient;
+
+    private static final String UPLOAD_DIR = "/Users/fanjinchen/工程实践/Movies/uploads/posters/";
+
+    private String savePosterFile(MultipartFile posterFile) {
+        if (posterFile == null || posterFile.isEmpty()) {
+            return null;
+        }
+        try {
+            File dir = new File(UPLOAD_DIR);
+            if (!dir.exists()) {
+                dir.mkdirs();
+            }
+            String originalName = posterFile.getOriginalFilename();
+            String ext = "";
+            if (originalName != null && originalName.contains(".")) {
+                ext = originalName.substring(originalName.lastIndexOf("."));
+            }
+            String filename = UUID.randomUUID() + ext;
+            Path path = Paths.get(UPLOAD_DIR + filename);
+            Files.write(path, posterFile.getBytes());
+            return "/uploads/posters/" + filename;
+        } catch (IOException e) {
+            throw new RuntimeException("海报上传失败", e);
+        }
+    }
 
     private User getUserFromSession(HttpSession session, Model model) {
         User user = (User) session.getAttribute("user");
@@ -170,11 +202,15 @@ public class ManagerController {
 
     @RequestMapping("/updateMovie")
     public String updateMovie(@RequestParam("movieId") Integer movieId, @RequestParam("title") String title, @RequestParam("description") String description, @RequestParam("releaseDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date releaseDate, @RequestParam("runtime") Integer runtime,
-                              @RequestParam("posterImage") String posterImage, HttpSession session, Model model) {
+                              @RequestParam(value = "posterImage", required = false) String posterImage, @RequestParam(value = "posterFile", required = false) MultipartFile posterFile, HttpSession session, Model model) {
         User user = getUserFromSession(session, model);
         if (user == null) {
             model.addAttribute("error", "请先登录");
             return "error";
+        }
+        String savedPoster = savePosterFile(posterFile);
+        if (savedPoster != null) {
+            posterImage = savedPoster;
         }
         Movie movie = new Movie(title,description,releaseDate,runtime,posterImage);
         movie.setMovieId(movieId);
@@ -194,12 +230,16 @@ public class ManagerController {
 
     @RequestMapping("/submitMovie")
     public String submitMovie(@RequestParam("title") String title, @RequestParam("description") String description, @RequestParam("releaseDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date releaseDate, @RequestParam("runtime") Integer runtime,
-                              @RequestParam("posterImage") String posterImage,
+                              @RequestParam(value = "posterImage", required = false) String posterImage, @RequestParam(value = "posterFile", required = false) MultipartFile posterFile,
                               HttpSession session, Model model) {
         User user = getUserFromSession(session, model);
         if (user == null) {
             model.addAttribute("error", "请先登录");
             return "error";
+        }
+        String savedPoster = savePosterFile(posterFile);
+        if (savedPoster != null) {
+            posterImage = savedPoster;
         }
         Movie movie = new Movie(title,description,releaseDate,runtime,posterImage);
         movieClient.insertMovie(movie);
