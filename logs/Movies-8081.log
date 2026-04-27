@@ -8,669 +8,123 @@
 
  :: Spring Boot ::                (v3.4.1)
 
-2026-04-23T16:24:45.536+08:00  INFO 56107 --- [movies-service] [           main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2026-04-23T16:24:45.679+08:00  INFO 56107 --- [movies-service] [           main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=movies-service, profiles=[dev], label=main, version=null, state=null
-2026-04-23T16:24:45.679+08:00  INFO 56107 --- [movies-service] [           main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}]
-2026-04-23T16:24:45.684+08:00  INFO 56107 --- [movies-service] [           main] e.c.y.YingpingsxitongApplication         : No active profile set, falling back to 1 default profile: "default"
-2026-04-23T16:24:46.099+08:00  INFO 56107 --- [movies-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-04-23T16:24:46.100+08:00  INFO 56107 --- [movies-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2026-04-23T16:24:46.110+08:00  INFO 56107 --- [movies-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
-2026-04-23T16:24:46.288+08:00  INFO 56107 --- [movies-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1e8f1ff3-997a-3908-8c91-f0ed70f1c4cd
+2026-04-26T12:59:55.076+08:00  INFO 67727 --- [movies-service] [           main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2026-04-26T12:59:55.217+08:00  INFO 67727 --- [movies-service] [           main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=movies-service, profiles=[dev], label=main, version=null, state=null
+2026-04-26T12:59:55.218+08:00  INFO 67727 --- [movies-service] [           main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}]
+2026-04-26T12:59:55.226+08:00  INFO 67727 --- [movies-service] [           main] e.c.y.YingpingsxitongApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-26T12:59:55.668+08:00  INFO 67727 --- [movies-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-26T12:59:55.669+08:00  INFO 67727 --- [movies-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-04-26T12:59:55.680+08:00  INFO 67727 --- [movies-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2026-04-26T12:59:55.799+08:00  INFO 67727 --- [movies-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1e8f1ff3-997a-3908-8c91-f0ed70f1c4cd
 WARNING: A restricted method in java.lang.System has been called
 WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (jar:nested:/Users/fanjinchen/工程实践/Movies/Movies/target/yingpingsxitong-0.0.1-SNAPSHOT.jar/!BOOT-INF/lib/tomcat-embed-core-10.1.34.jar!/)
 WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
 WARNING: Restricted methods will be blocked in a future release unless native access is enabled
 
-2026-04-23T16:24:46.614+08:00  INFO 56107 --- [movies-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2026-04-23T16:24:46.621+08:00  INFO 56107 --- [movies-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-04-23T16:24:46.621+08:00  INFO 56107 --- [movies-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
-2026-04-23T16:24:46.636+08:00  INFO 56107 --- [movies-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-04-23T16:24:46.636+08:00  INFO 56107 --- [movies-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 940 ms
-2026-04-23T16:24:46.987+08:00  INFO 56107 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
-2026-04-23T16:24:47.021+08:00  INFO 56107 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
-2026-04-23T16:24:47.030+08:00  INFO 56107 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
-2026-04-23T16:24:47.042+08:00  INFO 56107 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
-2026-04-23T16:24:47.092+08:00  WARN 56107 --- [movies-service] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+2026-04-26T12:59:56.127+08:00  INFO 67727 --- [movies-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-04-26T12:59:56.135+08:00  INFO 67727 --- [movies-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-26T12:59:56.135+08:00  INFO 67727 --- [movies-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-04-26T12:59:56.149+08:00  INFO 67727 --- [movies-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-26T12:59:56.149+08:00  INFO 67727 --- [movies-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 909 ms
+2026-04-26T12:59:56.538+08:00  INFO 67727 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
+2026-04-26T12:59:56.578+08:00  INFO 67727 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
+2026-04-26T12:59:56.588+08:00  INFO 67727 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
+2026-04-26T12:59:56.598+08:00  INFO 67727 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
+2026-04-26T12:59:56.650+08:00  WARN 67727 --- [movies-service] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 65284d24-6a2a-4098-97b5-4c19e833a002
+Using generated security password: 91484d1b-3a46-4c0f-b7ce-c6fdde9ffd15
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2026-04-23T16:24:47.097+08:00  INFO 56107 --- [movies-service] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-26T12:59:56.654+08:00  INFO 67727 --- [movies-service] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
 WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
 WARNING: sun.misc.Unsafe::allocateMemory has been called by io.netty.util.internal.PlatformDependent0$2 (jar:nested:/Users/fanjinchen/工程实践/Movies/Movies/target/yingpingsxitong-0.0.1-SNAPSHOT.jar/!BOOT-INF/lib/netty-common-4.1.116.Final.jar!/)
 WARNING: Please consider reporting this to the maintainers of class io.netty.util.internal.PlatformDependent0$2
 WARNING: sun.misc.Unsafe::allocateMemory will be removed in a future release
-2026-04-23T16:24:47.518+08:00  INFO 56107 --- [movies-service] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 18 endpoints beneath base path '/actuator'
-2026-04-23T16:24:47.804+08:00  INFO 56107 --- [movies-service] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2026-04-23T16:24:47.821+08:00  WARN 56107 --- [movies-service] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-04-23T16:24:47.857+08:00  INFO 56107 --- [movies-service] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2026-04-23T16:24:47.872+08:00  INFO 56107 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2026-04-23T16:24:47.878+08:00  INFO 56107 --- [movies-service] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-23T16:24:47.884+08:00  INFO 56107 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2026-04-23T16:24:47.884+08:00  INFO 56107 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2026-04-23T16:24:47.884+08:00  INFO 56107 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2026-04-23T16:24:47.884+08:00  INFO 56107 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2026-04-23T16:24:47.884+08:00  INFO 56107 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2026-04-23T16:24:47.884+08:00  INFO 56107 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2026-04-23T16:24:47.884+08:00  INFO 56107 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2026-04-23T16:24:48.052+08:00  INFO 56107 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2026-04-23T16:24:48.053+08:00  INFO 56107 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2026-04-23T16:24:48.053+08:00  INFO 56107 --- [movies-service] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-04-23T16:24:48.054+08:00  INFO 56107 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1776932688053 with initial instances count: 0
-2026-04-23T16:24:48.056+08:00  INFO 56107 --- [movies-service] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MOVIES-SERVICE with eureka with status UP
-2026-04-23T16:24:48.057+08:00  INFO 56107 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1776932688057, current=UP, previous=STARTING]
-2026-04-23T16:24:48.058+08:00  INFO 56107 --- [movies-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/10.27.6.29:movies-service:8081: registering service...
-2026-04-23T16:24:48.070+08:00  INFO 56107 --- [movies-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
-2026-04-23T16:24:48.070+08:00  INFO 56107 --- [movies-service] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8081
-2026-04-23T16:24:48.090+08:00  INFO 56107 --- [movies-service] [           main] e.c.y.YingpingsxitongApplication         : Started YingpingsxitongApplication in 2.922 seconds (process running for 3.127)
-2026-04-23T16:24:48.131+08:00  INFO 56107 --- [movies-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/10.27.6.29:movies-service:8081 - registration status: 204
-2026-04-23T16:25:18.059+08:00  INFO 56107 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2026-04-23T16:25:18.062+08:00  INFO 56107 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2026-04-23T16:25:18.062+08:00  INFO 56107 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2026-04-23T16:25:18.062+08:00  INFO 56107 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2026-04-23T16:25:18.062+08:00  INFO 56107 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2026-04-23T16:25:18.062+08:00  INFO 56107 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
-2026-04-23T16:25:18.062+08:00  INFO 56107 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2026-04-23T16:25:18.097+08:00  INFO 56107 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2026-04-23T16:29:47.894+08:00  INFO 56107 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-23T16:34:47.905+08:00  INFO 56107 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-23T16:35:00.705+08:00  INFO 56107 --- [movies-service] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-04-23T16:35:00.707+08:00  INFO 56107 --- [movies-service] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-04-23T16:35:00.714+08:00  INFO 56107 --- [movies-service] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
-2026-04-23T16:35:00.759+08:00  INFO 56107 --- [movies-service] [nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-04-23T16:35:00.836+08:00  INFO 56107 --- [movies-service] [nio-8081-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@14459ec
-2026-04-23T16:35:00.837+08:00  INFO 56107 --- [movies-service] [nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-04-23T16:39:47.920+08:00  INFO 56107 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-23T16:44:47.931+08:00  INFO 56107 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-23T16:47:48.387+08:00 ERROR 56107 --- [movies-service] [nio-8081-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
-
-org.springframework.data.redis.serializer.SerializationException: Cannot deserialize
-	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.deserialize(JdkSerializationRedisSerializer.java:111) ~[spring-data-redis-3.4.1.jar!/:3.4.1]
-	at org.springframework.data.redis.core.AbstractOperations.deserializeHashValue(AbstractOperations.java:400) ~[spring-data-redis-3.4.1.jar!/:3.4.1]
-	at org.springframework.data.redis.core.AbstractOperations.deserializeHashMap(AbstractOperations.java:344) ~[spring-data-redis-3.4.1.jar!/:3.4.1]
-	at org.springframework.data.redis.core.DefaultHashOperations.entries(DefaultHashOperations.java:237) ~[spring-data-redis-3.4.1.jar!/:3.4.1]
-	at org.springframework.session.data.redis.RedisSessionRepository.findById(RedisSessionRepository.java:138) ~[spring-session-data-redis-3.4.1.jar!/:3.4.1]
-	at org.springframework.session.data.redis.RedisSessionRepository.findById(RedisSessionRepository.java:45) ~[spring-session-data-redis-3.4.1.jar!/:3.4.1]
-	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.getRequestedSession(SessionRepositoryFilter.java:352) ~[spring-session-core-3.4.1.jar!/:3.4.1]
-	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.getSession(SessionRepositoryFilter.java:286) ~[spring-session-core-3.4.1.jar!/:3.4.1]
-	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.getSession(SessionRepositoryFilter.java:193) ~[spring-session-core-3.4.1.jar!/:3.4.1]
-	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:221) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:221) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:221) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.springframework.web.util.WebUtils.getSessionId(WebUtils.java:360) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.servlet.FrameworkServlet.publishRequestHandledEvent(FrameworkServlet.java:1152) ~[spring-webmvc-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1031) ~[spring-webmvc-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.1.jar!/:6.2.1]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.1.jar!/:6.2.1]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:479) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:340) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:82) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:128) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243) ~[spring-webmvc-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:238) ~[spring-security-config-6.4.2.jar!/:6.4.2]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:142) ~[spring-session-core-3.4.1.jar!/:3.4.1]
-	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:82) ~[spring-session-core-3.4.1.jar!/:3.4.1]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
-Caused by: org.springframework.core.serializer.support.SerializationFailedException: Failed to deserialize payload. Is the byte array a result of corresponding serialization for DefaultDeserializer?
-	at org.springframework.core.serializer.support.DeserializingConverter.convert(DeserializingConverter.java:80) ~[spring-core-6.2.1.jar!/:6.2.1]
-	at org.springframework.core.serializer.support.DeserializingConverter.convert(DeserializingConverter.java:37) ~[spring-core-6.2.1.jar!/:6.2.1]
-	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.deserialize(JdkSerializationRedisSerializer.java:109) ~[spring-data-redis-3.4.1.jar!/:3.4.1]
-	... 126 common frames omitted
-Caused by: java.io.IOException: Failed to deserialize object type
-	at org.springframework.core.serializer.DefaultDeserializer.deserialize(DefaultDeserializer.java:74) ~[spring-core-6.2.1.jar!/:6.2.1]
-	at org.springframework.core.serializer.support.DeserializingConverter.convert(DeserializingConverter.java:75) ~[spring-core-6.2.1.jar!/:6.2.1]
-	... 128 common frames omitted
-Caused by: java.lang.ClassNotFoundException: edu.cuit.userportal.entity.Movie
-	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:377) ~[na:na]
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:557) ~[na:na]
-	at org.springframework.boot.loader.net.protocol.jar.JarUrlClassLoader.loadClass(JarUrlClassLoader.java:107) ~[yingpingsxitong-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
-	at org.springframework.boot.loader.launch.LaunchedClassLoader.loadClass(LaunchedClassLoader.java:91) ~[yingpingsxitong-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
-	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
-	at java.base/java.lang.Class.forName(Class.java:547) ~[na:na]
-	at org.springframework.util.ClassUtils.forName(ClassUtils.java:321) ~[spring-core-6.2.1.jar!/:6.2.1]
-	at org.springframework.core.ConfigurableObjectInputStream.resolveClass(ConfigurableObjectInputStream.java:76) ~[spring-core-6.2.1.jar!/:6.2.1]
-	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1912) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1785) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2101) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1620) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:487) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:445) ~[na:na]
-	at java.base/java.util.ArrayList.readObject(ArrayList.java:982) ~[na:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
-	at java.base/java.io.ObjectStreamClass.invokeReadObject(ObjectStreamClass.java:976) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2302) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2133) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1620) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:487) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:445) ~[na:na]
-	at org.springframework.core.serializer.DefaultDeserializer.deserialize(DefaultDeserializer.java:71) ~[spring-core-6.2.1.jar!/:6.2.1]
-	... 129 common frames omitted
-
-2026-04-23T16:47:48.395+08:00 ERROR 56107 --- [movies-service] [nio-8081-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] threw exception
-
-org.springframework.data.redis.serializer.SerializationException: Cannot deserialize
-	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.deserialize(JdkSerializationRedisSerializer.java:111) ~[spring-data-redis-3.4.1.jar!/:3.4.1]
-	at org.springframework.data.redis.core.AbstractOperations.deserializeHashValue(AbstractOperations.java:400) ~[spring-data-redis-3.4.1.jar!/:3.4.1]
-	at org.springframework.data.redis.core.AbstractOperations.deserializeHashMap(AbstractOperations.java:344) ~[spring-data-redis-3.4.1.jar!/:3.4.1]
-	at org.springframework.data.redis.core.DefaultHashOperations.entries(DefaultHashOperations.java:237) ~[spring-data-redis-3.4.1.jar!/:3.4.1]
-	at org.springframework.session.data.redis.RedisSessionRepository.findById(RedisSessionRepository.java:138) ~[spring-session-data-redis-3.4.1.jar!/:3.4.1]
-	at org.springframework.session.data.redis.RedisSessionRepository.findById(RedisSessionRepository.java:45) ~[spring-session-data-redis-3.4.1.jar!/:3.4.1]
-	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.getRequestedSession(SessionRepositoryFilter.java:352) ~[spring-session-core-3.4.1.jar!/:3.4.1]
-	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.getSession(SessionRepositoryFilter.java:286) ~[spring-session-core-3.4.1.jar!/:3.4.1]
-	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.getSession(SessionRepositoryFilter.java:193) ~[spring-session-core-3.4.1.jar!/:3.4.1]
-	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:221) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:221) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.springframework.web.util.WebUtils.getSessionId(WebUtils.java:360) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.servlet.FrameworkServlet.publishRequestHandledEvent(FrameworkServlet.java:1152) ~[spring-webmvc-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1031) ~[spring-webmvc-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.1.jar!/:6.2.1]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.1.jar!/:6.2.1]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:479) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:340) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:82) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:128) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243) ~[spring-webmvc-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:238) ~[spring-security-config-6.4.2.jar!/:6.4.2]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:142) ~[spring-session-core-3.4.1.jar!/:3.4.1]
-	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:82) ~[spring-session-core-3.4.1.jar!/:3.4.1]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:633) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:411) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:331) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:268) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:380) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:208) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:285) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:149) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
-Caused by: org.springframework.core.serializer.support.SerializationFailedException: Failed to deserialize payload. Is the byte array a result of corresponding serialization for DefaultDeserializer?
-	at org.springframework.core.serializer.support.DeserializingConverter.convert(DeserializingConverter.java:80) ~[spring-core-6.2.1.jar!/:6.2.1]
-	at org.springframework.core.serializer.support.DeserializingConverter.convert(DeserializingConverter.java:37) ~[spring-core-6.2.1.jar!/:6.2.1]
-	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.deserialize(JdkSerializationRedisSerializer.java:109) ~[spring-data-redis-3.4.1.jar!/:3.4.1]
-	... 116 common frames omitted
-Caused by: java.io.IOException: Failed to deserialize object type
-	at org.springframework.core.serializer.DefaultDeserializer.deserialize(DefaultDeserializer.java:74) ~[spring-core-6.2.1.jar!/:6.2.1]
-	at org.springframework.core.serializer.support.DeserializingConverter.convert(DeserializingConverter.java:75) ~[spring-core-6.2.1.jar!/:6.2.1]
-	... 118 common frames omitted
-Caused by: java.lang.ClassNotFoundException: edu.cuit.userportal.entity.Movie
-	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:377) ~[na:na]
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:557) ~[na:na]
-	at org.springframework.boot.loader.net.protocol.jar.JarUrlClassLoader.loadClass(JarUrlClassLoader.java:107) ~[yingpingsxitong-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
-	at org.springframework.boot.loader.launch.LaunchedClassLoader.loadClass(LaunchedClassLoader.java:91) ~[yingpingsxitong-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
-	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
-	at java.base/java.lang.Class.forName(Class.java:547) ~[na:na]
-	at org.springframework.util.ClassUtils.forName(ClassUtils.java:321) ~[spring-core-6.2.1.jar!/:6.2.1]
-	at org.springframework.core.ConfigurableObjectInputStream.resolveClass(ConfigurableObjectInputStream.java:76) ~[spring-core-6.2.1.jar!/:6.2.1]
-	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1912) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1785) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2101) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1620) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:487) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:445) ~[na:na]
-	at java.base/java.util.ArrayList.readObject(ArrayList.java:982) ~[na:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
-	at java.base/java.io.ObjectStreamClass.invokeReadObject(ObjectStreamClass.java:976) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2302) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2133) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1620) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:487) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:445) ~[na:na]
-	at org.springframework.core.serializer.DefaultDeserializer.deserialize(DefaultDeserializer.java:71) ~[spring-core-6.2.1.jar!/:6.2.1]
-	... 119 common frames omitted
-
-2026-04-23T16:47:48.396+08:00 ERROR 56107 --- [movies-service] [nio-8081-exec-6] o.a.c.c.C.[Tomcat].[localhost]           : Exception Processing [ErrorPage[errorCode=0, location=/error]]
-
-org.springframework.data.redis.serializer.SerializationException: Cannot deserialize
-	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.deserialize(JdkSerializationRedisSerializer.java:111) ~[spring-data-redis-3.4.1.jar!/:3.4.1]
-	at org.springframework.data.redis.core.AbstractOperations.deserializeHashValue(AbstractOperations.java:400) ~[spring-data-redis-3.4.1.jar!/:3.4.1]
-	at org.springframework.data.redis.core.AbstractOperations.deserializeHashMap(AbstractOperations.java:344) ~[spring-data-redis-3.4.1.jar!/:3.4.1]
-	at org.springframework.data.redis.core.DefaultHashOperations.entries(DefaultHashOperations.java:237) ~[spring-data-redis-3.4.1.jar!/:3.4.1]
-	at org.springframework.session.data.redis.RedisSessionRepository.findById(RedisSessionRepository.java:138) ~[spring-session-data-redis-3.4.1.jar!/:3.4.1]
-	at org.springframework.session.data.redis.RedisSessionRepository.findById(RedisSessionRepository.java:45) ~[spring-session-data-redis-3.4.1.jar!/:3.4.1]
-	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.getRequestedSession(SessionRepositoryFilter.java:352) ~[spring-session-core-3.4.1.jar!/:3.4.1]
-	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.getSession(SessionRepositoryFilter.java:286) ~[spring-session-core-3.4.1.jar!/:3.4.1]
-	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.getSession(SessionRepositoryFilter.java:193) ~[spring-session-core-3.4.1.jar!/:3.4.1]
-	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:221) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:221) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.springframework.web.util.WebUtils.getSessionId(WebUtils.java:360) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.servlet.FrameworkServlet.publishRequestHandledEvent(FrameworkServlet.java:1152) ~[spring-webmvc-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1031) ~[spring-webmvc-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.1.jar!/:6.2.1]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.1.jar!/:6.2.1]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:479) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:340) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:82) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:128) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.4.2.jar!/:6.4.2]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243) ~[spring-webmvc-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:238) ~[spring-security-config-6.4.2.jar!/:6.4.2]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:142) ~[spring-session-core-3.4.1.jar!/:3.4.1]
-	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:82) ~[spring-session-core-3.4.1.jar!/:3.4.1]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101) ~[spring-web-6.2.1.jar!/:6.2.1]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:633) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:411) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:331) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:268) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:380) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:208) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:285) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:149) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
-Caused by: org.springframework.core.serializer.support.SerializationFailedException: Failed to deserialize payload. Is the byte array a result of corresponding serialization for DefaultDeserializer?
-	at org.springframework.core.serializer.support.DeserializingConverter.convert(DeserializingConverter.java:80) ~[spring-core-6.2.1.jar!/:6.2.1]
-	at org.springframework.core.serializer.support.DeserializingConverter.convert(DeserializingConverter.java:37) ~[spring-core-6.2.1.jar!/:6.2.1]
-	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.deserialize(JdkSerializationRedisSerializer.java:109) ~[spring-data-redis-3.4.1.jar!/:3.4.1]
-	... 116 common frames omitted
-Caused by: java.io.IOException: Failed to deserialize object type
-	at org.springframework.core.serializer.DefaultDeserializer.deserialize(DefaultDeserializer.java:74) ~[spring-core-6.2.1.jar!/:6.2.1]
-	at org.springframework.core.serializer.support.DeserializingConverter.convert(DeserializingConverter.java:75) ~[spring-core-6.2.1.jar!/:6.2.1]
-	... 118 common frames omitted
-Caused by: java.lang.ClassNotFoundException: edu.cuit.userportal.entity.Movie
-	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:377) ~[na:na]
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:557) ~[na:na]
-	at org.springframework.boot.loader.net.protocol.jar.JarUrlClassLoader.loadClass(JarUrlClassLoader.java:107) ~[yingpingsxitong-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
-	at org.springframework.boot.loader.launch.LaunchedClassLoader.loadClass(LaunchedClassLoader.java:91) ~[yingpingsxitong-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
-	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
-	at java.base/java.lang.Class.forName(Class.java:547) ~[na:na]
-	at org.springframework.util.ClassUtils.forName(ClassUtils.java:321) ~[spring-core-6.2.1.jar!/:6.2.1]
-	at org.springframework.core.ConfigurableObjectInputStream.resolveClass(ConfigurableObjectInputStream.java:76) ~[spring-core-6.2.1.jar!/:6.2.1]
-	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1912) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1785) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2101) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1620) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:487) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:445) ~[na:na]
-	at java.base/java.util.ArrayList.readObject(ArrayList.java:982) ~[na:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
-	at java.base/java.io.ObjectStreamClass.invokeReadObject(ObjectStreamClass.java:976) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2302) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2133) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1620) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:487) ~[na:na]
-	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:445) ~[na:na]
-	at org.springframework.core.serializer.DefaultDeserializer.deserialize(DefaultDeserializer.java:71) ~[spring-core-6.2.1.jar!/:6.2.1]
-	... 119 common frames omitted
-
-2026-04-23T16:49:47.941+08:00  INFO 56107 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-23T16:54:47.940+08:00  INFO 56107 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-23T16:59:47.946+08:00  INFO 56107 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-23T17:04:47.954+08:00  INFO 56107 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-23T17:09:47.963+08:00  INFO 56107 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-23T17:14:47.974+08:00  INFO 56107 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-23T17:19:47.983+08:00  INFO 56107 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-23T17:24:47.978+08:00  INFO 56107 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-23T17:29:47.987+08:00  INFO 56107 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-23T18:07:39.729+08:00  INFO 56107 --- [movies-service] [nio-8081-exec-3] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
- Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
-
-java.lang.IllegalArgumentException: Invalid character found in method name [0x020xcb0x080x000x040x060x0bwup_version0x160x033.00x060x0dTYPE_COMPRESS0x160x0120x060x09encr_type0x160x07rsapost0x060x07bea_key0x160xaccbPKu4VX+ACNnkQh34VR0zKUzy32nEMewi0Ac6KztZdESyGcnZgq/ZMgc9k+X9krPEzAPX6Fwf2ihgc36Eq4bqFFVq7ORfsfLxaYtf3XfdciSlRzIYGCNGMViHZB/EWLJ0oqr1wC+FAAIBliIi2Vwz+dRfSrqYj97dd8bpLG7yY=0x1d0x000x010x010xd00xf8=0x950xef0xca0xf5.0xd84!0xd7B0x800x17tE0x8b0xae/0xcck0xd50xc80xfa0x0e0xbb0xb00x97G0xe90xddU0xc9j0xbb0xc10x890xfe0x0d]0xeb!0xceZ0xa50xc9W@0xbfQ0xc70x0d{0xb00x9a%S0x14*0x0ff0xec0xfa!0xbdD0x150xa8,,0xc20x12L0x0d0x1eI)0x07&M0xef0x1c0xc20xe1wS(z7`+0xce0x82}&0x0a0xach.90x8e0x940xd80xb0vW0xf30x94/|0x8a0xe8;f0xd30x8b<g0xb1s0xed0xf00x91=0xbc0x00HQ0xbd{0x1a0xd1]0xadX0xf50x18N0x890xed0xb70x1c0x8a0x0d0xe40xc00xd0Hj0xf40xae0x160xff0xe90xe00xb7i>70x88d0xd10xe90x1b0x1b0xd6}0xf420xbc0x960xcf0xc90xc9m0xfc0xe90xed0xac0xfc0xa70x1d*0xc90xcaT0xab60xa85T0x940xfdm0xad0x12rw0x86^0x120x810x940x100x0600xac0xd7A0xdc0x9f0xa4q0xd10xc6j0x1f0x880x810*dvX0x9d0xd4 ]. HTTP method names must be tokens
-	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:406) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:270) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
-
-2026-04-23T18:07:39.727+08:00  INFO 56107 --- [movies-service] [nio-8081-exec-5] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
- Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
-
-java.lang.IllegalArgumentException: Invalid character found in method name [0x020xcb0x080x000x040x060x0bwup_version0x160x033.00x060x0dTYPE_COMPRESS0x160x0120x060x09encr_type0x160x07rsapost0x060x07bea_key0x160xaccbPKu4VX+ACNnkQh34VR0zKUzy32nEMewi0Ac6KztZdESyGcnZgq/ZMgc9k+X9krPEzAPX6Fwf2ihgc36Eq4bqFFVq7ORfsfLxaYtf3XfdciSlRzIYGCNGMViHZB/EWLJ0oqr1wC+FAAIBliIi2Vwz+dRfSrqYj97dd8bpLG7yY=0x1d0x000x010x010xd010xaf0xd2h_~'1Q+0x000xf60xe90xb70xa10x820xcfQ[0xe90xf90xef0x143z0xf10xf90x920xab0xb30xa0i0xb40xff0xa5*u0xad0xe30xf30x7fo0x90x0xc260xe7=0xa60xc30xf4F0x9d0xad0xae0xab.0x080xb3^0x850x9c0xcf0xfc0xde0x1e#0x140x8f0xd70x190xb70xd00x040xe5tb0xe90xff!0x990x150xd10x05m0x9e%0xc70xaf|*=C0xa9k0x170xad0xb60xa60x81B0xa5T0xe9/0x880x8dU0x99Y0xc0lO0x9d0x9d0xc60xe7+dl0x8e)J0x09CrSJ0x1e0xf40xa6s0xd80xbc0xc60xf20xd00xa5O0x870x9f0xb10x170xd40xd80x1b0xfb0x9f0xe60x82e0xf00x08p0x9cp0xe8Y$0xb88x`0x050x990x070xf80x07Q0x1f0x880xf6T0x92j0x190x100x84T0xb0Ij0xe00xd2U:m0x9b0xfe0xde0xc7E10x0f$0x0a0xbf%0x830x02S)o0xb10xd20xd30x810xec(0x1e0xeb0xbd{0xcc0xab0xd0m30xcb:0x100x00R0x870x9e20xba0x9d70xc1z\60xbcK0xa5J0xdc840xda0xaa0xe4X0xd30x1cm0xc9mi0xd80xa6V@0xc0a0x8d60x1d0xee0xc50x1b0xfb0xbf0xda0x13S0x7f}z0x8a("0xa00xd80xf00xfd_0x1c0xe9+}0xc00xe40xd90xcdz0xe80xfd0xdeC0xaa0xdc0x100xdb0xca0x9900xe1Q0xf9)0x0d0xe8?fn0xdc*w0xd2G0xcb0xba0xaa0x8d!0xe20x040xa80x0e0xcf"jOv"%1n0xed0xd8C0x900x0f0xed0xfez*0x060x9c10x880xe80xc7O0x0aN0xb9B0x02-H$P0x96*0xed0x030x170x020xce0x880xd40xa2i0xda0xb10x18Z=0xdb50xbd0xcb0x92[0xae0xf0NH0x1200x8bD90xe3f0xf60x8cJ0xe70x1f0xd8Ry0xff0x820xea'0xd40xe20x060x0dA0xcfJIo0x86E0x9d0x89mOJ0xafCt]0xf40xc80xd50xd10xc4g0xc10xd20xa60xc72Rz0x1c0xc8'0xc90xc00xb20x11#0xfc0xd1 ]. HTTP method names must be tokens
-	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:406) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:270) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
-
-2026-04-23T18:07:39.728+08:00  INFO 56107 --- [movies-service] [nio-8081-exec-4] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
- Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
-
-java.lang.IllegalArgumentException: Invalid character found in method name [0x020xbb0x080x000x040x060x0bwup_version0x160x033.00x060x0dTYPE_COMPRESS0x160x0120x060x09encr_type0x160x07rsapost0x060x07bea_key0x160xaccbPKu4VX+ACNnkQh34VR0zKUzy32nEMewi0Ac6KztZdESyGcnZgq/ZMgc9k+X9krPEzAPX6Fwf2ihgc36Eq4bqFFVq7ORfsfLxaYtf3XfdciSlRzIYGCNGMViHZB/EWLJ0oqr1wC+FAAIBliIi2Vwz+dRfSrqYj97dd8bpLG7yY=0x1d0x000x010x010xc0]0x1d0xaa0xb2m;:50x160x140x150xa10xb00x05+}0xbf&0x13+30x16P>30x9d#0xef0xe00xb8~`D0x0fn0xebz0x16@5j10xb60xfax0xc4&I0xa00x820xf10xe90xf10x99m0xc3`0xe00x9a0x050xaa;o0xbcc0x9f[0xc10x990xe4=+m0xf20xc00x070xfeh90x1f0xf3^0xba_0xe6A0xe9&0xe0L0x100x940x0a0xa40xd1av0x8bv0xab0xf10xc10x90h0x19@0xb3>d0xa220x980xea0xdb0x810xce}0xe90x170x1d)0:Ln$M0x180xb70xd60x100xe9 ]. HTTP method names must be tokens
-	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:406) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:270) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar!/:na]
-	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
-
-2026-04-23T18:25:30.308+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=54m58s978ms).
-2026-04-23T19:31:37.246+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h6m6s939ms).
-2026-04-23T19:45:09.911+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=13m32s665ms).
-2026-04-23T21:05:40.767+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h20m30s856ms).
-2026-04-23T22:24:30.717+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h18m49s950ms).
-2026-04-23T23:24:07.156+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=59m36s439ms).
-2026-04-24T00:54:10.593+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h30m3s437ms).
-2026-04-24T01:59:02.725+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h4m52s132ms).
-2026-04-24T02:38:37.494+08:00  INFO 56107 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-24T03:11:39.725+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h12m37s).
-2026-04-24T04:28:19.593+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h16m39s868ms).
-2026-04-24T05:32:36.721+08:00  INFO 56107 --- [movies-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/10.27.6.29:movies-service:8081 - Re-registering apps/MOVIES-SERVICE
-2026-04-24T05:32:36.721+08:00  INFO 56107 --- [movies-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/10.27.6.29:movies-service:8081: registering service...
-2026-04-24T05:32:36.728+08:00  INFO 56107 --- [movies-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/10.27.6.29:movies-service:8081 - registration status: 204
-2026-04-24T06:05:18.611+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h36m59s18ms).
-2026-04-24T07:32:14.603+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h26m55s992ms).
-2026-04-24T08:40:34.350+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h8m19s747ms).
-2026-04-24T09:12:23.954+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=31m49s604ms).
-2026-04-24T10:27:48.790+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h15m24s836ms).
-2026-04-24T11:35:17.566+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h7m28s776ms).
-2026-04-24T13:08:52.660+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h33m35s93ms).
-2026-04-24T14:11:12.144+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h2m19s484ms).
-2026-04-24T14:38:16.357+08:00  INFO 56107 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-24T15:10:45.649+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=59m33s506ms).
-2026-04-24T16:33:29.345+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h22m43s695ms).
-2026-04-24T16:34:41.151+08:00  INFO 56107 --- [movies-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/10.27.6.29:movies-service:8081 - Re-registering apps/MOVIES-SERVICE
-2026-04-24T16:34:41.152+08:00  INFO 56107 --- [movies-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/10.27.6.29:movies-service:8081: registering service...
-2026-04-24T16:34:41.161+08:00  INFO 56107 --- [movies-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/10.27.6.29:movies-service:8081 - registration status: 204
-2026-04-24T16:40:17.791+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m48s447ms).
-2026-04-24T17:41:19.849+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h1m2s58ms).
-2026-04-24T18:24:55.865+08:00  INFO 56107 --- [movies-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/10.27.6.29:movies-service:8081 - Re-registering apps/MOVIES-SERVICE
-2026-04-24T18:24:55.866+08:00  INFO 56107 --- [movies-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/10.27.6.29:movies-service:8081: registering service...
-2026-04-24T18:24:55.872+08:00  INFO 56107 --- [movies-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/10.27.6.29:movies-service:8081 - registration status: 204
-2026-04-24T18:42:17.496+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h57s647ms).
-2026-04-24T19:58:40.527+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h16m23s31ms).
-2026-04-24T21:16:30.302+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h17m49s775ms).
-2026-04-24T22:46:15.234+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h29m44s931ms).
-2026-04-25T00:05:13.410+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h18m58s177ms).
-2026-04-25T01:38:49.723+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h33m36s313ms).
-2026-04-25T02:20:58.433+08:00  INFO 56107 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-25T02:38:55.635+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h5s912ms).
-2026-04-25T04:13:29.528+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h34m33s893ms).
-2026-04-25T05:38:29.995+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h25m467ms).
-2026-04-25T07:15:07.903+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h36m37s907ms).
-2026-04-25T08:05:54.707+08:00  INFO 56107 --- [movies-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/10.27.6.29:movies-service:8081 - Re-registering apps/MOVIES-SERVICE
-2026-04-25T08:05:54.707+08:00  INFO 56107 --- [movies-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/10.27.6.29:movies-service:8081: registering service...
-2026-04-25T08:05:54.711+08:00  INFO 56107 --- [movies-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/10.27.6.29:movies-service:8081 - registration status: 204
-2026-04-25T08:54:41.826+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h39m33s924ms).
-2026-04-25T10:04:40.666+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h9m58s840ms).
-2026-04-25T11:34:08.049+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h29m27s383ms).
-2026-04-25T12:52:36.191+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h18m28s142ms).
-2026-04-25T13:54:19.492+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h1m43s301ms).
-2026-04-25T14:02:26.632+08:00  WARN 56107 --- [movies-service] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m7s139ms).
-2026-04-25T14:02:42.898+08:00  INFO 56107 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-25T14:07:42.903+08:00  INFO 56107 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-25T14:12:42.908+08:00  INFO 56107 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T12:59:57.083+08:00  INFO 67727 --- [movies-service] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 18 endpoints beneath base path '/actuator'
+2026-04-26T12:59:57.380+08:00  INFO 67727 --- [movies-service] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-04-26T12:59:57.398+08:00  WARN 67727 --- [movies-service] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-04-26T12:59:57.431+08:00  INFO 67727 --- [movies-service] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-04-26T12:59:57.446+08:00  INFO 67727 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-04-26T12:59:57.449+08:00  INFO 67727 --- [movies-service] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T12:59:57.456+08:00  INFO 67727 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-04-26T12:59:57.456+08:00  INFO 67727 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-04-26T12:59:57.456+08:00  INFO 67727 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-04-26T12:59:57.456+08:00  INFO 67727 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-04-26T12:59:57.456+08:00  INFO 67727 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-04-26T12:59:57.456+08:00  INFO 67727 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-04-26T12:59:57.456+08:00  INFO 67727 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-04-26T12:59:57.647+08:00  INFO 67727 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-04-26T12:59:57.648+08:00  INFO 67727 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-04-26T12:59:57.648+08:00  INFO 67727 --- [movies-service] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-04-26T12:59:57.649+08:00  INFO 67727 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1777179597649 with initial instances count: 0
+2026-04-26T12:59:57.652+08:00  INFO 67727 --- [movies-service] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MOVIES-SERVICE with eureka with status UP
+2026-04-26T12:59:57.652+08:00  INFO 67727 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1777179597652, current=UP, previous=STARTING]
+2026-04-26T12:59:57.654+08:00  INFO 67727 --- [movies-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/mac:movies-service:8081: registering service...
+2026-04-26T12:59:57.667+08:00  INFO 67727 --- [movies-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2026-04-26T12:59:57.668+08:00  INFO 67727 --- [movies-service] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8081
+2026-04-26T12:59:57.685+08:00  INFO 67727 --- [movies-service] [           main] e.c.y.YingpingsxitongApplication         : Started YingpingsxitongApplication in 3.007 seconds (process running for 3.235)
+2026-04-26T12:59:57.720+08:00  INFO 67727 --- [movies-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/mac:movies-service:8081 - registration status: 204
+2026-04-26T13:00:27.654+08:00  INFO 67727 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-04-26T13:00:27.656+08:00  INFO 67727 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-04-26T13:00:27.657+08:00  INFO 67727 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-04-26T13:00:27.657+08:00  INFO 67727 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-04-26T13:00:27.657+08:00  INFO 67727 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-04-26T13:00:27.657+08:00  INFO 67727 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2026-04-26T13:00:27.657+08:00  INFO 67727 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-04-26T13:00:27.677+08:00  INFO 67727 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-04-26T13:01:18.711+08:00  INFO 67727 --- [movies-service] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-26T13:01:18.712+08:00  INFO 67727 --- [movies-service] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-26T13:01:18.717+08:00  INFO 67727 --- [movies-service] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2026-04-26T13:01:18.750+08:00  INFO 67727 --- [movies-service] [nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-26T13:01:18.814+08:00  INFO 67727 --- [movies-service] [nio-8081-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2f191d73
+2026-04-26T13:01:18.816+08:00  INFO 67727 --- [movies-service] [nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-26T13:04:57.464+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T13:09:57.470+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T13:14:57.477+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T13:19:57.498+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T13:24:57.507+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T13:29:57.517+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T13:34:57.523+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T13:39:57.536+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T13:44:57.548+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T13:49:57.556+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T13:54:57.564+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T13:59:57.572+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T14:04:57.592+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T14:09:57.603+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T14:14:57.614+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T14:19:57.633+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T14:24:57.647+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T14:29:57.659+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T14:34:57.672+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T14:39:57.684+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T14:44:57.698+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T14:49:57.709+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T14:54:57.722+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T14:59:57.728+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T15:04:57.742+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T15:09:57.755+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T15:14:57.764+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T15:19:57.770+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T15:24:57.784+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T15:29:57.787+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T15:34:57.797+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T15:39:57.808+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T15:44:57.817+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T15:49:57.827+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T15:54:57.837+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T15:59:57.812+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T16:04:57.817+08:00  INFO 67727 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-26T16:05:21.098+08:00  INFO 67727 --- [movies-service] [ionShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MOVIES-SERVICE with eureka with status DOWN
+2026-04-26T16:05:21.099+08:00  INFO 67727 --- [movies-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1777190721099, current=DOWN, previous=UP]
+2026-04-26T16:05:21.099+08:00  INFO 67727 --- [movies-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/mac:movies-service:8081: registering service...
+2026-04-26T16:05:21.107+08:00  INFO 67727 --- [movies-service] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-26T16:05:21.110+08:00  INFO 67727 --- [movies-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/mac:movies-service:8081 - registration status: 204
+2026-04-26T16:05:21.111+08:00  INFO 67727 --- [movies-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-04-26T16:05:21.144+08:00  INFO 67727 --- [movies-service] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-26T16:05:21.148+08:00  INFO 67727 --- [movies-service] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-26T16:05:21.149+08:00  INFO 67727 --- [movies-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-04-26T16:05:24.152+08:00  INFO 67727 --- [movies-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-04-26T16:05:24.159+08:00  INFO 67727 --- [movies-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/mac:movies-service:8081 - deregister  status: 200
+2026-04-26T16:05:24.159+08:00  INFO 67727 --- [movies-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

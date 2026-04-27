@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>影评列表 - CUIT影评</title>
+    <title>影评区 - CUIT影评</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f5f7fa; min-height: 100vh; }
@@ -40,20 +40,33 @@
         .header { background: white; padding: 25px 30px; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); margin-bottom: 30px; }
         .header h1 { color: #1a202c; font-size: 1.8rem; font-weight: 600; }
 
-        /* 评论卡片 */
-        .reviews-container { display: flex; flex-direction: column; gap: 24px; }
-        .review-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: all 0.35s ease; text-decoration: none; color: inherit; display: flex; }
-        .review-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.12); }
-        .review-poster { width: 180px; min-height: 240px; flex-shrink: 0; position: relative; }
-        .review-poster img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .review-poster-overlay { position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); color: white; padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
-        .review-body { flex: 1; padding: 24px 28px; display: flex; flex-direction: column; }
-        .review-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
-        .review-movie-title { font-size: 1.3rem; font-weight: 700; color: #1a202c; margin-bottom: 6px; }
+        /* 评论卡片 - 垂直社交媒体风格 */
+        .reviews-container { display: flex; flex-direction: column; gap: 20px; }
+        .review-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: all 0.35s ease; }
+        .review-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+
+        /* 卡片头部: 用户信息 + 点赞 */
+        .review-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px 10px; }
+        .review-author { display: flex; align-items: center; gap: 10px; }
+        .review-author .user-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 0.9rem; overflow: hidden; flex-shrink: 0; }
+        .review-author .user-avatar img { width: 100%; height: 100%; object-fit: cover; }
+        .author-info { display: flex; flex-direction: column; gap: 2px; }
+        .author-name { font-weight: 600; color: #1a202c; font-size: 0.95rem; }
+        .post-time { color: #a0aec0; font-size: 0.8rem; }
+
+        /* 卡片主体: 电影信息 + 评论内容 */
+        .review-main { padding: 0 20px 12px; }
+        .movie-info-bar { display: flex; gap: 12px; padding: 12px; background: #f8f9fa; border-radius: 12px; margin-bottom: 12px; }
+        .movie-thumb { width: 56px; height: 80px; object-fit: cover; border-radius: 8px; flex-shrink: 0; display: block; }
+        .movie-thumb-link { flex-shrink: 0; text-decoration: none; }
+        .movie-meta { display: flex; flex-direction: column; justify-content: center; gap: 6px; min-width: 0; }
+        .movie-title-line { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .review-movie-title { font-size: 1.1rem; font-weight: 700; color: #1a202c; text-decoration: none; }
         .review-date { color: #a0aec0; font-size: 0.85rem; }
-        .review-stars { display: flex; gap: 3px; font-size: 1.1rem; }
-        .review-star { color: #fbbf24; }
-        .review-star.empty { color: #e2e8f0; }
+        .user-rating-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; color: #f59e0b; margin-bottom: 8px; }
+        .review-content-text { color: #4a5568; font-size: 1rem; line-height: 1.7; margin-bottom: 8px; }
+        .detail-link { color: #a0aec0; font-size: 0.8rem; text-decoration: none; display: inline-block; }
+        .detail-link:hover { color: #667eea; }
 
         /* 小数星级 */
         .star-bar { display: inline-flex; gap: 1px; font-size: 1.1rem; }
@@ -63,13 +76,106 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .review-content { color: #4a5568; font-size: 1rem; line-height: 1.7; margin-bottom: 20px; flex: 1; }
-        .review-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; border-top: 1px solid #edf2f7; }
-        .review-user { display: flex; align-items: center; gap: 10px; }
-        .user-avatar { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 0.85rem; overflow: hidden; flex-shrink: 0; }
-        .user-avatar img { width: 100%; height: 100%; object-fit: cover; }
-        .user-name { font-weight: 600; color: #2d3748; font-size: 0.95rem; }
-        .review-badge { display: inline-flex; align-items: center; gap: 4px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 8px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+        .review-stars { display: flex; gap: 3px; font-size: 1.1rem; }
+        .review-star { color: #fbbf24; }
+        .review-star.empty { color: #e2e8f0; }
+
+        /* 卡片底部: 回复区 */
+        .review-footer { padding: 0 20px 16px; }
+        .like-badge { display: inline-flex; align-items: center; gap: 5px; background: #fff0f3; color: #f5576c; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: none; }
+        .like-badge.liked { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; }
+
+        /* 朋友圈风格回复区 - 常显示 */
+        .reply-section { display: block; margin-top: 10px; }
+
+        .reply-bubble {
+            background: #f2f3f5;
+            border-radius: 8px;
+            padding: 10px 14px;
+        }
+        .reply-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 6px 0;
+        }
+        .reply-item + .reply-item {
+            margin-top: 10px;
+        }
+        .reply-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.8rem;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .reply-avatar img { width: 100%; height: 100%; object-fit: cover; }
+        .reply-content { flex: 1; min-width: 0; }
+        .reply-name {
+            color: #576b95;
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            margin-bottom: 2px;
+            text-decoration: none;
+        }
+        .reply-text {
+            font-size: 0.88rem;
+            color: #333;
+            line-height: 1.5;
+        }
+        .reply-toggle-text {
+            display: inline-block;
+            margin-top: 6px;
+            font-size: 0.8rem;
+            color: #576b95;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        .reply-toggle-text:hover { text-decoration: underline; }
+        .replies-preview .reply-item:nth-child(n+2) { display: none; }
+
+        .reply-form-inline {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+            padding: 10px 12px;
+            background: #f7fafc;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+        }
+        .reply-form-inline input[type="text"] {
+            flex: 1;
+            border: none;
+            background: transparent;
+            font-size: 0.9rem;
+            outline: none;
+            padding: 4px 8px;
+        }
+        .reply-submit-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .reply-submit-icon:hover {
+            opacity: 0.9;
+        }
 
         /* 空状态 */
         .empty-state { text-align: center; padding: 80px 20px; color: #a0aec0; background: white; border-radius: 20px; }
@@ -77,13 +183,12 @@
         .empty-state h3 { font-size: 1.4rem; color: #4a5568; margin-bottom: 10px; }
         .empty-state p { font-size: 1rem; }
 
-        @media (max-width: 1024px) { .review-poster { width: 140px; min-height: 200px; } }
         @media (max-width: 768px) {
             .sidebar { width: 100%; position: relative; height: auto; }
             .main-content { margin-left: 0; padding: 20px; }
             .container { flex-direction: column; }
-            .review-card { flex-direction: column; }
-            .review-poster { width: 100%; height: 200px; min-height: auto; }
+            .movie-info-bar { gap: 10px; }
+            .movie-thumb { width: 48px; height: 68px; }
         }
     </style>
 </head>
@@ -93,61 +198,138 @@
 
         <main class="main-content">
             <div class="header">
-                <h1 th:text="${pageTitle} ?: '影评列表'">影评列表</h1>
+                <h1 th:text="${pageTitle} ?: '影评区'">影评区</h1>
             </div>
 
             <div class="reviews-container">
-                <a th:each="review : ${reviews}" th:href="@{/user/getmovie(movieId=${review.movieId})}" class="review-card">
-                    <div class="review-poster">
-                        <img th:src="${review.moviePoster}" alt="电影海报">
-                        <div class="review-poster-overlay" th:text="${review.releaseDate} ?: ''">2024</div>
+                <div th:each="review : ${reviews}" class="review-card">
+                    <!-- 头部: 用户信息 + 点赞 -->
+                    <div class="review-header">
+                        <div class="review-author">
+                            <div class="user-avatar">
+                                <img th:if="${review.avatar != null and review.avatar != ''}" th:src="${review.avatar}" alt="avatar">
+                                <span th:unless="${review.avatar != null and review.avatar != ''}" th:text="${#strings.substring(review.username,0,1)}">U</span>
+                            </div>
+                            <div class="author-info">
+                                <span class="author-name" th:text="${review.nickname != null and review.nickname != ''} ? ${review.nickname} : ${review.username}">用户名</span>
+                                <span class="post-time" th:text="${#dates.format(review.createdAt, 'yyyy-MM-dd HH:mm')}">日期</span>
+                            </div>
+                        </div>
+                        <button type="button"
+                                th:class="${review.liked != null and review.liked} ? 'like-badge liked' : 'like-badge'"
+                                th:data-review-id="${review.reviewId}"
+                                th:data-liked="${review.liked != null and review.liked}"
+                                onclick="toggleLike(this)">
+                            <span class="like-icon" th:text="${review.liked != null and review.liked} ? '❤️' : '🤍'">🤍</span>
+                            <span class="like-count" th:text="${review.likeCount != null ? review.likeCount : 0}">0</span>
+                        </button>
                     </div>
-                    <div class="review-body">
-                        <div class="review-top">
-                            <div>
-                                <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
-                                    <div class="review-movie-title" th:text="${review.title}">电影标题</div>
-                                    <span class="movie-avg-score" th:if="${review.averageScore != null}">
-                                        <span class="star-bar" style="font-size:0.85rem;">
-                                            <span th:each="i : ${#numbers.sequence(1, 5)}"
-                                                  class="star-fill"
-                                                  th:style="'--pct:' + ${(review.averageScore >= i) ? 100 : (review.averageScore > (i - 1) ? (review.averageScore - i + 1) * 100 : 0)} + '%'">★</span>
-                                        </span>
-                                        <span style="color:#f59e0b;font-size:0.8rem;font-weight:600;" th:text="${#numbers.formatDecimal(review.averageScore, 1, 1)}">0.0</span>
+
+                    <!-- 主体: 电影信息 + 评论内容 -->
+                    <div class="review-main">
+                        <div class="movie-info-bar">
+                            <a th:href="@{/user/getmovie(movieId=${review.movieId})}" class="movie-thumb-link">
+                                <img th:src="${review.moviePoster}" class="movie-thumb" alt="电影海报">
+                            </a>
+                            <div class="movie-meta">
+                                <div class="movie-title-line">
+                                    <a th:href="@{/user/getmovie(movieId=${review.movieId})}" class="review-movie-title" th:text="${review.title}">电影标题</a>
+                                </div>
+                                <div class="user-rating-tag">
+                                    <span style="color:#718096;">评分</span>
+                                    <span class="star-bar">
+                                        <span th:each="i : ${#numbers.sequence(1, 5)}"
+                                              class="star-fill"
+                                              th:style="'--pct:' + ${(review.score >= i) ? 100 : 0} + '%'">★</span>
                                     </span>
+                                    <span style="font-weight:600;margin-left:4px;" th:text="${review.score}">0</span>
                                 </div>
-                                <div class="review-date" th:text="${#dates.format(review.createdAt, 'yyyy-MM-dd HH:mm')}">日期</div>
-                            </div>
-                            <div class="review-stars">
-                                <span class="star-bar">
-                                    <span th:each="i : ${#numbers.sequence(1, 5)}"
-                                          class="star-fill"
-                                          th:style="'--pct:' + ${(review.score >= i) ? 100 : 0} + '%'">★</span>
-                                </span>
                             </div>
                         </div>
-                        <div class="review-content" th:text="${review.content}">评论内容...</div>
-                        <div class="review-footer">
-                            <div class="review-user">
-                                <div class="user-avatar">
-                                    <img th:if="${review.avatar != null and review.avatar != ''}" th:src="${review.avatar}" alt="avatar">
-                                    <span th:unless="${review.avatar != null and review.avatar != ''}" th:text="${#strings.substring(review.username,0,1)}">U</span>
+                        <div class="review-content-text" th:text="${review.content}">评论内容...</div>
+                    </div>
+
+                    <!-- 底部: 回复区 -->
+                    <div class="review-footer">
+                        <div class="reply-section" th:id="'reply-section-' + ${review.reviewId}">
+                            <div class="reply-bubble" th:if="${review.replies != null and !#lists.isEmpty(review.replies)}"
+                                 th:class="${#lists.size(review.replies) > 1} ? 'reply-bubble replies-preview' : 'reply-bubble'"
+                                 th:id="'replies-' + ${review.reviewId}"
+                            >
+                                <div class="reply-item" th:each="reply : ${review.replies}">
+                                    <div class="reply-avatar">
+                                        <img th:if="${reply.avatar != null and reply.avatar != ''}" th:src="${reply.avatar}" alt="avatar">
+                                        <span th:unless="${reply.avatar != null and reply.avatar != ''}" th:text="${#strings.substring(reply.username,0,1)}">U</span>
+                                    </div>
+                                    <div class="reply-content">
+                                        <div class="reply-name" th:text="${reply.nickname != null and reply.nickname != ''} ? ${reply.nickname} : ${reply.username}">用户名</div>
+                                        <div class="reply-text" th:text="${reply.content}">回复内容</div>
+                                    </div>
                                 </div>
-                                <span class="user-name" th:text="${review.nickname != null and review.nickname != ''} ? ${review.nickname} : ${review.username}">用户名</span>
+                                <span class="reply-toggle-text"
+                                      th:if="${#lists.size(review.replies) > 1}"
+                                      th:onclick="|event.stopPropagation(); toggleReplies(${review.reviewId})|"
+                                      th:text="'展开 ' + ${#lists.size(review.replies) - 1} + ' 条回复'"
+                                >展开回复</span>
                             </div>
-                            <span class="review-badge">查看详情 →</span>
+                            <form class="reply-form-inline" th:action="@{/user/replyReview}" method="post" th:onsubmit="|event.stopPropagation()|">
+                                <input type="hidden" name="parentId" th:value="${review.reviewId}">
+                                <input type="hidden" name="movieId" th:value="${review.movieId}">
+                                <input type="hidden" name="redirectTo" th:value="${pageTitle == '我的影评'} ? 'myreviews' : 'reviews'">
+                                <input type="text" name="content" placeholder="回复..." required autocomplete="off">
+                                <button type="submit" class="reply-submit-icon">➤</button>
+                            </form>
                         </div>
                     </div>
-                </a>
+                </div>
 
                 <div class="empty-state" th:if="${#lists.isEmpty(reviews)}">
                     <div class="empty-state-icon">📝</div>
-                    <h3>暂无评论</h3>
-                    <p>去电影列表选择一部喜欢的电影，写下你的第一条评论吧！</p>
+                    <h3>暂无影评</h3>
+                    <p>选一部喜欢的电影，写下你的第一条影评吧！</p>
                 </div>
             </div>
         </main>
     </div>
     <script th:replace="~{fragments :: userBarScript}"></script>
+    <script>
+        function toggleReplies(reviewId) {
+            const el = document.getElementById('replies-' + reviewId);
+            const btn = el.querySelector('.reply-toggle-text');
+            if (el.classList.contains('replies-preview')) {
+                el.classList.remove('replies-preview');
+                btn.textContent = '收起回复';
+            } else {
+                el.classList.add('replies-preview');
+                const count = el.querySelectorAll('.reply-item').length - 1;
+                btn.textContent = '展开 ' + count + ' 条回复';
+            }
+        }
+
+        function toggleLike(btn) {
+            const reviewId = btn.dataset.reviewId;
+            const liked = btn.dataset.liked === 'true';
+            const formData = new FormData();
+            formData.append('reviewId', reviewId);
+            fetch('/user/likeReviewAjax', { method: 'POST', body: formData })
+                .then(res => res.json())
+                .then(data => {
+                    if (!data || !data.success) { alert(data && data.message ? data.message : '操作失败'); return; }
+                    const icon = btn.querySelector('.like-icon');
+                    const countSpan = btn.querySelector('.like-count');
+                    if (data.liked) {
+                        btn.classList.add('liked');
+                        icon.textContent = '❤️';
+                        btn.dataset.liked = 'true';
+                    } else {
+                        btn.classList.remove('liked');
+                        icon.textContent = '🤍';
+                        btn.dataset.liked = 'false';
+                    }
+                    countSpan.textContent = data.likeCount != null ? data.likeCount : 0;
+                })
+                .catch(() => alert('操作失败，请重试'));
+        }
+    </script>
 </body>
 </html>

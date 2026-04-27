@@ -1,6 +1,7 @@
 package edu.cuit.yingpingsxitong.Controller;
 
 import edu.cuit.yingpingsxitong.Entity.User;
+import edu.cuit.yingpingsxitong.Service.UserService;
 import edu.cuit.yingpingsxitong.client.MovieClient;
 import edu.cuit.yingpingsxitong.client.ReviewClient;
 import edu.cuit.yingpingsxitong.client.LogClient;
@@ -31,6 +32,9 @@ public class IndexController {
     private UserClient userClient;
 
     @Autowired
+    private UserService userService;
+
+    @Autowired
     private MovieClient movieClient;
 
     @Autowired
@@ -47,13 +51,14 @@ public class IndexController {
                         RedirectAttributes redirectAttributes) {
         Result<User> result = userClient.findUserByUsername(username);
         User user = result.getData();
-        if (user != null && user.getPassword().equals(password) && user.getPermission() && user.getManager()) {
+        boolean passwordValid = user != null && userService.validatePassword(password, user.getPassword());
+        if (passwordValid && user.getPermission() && user.getManager()) {
             model.addAttribute("user", user);
             return "redirect:/admin/home";
-        } else if (user != null && user.getPassword().equals(password) && user.getPermission() && !user.getManager()) {
+        } else if (passwordValid && user.getPermission() && !user.getManager()) {
             model.addAttribute("error", "普通用户请通过用户端入口访问");
             return "error";
-        } else if (user != null && user.getPassword().equals(password) && !user.getPermission()){
+        } else if (passwordValid && !user.getPermission()){
             model.addAttribute("error", "No Permission");
             return "error";
         }else{

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${pageTitle} + ' - CUIT影评'">推荐列表 - CUIT影评</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f5f7fa; min-height: 100vh; color: #333; line-height: 1.6; }
+        .container { display: flex; min-height: 100vh; }
+
+        /* 侧边栏 */
+        .sidebar { width: 260px; background: linear-gradient(180deg, #667eea 0%, #764ba2 100%); padding: 24px 16px; position: fixed; height: 100vh; overflow-y: auto; z-index: 100; display: flex; flex-direction: column; line-height: normal; }
+        .sidebar-header { text-align: center; margin-bottom: 32px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.15); }
+        .sidebar-header h2 { color: white; font-size: 1.4rem; font-weight: 600; }
+        .sidebar-header p { color: rgba(255,255,255,0.6); font-size: 0.8rem; margin-top: 4px; }
+        .nav-menu { list-style: none; flex: 1; }
+        .nav-item { margin-bottom: 4px; }
+        .nav-link { display: flex; align-items: center; padding: 10px 14px; color: rgba(255,255,255,0.85); text-decoration: none; border-radius: 10px; transition: all 0.25s ease; font-weight: 500; font-size: 0.92rem; }
+        .nav-link:hover { background: rgba(255,255,255,0.12); color: white; transform: translateX(3px); }
+        .nav-link.active { background: rgba(255,255,255,0.2); color: white; }
+        .nav-icon { width: 20px; height: 20px; margin-right: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+
+        .user-bar { margin-top: auto; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.15); position: relative; }
+        .user-bar-trigger { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 10px; cursor: pointer; transition: all 0.25s ease; user-select: none; }
+        .user-bar-trigger:hover { background: rgba(255,255,255,0.12); }
+        .user-bar-avatar { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 0.9rem; flex-shrink: 0; overflow: hidden; }
+        .user-bar-avatar img { width: 100%; height: 100%; object-fit: cover; }
+        .user-bar-info { flex: 1; min-width: 0; }
+        .user-bar-name { color: white; font-weight: 600; font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .user-bar-chevron { color: rgba(255,255,255,0.6); font-size: 0.8rem; transition: transform 0.25s ease; }
+        .user-bar.open .user-bar-chevron { transform: rotate(180deg); }
+        .user-dropdown { position: absolute; bottom: calc(100% + 8px); left: 0; right: 0; background: white; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); padding: 8px; opacity: 0; visibility: hidden; transform: translateY(8px); transition: all 0.25s ease; z-index: 200; }
+        .user-bar.open .user-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-item { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 8px; color: #4a5568; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.2s ease; cursor: pointer; }
+        .dropdown-item:hover { background: #f7fafc; color: #667eea; }
+        .dropdown-divider { height: 1px; background: #e2e8f0; margin: 6px 0; }
+
+        .main-content { flex: 1; margin-left: 260px; padding: 30px; }
+        .header { background: white; padding: 25px 30px; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); margin-bottom: 30px; display: flex; align-items: center; justify-content: space-between; }
+        .header h1 { color: #1a202c; font-size: 1.8rem; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+        .back-link { color: #667eea; text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 5px; transition: all 0.3s; padding: 6px 14px; border-radius: 8px; font-size: 0.9em; }
+        .back-link:hover { color: white; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+
+        .movie-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+        .movie-card { background: white; border-radius: 16px; overflow: hidden; transition: all 0.3s ease; cursor: pointer; border: 1px solid #e2e8f0; box-shadow: 0 2px 8px rgba(0,0,0,0.04); text-decoration: none; }
+        .movie-card:hover { transform: translateY(-6px); border-color: #667eea; box-shadow: 0 12px 30px rgba(102,126,234,0.15); }
+        .movie-poster { width: 100%; height: 280px; position: relative; overflow: hidden; background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e0 100%); }
+        .movie-poster img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+        .movie-card:hover .movie-poster img { transform: scale(1.05); }
+        .movie-poster .fallback { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3.5em; opacity: 0.4; }
+        .movie-info { padding: 15px; }
+        .movie-title { font-weight: 600; color: #2d3748; margin-bottom: 8px; font-size: 1em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .movie-meta { display: flex; justify-content: space-between; align-items: center; }
+        .movie-score { display: flex; align-items: center; gap: 4px; color: #f39c12; font-weight: 700; font-size: 1em; }
+        .movie-year { color: #a0aec0; font-size: 0.85em; }
+
+        .empty-state { text-align: center; padding: 50px; color: #a0aec0; }
+        .empty-state .icon { font-size: 4em; margin-bottom: 15px; opacity: 0.5; }
+
+        @media (max-width: 768px) {
+            .sidebar { width: 100%; position: relative; height: auto; }
+            .main-content { margin-left: 0; padding: 20px; }
+            .container { flex-direction: column; }
+            .header { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .movie-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+            .movie-poster { height: 200px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside th:replace="~{fragments :: sidebar('recommend')}"></aside>
+
+        <main class="main-content">
+            <div class="header">
+                <h1>
+                    <span th:text="${pageIcon}">⭐</span>
+                    <span th:text="${pageTitle}">推荐列表</span>
+                </h1>
+                <a href="/user/recommend" class="back-link">← 返回推荐首页</a>
+            </div>
+
+            <div class="movie-grid" th:if="${not #lists.isEmpty(movies)}">
+                <a th:href="@{/user/getmovie(movieId=${movie.movieId})}" class="movie-card" th:each="movie : ${movies}">
+                    <div class="movie-poster">
+                        <img th:src="${movie.posterImage}" th:alt="${movie.title}"
+                             onerror="this.style.display='none'; this.parentElement.querySelector('.fallback').style.display='block'">
+                        <div class="fallback" style="display:none">🎬</div>
+                    </div>
+                    <div class="movie-info">
+                        <div class="movie-title" th:text="${movie.title}">电影标题</div>
+                        <div class="movie-meta">
+                            <span class="movie-year" th:text="${movie.releaseDate != null} ? ${#dates.format(movie.releaseDate, 'yyyy')} : ''">2024</span>
+                            <div class="movie-score">
+                                <span>★</span>
+                                <span th:text="${movie.averageScore}">4.5</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="empty-state" th:if="${#lists.isEmpty(movies)}">
+                <div class="icon">📭</div>
+                <p th:text="${emptyMessage}">暂无数据</p>
+            </div>
+        </main>
+    </div>
+    <script th:replace="~{fragments :: userBarScript}"></script>
+</body>
+</html>

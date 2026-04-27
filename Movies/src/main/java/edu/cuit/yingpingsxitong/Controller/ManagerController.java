@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -256,5 +257,60 @@ public class ManagerController {
         List<Log> logs = logClient.findAllLog().getData();
         model.addAttribute("logs",logs);
         return "loglist";
+    }
+
+    @RequestMapping("/profile")
+    public String profile(HttpSession session, Model model) {
+        User user = getUserFromSession(session, model);
+        if (user == null) {
+            model.addAttribute("error", "请先登录");
+            return "error";
+        }
+        Result<User> result = userClient.findUserById(user.getUserId());
+        User freshUser = result.getData();
+        if (freshUser != null) {
+            model.addAttribute("user", freshUser);
+        }
+        return "adminprofile";
+    }
+
+    @PostMapping("/profile/update")
+    public String updateProfile(@RequestParam("nickname") String nickname,
+                                @RequestParam(value = "avatarFile", required = false) MultipartFile avatarFile,
+                                @RequestParam("email") String email,
+                                HttpSession session,
+                                Model model) {
+        User user = getUserFromSession(session, model);
+        if (user == null) {
+            model.addAttribute("error", "请先登录");
+            return "error";
+        }
+        user.setNickname(nickname);
+        user.setEmail(email);
+
+        if (avatarFile != null && !avatarFile.isEmpty()) {
+            try {
+                String originalName = avatarFile.getOriginalFilename();
+                String ext = originalName != null && originalName.contains(".")
+                        ? originalName.substring(originalName.lastIndexOf("."))
+                        : ".jpg";
+                String filename = UUID.randomUUID() + ext;
+                String avatarDir = "/Users/fanjinchen/工程实践/Movies/uploads/avatars/";
+                File dir = new File(avatarDir);
+                if (!dir.exists()) {
+                    dir.mkdirs();
+                }
+                Path targetPath = Paths.get(avatarDir, filename);
+                Files.write(targetPath, avatarFile.getBytes());
+                user.setAvatar("/uploads/avatars/" + filename);
+            } catch (IOException e) {
+                model.addAttribute("error", "头像上传失败: " + e.getMessage());
+                return "error";
+            }
+        }
+
+        userClient.updateUser(user);
+        session.setAttribute("user", user);
+        return "redirect:/admin/profile";
     }
 }

@@ -3,420 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>电影列表 - CUIT影评</title>
+    <title>全部电影 - CUIT影评</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f5f7fa; min-height: 100vh; }
+        .container { display: flex; min-height: 100vh; }
 
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: #f5f7fa;
-            min-height: 100vh;
-        }
-
-        .container {
-            display: flex;
-            min-height: 100vh;
-        }
-
-        /* 侧边栏样式 */
+        /* 侧边栏 */
         .sidebar {
-            width: 260px;
-            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
-            padding: 24px 16px;
-            position: fixed;
-            height: 100vh;
-            overflow-y: auto;
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
+            width: 260px; background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            padding: 24px 16px; position: fixed; height: 100vh; overflow-y: auto;
+            z-index: 100; display: flex; flex-direction: column;
         }
+        .sidebar-header { text-align: center; margin-bottom: 32px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.15); }
+        .sidebar-header h2 { color: white; font-size: 1.4rem; font-weight: 600; }
+        .sidebar-header p { color: rgba(255,255,255,0.6); font-size: 0.8rem; margin-top: 4px; }
+        .nav-menu { list-style: none; flex: 1; }
+        .nav-item { margin-bottom: 4px; }
+        .nav-link { display: flex; align-items: center; padding: 10px 14px; color: rgba(255,255,255,0.85); text-decoration: none; border-radius: 10px; transition: all 0.25s ease; font-weight: 500; font-size: 0.92rem; }
+        .nav-link:hover { background: rgba(255,255,255,0.12); color: white; transform: translateX(3px); }
+        .nav-link.active { background: rgba(255,255,255,0.2); color: white; }
+        .nav-icon { width: 20px; height: 20px; margin-right: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
 
-        .sidebar-header {
-            text-align: center;
-            margin-bottom: 32px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid rgba(255,255,255,0.15);
-        }
+        .user-bar { margin-top: auto; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.15); position: relative; }
+        .user-bar-trigger { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 10px; cursor: pointer; transition: all 0.25s ease; user-select: none; }
+        .user-bar-trigger:hover { background: rgba(255,255,255,0.12); }
+        .user-bar-avatar { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 0.9rem; flex-shrink: 0; overflow: hidden; }
+        .user-bar-avatar img { width: 100%; height: 100%; object-fit: cover; }
+        .user-bar-info { flex: 1; min-width: 0; }
+        .user-bar-name { color: white; font-weight: 600; font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .user-bar-chevron { color: rgba(255,255,255,0.6); font-size: 0.8rem; transition: transform 0.25s ease; }
+        .user-bar.open .user-bar-chevron { transform: rotate(180deg); }
+        .user-dropdown { position: absolute; bottom: calc(100% + 8px); left: 0; right: 0; background: white; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); padding: 8px; opacity: 0; visibility: hidden; transform: translateY(8px); transition: all 0.25s ease; z-index: 200; }
+        .user-bar.open .user-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-item { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 8px; color: #4a5568; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.2s ease; cursor: pointer; }
+        .dropdown-item:hover { background: #f7fafc; color: #667eea; }
+        .dropdown-divider { height: 1px; background: #e2e8f0; margin: 6px 0; }
 
-        .sidebar-header h2 {
-            color: white;
-            font-size: 1.4rem;
-            font-weight: 600;
-        }
-
-        .sidebar-header p {
-            color: rgba(255,255,255,0.6);
-            font-size: 0.8rem;
-            margin-top: 4px;
-        }
-
-.nav-menu {
-            list-style: none;
-            flex: 1;
-        }
-
-        .nav-item {
-            margin-bottom: 4px;
-        }
-
-        .nav-link {
-            display: flex;
-            align-items: center;
-            padding: 10px 14px;
-            color: rgba(255,255,255,0.85);
-            text-decoration: none;
-            border-radius: 10px;
-            transition: all 0.25s ease;
-            font-weight: 500;
-            font-size: 0.92rem;
-        }
-
-        .nav-link:hover {
-            background: rgba(255,255,255,0.12);
-            color: white;
-            transform: translateX(3px);
-        }
-
-        .nav-link.active {
-            background: rgba(255,255,255,0.2);
-            color: white;
-        }
-
-        .nav-icon {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-        }
-
-        .user-bar {
-            margin-top: auto;
-            padding-top: 12px;
-            border-top: 1px solid rgba(255,255,255,0.15);
-            position: relative;
-        }
-
-        .user-bar-trigger {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            user-select: none;
-        }
-
-        .user-bar-trigger:hover {
-            background: rgba(255,255,255,0.12);
-        }
-
-        .user-bar-avatar {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-            font-size: 0.9rem;
-            flex-shrink: 0;
-            overflow: hidden;
-        }
-
-        .user-bar-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .user-bar-info {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .user-bar-name {
-            color: white;
-            font-weight: 600;
-            font-size: 0.9rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .user-bar-chevron {
-            color: rgba(255,255,255,0.6);
-            font-size: 0.8rem;
-            transition: transform 0.25s ease;
-        }
-
-        .user-bar.open .user-bar-chevron {
-            transform: rotate(180deg);
-        }
-
-        .user-dropdown {
-            position: absolute;
-            bottom: calc(100% + 8px);
-            left: 0;
-            right: 0;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-            padding: 8px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(8px);
-            transition: all 0.25s ease;
-            z-index: 200;
-        }
-
-        .user-bar.open .user-dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .dropdown-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 12px;
-            border-radius: 8px;
-            color: #4a5568;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            cursor: pointer;
-        }
-
-        .dropdown-item:hover {
-            background: #f7fafc;
-            color: #667eea;
-        }
-
-        .dropdown-divider {
-            height: 1px;
-            background: #e2e8f0;
-            margin: 6px 0;
-        }
-
-        /* 主内容区域 */
-        .main-content {
-            flex: 1;
-            margin-left: 260px;
-            padding: 30px;
-        }
-
-        .header {
-            background: white;
-            padding: 25px 30px;
-            border-radius: 16px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-            margin-bottom: 30px;
-        }
-
-        .header h1 {
-            color: #1a202c;
-            font-size: 1.8rem;
-            font-weight: 600;
-        }
+        /* 主内容 */
+        .main-content { flex: 1; margin-left: 260px; padding: 30px; }
+        .header { background: white; padding: 20px 30px; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); margin-bottom: 30px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+        .header h1 { color: #1a202c; font-size: 1.8rem; font-weight: 600; }
 
         /* 搜索栏 */
-        .search-container {
-            margin-bottom: 30px;
+        .search-bar { display: flex; gap: 10px; flex: 1; max-width: 420px; min-width: 260px; }
+        .search-bar input[type="text"] {
+            flex: 1; padding: 12px 18px; border: 2px solid #e2e8f0; border-radius: 12px;
+            font-size: 0.95rem; transition: all 0.3s ease; background: white;
         }
-
-        .search-container form {
-            display: flex;
-            gap: 15px;
-            max-width: 600px;
+        .search-bar input[type="text"]:focus { outline: none; border-color: #667eea; box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1); }
+        .search-bar input[type="submit"] {
+            padding: 12px 24px; border: none; border-radius: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;
+            font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;
         }
+        .search-bar input[type="submit"]:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3); }
 
-        .search-container input[type="text"] {
-            flex: 1;
-            padding: 14px 20px;
-            border: 2px solid #e2e8f0;
-            border-radius: 12px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            background: white;
+        /* 筛选条 */
+        .filter-panel {
+            background: white; border-radius: 16px; padding: 20px 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06); margin-bottom: 30px;
         }
-
-        .search-container input[type="text"]:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        .filter-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+        .filter-row:last-child { margin-bottom: 0; }
+        .filter-label {
+            font-size: 0.85rem; font-weight: 600; color: #718096;
+            min-width: 64px; margin-right: 4px;
         }
-
-        .search-container input[type="submit"] {
-            padding: 14px 30px;
-            border: none;
-            border-radius: 12px;
+        .filter-options { display: flex; flex-wrap: wrap; gap: 8px; }
+        .filter-chip {
+            padding: 6px 16px; border-radius: 6px; font-size: 0.85rem;
+            color: #4a5568; text-decoration: none; transition: all 0.2s ease;
+            background: transparent; border: none; cursor: pointer; font-weight: 500;
+        }
+        .filter-chip:hover { color: #667eea; background: #f7fafc; }
+        .filter-chip.active {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .search-container input[type="submit"]:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
         }
 
         /* 电影网格 */
-        .movie-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .movie-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .movie-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 16px 40px rgba(0,0,0,0.12);
-        }
-
-        .movie-poster {
-            width: 100%;
-            height: 420px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .movie-card:hover .movie-poster {
-            transform: scale(1.03);
-        }
-
-        .movie-info {
-            padding: 24px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .movie-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #1a202c;
-            margin-bottom: 12px;
-            line-height: 1.3;
-        }
-
-        .movie-meta {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-            color: #718096;
-        }
-
-        .movie-rating {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            color: #f59e0b;
-            font-weight: 600;
-            font-size: 1rem;
-        }
-
-        /* 小数星级 */
+        .movie-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
+        .movie-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: all 0.3s ease; display: flex; flex-direction: column; }
+        .movie-card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,0.12); }
+        .movie-poster { width: 100%; height: 420px; object-fit: cover; display: block; transition: transform 0.3s ease; }
+        .movie-card:hover .movie-poster { transform: scale(1.03); }
+        .movie-info { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+        .movie-title { font-size: 1.3rem; font-weight: 700; color: #1a202c; margin-bottom: 12px; line-height: 1.3; }
+        .movie-meta { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; font-size: 0.9rem; color: #718096; }
+        .movie-rating { display: flex; align-items: center; gap: 5px; color: #f59e0b; font-weight: 600; font-size: 1rem; }
         .star-bar { display: inline-flex; gap: 1px; font-size: 0.85rem; }
         .star-fill {
             background: linear-gradient(90deg, #fbbf24 var(--pct), #e2e8f0 var(--pct));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
-
-        .movie-description {
-            font-size: 0.9rem;
-            color: #4a5568;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            flex: 1;
-        }
-
-        .review-link {
-            display: inline-block;
-            padding: 12px 24px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .review-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
-        }
+        .movie-description { font-size: 0.9rem; color: #4a5568; line-height: 1.6; margin-bottom: 20px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; flex: 1; }
+        .review-link { display: inline-block; padding: 12px 24px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease; text-align: center; }
+        .review-link:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3); }
 
         @media (max-width: 768px) {
-            .sidebar {
-                width: 100%;
-                position: relative;
-                height: auto;
-            }
-
-            .main-content {
-                margin-left: 0;
-            }
-
-            .container {
-                flex-direction: column;
-            }
-
-            .movie-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
+            .sidebar { width: 100%; position: relative; height: auto; }
+            .main-content { margin-left: 0; }
+            .container { flex-direction: column; }
+            .movie-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- 侧边栏 -->
         <aside th:replace="~{fragments :: sidebar('movielist')}"></aside>
 
-        <!-- 主内容区域 -->
         <main class="main-content">
             <div class="header">
-                <h1>电影列表</h1>
+                <h1>全部电影</h1>
+                <div class="search-bar">
+                    <form th:action="@{/user/search}" method="post" style="display:flex;gap:10px;flex:1;">
+                        <input type="text" name="title" th:value="${searchTitle}" placeholder="搜索电影名称...">
+                        <input type="hidden" name="runtimeFilter" th:value="${runtimeFilter}">
+                        <input type="hidden" name="scoreFilter" th:value="${scoreFilter}">
+                        <input type="hidden" name="yearFilter" th:value="${yearFilter}">
+                        <input type="hidden" name="sortBy" th:value="${sortBy}">
+                        <input type="submit" value="搜索">
+                    </form>
+                </div>
             </div>
 
-            <div class="search-container">
-                <form th:action="@{/user/search}" method="post">
-                    <input type="text" name="title" placeholder="搜索电影名称...">
-                    <input type="submit" value="搜索">
-                </form>
+            <!-- 筛选条 -->
+            <div class="filter-panel">
+                <!-- 排序 -->
+                <div class="filter-row">
+                    <span class="filter-label">排序</span>
+                    <div class="filter-options">
+                        <a th:href="@{/user/movielist(runtimeFilter=${runtimeFilter},scoreFilter=${scoreFilter},yearFilter=${yearFilter})}"
+                           th:class="${sortBy == null or sortBy == ''} ? 'filter-chip active' : 'filter-chip'">默认</a>
+                        <a th:href="@{/user/movielist(sortBy='scoreDesc',runtimeFilter=${runtimeFilter},scoreFilter=${scoreFilter},yearFilter=${yearFilter})}"
+                           th:class="${sortBy == 'scoreDesc'} ? 'filter-chip active' : 'filter-chip'">评分从高到低</a>
+                        <a th:href="@{/user/movielist(sortBy='scoreAsc',runtimeFilter=${runtimeFilter},scoreFilter=${scoreFilter},yearFilter=${yearFilter})}"
+                           th:class="${sortBy == 'scoreAsc'} ? 'filter-chip active' : 'filter-chip'">评分从低到高</a>
+                        <a th:href="@{/user/movielist(sortBy='runtimeDesc',runtimeFilter=${runtimeFilter},scoreFilter=${scoreFilter},yearFilter=${yearFilter})}"
+                           th:class="${sortBy == 'runtimeDesc'} ? 'filter-chip active' : 'filter-chip'">时长从长到短</a>
+                        <a th:href="@{/user/movielist(sortBy='runtimeAsc',runtimeFilter=${runtimeFilter},scoreFilter=${scoreFilter},yearFilter=${yearFilter})}"
+                           th:class="${sortBy == 'runtimeAsc'} ? 'filter-chip active' : 'filter-chip'">时长从短到长</a>
+                        <a th:href="@{/user/movielist(sortBy='dateDesc',runtimeFilter=${runtimeFilter},scoreFilter=${scoreFilter},yearFilter=${yearFilter})}"
+                           th:class="${sortBy == 'dateDesc'} ? 'filter-chip active' : 'filter-chip'">上映时间从新到旧</a>
+                        <a th:href="@{/user/movielist(sortBy='dateAsc',runtimeFilter=${runtimeFilter},scoreFilter=${scoreFilter},yearFilter=${yearFilter})}"
+                           th:class="${sortBy == 'dateAsc'} ? 'filter-chip active' : 'filter-chip'">上映时间从旧到新</a>
+                    </div>
+                </div>
+                <!-- 时长 -->
+                <div class="filter-row">
+                    <span class="filter-label">时长</span>
+                    <div class="filter-options">
+                        <a th:href="@{/user/movielist(scoreFilter=${scoreFilter},yearFilter=${yearFilter},sortBy=${sortBy})}"
+                           th:class="${runtimeFilter == null or runtimeFilter == ''} ? 'filter-chip active' : 'filter-chip'">全部</a>
+                        <a th:href="@{/user/movielist(runtimeFilter='short',scoreFilter=${scoreFilter},yearFilter=${yearFilter},sortBy=${sortBy})}"
+                           th:class="${runtimeFilter == 'short'} ? 'filter-chip active' : 'filter-chip'">短篇 (&lt;90分)</a>
+                        <a th:href="@{/user/movielist(runtimeFilter='medium',scoreFilter=${scoreFilter},yearFilter=${yearFilter},sortBy=${sortBy})}"
+                           th:class="${runtimeFilter == 'medium'} ? 'filter-chip active' : 'filter-chip'">中篇 (90-150分)</a>
+                        <a th:href="@{/user/movielist(runtimeFilter='long',scoreFilter=${scoreFilter},yearFilter=${yearFilter},sortBy=${sortBy})}"
+                           th:class="${runtimeFilter == 'long'} ? 'filter-chip active' : 'filter-chip'">长篇 (&gt;150分)</a>
+                    </div>
+                </div>
+                <!-- 评分 -->
+                <div class="filter-row">
+                    <span class="filter-label">评分</span>
+                    <div class="filter-options">
+                        <a th:href="@{/user/movielist(runtimeFilter=${runtimeFilter},yearFilter=${yearFilter},sortBy=${sortBy})}"
+                           th:class="${scoreFilter == null or scoreFilter == ''} ? 'filter-chip active' : 'filter-chip'">全部</a>
+                        <a th:href="@{/user/movielist(scoreFilter='high',runtimeFilter=${runtimeFilter},yearFilter=${yearFilter},sortBy=${sortBy})}"
+                           th:class="${scoreFilter == 'high'} ? 'filter-chip active' : 'filter-chip'">高分 (≥4.0)</a>
+                        <a th:href="@{/user/movielist(scoreFilter='mid',runtimeFilter=${runtimeFilter},yearFilter=${yearFilter},sortBy=${sortBy})}"
+                           th:class="${scoreFilter == 'mid'} ? 'filter-chip active' : 'filter-chip'">中分 (2.0-4.0)</a>
+                        <a th:href="@{/user/movielist(scoreFilter='low',runtimeFilter=${runtimeFilter},yearFilter=${yearFilter},sortBy=${sortBy})}"
+                           th:class="${scoreFilter == 'low'} ? 'filter-chip active' : 'filter-chip'">低分 (&lt;2.0)</a>
+                    </div>
+                </div>
+                <!-- 年代 -->
+                <div class="filter-row">
+                    <span class="filter-label">年代</span>
+                    <div class="filter-options">
+                        <a th:href="@{/user/movielist(runtimeFilter=${runtimeFilter},scoreFilter=${scoreFilter},sortBy=${sortBy})}"
+                           th:class="${yearFilter == null or yearFilter == ''} ? 'filter-chip active' : 'filter-chip'">全部</a>
+                        <a th:href="@{/user/movielist(yearFilter='2020s',runtimeFilter=${runtimeFilter},scoreFilter=${scoreFilter},sortBy=${sortBy})}"
+                           th:class="${yearFilter == '2020s'} ? 'filter-chip active' : 'filter-chip'">2020年代</a>
+                        <a th:href="@{/user/movielist(yearFilter='2010s',runtimeFilter=${runtimeFilter},scoreFilter=${scoreFilter},sortBy=${sortBy})}"
+                           th:class="${yearFilter == '2010s'} ? 'filter-chip active' : 'filter-chip'">2010年代</a>
+                        <a th:href="@{/user/movielist(yearFilter='2000s',runtimeFilter=${runtimeFilter},scoreFilter=${scoreFilter},sortBy=${sortBy})}"
+                           th:class="${yearFilter == '2000s'} ? 'filter-chip active' : 'filter-chip'">2000年代</a>
+                        <a th:href="@{/user/movielist(yearFilter='1990s',runtimeFilter=${runtimeFilter},scoreFilter=${scoreFilter},sortBy=${sortBy})}"
+                           th:class="${yearFilter == '1990s'} ? 'filter-chip active' : 'filter-chip'">1990年代</a>
+                        <a th:href="@{/user/movielist(yearFilter='before1990',runtimeFilter=${runtimeFilter},scoreFilter=${scoreFilter},sortBy=${sortBy})}"
+                           th:class="${yearFilter == 'before1990'} ? 'filter-chip active' : 'filter-chip'">1990年以前</a>
+                    </div>
+                </div>
             </div>
 
             <div class="movie-grid">

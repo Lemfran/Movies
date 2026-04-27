@@ -22,91 +22,17 @@
             min-height: 100vh;
         }
 
-        /* 侧边栏样式 */
-        .sidebar {
-            width: 260px;
-            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
-            padding: 30px 20px;
-            position: fixed;
-            height: 100vh;
-            overflow-y: auto;
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .sidebar-header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .sidebar-header h2 {
-            color: white;
-            font-size: 24px;
-            font-weight: 600;
-        }
-
-        .sidebar-header p {
-            color: rgba(255,255,255,0.7);
-            font-size: 12px;
-            margin-top: 5px;
-        }
-
-        .nav-menu {
-            list-style: none;
-        }
-
-        .nav-item {
-            margin-bottom: 8px;
-        }
-
-        .nav-link {
-            display: flex;
-            align-items: center;
-            padding: 14px 18px;
-            color: rgba(255,255,255,0.9);
-            text-decoration: none;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            font-size: 15px;
-        }
-
-        .nav-link:hover {
-            background: rgba(255,255,255,0.15);
-            transform: translateX(5px);
-        }
-
-        .nav-link.active {
-            background: rgba(255,255,255,0.2);
-            color: white;
-        }
-
-        .nav-icon {
-            width: 22px;
-            height: 22px;
-            margin-right: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-        }
-
-        .nav-section {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .nav-section-title {
-            color: rgba(255,255,255,0.5);
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-            padding-left: 18px;
-        }
+        /* 侧边栏 */
+        .sidebar { width: 260px; background: linear-gradient(180deg, #667eea 0%, #764ba2 100%); padding: 24px 16px; position: fixed; height: 100vh; overflow-y: auto; z-index: 100; display: flex; flex-direction: column; line-height: normal; }
+        .sidebar-header { text-align: center; margin-bottom: 32px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.15); }
+        .sidebar-header h2 { color: white; font-size: 1.4rem; font-weight: 600; }
+        .sidebar-header p { color: rgba(255,255,255,0.6); font-size: 0.8rem; margin-top: 4px; }
+        .nav-menu { list-style: none; flex: 1; }
+        .nav-item { margin-bottom: 4px; }
+        .nav-link { display: flex; align-items: center; padding: 10px 14px; color: rgba(255,255,255,0.85); text-decoration: none; border-radius: 10px; transition: all 0.25s ease; font-weight: 500; font-size: 0.92rem; }
+        .nav-link:hover { background: rgba(255,255,255,0.12); color: white; transform: translateX(3px); }
+        .nav-link.active { background: rgba(255,255,255,0.2); color: white; }
+        .nav-icon { width: 20px; height: 20px; margin-right: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
 
         .user-bar { margin-top: auto; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.15); position: relative; }
         .user-bar-trigger { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 10px; cursor: pointer; transition: all 0.25s ease; user-select: none; }
@@ -121,6 +47,7 @@
         .user-bar.open .user-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
         .dropdown-item { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 8px; color: #4a5568; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.2s ease; cursor: pointer; }
         .dropdown-item:hover { background: #f7fafc; color: #667eea; }
+        .dropdown-divider { height: 1px; background: #e2e8f0; margin: 6px 0; }
 
         /* 主内容区域 */
         .main-content {
@@ -174,7 +101,6 @@
             align-items: flex-start;
             margin-bottom: 16px;
             padding-bottom: 16px;
-            border-bottom: 1px solid #e2e8f0;
         }
 
         .movie-info {
@@ -262,6 +188,31 @@
             border-radius: 20px;
             font-size: 14px;
             font-weight: 600;
+        }
+
+        .like-count-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 6px 14px;
+            background: #fff0f3;
+            color: #f5576c;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .reply-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 10px;
+            background: #edf2f7;
+            color: #718096;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 8px;
         }
 
         .delete-btn {
@@ -355,7 +306,10 @@
                             <div class="movie-info">
                                 <div class="movie-icon">🎬</div>
                                 <div>
-                                    <div class="movie-title" th:text="${review.title}">电影名称</div>
+                                    <div style="display:flex;align-items:center;">
+                                        <div class="movie-title" th:text="${review.title}">电影名称</div>
+                                        <span class="reply-indicator" th:if="${review.parentId != null}">↳ 回复</span>
+                                    </div>
                                     <div class="review-date" th:text="${#dates.format(review.createdAt, 'yyyy-MM-dd HH:mm')}">2024-01-01</div>
                                 </div>
                             </div>
@@ -369,7 +323,8 @@
                                 <span class="username" th:text="${review.username}">用户名</span>
                             </div>
                             <div class="review-meta">
-                                <span class="score-badge">⭐ <span th:text="${review.score}">0.0</span> 分</span>
+                                <span class="score-badge" th:if="${review.score != null}">⭐ <span th:text="${review.score}">0.0</span> 分</span>
+                                <span class="like-count-badge">❤️ <span th:text="${review.likeCount != null ? review.likeCount : 0}">0</span></span>
                                 <button type="submit" class="delete-btn">🗑️ 删除评论</button>
                             </div>
                         </div>

@@ -20,6 +20,10 @@ public class Review implements Serializable {
     private String moviePoster;
     private String releaseDate;
     private Double averageScore;
+    private Integer parentId;
+    private Integer likeCount;
+    private java.util.List<Review> replies;
+    private Boolean liked;
 
     public Review() {}
 
@@ -61,4 +65,12 @@ public class Review implements Serializable {
     public void setReleaseDate(String releaseDate) { this.releaseDate = releaseDate; }
     public Double getAverageScore() { return averageScore; }
     public void setAverageScore(Double averageScore) { this.averageScore = averageScore; }
+    public Integer getParentId() { return parentId; }
+    public void setParentId(Integer parentId) { this.parentId = parentId; }
+    public Integer getLikeCount() { return likeCount; }
+    public void setLikeCount(Integer likeCount) { this.likeCount = likeCount; }
+    public java.util.List<Review> getReplies() { return replies; }
+    public void setReplies(java.util.List<Review> replies) { this.replies = replies; }
+    public Boolean getLiked() { return liked; }
+    public void setLiked(Boolean liked) { this.liked = liked; }
 }

@@ -8,65 +8,124 @@
 
  :: Spring Boot ::                (v3.4.1)
 
-2026-04-23T01:55:57.682+08:00  INFO 12549 --- [movies-service] [           main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2026-04-23T01:55:57.767+08:00  INFO 12549 --- [movies-service] [           main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=movies-service, profiles=[dev], label=main, version=null, state=null
-2026-04-23T01:55:57.767+08:00  INFO 12549 --- [movies-service] [           main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}]
-2026-04-23T01:55:57.770+08:00  INFO 12549 --- [movies-service] [           main] e.c.y.YingpingsxitongApplication         : No active profile set, falling back to 1 default profile: "default"
-2026-04-23T01:55:58.168+08:00  INFO 12549 --- [movies-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=6eb64f47-4bf5-389e-b588-1fd05b55b916
+2026-04-25T14:45:21.342+08:00  INFO 81194 --- [movies-service] [           main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2026-04-25T14:45:21.523+08:00  INFO 81194 --- [movies-service] [           main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=movies-service, profiles=[dev], label=main, version=null, state=null
+2026-04-25T14:45:21.524+08:00  INFO 81194 --- [movies-service] [           main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}]
+2026-04-25T14:45:21.533+08:00  INFO 81194 --- [movies-service] [           main] e.c.y.YingpingsxitongApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-25T14:45:22.339+08:00  INFO 81194 --- [movies-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-25T14:45:22.342+08:00  INFO 81194 --- [movies-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-04-25T14:45:22.364+08:00  INFO 81194 --- [movies-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2026-04-25T14:45:22.669+08:00  INFO 81194 --- [movies-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1e8f1ff3-997a-3908-8c91-f0ed70f1c4cd
 WARNING: A restricted method in java.lang.System has been called
 WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (jar:nested:/Users/fanjinchen/工程实践/Movies/Movies/target/yingpingsxitong-0.0.1-SNAPSHOT.jar/!BOOT-INF/lib/tomcat-embed-core-10.1.34.jar!/)
 WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
 WARNING: Restricted methods will be blocked in a future release unless native access is enabled
 
-2026-04-23T01:55:58.472+08:00  INFO 12549 --- [movies-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8084 (http)
-2026-04-23T01:55:58.479+08:00  INFO 12549 --- [movies-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-04-23T01:55:58.479+08:00  INFO 12549 --- [movies-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
-2026-04-23T01:55:58.496+08:00  INFO 12549 --- [movies-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-04-23T01:55:58.496+08:00  INFO 12549 --- [movies-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 720 ms
-2026-04-23T01:55:58.839+08:00  INFO 12549 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
-2026-04-23T01:55:58.874+08:00  INFO 12549 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
-2026-04-23T01:55:58.886+08:00  INFO 12549 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
-2026-04-23T01:55:58.895+08:00  INFO 12549 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
-2026-04-23T01:55:58.939+08:00  WARN 12549 --- [movies-service] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+2026-04-25T14:45:23.478+08:00  INFO 81194 --- [movies-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8084 (http)
+2026-04-25T14:45:23.492+08:00  INFO 81194 --- [movies-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-25T14:45:23.492+08:00  INFO 81194 --- [movies-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-04-25T14:45:23.510+08:00  INFO 81194 --- [movies-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-25T14:45:23.511+08:00  INFO 81194 --- [movies-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1961 ms
+2026-04-25T14:45:24.343+08:00  INFO 81194 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
+2026-04-25T14:45:24.418+08:00  INFO 81194 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
+2026-04-25T14:45:24.431+08:00  INFO 81194 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
+2026-04-25T14:45:24.462+08:00  INFO 81194 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
+2026-04-25T14:45:24.543+08:00  WARN 81194 --- [movies-service] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 900bf491-18e7-4af6-b992-cebd1417361e
+Using generated security password: 67a0ec8f-2430-491a-bf44-73d11a885a42
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2026-04-23T01:55:58.945+08:00  INFO 12549 --- [movies-service] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2026-04-23T01:55:59.179+08:00  INFO 12549 --- [movies-service] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 17 endpoints beneath base path '/actuator'
-2026-04-23T01:55:59.424+08:00  INFO 12549 --- [movies-service] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2026-04-23T01:55:59.440+08:00  WARN 12549 --- [movies-service] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-04-23T01:55:59.468+08:00  INFO 12549 --- [movies-service] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2026-04-23T01:55:59.478+08:00  INFO 12549 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2026-04-23T01:55:59.480+08:00  INFO 12549 --- [movies-service] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-23T01:55:59.483+08:00  INFO 12549 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2026-04-23T01:55:59.483+08:00  INFO 12549 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2026-04-23T01:55:59.483+08:00  INFO 12549 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2026-04-23T01:55:59.483+08:00  INFO 12549 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2026-04-23T01:55:59.483+08:00  INFO 12549 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2026-04-23T01:55:59.483+08:00  INFO 12549 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2026-04-23T01:55:59.483+08:00  INFO 12549 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2026-04-23T01:55:59.601+08:00  INFO 12549 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2026-04-23T01:55:59.602+08:00  INFO 12549 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2026-04-23T01:55:59.603+08:00  INFO 12549 --- [movies-service] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-04-23T01:55:59.604+08:00  INFO 12549 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1776880559603 with initial instances count: 4
-2026-04-23T01:55:59.607+08:00  INFO 12549 --- [movies-service] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MOVIES-SERVICE with eureka with status UP
-2026-04-23T01:55:59.607+08:00  INFO 12549 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1776880559607, current=UP, previous=STARTING]
-2026-04-23T01:55:59.608+08:00  INFO 12549 --- [movies-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/mac:movies-service:8084: registering service...
-2026-04-23T01:55:59.610+08:00  INFO 12549 --- [movies-service] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MOVIES-SERVICE with eureka with status DOWN
-2026-04-23T01:55:59.611+08:00  INFO 12549 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1776880559611, current=DOWN, previous=UP]
-2026-04-23T01:55:59.611+08:00  WARN 12549 --- [movies-service] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
-2026-04-23T012026-04-23T01:56:15.784+08:00  INFO 12386 --- [movies-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/mac:movies-service:8084 - Re-registering apps/MOVIES-SERVICE
-2026-04-23T01:56:15.784+08:00  INFO 12386 --- [movies-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/mac:movies-service:8084: registering service...
-2026-04-23T01:56:15.787+08:00  INFO 12386 --- [movies-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/mac:movies-service:8084 - registration status: 204
-2026-04-23T01:57:46.588+08:00  INFO 12386 --- [movies-service] [ionShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MOVIES-SERVICE with eureka with status DOWN
-2026-04-23T01:57:46.589+08:00  INFO 12386 --- [movies-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1776880666589, current=DOWN, previous=UP]
-2026-04-23T01:57:46.589+08:00  INFO 12386 --- [movies-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/mac:movies-service:8084: registering service...
-2026-04-23T01:57:46.591+08:00  INFO 12386 --- [movies-service] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-04-23T01:57:46.594+08:00  INFO 12386 --- [movies-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/mac:movies-service:8084 - registration status: 204
-2026-04-23T01:57:46.596+08:00  INFO 12386 --- [movies-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-04-23T01:57:46.608+08:00  INFO 12386 --- [movies-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2026-04-23T01:57:49.614+08:00  INFO 12386 --- [movies-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2026-04-23T01:57:49.618+08:00  INFO 12386 --- [movies-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/mac:movies-service:8084 - deregister  status: 200
-2026-04-23T01:57:49.618+08:00  INFO 12386 --- [movies-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-04-25T14:45:24.554+08:00  INFO 81194 --- [movies-service] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::allocateMemory has been called by io.netty.util.internal.PlatformDependent0$2 (jar:nested:/Users/fanjinchen/工程实践/Movies/Movies/target/yingpingsxitong-0.0.1-SNAPSHOT.jar/!BOOT-INF/lib/netty-common-4.1.116.Final.jar!/)
+WARNING: Please consider reporting this to the maintainers of class io.netty.util.internal.PlatformDependent0$2
+WARNING: sun.misc.Unsafe::allocateMemory will be removed in a future release
+2026-04-25T14:45:25.266+08:00  INFO 81194 --- [movies-service] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 18 endpoints beneath base path '/actuator'
+2026-04-25T14:45:25.741+08:00  INFO 81194 --- [movies-service] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-04-25T14:45:25.767+08:00  WARN 81194 --- [movies-service] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-04-25T14:45:25.832+08:00  INFO 81194 --- [movies-service] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-04-25T14:45:25.860+08:00  INFO 81194 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-04-25T14:45:25.867+08:00  INFO 81194 --- [movies-service] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T14:45:25.876+08:00  INFO 81194 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-04-25T14:45:25.877+08:00  INFO 81194 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-04-25T14:45:25.877+08:00  INFO 81194 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-04-25T14:45:25.877+08:00  INFO 81194 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-04-25T14:45:25.877+08:00  INFO 81194 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-04-25T14:45:25.877+08:00  INFO 81194 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-04-25T14:45:25.877+08:00  INFO 81194 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-04-25T14:45:26.072+08:00  INFO 81194 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-04-25T14:45:26.073+08:00  INFO 81194 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-04-25T14:45:26.075+08:00  INFO 81194 --- [movies-service] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-04-25T14:45:26.077+08:00  INFO 81194 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1777099526076 with initial instances count: 6
+2026-04-25T14:45:26.084+08:00  INFO 81194 --- [movies-service] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MOVIES-SERVICE with eureka with status UP
+2026-04-25T14:45:26.085+08:00  INFO 81194 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1777099526085, current=UP, previous=STARTING]
+2026-04-25T14:45:26.086+08:00  INFO 81194 --- [movies-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/movies-service-8084: registering service...
+2026-04-25T14:45:26.106+08:00  INFO 81194 --- [movies-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8084 (http) with context path '/'
+2026-04-25T14:45:26.107+08:00  INFO 81194 --- [movies-service] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8084
+2026-04-25T14:45:26.126+08:00  INFO 81194 --- [movies-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/movies-service-8084 - registration status: 204
+2026-04-25T14:45:26.127+08:00  INFO 81194 --- [movies-service] [           main] e.c.y.YingpingsxitongApplication         : Started YingpingsxitongApplication in 5.691 seconds (process running for 6.077)
+2026-04-25T14:46:01.489+08:00  INFO 81194 --- [movies-service] [nio-8084-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-25T14:46:01.490+08:00  INFO 81194 --- [movies-service] [nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-25T14:46:01.492+08:00  INFO 81194 --- [movies-service] [nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-04-25T14:46:01.525+08:00  INFO 81194 --- [movies-service] [nio-8084-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-25T14:46:01.602+08:00  INFO 81194 --- [movies-service] [nio-8084-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@38746ebd
+2026-04-25T14:46:01.603+08:00  INFO 81194 --- [movies-service] [nio-8084-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-25T14:50:25.888+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T14:55:25.896+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T15:00:25.900+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T15:05:25.906+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T15:10:25.914+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T15:15:25.926+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T15:20:25.935+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T15:25:25.944+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T15:30:25.951+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T15:35:25.956+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T15:40:25.969+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T15:45:25.978+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T15:50:25.990+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T15:55:26.002+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T16:00:26.011+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T16:05:26.021+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T16:10:26.029+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T16:15:26.041+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T16:20:26.045+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T16:25:26.051+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T16:30:26.080+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T16:35:26.088+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T16:40:26.094+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T16:45:26.184+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T16:50:26.195+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T16:55:26.204+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T17:00:26.231+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T17:05:26.241+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T17:10:26.251+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T17:15:26.263+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T17:20:26.278+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T17:25:26.291+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T17:30:26.274+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T17:35:26.284+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T17:40:26.298+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T17:45:26.308+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T17:50:26.322+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T17:55:26.337+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T18:00:26.352+08:00  INFO 81194 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-25T18:05:12.357+08:00  INFO 81194 --- [movies-service] [ionShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MOVIES-SERVICE with eureka with status DOWN
+2026-04-25T18:05:12.358+08:00  INFO 81194 --- [movies-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1777111512358, current=DOWN, previous=UP]
+2026-04-25T18:05:12.358+08:00  INFO 81194 --- [movies-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/movies-service-8084: registering service...
+2026-04-25T18:05:12.370+08:00  INFO 81194 --- [movies-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/movies-service-8084 - registration status: 204
+Exception in thread "SpringApplicationShutdownHook" java.lang.NoClassDefFoundError: ch/qos/logback/classic/spi/ThrowableProxy
+	at ch.qos.logback.classic.spi.LoggingEvent.<init>(LoggingEvent.java:145)
+	at ch.qos.logback.classic.Logger.buildLoggingEventAndAppend(Logger.java:424)
+	at ch.qos.logback.classic.Logger.filterAndLog_0_Or3Plus(Logger.java:386)
+	at ch.qos.logback.classic.Logger.log(Logger.java:780)
+	at org.apache.commons.logging.LogAdapter$Slf4jLocationAwareLog.warn(LogAdapter.java:445)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1175)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1126)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:147)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.lang.ClassNotFoundException: ch.qos.logback.classic.spi.ThrowableProxy
+	... 12 more

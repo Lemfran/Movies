@@ -30,4 +30,16 @@ public interface ReviewClient {
 
     @GetMapping("/rpc/review/count")
     Result<Integer> countReviews();
+
+    @GetMapping("/rpc/review/findReplies")
+    Result<List<Review>> findRepliesByParentId(@RequestParam("parentId") Integer parentId);
+
+    @GetMapping("/rpc/review/findTopLevelByMovieId")
+    Result<List<Review>> findTopLevelReviewsByMovieId(@RequestParam("movieId") Integer movieId);
+
+    @PostMapping("/rpc/review/toggleLike")
+    Result<Boolean> toggleLike(@RequestParam("reviewId") Integer reviewId, @RequestParam("userId") Integer userId);
+
+    @GetMapping("/rpc/review/hasLiked")
+    Result<Boolean> hasLiked(@RequestParam("reviewId") Integer reviewId, @RequestParam("userId") Integer userId);
 }

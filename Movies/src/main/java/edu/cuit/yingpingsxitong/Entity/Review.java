@@ -18,6 +18,13 @@ public class Review implements Serializable {
     private String avatar;
     private String nickname;
     private String moviePoster;
+    private Integer parentId;
+    private Integer likeCount;
+
+    // Transient fields for UI
+    private java.util.List<Review> replies;
+    private Boolean liked;
+
     // Constructors
     public Review() {}
 
@@ -130,5 +137,37 @@ public class Review implements Serializable {
 
     public void setMoviePoster(String moviePoster) {
         this.moviePoster = moviePoster;
+    }
+
+    public Integer getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(Integer parentId) {
+        this.parentId = parentId;
+    }
+
+    public Integer getLikeCount() {
+        return likeCount;
+    }
+
+    public void setLikeCount(Integer likeCount) {
+        this.likeCount = likeCount;
+    }
+
+    public java.util.List<Review> getReplies() {
+        return replies;
+    }
+
+    public void setReplies(java.util.List<Review> replies) {
+        this.replies = replies;
+    }
+
+    public Boolean getLiked() {
+        return liked;
+    }
+
+    public void setLiked(Boolean liked) {
+        this.liked = liked;
     }
 }

@@ -48,7 +48,7 @@ public class AuthController {
             return Result.error("用户不存在");
         }
 
-        if (!user.getPassword().equals(password)) {
+        if (!userService.validatePassword(password, user.getPassword())) {
             return Result.error("密码错误");
         }
 
@@ -83,7 +83,7 @@ public class AuthController {
             return Result.error("用户名已存在");
         }
 
-        User user = new User(username, password, email);
+        User user = new User(username, userService.encodePassword(password), email);
         userService.insertUser(user);
 
         // 重新查询获取生成的 userId

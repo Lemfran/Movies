@@ -147,7 +147,7 @@
                         <p class="hero-desc">浏览最新电影，阅读真实影评，记录你的观影感受。每一部电影，都值得被认真对待。</p>
                         <div class="hero-actions">
                             <a th:href="@{/user/movielist}" class="hero-btn hero-btn-primary">🎬 浏览电影</a>
-                            <a th:href="@{/user/reviews}" class="hero-btn hero-btn-secondary">💬 查看评论</a>
+                            <a th:href="@{/user/reviews}" class="hero-btn hero-btn-secondary">💬 去影评区</a>
                         </div>
                     </div>
                 </div>
@@ -157,7 +157,7 @@
                         <h1 class="hero-title">真实口碑，帮你找到好电影</h1>
                         <p class="hero-desc">看看其他影迷的真实评价，发现那些被低估的佳作，不再错过任何一部好片。</p>
                         <div class="hero-actions">
-                            <a th:href="@{/user/reviews}" class="hero-btn hero-btn-primary">💬 查看评论</a>
+                            <a th:href="@{/user/reviews}" class="hero-btn hero-btn-primary">💬 去影评区</a>
                             <a th:href="@{/user/movielist}" class="hero-btn hero-btn-secondary">🎬 去选电影</a>
                         </div>
                     </div>
@@ -186,7 +186,7 @@
                     <div class="stat-circle blue">📝</div>
                     <div class="stat-info">
                         <h3 th:text="${myReviewCount}">0</h3>
-                        <p>我的评论</p>
+                        <p>我的影评</p>
                     </div>
                 </div>
                 <div class="stat-item">
@@ -235,7 +235,7 @@
                 </div>
             </div>
 
-            <!-- 两栏：最新影评 + 我的评论 -->
+            <!-- 两栏：最新影评 + 我的影评 -->
             <div class="two-column">
                 <!-- 最新影评 -->
                 <div class="review-section">
@@ -268,14 +268,14 @@
                     </div>
                     <div class="empty-mini" th:unless="${recentReviews != null and !recentReviews.isEmpty()}">
                         <div class="empty-mini-icon">📝</div>
-                        <p>暂无评论</p>
+                        <p>暂无影评</p>
                     </div>
                 </div>
 
-                <!-- 我的评论 -->
+                <!-- 我的影评 -->
                 <div class="review-section">
                     <div class="section-header">
-                        <h2 class="section-title">📝 我的评论</h2>
+                        <h2 class="section-title">📝 我的影评</h2>
                         <a th:href="@{/user/myreviews}" class="section-link">全部 →</a>
                     </div>
                     <div class="review-list" th:if="${myReviews != null and !myReviews.isEmpty()}">
@@ -299,7 +299,7 @@
                     </div>
                     <div class="empty-mini" th:unless="${myReviews != null and !myReviews.isEmpty()}">
                         <div class="empty-mini-icon">🎬</div>
-                        <p>你还没有写过评论<br>去电影列表写下第一条吧</p>
+                        <p>你还没有写过影评<br>去全部电影选一部，写下第一条吧</p>
                     </div>
                 </div>
             </div>

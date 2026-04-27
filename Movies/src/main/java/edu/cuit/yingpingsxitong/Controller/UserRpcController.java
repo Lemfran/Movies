@@ -19,8 +19,21 @@ public class UserRpcController {
 
     @PostMapping("/insert")
     public Result<Void> insertUser(@RequestBody User user) {
+        if (user.getPassword() != null) {
+            user.setPassword(userService.encodePassword(user.getPassword()));
+        }
         userService.insertUser(user);
         return Result.success();
+    }
+
+    @PostMapping("/validatePassword")
+    public Result<Boolean> validatePassword(@RequestParam("username") String username,
+                                             @RequestParam("password") String password) {
+        User user = userService.findUserByUsername(username);
+        if (user == null) {
+            return Result.success(false);
+        }
+        return Result.success(userService.validatePassword(password, user.getPassword()));
     }
 
     @GetMapping("/findByUsername")

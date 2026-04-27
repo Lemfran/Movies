@@ -49,7 +49,7 @@ public class ReviewRpcController {
 
     @PostMapping("/delete")
     public Result<Void> deleteReview(@RequestParam("reviewId") Integer reviewId) {
-        reviewService.deleteReview(reviewId);
+        reviewService.deleteReviewCascade(reviewId);
         return Result.success();
     }
 
@@ -62,5 +62,26 @@ public class ReviewRpcController {
     @GetMapping("/count")
     public Result<Integer> countReviews() {
         return Result.success(reviewService.countReviews());
+    }
+
+    @GetMapping("/findReplies")
+    public Result<List<Review>> findRepliesByParentId(@RequestParam("parentId") Integer parentId) {
+        return Result.success(reviewService.findRepliesByParentId(parentId));
+    }
+
+    @GetMapping("/findTopLevelByMovieId")
+    public Result<List<Review>> findTopLevelReviewsByMovieId(@RequestParam("movieId") Integer movieId) {
+        return Result.success(reviewService.findTopLevelReviewsByMovieId(movieId));
+    }
+
+    @PostMapping("/toggleLike")
+    public Result<Boolean> toggleLike(@RequestParam("reviewId") Integer reviewId, @RequestParam("userId") Integer userId) {
+        boolean liked = reviewService.toggleLike(reviewId, userId);
+        return Result.success(liked);
+    }
+
+    @GetMapping("/hasLiked")
+    public Result<Boolean> hasLiked(@RequestParam("reviewId") Integer reviewId, @RequestParam("userId") Integer userId) {
+        return Result.success(reviewService.hasUserLiked(reviewId, userId));
     }
 }

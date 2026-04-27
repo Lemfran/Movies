@@ -34,13 +34,14 @@ public class PortalIndexController {
                         Model model) {
         Result<User> result = userClient.findUserByUsername(username);
         User user = result.getData();
-        if (user != null && user.getPassword().equals(password) && user.getPermission() && !user.getManager()) {
+        boolean passwordValid = user != null && Boolean.TRUE.equals(userClient.validatePassword(username, password).getData());
+        if (passwordValid && user.getPermission() && !user.getManager()) {
             model.addAttribute("user", user);
             return "redirect:/user/home";
-        } else if (user != null && user.getPassword().equals(password) && user.getPermission() && user.getManager()) {
+        } else if (passwordValid && user.getPermission() && user.getManager()) {
             model.addAttribute("error", "管理员请通过管理端入口登录");
             return "error";
-        } else if (user != null && user.getPassword().equals(password) && !user.getPermission()) {
+        } else if (passwordValid && !user.getPermission()) {
             model.addAttribute("error", "No Permission");
             return "error";
         } else {
@@ -77,9 +78,12 @@ public class PortalIndexController {
             // 最新影评（取最近6条）
             List<Review> allReviews = reviewClient.findAllReviews().getData();
             if (allReviews != null) {
-                allReviews.sort((a, b) -> b.getCreatedAt().compareTo(a.getCreatedAt()));
-                int recentCount = Math.min(4, allReviews.size());
-                List<Review> recentReviews = allReviews.subList(0, recentCount);
+                List<Review> topLevelReviews = allReviews.stream()
+                    .filter(r -> r.getParentId() == null)
+                    .collect(java.util.stream.Collectors.toList());
+                topLevelReviews.sort((a, b) -> b.getCreatedAt().compareTo(a.getCreatedAt()));
+                int recentCount = Math.min(4, topLevelReviews.size());
+                List<Review> recentReviews = topLevelReviews.subList(0, recentCount);
                 for (Review r : recentReviews) {
                     User u = userClient.findUserById(r.getUserId()).getData();
                     r.setUsername(u.getUsername());
@@ -99,7 +103,7 @@ public class PortalIndexController {
             if (myReviews != null) {
                 myReviewCount = myReviews.size();
                 if (myReviewCount > 0) {
-                    myAvgScore = myReviews.stream().mapToInt(Review::getScore).average().orElse(0);
+                    myAvgScore = myReviews.stream().filter(r -> r.getScore() != null).mapToInt(Review::getScore).average().orElse(0);
                     myReviews.sort((a, b) -> b.getCreatedAt().compareTo(a.getCreatedAt()));
                     int myCount = Math.min(4, myReviews.size());
                     recentMyReviews = myReviews.subList(0, myCount);

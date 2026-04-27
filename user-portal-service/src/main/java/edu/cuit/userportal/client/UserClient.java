@@ -33,4 +33,7 @@ public interface UserClient {
 
     @PostMapping("/rpc/user/updateManager")
     Result<Void> updateManager(@RequestParam("userId") Integer userId, @RequestParam("manager") Boolean manager);
+
+    @PostMapping("/rpc/user/validatePassword")
+    Result<Boolean> validatePassword(@RequestParam("username") String username, @RequestParam("password") String password);
 }

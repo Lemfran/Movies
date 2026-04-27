@@ -9,51 +9,48 @@
         <h2>CUIT影评</h2>
         <p>管理控制台</p>
     </div>
-
-    <nav style="flex:1;">
+    <nav>
         <ul class="nav-menu">
             <li class="nav-item">
-                <a th:href="@{/admin/home}" th:class="${activeMenu} == 'home' ? 'nav-link active' : 'nav-link'">
+                <a th:href="@{/admin/home}" class="nav-link" th:classappend="${activeMenu} == 'home' ? 'active' : ''">
                     <span class="nav-icon">🏠</span>
                     首页
                 </a>
             </li>
+            <li class="nav-item">
+                <a th:href="@{/admin/manager}" class="nav-link" th:classappend="${activeMenu} == 'users' ? 'active' : ''">
+                    <span class="nav-icon">👥</span>
+                    用户管理
+                </a>
+            </li>
+            <li class="nav-item">
+                <a th:href="@{/admin/movieManage}" class="nav-link" th:classappend="${activeMenu} == 'movies' ? 'active' : ''">
+                    <span class="nav-icon">🎬</span>
+                    电影管理
+                </a>
+            </li>
+            <li class="nav-item">
+                <a th:href="@{/admin/reviewsManage}" class="nav-link" th:classappend="${activeMenu} == 'reviews' ? 'active' : ''">
+                    <span class="nav-icon">💬</span>
+                    评论管理
+                </a>
+            </li>
+            <li class="nav-item">
+                <a th:href="@{/admin/logList}" class="nav-link" th:classappend="${activeMenu} == 'logs' ? 'active' : ''">
+                    <span class="nav-icon">📋</span>
+                    系统日志
+                </a>
+            </li>
         </ul>
-
-        <div class="nav-section">
-            <div class="nav-section-title">功能管理</div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a th:href="@{/admin/manager}" th:class="${activeMenu} == 'users' ? 'nav-link active' : 'nav-link'">
-                        <span class="nav-icon">👥</span>
-                        用户管理
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a th:href="@{/admin/movieManage}" th:class="${activeMenu} == 'movies' ? 'nav-link active' : 'nav-link'">
-                        <span class="nav-icon">🎬</span>
-                        电影管理
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a th:href="@{/admin/reviewsManage}" th:class="${activeMenu} == 'reviews' ? 'nav-link active' : 'nav-link'">
-                        <span class="nav-icon">💬</span>
-                        评论管理
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a th:href="@{/admin/logList}" th:class="${activeMenu} == 'logs' ? 'nav-link active' : 'nav-link'">
-                        <span class="nav-icon">📋</span>
-                        系统日志
-                    </a>
-                </li>
-            </ul>
-        </div>
     </nav>
-
     <!-- Bottom Admin User Bar -->
     <div class="user-bar" id="userBar">
         <div class="user-dropdown">
+            <a th:href="@{/admin/profile}" class="dropdown-item">
+                <span>⚙️</span>
+                <span>个人信息设置</span>
+            </a>
+            <div class="dropdown-divider"></div>
             <a href="/admin/" class="dropdown-item">
                 <span>🚪</span>
                 <span>退出登录</span>

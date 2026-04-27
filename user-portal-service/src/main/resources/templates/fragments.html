@@ -14,25 +14,25 @@
     <nav>
         <ul class="nav-menu">
             <li class="nav-item">
-                <a th:href="@{/user/home}" th:class="${activeMenu} == 'home' ? 'nav-link active' : 'nav-link'">
+                <a th:href="@{/user/home}" class="nav-link" th:classappend="${activeMenu} == 'home' ? 'active' : ''">
                     <span class="nav-icon">🏠</span>
                     首页
                 </a>
             </li>
             <li class="nav-item">
-                <a th:href="@{/user/movielist}" th:class="${activeMenu} == 'movielist' ? 'nav-link active' : 'nav-link'">
+                <a th:href="@{/user/movielist}" class="nav-link" th:classappend="${activeMenu} == 'movielist' ? 'active' : ''">
                     <span class="nav-icon">🎬</span>
-                    电影列表
+                    全部电影
                 </a>
             </li>
             <li class="nav-item">
-                <a th:href="@{/user/reviews}" th:class="${activeMenu} == 'reviews' ? 'nav-link active' : 'nav-link'">
+                <a th:href="@{/user/reviews}" class="nav-link" th:classappend="${activeMenu} == 'reviews' ? 'active' : ''">
                     <span class="nav-icon">💬</span>
-                    评论列表
+                    影评区
                 </a>
             </li>
             <li class="nav-item">
-                <a href="/recommend/" class="nav-link" target="_blank">
+                <a th:href="@{/user/recommend}" class="nav-link" th:classappend="${activeMenu} == 'recommend' ? 'active' : ''">
                     <span class="nav-icon">⭐</span>
                     智能推荐
                 </a>
@@ -48,7 +48,7 @@
             </a>
             <a href="/user/myreviews" class="dropdown-item">
                 <span>📝</span>
-                <span>我的评论</span>
+                <span>我的影评</span>
             </a>
             <div class="dropdown-divider"></div>
             <a href="/user/" class="dropdown-item">

@@ -4,13 +4,13 @@
 
     <!-- 插入评论 -->
     <insert id="insertReview" parameterType="edu.cuit.yingpingsxitong.Entity.Review">
-        INSERT INTO reviews (movieid, userid, content, score, createdat)
-        VALUES (#{movieId}, #{userId}, #{content}, #{score}, #{createdAt})
+        INSERT INTO reviews (movieid, userid, content, score, parent_id, createdat)
+        VALUES (#{movieId}, #{userId}, #{content}, #{score}, #{parentId}, #{createdAt})
     </insert>
 
     <!-- 根据ID查找评论 -->
     <select id="findReviewById" parameterType="java.lang.Integer" resultType="edu.cuit.yingpingsxitong.Entity.Review">
-        SELECT r.reviewid, r.movieid, m.title, r.userid, u.username, r.content, r.score, r.createdat
+        SELECT r.reviewid, r.movieid, m.title, r.userid, u.username, r.content, r.score, r.parent_id, r.like_count, r.createdat
         FROM reviews r
                  JOIN movies m ON r.movieid = m.movieid
                  JOIN users u ON r.userid = u.userid
@@ -36,7 +36,7 @@
         FROM reviews r
                  JOIN movies m ON r.movieid = m.movieid
                  JOIN users u ON r.userid = u.userid
-        WHERE r.userid = #{userId}
+        WHERE r.userid = #{userId} AND r.parent_id IS NULL
     </select>
 
     <!-- 更新评论 -->
@@ -58,6 +58,62 @@
 
     <!-- 统计评论数量 -->
     <select id="countReviews" resultType="java.lang.Integer">
-        SELECT COUNT(*) FROM reviews
+        SELECT COUNT(*) FROM reviews WHERE parent_id IS NULL
     </select>
+
+    <!-- 获取某条评论的回复列表 -->
+    <select id="findRepliesByParentId" parameterType="java.lang.Integer" resultType="edu.cuit.yingpingsxitong.Entity.Review">
+        SELECT r.reviewid, r.movieid, r.userid, r.content, r.score, r.parent_id, r.like_count, r.createdat,
+               u.username, u.avatar, u.nickname
+        FROM reviews r
+        JOIN users u ON r.userid = u.userid
+        WHERE r.parent_id = #{parentId}
+        ORDER BY r.createdat ASC
+    </select>
+
+    <!-- 获取电影下的顶级评论（parent_id IS NULL） -->
+    <select id="findTopLevelReviewsByMovieId" parameterType="java.lang.Integer" resultType="edu.cuit.yingpingsxitong.Entity.Review">
+        SELECT r.reviewid, r.movieid, m.title, r.userid, u.username, r.content, r.score, r.parent_id, r.like_count, r.createdat,
+               u.avatar, u.nickname
+        FROM reviews r
+        JOIN movies m ON r.movieid = m.movieid
+        JOIN users u ON r.userid = u.userid
+        WHERE r.movieid = #{movieId} AND r.parent_id IS NULL
+        ORDER BY r.createdat DESC
+    </select>
+
+    <!-- 级联删除回复 -->
+    <delete id="deleteRepliesByParentId" parameterType="java.lang.Integer">
+        DELETE FROM reviews WHERE parent_id = #{parentId}
+    </delete>
+
+    <!-- 删除某评论的所有点赞记录 -->
+    <delete id="deleteLikesByReviewId" parameterType="java.lang.Integer">
+        DELETE FROM review_likes WHERE review_id = #{reviewId}
+    </delete>
+
+    <!-- 查询用户是否已点赞 -->
+    <select id="hasUserLiked" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM review_likes WHERE review_id = #{reviewId} AND user_id = #{userId}
+    </select>
+
+    <!-- 插入点赞 -->
+    <insert id="insertLike">
+        INSERT INTO review_likes (review_id, user_id, created_at) VALUES (#{reviewId}, #{userId}, NOW())
+    </insert>
+
+    <!-- 取消点赞 -->
+    <delete id="deleteLike">
+        DELETE FROM review_likes WHERE review_id = #{reviewId} AND user_id = #{userId}
+    </delete>
+
+    <!-- 增加点赞数 -->
+    <update id="incrementLikeCount" parameterType="java.lang.Integer">
+        UPDATE reviews SET like_count = COALESCE(like_count, 0) + 1 WHERE reviewid = #{reviewId}
+    </update>
+
+    <!-- 减少点赞数 -->
+    <update id="decrementLikeCount" parameterType="java.lang.Integer">
+        UPDATE reviews SET like_count = COALESCE(like_count, 0) - 1 WHERE reviewid = #{reviewId}
+    </update>
 </mapper>
