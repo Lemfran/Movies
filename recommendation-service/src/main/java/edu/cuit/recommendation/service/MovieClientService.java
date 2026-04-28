@@ -1,10 +1,10 @@
 package edu.cuit.recommendation.service;
 
+import edu.cuit.recommendation.client.MovieClient;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.retry.annotation.Retry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,16 +14,14 @@ import java.util.Map;
 /**
  * 电影数据客户端服务
  *
- * 将外部 HTTP 调用抽离到单独的类中，确保 @CircuitBreaker 和 @Retry
- * 的 AOP 代理能正确拦截（避免同类自调用问题）
+ * 通过 Feign 调用 movies-service，同时保留熔断重试保护。
+ * @CircuitBreaker 和 @Retry 作用在本层方法上，当 Feign 调用失败时触发降级。
  */
 @Service
 public class MovieClientService {
 
     @Autowired
-    private RestTemplate restTemplate;
-
-    private static final String MOVIES_SERVICE = "http://movies-service";
+    private MovieClient movieClient;
 
     /**
      * 从 movies-service 获取全部电影数据
@@ -36,9 +34,7 @@ public class MovieClientService {
     @Retry(name = "movies-service")
     @SuppressWarnings("unchecked")
     public List<Map<String, Object>> fetchAllMovies() {
-        Map<String, Object> response = restTemplate.getForObject(
-            MOVIES_SERVICE + "/api/movies", Map.class
-        );
+        Map<String, Object> response = movieClient.getAllMovies();
         if (response == null || response.get("data") == null) {
             return new ArrayList<>();
         }
@@ -70,10 +66,10 @@ public class MovieClientService {
     /**
      * 获取 movies-service 服务信息
      */
-    @SuppressWarnings("unchecked")
     public Map<String, Object> getMoviesServiceInfo() {
         try {
-            return restTemplate.getForObject(MOVIES_SERVICE + "/api/info", Map.class);
+            Map<String, String> info = movieClient.info();
+            return new HashMap<>(info);
         } catch (Exception e) {
             Map<String, Object> error = new HashMap<>();
             error.put("error", "无法连接到 movies-service");

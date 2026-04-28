@@ -7,6 +7,9 @@ import edu.cuit.userportal.client.Result;
 import edu.cuit.userportal.entity.Movie;
 import edu.cuit.userportal.entity.Review;
 import edu.cuit.userportal.entity.User;
+import edu.cuit.userportal.util.JwtUtil;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,15 +31,26 @@ public class PortalIndexController {
     @Autowired
     private ReviewClient reviewClient;
 
+    @Autowired
+    private JwtUtil jwtUtil;
+
     @PostMapping({"/index"})
     public String login(@RequestParam("username") String username,
                         @RequestParam("password") String password,
-                        Model model) {
+                        Model model,
+                        HttpServletResponse response) {
         Result<User> result = userClient.findUserByUsername(username);
         User user = result.getData();
         boolean passwordValid = user != null && Boolean.TRUE.equals(userClient.validatePassword(username, password).getData());
         if (passwordValid && user.getPermission() && !user.getManager()) {
             model.addAttribute("user", user);
+            // 同时生成 JWT Token 写入 Cookie，供网关 AuthFilter 验证
+            String token = jwtUtil.generateToken(user.getUserId(), user.getUsername());
+            Cookie jwtCookie = new Cookie("jwt_token", token);
+            jwtCookie.setPath("/");
+            jwtCookie.setHttpOnly(true);
+            jwtCookie.setMaxAge(86400);
+            response.addCookie(jwtCookie);
             return "redirect:/user/home";
         } else if (passwordValid && user.getPermission() && user.getManager()) {
             model.addAttribute("error", "管理员请通过管理端入口登录");

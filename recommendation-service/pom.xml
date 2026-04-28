@@ -54,10 +54,10 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
         
-        <!-- LoadBalancer - 负载均衡 -->
+        <!-- OpenFeign - 声明式 HTTP 客户端 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
         
         <!-- Resilience4j 容错处理（替代已弃用的 Hystrix） -->

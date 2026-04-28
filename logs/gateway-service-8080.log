@@ -8,541 +8,156 @@
 
  :: Spring Boot ::                (v3.4.1)
 
-2026-04-26T13:00:18.847+08:00  INFO 67931 --- [gateway-service] [           main] edu.cuit.gateway.GatewayApplication      : Starting GatewayApplication v0.0.1-SNAPSHOT using Java 25.0.1 with PID 67931 (/Users/fanjinchen/工程实践/Movies/gateway-service/target/gateway-service-0.0.1-SNAPSHOT.jar started by fanjinchen in /Users/fanjinchen/工程实践/Movies)
-2026-04-26T13:00:18.848+08:00 DEBUG 67931 --- [gateway-service] [           main] edu.cuit.gateway.GatewayApplication      : Running with Spring Boot v3.4.1, Spring v6.2.1
-2026-04-26T13:00:18.848+08:00  INFO 67931 --- [gateway-service] [           main] edu.cuit.gateway.GatewayApplication      : No active profile set, falling back to 1 default profile: "default"
-2026-04-26T13:00:19.230+08:00  INFO 67931 --- [gateway-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8891d2ed-7a38-35bc-8894-ba20cff79d5d
+2026-04-28T18:01:18.259+08:00  INFO 64210 --- [gateway-service] [           main] edu.cuit.gateway.GatewayApplication      : Starting GatewayApplication v0.0.1-SNAPSHOT using Java 25.0.1 with PID 64210 (/Users/fanjinchen/工程实践/Movies/gateway-service/target/gateway-service-0.0.1-SNAPSHOT.jar started by fanjinchen in /Users/fanjinchen/工程实践/Movies)
+2026-04-28T18:01:18.260+08:00 DEBUG 64210 --- [gateway-service] [           main] edu.cuit.gateway.GatewayApplication      : Running with Spring Boot v3.4.1, Spring v6.2.1
+2026-04-28T18:01:18.261+08:00  INFO 64210 --- [gateway-service] [           main] edu.cuit.gateway.GatewayApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-04-28T18:01:18.712+08:00  INFO 64210 --- [gateway-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8891d2ed-7a38-35bc-8894-ba20cff79d5d
 WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
 WARNING: sun.misc.Unsafe::allocateMemory has been called by io.netty.util.internal.PlatformDependent0$2 (jar:nested:/Users/fanjinchen/工程实践/Movies/gateway-service/target/gateway-service-0.0.1-SNAPSHOT.jar/!BOOT-INF/lib/netty-common-4.1.116.Final.jar!/)
 WARNING: Please consider reporting this to the maintainers of class io.netty.util.internal.PlatformDependent0$2
 WARNING: sun.misc.Unsafe::allocateMemory will be removed in a future release
-2026-04-26T13:00:19.587+08:00  INFO 67931 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
-2026-04-26T13:00:19.587+08:00  INFO 67931 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
-2026-04-26T13:00:19.587+08:00  INFO 67931 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
-2026-04-26T13:00:19.587+08:00  INFO 67931 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
-2026-04-26T13:00:19.587+08:00  INFO 67931 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
-2026-04-26T13:00:19.587+08:00  INFO 67931 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
-2026-04-26T13:00:19.587+08:00  INFO 67931 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
-2026-04-26T13:00:19.587+08:00  INFO 67931 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
-2026-04-26T13:00:19.587+08:00  INFO 67931 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
-2026-04-26T13:00:19.587+08:00  INFO 67931 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
-2026-04-26T13:00:19.587+08:00  INFO 67931 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
-2026-04-26T13:00:19.587+08:00  INFO 67931 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
-2026-04-26T13:00:19.587+08:00  INFO 67931 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
-2026-04-26T13:00:19.587+08:00  INFO 67931 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
-2026-04-26T13:00:19.692+08:00  INFO 67931 --- [gateway-service] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2026-04-26T13:00:19.703+08:00  WARN 67931 --- [gateway-service] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-04-26T13:00:19.716+08:00  INFO 67931 --- [gateway-service] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2026-04-26T13:00:19.732+08:00  INFO 67931 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2026-04-26T13:00:19.734+08:00  INFO 67931 --- [gateway-service] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T13:00:19.737+08:00  INFO 67931 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2026-04-26T13:00:19.737+08:00  INFO 67931 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2026-04-26T13:00:19.737+08:00  INFO 67931 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2026-04-26T13:00:19.737+08:00  INFO 67931 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2026-04-26T13:00:19.737+08:00  INFO 67931 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2026-04-26T13:00:19.737+08:00  INFO 67931 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2026-04-26T13:00:19.737+08:00  INFO 67931 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2026-04-26T13:00:19.897+08:00  INFO 67931 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2026-04-26T13:00:19.897+08:00  INFO 67931 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2026-04-26T13:00:19.898+08:00  INFO 67931 --- [gateway-service] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-04-26T13:00:19.898+08:00  INFO 67931 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1777179619898 with initial instances count: 1
-2026-04-26T13:00:19.899+08:00  INFO 67931 --- [gateway-service] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application GATEWAY-SERVICE with eureka with status UP
-2026-04-26T13:00:19.899+08:00  INFO 67931 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1777179619899, current=UP, previous=STARTING]
-2026-04-26T13:00:19.900+08:00  INFO 67931 --- [gateway-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/mac:gateway-service:8080: registering service...
-2026-04-26T13:00:19.920+08:00  INFO 67931 --- [gateway-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/mac:gateway-service:8080 - registration status: 204
-2026-04-26T13:00:19.979+08:00  INFO 67931 --- [gateway-service] [           main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
-2026-04-26T13:00:19.979+08:00  INFO 67931 --- [gateway-service] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
-2026-04-26T13:00:19.992+08:00  INFO 67931 --- [gateway-service] [           main] edu.cuit.gateway.GatewayApplication      : Started GatewayApplication in 1.412 seconds (process running for 1.704)
-[Gateway日志] 2026-04-26 13:01:18 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+2026-04-28T18:01:19.036+08:00  INFO 64210 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2026-04-28T18:01:19.036+08:00  INFO 64210 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2026-04-28T18:01:19.036+08:00  INFO 64210 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2026-04-28T18:01:19.036+08:00  INFO 64210 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2026-04-28T18:01:19.036+08:00  INFO 64210 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2026-04-28T18:01:19.036+08:00  INFO 64210 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2026-04-28T18:01:19.036+08:00  INFO 64210 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2026-04-28T18:01:19.036+08:00  INFO 64210 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2026-04-28T18:01:19.036+08:00  INFO 64210 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2026-04-28T18:01:19.036+08:00  INFO 64210 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2026-04-28T18:01:19.036+08:00  INFO 64210 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2026-04-28T18:01:19.036+08:00  INFO 64210 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2026-04-28T18:01:19.036+08:00  INFO 64210 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2026-04-28T18:01:19.036+08:00  INFO 64210 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2026-04-28T18:01:19.137+08:00  INFO 64210 --- [gateway-service] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-04-28T18:01:19.147+08:00  WARN 64210 --- [gateway-service] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-04-28T18:01:19.159+08:00  INFO 64210 --- [gateway-service] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-04-28T18:01:19.174+08:00  INFO 64210 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-04-28T18:01:19.176+08:00  INFO 64210 --- [gateway-service] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:01:19.181+08:00  INFO 64210 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-04-28T18:01:19.181+08:00  INFO 64210 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-04-28T18:01:19.181+08:00  INFO 64210 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-04-28T18:01:19.181+08:00  INFO 64210 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-04-28T18:01:19.181+08:00  INFO 64210 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-04-28T18:01:19.181+08:00  INFO 64210 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-04-28T18:01:19.181+08:00  INFO 64210 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-04-28T18:01:19.344+08:00  INFO 64210 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-04-28T18:01:19.344+08:00  INFO 64210 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-04-28T18:01:19.345+08:00  INFO 64210 --- [gateway-service] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-04-28T18:01:19.346+08:00  INFO 64210 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1777370479345 with initial instances count: 6
+2026-04-28T18:01:19.347+08:00  INFO 64210 --- [gateway-service] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application GATEWAY-SERVICE with eureka with status UP
+2026-04-28T18:01:19.347+08:00  INFO 64210 --- [gateway-service] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1777370479347, current=UP, previous=STARTING]
+2026-04-28T18:01:19.348+08:00  INFO 64210 --- [gateway-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/mac:gateway-service:8080: registering service...
+2026-04-28T18:01:19.369+08:00  INFO 64210 --- [gateway-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/mac:gateway-service:8080 - registration status: 204
+2026-04-28T18:01:19.426+08:00  INFO 64210 --- [gateway-service] [           main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2026-04-28T18:01:19.427+08:00  INFO 64210 --- [gateway-service] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
+2026-04-28T18:01:19.443+08:00  INFO 64210 --- [gateway-service] [           main] edu.cuit.gateway.GatewayApplication      : Started GatewayApplication in 1.442 seconds (process running for 1.672)
+[Gateway日志] 2026-04-28 18:01:20 | 0:0:0:0:0:0:0:1 | GET /user/login
 WARNING: A restricted method in java.lang.System has been called
 WARNING: java.lang.System::loadLibrary has been called by io.netty.util.internal.NativeLibraryUtil in an unnamed module (jar:nested:/Users/fanjinchen/工程实践/Movies/gateway-service/target/gateway-service-0.0.1-SNAPSHOT.jar/!BOOT-INF/lib/netty-common-4.1.116.Final.jar!/)
 WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
 WARNING: Restricted methods will be blocked in a future release unless native access is enabled
 
-2026-04-26T13:01:18.403+08:00 ERROR 67931 --- [gateway-service] [ctor-http-nio-2] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
-[Gateway日志] 响应状态: 200 | 耗时: 964ms
-[Gateway日志] 2026-04-26 13:01:21 | 0:0:0:0:0:0:0:1 | GET /recommend/
-[Gateway日志] 响应状态: 200 | 耗时: 543ms
-[Gateway日志] 2026-04-26 13:01:24 | 0:0:0:0:0:0:0:1 | GET /user/reviews
-[Gateway日志] 响应状态: 200 | 耗时: 559ms
-[Gateway日志] 2026-04-26 13:01:26 | 0:0:0:0:0:0:0:1 | GET /recommend/
-[Gateway日志] 响应状态: 200 | 耗时: 38ms
-[Gateway日志] 2026-04-26 13:01:27 | 0:0:0:0:0:0:0:1 | GET /recommend/hot
-[Gateway日志] 响应状态: 200 | 耗时: 28ms
-[Gateway日志] 2026-04-26 13:01:28 | 0:0:0:0:0:0:0:1 | GET /recommend/personalized
-[Gateway日志] 响应状态: 200 | 耗时: 30ms
-[Gateway日志] 2026-04-26 13:01:28 | 0:0:0:0:0:0:0:1 | GET /recommend/high-score
-[Gateway日志] 响应状态: 200 | 耗时: 28ms
-[Gateway日志] 2026-04-26 13:01:29 | 0:0:0:0:0:0:0:1 | GET /recommend/hot
-[Gateway日志] 响应状态: 200 | 耗时: 25ms
-[Gateway日志] 2026-04-26 13:01:29 | 0:0:0:0:0:0:0:1 | GET /recommend/
-[Gateway日志] 响应状态: 200 | 耗时: 40ms
-[Gateway日志] 2026-04-26 13:01:34 | 0:0:0:0:0:0:0:1 | GET /recommend/service-info
-[Gateway日志] 响应状态: 200 | 耗时: 15ms
-2026-04-26T13:01:34.349+08:00 ERROR 67931 --- [gateway-service] [ctor-http-nio-2] o.s.w.s.adapter.HttpWebHandlerAdapter    : [44315cac-10] Error [reactor.netty.http.client.PrematureCloseException: Connection prematurely closed DURING response] for HTTP GET "/recommend/service-info", but ServerHttpResponse already committed (200 OK)
-2026-04-26T13:01:34.349+08:00 ERROR 67931 --- [gateway-service] [ctor-http-nio-2] r.n.http.server.HttpServerOperations     : [44315cac-10, L:/[0:0:0:0:0:0:0:1]:8080 - R:/[0:0:0:0:0:0:0:1]:59375] Error finishing response. Closing connection
-
-reactor.netty.http.client.PrematureCloseException: Connection prematurely closed DURING response
-	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
-Error has been observed at the following site(s):
-	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ HTTP GET "/recommend/service-info" [ExceptionHandlingWebHandler]
-Original Stack Trace:
-
-[Gateway日志] 2026-04-26 13:02:00 | 0:0:0:0:0:0:0:1 | GET /recommend/
-[Gateway日志] 响应状态: 200 | 耗时: 56ms
-[Gateway日志] 2026-04-26 13:02:05 | 0:0:0:0:0:0:0:1 | GET /recommend/
-[Gateway日志] 响应状态: 200 | 耗时: 44ms
-[Gateway日志] 2026-04-26 13:02:08 | 0:0:0:0:0:0:0:1 | GET /recommend/
-[Gateway日志] 响应状态: 200 | 耗时: 35ms
-[Gateway日志] 2026-04-26 13:02:42 | 0:0:0:0:0:0:0:1 | GET /recommend/
-[Gateway日志] 响应状态: 200 | 耗时: 121ms
-[Gateway日志] 2026-04-26 13:03:24 | 0:0:0:0:0:0:0:1 | GET /recommend/
-[Gateway日志] 响应状态: 200 | 耗时: 73ms
-2026-04-26T13:05:19.741+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T13:10:19.745+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-[Gateway日志] 2026-04-26 13:11:47 | 0:0:0:0:0:0:0:1 | GET /user/reviews
-[Gateway日志] 响应状态: 200 | 耗时: 289ms
-[Gateway日志] 2026-04-26 13:11:50 | 0:0:0:0:0:0:0:1 | GET /recommend/
-[Gateway日志] 响应状态: 200 | 耗时: 42ms
-[Gateway日志] 2026-04-26 13:11:53 | 0:0:0:0:0:0:0:1 | GET /user/reviews
-[Gateway日志] 响应状态: 200 | 耗时: 217ms
-[Gateway日志] 2026-04-26 13:11:54 | 0:0:0:0:0:0:0:1 | GET /recommend/
-[Gateway日志] 响应状态: 200 | 耗时: 34ms
-[Gateway日志] 2026-04-26 13:12:27 | 0:0:0:0:0:0:0:1 | GET /user/recommend/
-[Gateway日志] 响应状态: 404 | 耗时: 58ms
-2026-04-26T13:15:19.753+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T13:20:19.770+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T13:25:19.780+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T13:30:19.789+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T13:35:19.793+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T13:40:19.797+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-[Gateway日志] 2026-04-26 13:42:10 | 0:0:0:0:0:0:0:1 | GET /user/
-[Gateway日志] 响应状态: 200 | 耗时: 40ms
-[Gateway日志] 2026-04-26 13:42:15 | 0:0:0:0:0:0:0:1 | POST /user/index
-[Gateway日志] 响应状态: 302 | 耗时: 126ms
-[Gateway日志] 2026-04-26 13:42:15 | 0:0:0:0:0:0:0:1 | GET /user/home
-[Gateway日志] 响应状态: 200 | 耗时: 85ms
-[Gateway日志] 2026-04-26 13:42:16 | 0:0:0:0:0:0:0:1 | GET /recommend/
-[Gateway日志] 响应状态: 200 | 耗时: 34ms
-[Gateway日志] 2026-04-26 13:42:22 | 0:0:0:0:0:0:0:1 | GET /recommend/
-[Gateway日志] 响应状态: 200 | 耗时: 34ms
-[Gateway日志] 2026-04-26 13:42:24 | 0:0:0:0:0:0:0:1 | GET /user/home
-[Gateway日志] 响应状态: 200 | 耗时: 91ms
-[Gateway日志] 2026-04-26 13:42:26 | 0:0:0:0:0:0:0:1 | GET /recommend/
-[Gateway日志] 响应状态: 200 | 耗时: 36ms
-2026-04-26T13:45:19.802+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T13:50:19.810+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T13:55:19.820+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T14:00:19.823+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T14:05:19.848+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T14:10:19.855+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T14:15:19.864+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T14:20:19.889+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T14:25:19.902+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T14:30:19.915+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T14:35:19.927+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T14:40:19.940+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T14:45:19.948+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T14:50:19.959+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T14:55:19.972+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T15:00:19.985+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T15:05:19.999+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-[Gateway日志] 2026-04-26 15:05:46 | 0:0:0:0:0:0:0:1 | GET /recommend/
-[Gateway日志] 响应状态: 200 | 耗时: 92ms
-[Gateway日志] 2026-04-26 15:05:49 | 0:0:0:0:0:0:0:1 | GET /user/home
-[Gateway日志] 响应状态: 200 | 耗时: 351ms
-[Gateway日志] 2026-04-26 15:05:51 | 0:0:0:0:0:0:0:1 | GET /user/
-[Gateway日志] 响应状态: 200 | 耗时: 282ms
-[Gateway日志] 2026-04-26 15:05:55 | 0:0:0:0:0:0:0:1 | POST /user/index
-[Gateway日志] 响应状态: 302 | 耗时: 104ms
-[Gateway日志] 2026-04-26 15:05:55 | 0:0:0:0:0:0:0:1 | GET /user/home
-[Gateway日志] 响应状态: 200 | 耗时: 141ms
-[Gateway日志] 2026-04-26 15:05:57 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 40ms
-[Gateway日志] 2026-04-26 15:09:43 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 43ms
-[Gateway日志] 2026-04-26 15:09:44 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 74ms
-[Gateway日志] 2026-04-26 15:09:45 | 0:0:0:0:0:0:0:1 | GET /user/home
-[Gateway日志] 响应状态: 200 | 耗时: 79ms
-[Gateway日志] 2026-04-26 15:09:47 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 27ms
-2026-04-26T15:10:20.012+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-[Gateway日志] 2026-04-26 15:10:59 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-2026-04-26T15:10:59.997+08:00  WARN 67931 --- [gateway-service] [tor-http-nio-10] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: user-portal-service
-[Gateway日志] 2026-04-26 15:11:00 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-2026-04-26T15:11:00.728+08:00  WARN 67931 --- [gateway-service] [tor-http-nio-10] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: user-portal-service
-[Gateway日志] 2026-04-26 15:11:03 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-2026-04-26T15:11:03.222+08:00  WARN 67931 --- [gateway-service] [tor-http-nio-10] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: user-portal-service
-[Gateway日志] 2026-04-26 15:11:04 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-2026-04-26T15:11:04.445+08:00  WARN 67931 --- [gateway-service] [tor-http-nio-10] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: user-portal-service
-[Gateway日志] 2026-04-26 15:11:04 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-2026-04-26T15:11:04.780+08:00  WARN 67931 --- [gateway-service] [tor-http-nio-10] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: user-portal-service
-[Gateway日志] 2026-04-26 15:11:04 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-2026-04-26T15:11:04.949+08:00  WARN 67931 --- [gateway-service] [tor-http-nio-10] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: user-portal-service
-[Gateway日志] 2026-04-26 15:11:05 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-2026-04-26T15:11:05.113+08:00  WARN 67931 --- [gateway-service] [tor-http-nio-10] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: user-portal-service
-[Gateway日志] 2026-04-26 15:11:13 | 0:0:0:0:0:0:0:1 | GET /user/home
-2026-04-26T15:11:13.105+08:00  WARN 67931 --- [gateway-service] [tor-http-nio-10] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: user-portal-service
-[Gateway日志] 2026-04-26 15:11:14 | 0:0:0:0:0:0:0:1 | GET /user/
-2026-04-26T15:11:14.288+08:00  WARN 67931 --- [gateway-service] [tor-http-nio-10] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: user-portal-service
-[Gateway日志] 2026-04-26 15:11:15 | 0:0:0:0:0:0:0:1 | GET /user/home
-2026-04-26T15:11:15.849+08:00  WARN 67931 --- [gateway-service] [tor-http-nio-10] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: user-portal-service
-[Gateway日志] 2026-04-26 15:11:54 | 0:0:0:0:0:0:0:1 | GET /user/home
-[Gateway日志] 响应状态: 200 | 耗时: 13ms
-[Gateway日志] 2026-04-26 15:11:54 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 80ms
-[Gateway日志] 2026-04-26 15:12:56 | 0:0:0:0:0:0:0:1 | GET /user/home
-[Gateway日志] 响应状态: 200 | 耗时: 161ms
-[Gateway日志] 2026-04-26 15:12:58 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 52ms
-[Gateway日志] 2026-04-26 15:13:02 | 0:0:0:0:0:0:0:1 | GET /user/recommend/hot
-[Gateway日志] 响应状态: 200 | 耗时: 15ms
-[Gateway日志] 2026-04-26 15:13:05 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 14ms
-[Gateway日志] 2026-04-26 15:13:08 | 0:0:0:0:0:0:0:1 | GET /user/recommend/personalized
-[Gateway日志] 响应状态: 200 | 耗时: 29ms
-[Gateway日志] 2026-04-26 15:13:09 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 17ms
-[Gateway日志] 2026-04-26 15:13:17 | 0:0:0:0:0:0:0:1 | GET /user/home
-[Gateway日志] 响应状态: 200 | 耗时: 93ms
-[Gateway日志] 2026-04-26 15:13:18 | 0:0:0:0:0:0:0:1 | GET /user/movielist
-[Gateway日志] 响应状态: 200 | 耗时: 32ms
-[Gateway日志] 2026-04-26 15:13:18 | 0:0:0:0:0:0:0:1 | GET /user/reviews
-[Gateway日志] 响应状态: 200 | 耗时: 146ms
-[Gateway日志] 2026-04-26 15:13:19 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 17ms
-[Gateway日志] 2026-04-26 15:13:20 | 0:0:0:0:0:0:0:1 | GET /user/home
-[Gateway日志] 响应状态: 200 | 耗时: 79ms
-[Gateway日志] 2026-04-26 15:13:21 | 0:0:0:0:0:0:0:1 | GET /user/movielist
-[Gateway日志] 响应状态: 200 | 耗时: 26ms
-[Gateway日志] 2026-04-26 15:13:21 | 0:0:0:0:0:0:0:1 | GET /user/reviews
-[Gateway日志] 响应状态: 200 | 耗时: 151ms
-[Gateway日志] 2026-04-26 15:13:22 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 19ms
-2026-04-26T15:15:20.029+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-[Gateway日志] 2026-04-26 15:16:48 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 32ms
-[Gateway日志] 2026-04-26 15:16:48 | 0:0:0:0:0:0:0:1 | GET /user/home
-[Gateway日志] 响应状态: 200 | 耗时: 8ms
-[Gateway日志] 2026-04-26 15:16:58 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 20ms
-2026-04-26T15:20:20.036+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-[Gateway日志] 2026-04-26 15:22:50 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 397ms
-[Gateway日志] 2026-04-26 15:22:54 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 392ms
-[Gateway日志] 2026-04-26 15:22:55 | 0:0:0:0:0:0:0:1 | GET /user/reviews
-[Gateway日志] 响应状态: 200 | 耗时: 152ms
-[Gateway日志] 2026-04-26 15:22:56 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 35ms
-[Gateway日志] 2026-04-26 15:23:16 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 47ms
-[Gateway日志] 2026-04-26 15:23:25 | 0:0:0:0:0:0:0:1 | GET /user/reviews
-[Gateway日志] 响应状态: 200 | 耗时: 142ms
-2026-04-26T15:25:20.048+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T15:30:20.054+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-[Gateway日志] 2026-04-26 15:32:01 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 417ms
-[Gateway日志] 2026-04-26 15:32:03 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 375ms
-[Gateway日志] 2026-04-26 15:32:04 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 34ms
-[Gateway日志] 2026-04-26 15:32:05 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 24ms
-[Gateway日志] 2026-04-26 15:32:05 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 18ms
-[Gateway日志] 2026-04-26 15:32:05 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 22ms
-[Gateway日志] 2026-04-26 15:32:13 | 0:0:0:0:0:0:0:1 | GET /user/movielist
-[Gateway日志] 响应状态: 200 | 耗时: 39ms
-[Gateway日志] 2026-04-26 15:32:14 | 0:0:0:0:0:0:0:1 | GET /user/home
-[Gateway日志] 响应状态: 200 | 耗时: 114ms
-[Gateway日志] 2026-04-26 15:32:15 | 0:0:0:0:0:0:0:1 | GET /user/reviews
-[Gateway日志] 响应状态: 200 | 耗时: 173ms
-[Gateway日志] 2026-04-26 15:32:16 | 0:0:0:0:0:0:0:1 | GET /user/home
+2026-04-28T18:01:20.955+08:00 ERROR 64210 --- [gateway-service] [ctor-http-nio-2] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
 [Gateway日志] 响应状态: 200 | 耗时: 75ms
-[Gateway日志] 2026-04-26 15:32:19 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 13ms
-[Gateway日志] 2026-04-26 15:32:56 | 0:0:0:0:0:0:0:1 | GET /user/getmovie
-[Gateway日志] 响应状态: 200 | 耗时: 80ms
-[Gateway日志] 2026-04-26 15:34:38 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 371ms
-2026-04-26T15:35:20.066+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T15:40:20.077+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-[Gateway日志] 2026-04-26 15:41:30 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 426ms
-[Gateway日志] 2026-04-26 15:41:45 | 0:0:0:0:0:0:0:1 | GET /user/recommend/high-score
-[Gateway日志] 响应状态: 200 | 耗时: 399ms
-[Gateway日志] 2026-04-26 15:41:54 | 0:0:0:0:0:0:0:1 | GET /user/movielist
-[Gateway日志] 响应状态: 200 | 耗时: 21ms
-[Gateway日志] 2026-04-26 15:41:54 | 0:0:0:0:0:0:0:1 | GET /user/reviews
-[Gateway日志] 响应状态: 200 | 耗时: 123ms
-[Gateway日志] 2026-04-26 15:41:55 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 18ms
-[Gateway日志] 2026-04-26 15:41:56 | 0:0:0:0:0:0:0:1 | GET /user/home
-[Gateway日志] 响应状态: 200 | 耗时: 96ms
-[Gateway日志] 2026-04-26 15:41:56 | 0:0:0:0:0:0:0:1 | GET /user/movielist
-[Gateway日志] 响应状态: 200 | 耗时: 21ms
-[Gateway日志] 2026-04-26 15:41:57 | 0:0:0:0:0:0:0:1 | GET /user/reviews
-[Gateway日志] 响应状态: 200 | 耗时: 111ms
-[Gateway日志] 2026-04-26 15:41:57 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 36ms
-[Gateway日志] 2026-04-26 15:41:59 | 0:0:0:0:0:0:0:1 | GET /user/home
-[Gateway日志] 响应状态: 200 | 耗时: 58ms
-[Gateway日志] 2026-04-26 15:41:59 | 0:0:0:0:0:0:0:1 | GET /user/movielist
-[Gateway日志] 响应状态: 200 | 耗时: 26ms
-[Gateway日志] 2026-04-26 15:42:00 | 0:0:0:0:0:0:0:1 | GET /user/reviews
-[Gateway日志] 响应状态: 200 | 耗时: 83ms
-[Gateway日志] 2026-04-26 15:42:00 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 32ms
-[Gateway日志] 2026-04-26 15:42:01 | 0:0:0:0:0:0:0:1 | GET /user/home
-[Gateway日志] 响应状态: 200 | 耗时: 59ms
-2026-04-26T15:45:20.090+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-[Gateway日志] 2026-04-26 15:46:09 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 45ms
-[Gateway日志] 2026-04-26 15:46:19 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 18ms
-[Gateway日志] 2026-04-26 15:46:30 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 28ms
-[Gateway日志] 2026-04-26 15:46:39 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+[Gateway日志] 2026-04-28 18:01:21 | 0:0:0:0:0:0:0:1 | GET /user/login
+[Gateway日志] 响应状态: 200 | 耗时: 197ms
+[Gateway日志] 2026-04-28 18:01:24 | 0:0:0:0:0:0:0:1 | POST /user/index
+[Gateway日志] 响应状态: 302 | 耗时: 49ms
+[Gateway日志] 2026-04-28 18:01:24 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 181ms
+[Gateway日志] 2026-04-28 18:01:26 | 0:0:0:0:0:0:0:1 | GET /user/movielist
+[Gateway日志] 响应状态: 200 | 耗时: 25ms
+[Gateway日志] 2026-04-28 18:01:27 | 0:0:0:0:0:0:0:1 | GET /user/reviews
+[Gateway日志] 响应状态: 200 | 耗时: 185ms
+[Gateway日志] 2026-04-28 18:01:29 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 84ms
+[Gateway日志] 2026-04-28 18:01:32 | 0:0:0:0:0:0:0:1 | POST /user/index
+[Gateway日志] 响应状态: 302 | 耗时: 37ms
+[Gateway日志] 2026-04-28 18:01:32 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 401 | 耗时: 2ms
+[Gateway日志] 2026-04-28 18:01:32 | 0:0:0:0:0:0:0:1 | GET /user/home
 [Gateway日志] 响应状态: 200 | 耗时: 5ms
-[Gateway日志] 2026-04-26 15:47:20 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 12ms
-2026-04-26T15:50:20.099+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T15:55:20.106+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-[Gateway日志] 2026-04-26 15:59:15 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 480ms
-[Gateway日志] 2026-04-26 15:59:17 | 0:0:0:0:0:0:0:1 | GET /user/reviews
-[Gateway日志] 响应状态: 200 | 耗时: 512ms
-[Gateway日志] 2026-04-26 15:59:18 | 0:0:0:0:0:0:0:1 | GET /user/movielist
-[Gateway日志] 响应状态: 200 | 耗时: 25ms
-[Gateway日志] 2026-04-26 15:59:19 | 0:0:0:0:0:0:0:1 | GET /user/home
-[Gateway日志] 响应状态: 200 | 耗时: 71ms
-[Gateway日志] 2026-04-26 15:59:19 | 0:0:0:0:0:0:0:1 | GET /user/reviews
-[Gateway日志] 响应状态: 200 | 耗时: 101ms
-[Gateway日志] 2026-04-26 15:59:20 | 0:0:0:0:0:0:0:1 | GET /user/recommend
-[Gateway日志] 响应状态: 200 | 耗时: 32ms
-[Gateway日志] 2026-04-26 15:59:30 | 0:0:0:0:0:0:0:1 | GET /user/
-[Gateway日志] 响应状态: 200 | 耗时: 28ms
-[Gateway日志] 2026-04-26 15:59:32 | 0:0:0:0:0:0:0:1 | GET /admin/login
-[Gateway日志] 响应状态: 200 | 耗时: 124ms
-[Gateway日志] 2026-04-26 15:59:38 | 0:0:0:0:0:0:0:1 | POST /admin/index
-[Gateway日志] 响应状态: 200 | 耗时: 267ms
-[Gateway日志] 2026-04-26 15:59:40 | 0:0:0:0:0:0:0:1 | GET /admin/
-[Gateway日志] 响应状态: 200 | 耗时: 3ms
-[Gateway日志] 2026-04-26 15:59:45 | 0:0:0:0:0:0:0:1 | POST /admin/index
-[Gateway日志] 响应状态: 302 | 耗时: 36ms
-[Gateway日志] 2026-04-26 15:59:45 | 0:0:0:0:0:0:0:1 | GET /admin/home
-[Gateway日志] 响应状态: 200 | 耗时: 82ms
-[Gateway日志] 2026-04-26 15:59:48 | 0:0:0:0:0:0:0:1 | GET /admin/manager
-[Gateway日志] 响应状态: 200 | 耗时: 40ms
-[Gateway日志] 2026-04-26 15:59:49 | 0:0:0:0:0:0:0:1 | GET /admin/movieManage
-[Gateway日志] 响应状态: 200 | 耗时: 35ms
-[Gateway日志] 2026-04-26 15:59:50 | 0:0:0:0:0:0:0:1 | GET /admin/home
-[Gateway日志] 响应状态: 200 | 耗时: 34ms
-[Gateway日志] 2026-04-26 15:59:51 | 0:0:0:0:0:0:0:1 | GET /admin/manager
-[Gateway日志] 响应状态: 200 | 耗时: 31ms
-[Gateway日志] 2026-04-26 15:59:52 | 0:0:0:0:0:0:0:1 | GET /admin/movieManage
-[Gateway日志] 响应状态: 200 | 耗时: 31ms
-[Gateway日志] 2026-04-26 15:59:52 | 0:0:0:0:0:0:0:1 | GET /admin/reviewsManage
-[Gateway日志] 响应状态: 200 | 耗时: 74ms
-[Gateway日志] 2026-04-26 15:59:54 | 0:0:0:0:0:0:0:1 | GET /admin/movieManage
-[Gateway日志] 响应状态: 200 | 耗时: 25ms
-[Gateway日志] 2026-04-26 15:59:57 | 0:0:0:0:0:0:0:1 | GET /admin/manager
-[Gateway日志] 响应状态: 200 | 耗时: 23ms
-[Gateway日志] 2026-04-26 15:59:57 | 0:0:0:0:0:0:0:1 | GET /admin/movieManage
-[Gateway日志] 响应状态: 200 | 耗时: 17ms
-[Gateway日志] 2026-04-26 15:59:58 | 0:0:0:0:0:0:0:1 | GET /admin/reviewsManage
-[Gateway日志] 响应状态: 200 | 耗时: 88ms
-[Gateway日志] 2026-04-26 15:59:59 | 0:0:0:0:0:0:0:1 | GET /admin/logList
-[Gateway日志] 响应状态: 200 | 耗时: 50ms
-[Gateway日志] 2026-04-26 16:00:00 | 0:0:0:0:0:0:0:1 | GET /admin/reviewsManage
-[Gateway日志] 响应状态: 200 | 耗时: 70ms
-[Gateway日志] 2026-04-26 16:00:01 | 0:0:0:0:0:0:0:1 | GET /admin/movieManage
-[Gateway日志] 响应状态: 200 | 耗时: 26ms
-[Gateway日志] 2026-04-26 16:00:02 | 0:0:0:0:0:0:0:1 | GET /admin/manager
-[Gateway日志] 响应状态: 200 | 耗时: 23ms
-2026-04-26T16:00:20.083+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-[Gateway日志] 2026-04-26 16:00:20 | 0:0:0:0:0:0:0:1 | GET /admin/reviewsManage
+[Gateway日志] 2026-04-28 18:01:32 | 0:0:0:0:0:0:0:1 | GET /user/login
+[Gateway日志] 响应状态: 200 | 耗时: 2ms
+[Gateway日志] 2026-04-28 18:01:32 | 0:0:0:0:0:0:0:1 | GET /recommend/hot
+[Gateway日志] 响应状态: 401 | 耗时: 0ms
+[Gateway日志] 2026-04-28 18:01:33 | 0:0:0:0:0:0:0:1 | GET /user/
+[Gateway日志] 响应状态: 200 | 耗时: 13ms
+[Gateway日志] 2026-04-28 18:01:37 | 0:0:0:0:0:0:0:1 | GET /user/home
 [Gateway日志] 响应状态: 200 | 耗时: 81ms
-2026-04-26T16:05:20.089+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-[Gateway日志] 2026-04-26 16:05:50 | 0:0:0:0:0:0:0:1 | GET /admin/reviewsManage
-[Gateway日志] 响应状态: 500 | 耗时: 429ms
-[Gateway日志] 2026-04-26 16:05:52 | 0:0:0:0:0:0:0:1 | GET /admin/
-2026-04-26T16:05:52.355+08:00 ERROR 67931 --- [gateway-service] [ctor-http-nio-5] a.w.r.e.AbstractErrorWebExceptionHandler : [a53cbd4a-133]  500 Server Error for HTTP GET "/admin/"
-
-io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/[0:0:0:0:0:0:0:1]:8084
-	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
-Error has been observed at the following site(s):
-	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ HTTP GET "/admin/" [ExceptionHandlingWebHandler]
-Original Stack Trace:
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:639) ~[na:na]
-	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:1046) ~[na:na]
-	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:336) ~[netty-transport-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:339) ~[netty-transport-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776) ~[netty-transport-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[netty-transport-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[netty-transport-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[netty-common-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.116.Final.jar!/:4.1.116.Final]
-	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
-
-[Gateway日志] 2026-04-26 16:05:53 | 0:0:0:0:0:0:0:1 | GET /admin/reviewsManage
-[Gateway日志] 响应状态: 500 | 耗时: 32ms
-[Gateway日志] 2026-04-26 16:05:54 | 0:0:0:0:0:0:0:1 | GET /admin/manager
-2026-04-26T16:05:54.278+08:00 ERROR 67931 --- [gateway-service] [ctor-http-nio-5] a.w.r.e.AbstractErrorWebExceptionHandler : [a53cbd4a-135]  500 Server Error for HTTP GET "/admin/manager"
-
-io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/[0:0:0:0:0:0:0:1]:8084
-	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
-Error has been observed at the following site(s):
-	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ HTTP GET "/admin/manager" [ExceptionHandlingWebHandler]
-Original Stack Trace:
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:639) ~[na:na]
-	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:1046) ~[na:na]
-	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:336) ~[netty-transport-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:339) ~[netty-transport-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776) ~[netty-transport-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[netty-transport-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[netty-transport-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[netty-common-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.116.Final.jar!/:4.1.116.Final]
-	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
-
-[Gateway日志] 2026-04-26 16:05:54 | 0:0:0:0:0:0:0:1 | GET /admin/movieManage
-[Gateway日志] 响应状态: 500 | 耗时: 17ms
-[Gateway日志] 2026-04-26 16:05:55 | 0:0:0:0:0:0:0:1 | GET /admin/reviewsManage
-2026-04-26T16:05:55.263+08:00 ERROR 67931 --- [gateway-service] [ctor-http-nio-5] a.w.r.e.AbstractErrorWebExceptionHandler : [a53cbd4a-137]  500 Server Error for HTTP GET "/admin/reviewsManage"
-
-io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/[0:0:0:0:0:0:0:1]:8084
-	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
-Error has been observed at the following site(s):
-	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ HTTP GET "/admin/reviewsManage" [ExceptionHandlingWebHandler]
-Original Stack Trace:
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:639) ~[na:na]
-	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:1046) ~[na:na]
-	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:336) ~[netty-transport-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:339) ~[netty-transport-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776) ~[netty-transport-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[netty-transport-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[netty-transport-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[netty-common-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.116.Final.jar!/:4.1.116.Final]
-	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
-
-[Gateway日志] 2026-04-26 16:05:55 | 0:0:0:0:0:0:0:1 | GET /admin/logList
-[Gateway日志] 响应状态: 500 | 耗时: 33ms
-[Gateway日志] 2026-04-26 16:05:55 | 0:0:0:0:0:0:0:1 | GET /admin/movieManage
-2026-04-26T16:05:55.962+08:00 ERROR 67931 --- [gateway-service] [ctor-http-nio-5] a.w.r.e.AbstractErrorWebExceptionHandler : [a53cbd4a-139]  500 Server Error for HTTP GET "/admin/movieManage"
-
-io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/[0:0:0:0:0:0:0:1]:8084
-	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
-Error has been observed at the following site(s):
-	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ HTTP GET "/admin/movieManage" [ExceptionHandlingWebHandler]
-Original Stack Trace:
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:639) ~[na:na]
-	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:1046) ~[na:na]
-	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:336) ~[netty-transport-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:339) ~[netty-transport-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776) ~[netty-transport-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[netty-transport-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[netty-transport-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[netty-common-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.116.Final.jar!/:4.1.116.Final]
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.116.Final.jar!/:4.1.116.Final]
-	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
-
-[Gateway日志] 2026-04-26 16:05:56 | 0:0:0:0:0:0:0:1 | GET /admin/home
-[Gateway日志] 响应状态: 500 | 耗时: 16ms
-2026-04-26T16:10:20.097+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T16:15:20.102+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-[Gateway日志] 2026-04-26 16:19:26 | 0:0:0:0:0:0:0:1 | GET /admin/
-[Gateway日志] 响应状态: 200 | 耗时: 46ms
-[Gateway日志] 2026-04-26 16:19:32 | 0:0:0:0:0:0:0:1 | POST /admin/index
-[Gateway日志] 响应状态: 302 | 耗时: 85ms
-[Gateway日志] 2026-04-26 16:19:32 | 0:0:0:0:0:0:0:1 | GET /admin/home
-[Gateway日志] 响应状态: 200 | 耗时: 35ms
-[Gateway日志] 2026-04-26 16:19:33 | 0:0:0:0:0:0:0:1 | GET /admin/manager
-[Gateway日志] 响应状态: 200 | 耗时: 17ms
-[Gateway日志] 2026-04-26 16:19:34 | 0:0:0:0:0:0:0:1 | GET /admin/movieManage
-[Gateway日志] 响应状态: 200 | 耗时: 42ms
-[Gateway日志] 2026-04-26 16:19:35 | 0:0:0:0:0:0:0:1 | GET /admin/logList
-[Gateway日志] 响应状态: 200 | 耗时: 70ms
-[Gateway日志] 2026-04-26 16:19:35 | 0:0:0:0:0:0:0:1 | GET /admin/reviewsManage
-[Gateway日志] 响应状态: 200 | 耗时: 112ms
-[Gateway日志] 2026-04-26 16:19:36 | 0:0:0:0:0:0:0:1 | GET /admin/home
-[Gateway日志] 响应状态: 200 | 耗时: 38ms
-[Gateway日志] 2026-04-26 16:19:37 | 0:0:0:0:0:0:0:1 | GET /admin/manager
-[Gateway日志] 响应状态: 200 | 耗时: 28ms
-[Gateway日志] 2026-04-26 16:19:38 | 0:0:0:0:0:0:0:1 | GET /admin/movieManage
-[Gateway日志] 响应状态: 200 | 耗时: 28ms
-[Gateway日志] 2026-04-26 16:19:40 | 0:0:0:0:0:0:0:1 | GET /admin/reviewsManage
-[Gateway日志] 响应状态: 200 | 耗时: 75ms
-[Gateway日志] 2026-04-26 16:19:41 | 0:0:0:0:0:0:0:1 | GET /admin/logList
-[Gateway日志] 响应状态: 200 | 耗时: 31ms
-[Gateway日志] 2026-04-26 16:19:41 | 0:0:0:0:0:0:0:1 | GET /admin/reviewsManage
-[Gateway日志] 响应状态: 200 | 耗时: 76ms
-[Gateway日志] 2026-04-26 16:19:52 | 0:0:0:0:0:0:0:1 | GET /admin/movieManage
-[Gateway日志] 响应状态: 200 | 耗时: 23ms
-[Gateway日志] 2026-04-26 16:19:53 | 0:0:0:0:0:0:0:1 | GET /admin/reviewsManage
-[Gateway日志] 响应状态: 200 | 耗时: 71ms
-[Gateway日志] 2026-04-26 16:19:54 | 0:0:0:0:0:0:0:1 | GET /admin/movieManage
-[Gateway日志] 响应状态: 200 | 耗时: 27ms
-[Gateway日志] 2026-04-26 16:19:54 | 0:0:0:0:0:0:0:1 | GET /admin/manager
-[Gateway日志] 响应状态: 200 | 耗时: 10ms
-[Gateway日志] 2026-04-26 16:19:55 | 0:0:0:0:0:0:0:1 | GET /admin/movieManage
-[Gateway日志] 响应状态: 200 | 耗时: 29ms
-[Gateway日志] 2026-04-26 16:19:56 | 0:0:0:0:0:0:0:1 | GET /admin/reviewsManage
-[Gateway日志] 响应状态: 200 | 耗时: 69ms
-[Gateway日志] 2026-04-26 16:19:57 | 0:0:0:0:0:0:0:1 | GET /admin/movieManage
-[Gateway日志] 响应状态: 200 | 耗时: 22ms
-[Gateway日志] 2026-04-26 16:19:58 | 0:0:0:0:0:0:0:1 | GET /admin/manager
-[Gateway日志] 响应状态: 200 | 耗时: 24ms
-[Gateway日志] 2026-04-26 16:19:59 | 0:0:0:0:0:0:0:1 | GET /admin/home
-[Gateway日志] 响应状态: 200 | 耗时: 33ms
-2026-04-26T16:20:20.111+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T16:25:20.118+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T16:30:20.121+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T16:35:20.130+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T16:40:20.141+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T16:45:20.147+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T16:50:20.158+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T16:55:20.166+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T17:00:20.168+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T17:05:20.179+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T17:10:20.190+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T17:15:20.198+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T23:39:37.822+08:00  INFO 67931 --- [gateway-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/mac:gateway-service:8080 - Re-registering apps/GATEWAY-SERVICE
-2026-04-26T23:39:37.823+08:00  INFO 67931 --- [gateway-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/mac:gateway-service:8080: registering service...
-2026-04-26T23:39:37.830+08:00  INFO 67931 --- [gateway-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/mac:gateway-service:8080 - registration status: 204
-2026-04-27T00:23:46.892+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-27T09:23:07.328+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-27T17:17:49.141+08:00  INFO 67931 --- [gateway-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/mac:gateway-service:8080 - Re-registering apps/GATEWAY-SERVICE
-2026-04-27T17:17:49.142+08:00  INFO 67931 --- [gateway-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/mac:gateway-service:8080: registering service...
-2026-04-27T17:17:49.150+08:00  INFO 67931 --- [gateway-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/mac:gateway-service:8080 - registration status: 204
-2026-04-27T20:40:26.436+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-27T20:45:26.448+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-27T20:50:26.457+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-27T20:55:26.464+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-27T21:00:26.478+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-27T21:05:26.489+08:00  INFO 67931 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+[Gateway日志] 2026-04-28 18:02:35 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 401 | 耗时: 2ms
+[Gateway日志] 2026-04-28 18:02:42 | 0:0:0:0:0:0:0:1 | GET /user/
+[Gateway日志] 响应状态: 401 | 耗时: 1ms
+[Gateway日志] 2026-04-28 18:02:46 | 0:0:0:0:0:0:0:1 | GET /
+[Gateway日志] 响应状态: 302 | 耗时: 0ms
+[Gateway日志] 2026-04-28 18:02:46 | 0:0:0:0:0:0:0:1 | GET /user/login
+[Gateway日志] 响应状态: 200 | 耗时: 26ms
+[Gateway日志] 2026-04-28 18:02:58 | 0:0:0:0:0:0:0:1 | POST /user/index
+[Gateway日志] 响应状态: 302 | 耗时: 64ms
+[Gateway日志] 2026-04-28 18:02:58 | 0:0:0:0:0:0:0:1 | GET /user/home
+[Gateway日志] 响应状态: 200 | 耗时: 85ms
+2026-04-28T18:06:19.189+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:11:19.198+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+[Gateway日志] 2026-04-28 18:12:34 | 0:0:0:0:0:0:0:1 | GET /
+[Gateway日志] 响应状态: 302 | 耗时: 0ms
+[Gateway日志] 2026-04-28 18:12:35 | 0:0:0:0:0:0:0:1 | GET /user/login
+[Gateway日志] 响应状态: 200 | 耗时: 53ms
+[Gateway日志] 2026-04-28 18:12:46 | 0:0:0:0:0:0:0:1 | GET /recommend/personalized
+[Gateway日志] 响应状态: 200 | 耗时: 548ms
+2026-04-28T18:16:19.207+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:21:19.215+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:26:19.225+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:31:19.235+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:36:19.246+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:41:19.256+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:46:19.264+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:51:19.274+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:56:19.286+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:01:19.295+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:06:19.306+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:11:19.319+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:16:19.331+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:21:19.349+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:26:19.365+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:31:19.369+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:36:19.383+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:41:19.390+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:46:19.403+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:51:19.415+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:56:19.431+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:01:19.447+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:06:19.458+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:11:19.468+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:16:19.482+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:21:19.496+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:26:19.512+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:31:19.522+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:36:19.529+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:41:19.539+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:46:19.550+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:51:19.560+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:56:19.571+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:01:19.580+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:06:19.594+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:11:19.603+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:16:19.616+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:21:19.626+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:26:19.593+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:31:19.602+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:36:19.611+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:41:19.625+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:46:19.624+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:51:19.629+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:56:19.638+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T22:01:19.647+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T22:06:19.655+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T22:11:19.673+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T22:16:19.682+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T22:21:19.690+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T22:26:19.704+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T22:31:19.708+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T22:36:19.720+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T22:41:19.726+08:00  INFO 64210 --- [gateway-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

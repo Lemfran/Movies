@@ -3,6 +3,7 @@ package edu.cuit.recommendation;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * 电影推荐服务启动类
@@ -19,6 +20,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @SpringBootApplication
 @EnableDiscoveryClient  // 开启服务发现，注册到 Eureka
+@EnableFeignClients     // 开启 Feign 客户端
 public class RecommendationServiceApplication {
 
     public static void main(String[] args) {

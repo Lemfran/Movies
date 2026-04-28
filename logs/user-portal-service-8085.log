@@ -8,84 +8,190 @@
 
  :: Spring Boot ::                (v3.4.1)
 
-2026-04-26T15:49:39.548+08:00  INFO 87272 --- [user-portal-service] [           main] e.cuit.userportal.UserPortalApplication  : Starting UserPortalApplication v0.0.1-SNAPSHOT using Java 25.0.1 with PID 87272 (/Users/fanjinchen/工程实践/Movies/user-portal-service/target/user-portal-service-0.0.1-SNAPSHOT.jar started by fanjinchen in /Users/fanjinchen/工程实践/Movies/user-portal-service)
-2026-04-26T15:49:39.548+08:00  INFO 87272 --- [user-portal-service] [           main] e.cuit.userportal.UserPortalApplication  : No active profile set, falling back to 1 default profile: "default"
-2026-04-26T15:49:39.794+08:00  INFO 87272 --- [user-portal-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-04-26T15:49:39.796+08:00  INFO 87272 --- [user-portal-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2026-04-26T15:49:39.807+08:00  INFO 87272 --- [user-portal-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
-2026-04-26T15:49:39.907+08:00  INFO 87272 --- [user-portal-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e75bcd03-7129-3c07-a9ff-dfebc792e4c4
+2026-04-28T17:54:28.624+08:00  INFO 62613 --- [user-portal-service] [           main] e.cuit.userportal.UserPortalApplication  : Starting UserPortalApplication v0.0.1-SNAPSHOT using Java 25.0.1 with PID 62613 (/Users/fanjinchen/工程实践/Movies/user-portal-service/target/user-portal-service-0.0.1-SNAPSHOT.jar started by fanjinchen in /Users/fanjinchen/工程实践/Movies)
+2026-04-28T17:54:28.627+08:00  INFO 62613 --- [user-portal-service] [           main] e.cuit.userportal.UserPortalApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-04-28T17:54:28.925+08:00  INFO 62613 --- [user-portal-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-28T17:54:28.927+08:00  INFO 62613 --- [user-portal-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-04-28T17:54:28.939+08:00  INFO 62613 --- [user-portal-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2026-04-28T17:54:29.042+08:00  INFO 62613 --- [user-portal-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1555e84e-e60b-37b5-a7d0-ba6ef079bb67
 WARNING: A restricted method in java.lang.System has been called
 WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (jar:nested:/Users/fanjinchen/工程实践/Movies/user-portal-service/target/user-portal-service-0.0.1-SNAPSHOT.jar/!BOOT-INF/lib/tomcat-embed-core-10.1.34.jar!/)
 WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
 WARNING: Restricted methods will be blocked in a future release unless native access is enabled
 
-2026-04-26T15:49:40.025+08:00  INFO 87272 --- [user-portal-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8085 (http)
-2026-04-26T15:49:40.032+08:00  INFO 87272 --- [user-portal-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-04-26T15:49:40.032+08:00  INFO 87272 --- [user-portal-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
-2026-04-26T15:49:40.044+08:00  INFO 87272 --- [user-portal-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-04-26T15:49:40.044+08:00  INFO 87272 --- [user-portal-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 476 ms
-2026-04-26T15:49:40.145+08:00  INFO 87272 --- [user-portal-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
-2026-04-26T15:49:40.172+08:00  INFO 87272 --- [user-portal-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
-2026-04-26T15:49:40.180+08:00  INFO 87272 --- [user-portal-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
-2026-04-26T15:49:40.197+08:00  INFO 87272 --- [user-portal-service] [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-04-28T17:54:29.163+08:00  INFO 62613 --- [user-portal-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8085 (http)
+2026-04-28T17:54:29.169+08:00  INFO 62613 --- [user-portal-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-28T17:54:29.169+08:00  INFO 62613 --- [user-portal-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-04-28T17:54:29.183+08:00  INFO 62613 --- [user-portal-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-28T17:54:29.183+08:00  INFO 62613 --- [user-portal-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 530 ms
+2026-04-28T17:54:29.289+08:00  INFO 62613 --- [user-portal-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
+2026-04-28T17:54:29.315+08:00  INFO 62613 --- [user-portal-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
+2026-04-28T17:54:29.323+08:00  INFO 62613 --- [user-portal-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
+2026-04-28T17:54:29.342+08:00  INFO 62613 --- [user-portal-service] [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
 WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
 WARNING: sun.misc.Unsafe::allocateMemory has been called by io.netty.util.internal.PlatformDependent0$2 (jar:nested:/Users/fanjinchen/工程实践/Movies/user-portal-service/target/user-portal-service-0.0.1-SNAPSHOT.jar/!BOOT-INF/lib/netty-common-4.1.116.Final.jar!/)
 WARNING: Please consider reporting this to the maintainers of class io.netty.util.internal.PlatformDependent0$2
 WARNING: sun.misc.Unsafe::allocateMemory will be removed in a future release
-2026-04-26T15:49:40.519+08:00  INFO 87272 --- [user-portal-service] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2026-04-26T15:49:40.526+08:00  WARN 87272 --- [user-portal-service] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-04-26T15:49:40.537+08:00  INFO 87272 --- [user-portal-service] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2026-04-26T15:49:40.546+08:00  INFO 87272 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2026-04-26T15:49:40.548+08:00  INFO 87272 --- [user-portal-service] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T15:49:40.551+08:00  INFO 87272 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2026-04-26T15:49:40.551+08:00  INFO 87272 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2026-04-26T15:49:40.551+08:00  INFO 87272 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2026-04-26T15:49:40.551+08:00  INFO 87272 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2026-04-26T15:49:40.551+08:00  INFO 87272 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2026-04-26T15:49:40.551+08:00  INFO 87272 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2026-04-26T15:49:40.551+08:00  INFO 87272 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2026-04-26T15:49:40.686+08:00  INFO 87272 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2026-04-26T15:49:40.687+08:00  INFO 87272 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2026-04-26T15:49:40.688+08:00  INFO 87272 --- [user-portal-service] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-04-26T15:49:40.688+08:00  INFO 87272 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1777189780688 with initial instances count: 6
-2026-04-26T15:49:40.689+08:00  INFO 87272 --- [user-portal-service] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application USER-PORTAL-SERVICE with eureka with status UP
-2026-04-26T15:49:40.689+08:00  INFO 87272 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1777189780689, current=UP, previous=STARTING]
-2026-04-26T15:49:40.690+08:00  INFO 87272 --- [user-portal-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-PORTAL-SERVICE/mac:user-portal-service:8085: registering service...
-2026-04-26T15:49:40.695+08:00  INFO 87272 --- [user-portal-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8085 (http) with context path '/'
-2026-04-26T15:49:40.695+08:00  INFO 87272 --- [user-portal-service] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8085
-2026-04-26T15:49:40.703+08:00  INFO 87272 --- [user-portal-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-PORTAL-SERVICE/mac:user-portal-service:8085 - registration status: 204
-2026-04-26T15:49:40.704+08:00  INFO 87272 --- [user-portal-service] [           main] e.cuit.userportal.UserPortalApplication  : Started UserPortalApplication in 1.312 seconds (process running for 1.516)
-2026-04-26T15:54:40.558+08:00  INFO 87272 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T15:59:15.774+08:00  INFO 87272 --- [user-portal-service] [nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-04-26T15:59:15.775+08:00  INFO 87272 --- [user-portal-service] [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-04-26T15:59:15.777+08:00  INFO 87272 --- [user-portal-service] [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2026-04-26T15:59:40.535+08:00  INFO 87272 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T16:04:40.537+08:00  INFO 87272 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T16:09:40.544+08:00  INFO 87272 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T16:14:40.548+08:00  INFO 87272 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T16:19:40.559+08:00  INFO 87272 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T16:24:40.564+08:00  INFO 87272 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T16:29:40.569+08:00  INFO 87272 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T16:34:40.577+08:00  INFO 87272 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T16:39:40.588+08:00  INFO 87272 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T16:44:40.596+08:00  INFO 87272 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T16:49:40.606+08:00  INFO 87272 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T16:54:40.611+08:00  INFO 87272 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T16:59:40.618+08:00  INFO 87272 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T17:04:40.629+08:00  INFO 87272 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T17:09:40.639+08:00  INFO 87272 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T17:14:40.648+08:00  INFO 87272 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T22:56:18.267+08:00  INFO 87272 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-27T05:22:50.493+08:00  INFO 87272 --- [user-portal-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-PORTAL-SERVICE/mac:user-portal-service:8085 - Re-registering apps/USER-PORTAL-SERVICE
-2026-04-27T05:22:50.494+08:00  INFO 87272 --- [user-portal-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-PORTAL-SERVICE/mac:user-portal-service:8085: registering service...
-2026-04-27T05:22:50.499+08:00  INFO 87272 --- [user-portal-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-PORTAL-SERVICE/mac:user-portal-service:8085 - registration status: 204
-2026-04-27T09:00:52.806+08:00  INFO 87272 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-27T14:16:58.177+08:00  INFO 87272 --- [user-portal-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-PORTAL-SERVICE/mac:user-portal-service:8085 - Re-registering apps/USER-PORTAL-SERVICE
-2026-04-27T14:16:58.177+08:00  INFO 87272 --- [user-portal-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-PORTAL-SERVICE/mac:user-portal-service:8085: registering service...
-2026-04-27T14:16:58.181+08:00  INFO 87272 --- [user-portal-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-PORTAL-SERVICE/mac:user-portal-service:8085 - registration status: 204
-2026-04-27T19:03:39.020+08:00  INFO 87272 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-27T20:44:46.894+08:00  INFO 87272 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-27T20:49:46.905+08:00  INFO 87272 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-27T20:54:46.914+08:00  INFO 87272 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-27T20:59:46.921+08:00  INFO 87272 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-27T21:04:46.931+08:00  INFO 87272 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T17:54:29.672+08:00  INFO 62613 --- [user-portal-service] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-04-28T17:54:29.679+08:00  WARN 62613 --- [user-portal-service] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-04-28T17:54:29.691+08:00  INFO 62613 --- [user-portal-service] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-04-28T17:54:29.699+08:00  INFO 62613 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-04-28T17:54:29.701+08:00  INFO 62613 --- [user-portal-service] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T17:54:29.704+08:00  INFO 62613 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-04-28T17:54:29.704+08:00  INFO 62613 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-04-28T17:54:29.704+08:00  INFO 62613 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-04-28T17:54:29.704+08:00  INFO 62613 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-04-28T17:54:29.704+08:00  INFO 62613 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-04-28T17:54:29.704+08:00  INFO 62613 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-04-28T17:54:29.704+08:00  INFO 62613 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-04-28T17:54:29.855+08:00  INFO 62613 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-04-28T17:54:29.856+08:00  INFO 62613 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-04-28T17:54:29.856+08:00  INFO 62613 --- [user-portal-service] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-04-28T17:54:29.857+08:00  INFO 62613 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1777370069856 with initial instances count: 0
+2026-04-28T17:54:29.858+08:00  INFO 62613 --- [user-portal-service] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application USER-PORTAL-SERVICE with eureka with status UP
+2026-04-28T17:54:29.858+08:00  INFO 62613 --- [user-portal-service] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1777370069858, current=UP, previous=STARTING]
+2026-04-28T17:54:29.858+08:00  INFO 62613 --- [user-portal-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-PORTAL-SERVICE/mac:user-portal-service:8085: registering service...
+2026-04-28T17:54:29.864+08:00  INFO 62613 --- [user-portal-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8085 (http) with context path '/'
+2026-04-28T17:54:29.864+08:00  INFO 62613 --- [user-portal-service] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8085
+2026-04-28T17:54:29.873+08:00  INFO 62613 --- [user-portal-service] [           main] e.cuit.userportal.UserPortalApplication  : Started UserPortalApplication in 1.436 seconds (process running for 1.648)
+2026-04-28T17:54:29.875+08:00  INFO 62613 --- [user-portal-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-PORTAL-SERVICE/mac:user-portal-service:8085 - registration status: 204
+2026-04-28T17:54:54.752+08:00  INFO 62613 --- [user-portal-service] [nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-28T17:54:54.752+08:00  INFO 62613 --- [user-portal-service] [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-28T17:54:54.753+08:00  INFO 62613 --- [user-portal-service] [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-04-28T17:54:54.803+08:00  WARN 62613 --- [user-portal-service] [nio-8085-exec-1] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: movies-service
+2026-04-28T17:54:54.805+08:00  WARN 62613 --- [user-portal-service] [nio-8085-exec-1] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service movies-service
+2026-04-28T17:54:54.809+08:00 ERROR 62613 --- [user-portal-service] [nio-8085-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: feign.FeignException$ServiceUnavailable: [503] during [GET] to [http://movies-service/rpc/user/findByUsername?username=admin] [UserClient#findUserByUsername(String)]: [Load balancer does not contain an instance for the service movies-service]] with root cause
+
+feign.FeignException$ServiceUnavailable: [503] during [GET] to [http://movies-service/rpc/user/findByUsername?username=admin] [UserClient#findUserByUsername(String)]: [Load balancer does not contain an instance for the service movies-service]
+	at feign.FeignException.serverErrorStatus(FeignException.java:287) ~[feign-core-13.5.jar!/:na]
+	at feign.FeignException.errorStatus(FeignException.java:226) ~[feign-core-13.5.jar!/:na]
+	at feign.FeignException.errorStatus(FeignException.java:213) ~[feign-core-13.5.jar!/:na]
+	at feign.codec.ErrorDecoder$Default.decode(ErrorDecoder.java:103) ~[feign-core-13.5.jar!/:na]
+	at feign.InvocationContext.decodeError(InvocationContext.java:133) ~[feign-core-13.5.jar!/:na]
+	at feign.InvocationContext.proceed(InvocationContext.java:80) ~[feign-core-13.5.jar!/:na]
+	at feign.ResponseHandler.handleResponse(ResponseHandler.java:69) ~[feign-core-13.5.jar!/:na]
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:109) ~[feign-core-13.5.jar!/:na]
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:53) ~[feign-core-13.5.jar!/:na]
+	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:104) ~[feign-core-13.5.jar!/:na]
+	at jdk.proxy2/jdk.proxy2.$Proxy76.findUserByUsername(Unknown Source) ~[na:na]
+	at edu.cuit.userportal.controller.PortalIndexController.login(PortalIndexController.java:42) ~[!/:0.0.1-SNAPSHOT]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.1.jar!/:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.1.jar!/:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.1.jar!/:6.2.1]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.1.jar!/:6.2.1]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.1.jar!/:6.2.1]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.1.jar!/:6.2.1]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.1.jar!/:6.2.1]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.1.jar!/:6.2.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.1.jar!/:6.2.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar!/:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar!/:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:142) ~[spring-session-core-3.4.1.jar!/:3.4.1]
+	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:82) ~[spring-session-core-3.4.1.jar!/:3.4.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.1.jar!/:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar!/:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
+
+2026-04-28T17:54:59.861+08:00  INFO 62613 --- [user-portal-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-04-28T17:54:59.861+08:00  INFO 62613 --- [user-portal-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-04-28T17:54:59.861+08:00  INFO 62613 --- [user-portal-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-04-28T17:54:59.861+08:00  INFO 62613 --- [user-portal-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-04-28T17:54:59.861+08:00  INFO 62613 --- [user-portal-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-04-28T17:54:59.861+08:00  INFO 62613 --- [user-portal-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2026-04-28T17:54:59.861+08:00  INFO 62613 --- [user-portal-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-04-28T17:54:59.887+08:00  INFO 62613 --- [user-portal-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-04-28T17:59:29.714+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:04:29.733+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:09:29.739+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:14:29.748+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:19:29.756+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:24:29.765+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:29:29.776+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:34:29.784+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:39:29.792+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:44:29.801+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:49:29.811+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:54:29.825+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:59:29.832+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:04:29.843+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:09:29.849+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:14:29.859+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:19:29.868+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:24:29.883+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:29:29.894+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:34:29.899+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:39:29.913+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:44:29.921+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:49:29.935+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:54:29.951+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:59:29.964+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:04:29.977+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:09:29.992+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:14:30.006+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:19:30.019+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:24:30.030+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:29:30.046+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:34:30.058+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:39:30.069+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:44:30.080+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:49:30.089+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:54:30.101+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:59:30.112+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:04:30.122+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:09:30.134+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:14:30.145+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:19:30.155+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:24:30.167+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:29:30.134+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:34:30.144+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:39:30.155+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:44:30.159+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:49:30.174+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:54:30.184+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:59:30.194+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T22:04:30.199+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T22:09:30.209+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T22:14:30.218+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T22:19:30.226+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T22:24:30.233+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T22:29:30.235+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T22:34:30.244+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T22:39:30.251+08:00  INFO 62613 --- [user-portal-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

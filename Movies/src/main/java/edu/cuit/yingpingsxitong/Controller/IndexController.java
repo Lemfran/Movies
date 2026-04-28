@@ -7,6 +7,7 @@ import edu.cuit.yingpingsxitong.client.ReviewClient;
 import edu.cuit.yingpingsxitong.client.LogClient;
 import edu.cuit.yingpingsxitong.client.UserClient;
 import edu.cuit.yingpingsxitong.client.Result;
+import edu.cuit.yingpingsxitong.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -17,7 +18,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -43,17 +45,27 @@ public class IndexController {
     @Autowired
     private LogClient logClient;
 
+    @Autowired
+    private JwtUtil jwtUtil;
+
     // POST 请求 - 登录，成功后重定向到 /home
     @PostMapping({"/index"})
     public String login(@RequestParam("username") String username,
                         @RequestParam("password") String password,
                         Model model,
-                        RedirectAttributes redirectAttributes) {
+                        HttpServletResponse response) {
         Result<User> result = userClient.findUserByUsername(username);
         User user = result.getData();
         boolean passwordValid = user != null && userService.validatePassword(password, user.getPassword());
         if (passwordValid && user.getPermission() && user.getManager()) {
             model.addAttribute("user", user);
+            // 同时生成 JWT Token 写入 Cookie
+            String token = jwtUtil.generateToken(user.getUserId(), user.getUsername());
+            Cookie jwtCookie = new Cookie("jwt_token", token);
+            jwtCookie.setPath("/");
+            jwtCookie.setHttpOnly(true);
+            jwtCookie.setMaxAge(86400);
+            response.addCookie(jwtCookie);
             return "redirect:/admin/home";
         } else if (passwordValid && user.getPermission() && !user.getManager()) {
             model.addAttribute("error", "普通用户请通过用户端入口访问");

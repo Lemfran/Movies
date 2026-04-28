@@ -8,115 +8,131 @@
 
  :: Spring Boot ::                (v3.4.1)
 
-2026-04-26T13:00:01.232+08:00  INFO 67775 --- [movies-service] [           main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2026-04-26T13:00:01.318+08:00  INFO 67775 --- [movies-service] [           main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=movies-service, profiles=[dev], label=main, version=null, state=null
-2026-04-26T13:00:01.318+08:00  INFO 67775 --- [movies-service] [           main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}]
-2026-04-26T13:00:01.322+08:00  INFO 67775 --- [movies-service] [           main] e.c.y.YingpingsxitongApplication         : No active profile set, falling back to 1 default profile: "default"
-2026-04-26T13:00:01.672+08:00  INFO 67775 --- [movies-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-04-26T13:00:01.674+08:00  INFO 67775 --- [movies-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2026-04-26T13:00:01.682+08:00  INFO 67775 --- [movies-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
-2026-04-26T13:00:01.790+08:00  INFO 67775 --- [movies-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1e8f1ff3-997a-3908-8c91-f0ed70f1c4cd
+2026-04-28T17:54:19.460+08:00  INFO 62539 --- [movies-service] [           main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2026-04-28T17:54:19.549+08:00  INFO 62539 --- [movies-service] [           main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=movies-service, profiles=[default], label=main, version=null, state=null
+2026-04-28T17:54:19.549+08:00  INFO 62539 --- [movies-service] [           main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-file:Movies/config-repo/movies-service.yml'}]
+2026-04-28T17:54:19.553+08:00  INFO 62539 --- [movies-service] [           main] e.c.y.YingpingsxitongApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-28T17:54:19.932+08:00  INFO 62539 --- [movies-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-28T17:54:19.933+08:00  INFO 62539 --- [movies-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-04-28T17:54:19.944+08:00  INFO 62539 --- [movies-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2026-04-28T17:54:20.056+08:00  INFO 62539 --- [movies-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1e8f1ff3-997a-3908-8c91-f0ed70f1c4cd
 WARNING: A restricted method in java.lang.System has been called
 WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (jar:nested:/Users/fanjinchen/工程实践/Movies/Movies/target/yingpingsxitong-0.0.1-SNAPSHOT.jar/!BOOT-INF/lib/tomcat-embed-core-10.1.34.jar!/)
 WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
 WARNING: Restricted methods will be blocked in a future release unless native access is enabled
 
-2026-04-26T13:00:02.102+08:00  INFO 67775 --- [movies-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8084 (http)
-2026-04-26T13:00:02.109+08:00  INFO 67775 --- [movies-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-04-26T13:00:02.110+08:00  INFO 67775 --- [movies-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
-2026-04-26T13:00:02.122+08:00  INFO 67775 --- [movies-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-04-26T13:00:02.122+08:00  INFO 67775 --- [movies-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 794 ms
-2026-04-26T13:00:02.469+08:00  INFO 67775 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
-2026-04-26T13:00:02.504+08:00  INFO 67775 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
-2026-04-26T13:00:02.514+08:00  INFO 67775 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
-2026-04-26T13:00:02.523+08:00  INFO 67775 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
-2026-04-26T13:00:02.562+08:00  WARN 67775 --- [movies-service] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+2026-04-28T17:54:20.379+08:00  INFO 62539 --- [movies-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8084 (http)
+2026-04-28T17:54:20.386+08:00  INFO 62539 --- [movies-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-28T17:54:20.386+08:00  INFO 62539 --- [movies-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-04-28T17:54:20.399+08:00  INFO 62539 --- [movies-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-28T17:54:20.399+08:00  INFO 62539 --- [movies-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 839 ms
+2026-04-28T17:54:20.766+08:00  INFO 62539 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
+2026-04-28T17:54:20.805+08:00  INFO 62539 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
+2026-04-28T17:54:20.815+08:00  INFO 62539 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
+2026-04-28T17:54:20.824+08:00  INFO 62539 --- [movies-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'movies-service' URL not provided. Will try picking an instance via load-balancing.
+2026-04-28T17:54:20.866+08:00  WARN 62539 --- [movies-service] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 4cbe555a-09f4-47a3-b0d8-7010fbc23994
+Using generated security password: e209da83-ef18-4d82-947d-38635d56f55c
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2026-04-26T13:00:02.566+08:00  INFO 67775 --- [movies-service] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-28T17:54:20.870+08:00  INFO 62539 --- [movies-service] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
 WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
 WARNING: sun.misc.Unsafe::allocateMemory has been called by io.netty.util.internal.PlatformDependent0$2 (jar:nested:/Users/fanjinchen/工程实践/Movies/Movies/target/yingpingsxitong-0.0.1-SNAPSHOT.jar/!BOOT-INF/lib/netty-common-4.1.116.Final.jar!/)
 WARNING: Please consider reporting this to the maintainers of class io.netty.util.internal.PlatformDependent0$2
 WARNING: sun.misc.Unsafe::allocateMemory will be removed in a future release
-2026-04-26T13:00:02.982+08:00  INFO 67775 --- [movies-service] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 18 endpoints beneath base path '/actuator'
-2026-04-26T13:00:03.284+08:00  INFO 67775 --- [movies-service] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2026-04-26T13:00:03.304+08:00  WARN 67775 --- [movies-service] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-04-26T13:00:03.337+08:00  INFO 67775 --- [movies-service] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2026-04-26T13:00:03.354+08:00  INFO 67775 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2026-04-26T13:00:03.357+08:00  INFO 67775 --- [movies-service] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T13:00:03.364+08:00  INFO 67775 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2026-04-26T13:00:03.365+08:00  INFO 67775 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2026-04-26T13:00:03.365+08:00  INFO 67775 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2026-04-26T13:00:03.365+08:00  INFO 67775 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2026-04-26T13:00:03.365+08:00  INFO 67775 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2026-04-26T13:00:03.365+08:00  INFO 67775 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2026-04-26T13:00:03.365+08:00  INFO 67775 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2026-04-26T13:00:03.478+08:00  INFO 67775 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2026-04-26T13:00:03.479+08:00  INFO 67775 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2026-04-26T13:00:03.479+08:00  INFO 67775 --- [movies-service] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-04-26T13:00:03.480+08:00  INFO 67775 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1777179603480 with initial instances count: 1
-2026-04-26T13:00:03.483+08:00  INFO 67775 --- [movies-service] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MOVIES-SERVICE with eureka with status UP
-2026-04-26T13:00:03.483+08:00  INFO 67775 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1777179603483, current=UP, previous=STARTING]
-2026-04-26T13:00:03.483+08:00  INFO 67775 --- [movies-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/mac:movies-service:8084: registering service...
-2026-04-26T13:00:03.493+08:00  INFO 67775 --- [movies-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8084 (http) with context path '/'
-2026-04-26T13:00:03.494+08:00  INFO 67775 --- [movies-service] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8084
-2026-04-26T13:00:03.507+08:00  INFO 67775 --- [movies-service] [           main] e.c.y.YingpingsxitongApplication         : Started YingpingsxitongApplication in 2.643 seconds (process running for 2.835)
-2026-04-26T13:00:03.508+08:00  INFO 67775 --- [movies-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/mac:movies-service:8084 - registration status: 204
-2026-04-26T13:01:18.902+08:00  INFO 67775 --- [movies-service] [nio-8084-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-04-26T13:01:18.902+08:00  INFO 67775 --- [movies-service] [nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-04-26T13:01:18.906+08:00  INFO 67775 --- [movies-service] [nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2026-04-26T13:01:18.938+08:00  INFO 67775 --- [movies-service] [nio-8084-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-04-26T13:01:19.017+08:00  INFO 67775 --- [movies-service] [nio-8084-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@55b3859e
-2026-04-26T13:01:19.018+08:00  INFO 67775 --- [movies-service] [nio-8084-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-04-26T13:05:03.370+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T13:10:03.379+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T13:15:03.388+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T13:20:03.407+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T13:25:03.413+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T13:30:03.416+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T13:35:03.428+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T13:40:03.438+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T13:45:03.449+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T13:50:03.452+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T13:55:03.460+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T14:00:03.471+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T14:05:03.495+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T14:10:03.501+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T14:15:03.511+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T14:20:03.537+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T14:25:03.549+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T14:30:03.560+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T14:35:03.565+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T14:40:03.577+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T14:45:03.583+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T14:50:03.595+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T14:55:03.608+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T15:00:03.613+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T15:05:03.620+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T15:10:03.632+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T15:15:03.640+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T15:20:03.648+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T15:25:03.655+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T15:30:03.662+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T15:35:03.675+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T15:40:03.682+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T15:45:03.689+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T15:50:03.698+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T15:55:03.707+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T16:00:03.685+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T16:05:03.690+08:00  INFO 67775 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-04-26T16:05:21.099+08:00  INFO 67775 --- [movies-service] [ionShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MOVIES-SERVICE with eureka with status DOWN
-2026-04-26T16:05:21.100+08:00  INFO 67775 --- [movies-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1777190721100, current=DOWN, previous=UP]
-2026-04-26T16:05:21.100+08:00  INFO 67775 --- [movies-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/mac:movies-service:8084: registering service...
-2026-04-26T16:05:21.107+08:00  INFO 67775 --- [movies-service] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-04-26T16:05:21.110+08:00  INFO 67775 --- [movies-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/mac:movies-service:8084 - registration status: 204
-2026-04-26T16:05:21.112+08:00  INFO 67775 --- [movies-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-04-26T16:05:21.142+08:00  INFO 67775 --- [movies-service] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-04-26T16:05:21.146+08:00  INFO 67775 --- [movies-service] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-04-26T16:05:21.147+08:00  INFO 67775 --- [movies-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2026-04-26T16:05:24.152+08:00  INFO 67775 --- [movies-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2026-04-26T16:05:24.159+08:00  INFO 67775 --- [movies-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/mac:movies-service:8084 - deregister  status: 200
-2026-04-26T16:05:24.159+08:00  INFO 67775 --- [movies-service] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-04-28T17:54:21.312+08:00  INFO 62539 --- [movies-service] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 18 endpoints beneath base path '/actuator'
+2026-04-28T17:54:21.635+08:00  INFO 62539 --- [movies-service] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-04-28T17:54:21.652+08:00  WARN 62539 --- [movies-service] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-04-28T17:54:21.691+08:00  INFO 62539 --- [movies-service] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-04-28T17:54:21.705+08:00  INFO 62539 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-04-28T17:54:21.708+08:00  INFO 62539 --- [movies-service] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T17:54:21.712+08:00  INFO 62539 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-04-28T17:54:21.712+08:00  INFO 62539 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-04-28T17:54:21.712+08:00  INFO 62539 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-04-28T17:54:21.712+08:00  INFO 62539 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-04-28T17:54:21.712+08:00  INFO 62539 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-04-28T17:54:21.712+08:00  INFO 62539 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-04-28T17:54:21.712+08:00  INFO 62539 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-04-28T17:54:21.822+08:00  INFO 62539 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-04-28T17:54:21.823+08:00  INFO 62539 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-04-28T17:54:21.823+08:00  INFO 62539 --- [movies-service] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-04-28T17:54:21.824+08:00  INFO 62539 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1777370061824 with initial instances count: 0
+2026-04-28T17:54:21.828+08:00  INFO 62539 --- [movies-service] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MOVIES-SERVICE with eureka with status UP
+2026-04-28T17:54:21.828+08:00  INFO 62539 --- [movies-service] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1777370061828, current=UP, previous=STARTING]
+2026-04-28T17:54:21.829+08:00  INFO 62539 --- [movies-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/mac:movies-service:8084: registering service...
+2026-04-28T17:54:21.838+08:00  INFO 62539 --- [movies-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8084 (http) with context path '/'
+2026-04-28T17:54:21.838+08:00  INFO 62539 --- [movies-service] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8084
+2026-04-28T17:54:21.850+08:00  INFO 62539 --- [movies-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MOVIES-SERVICE/mac:movies-service:8084 - registration status: 204
+2026-04-28T17:54:21.853+08:00  INFO 62539 --- [movies-service] [           main] e.c.y.YingpingsxitongApplication         : Started YingpingsxitongApplication in 2.745 seconds (process running for 2.943)
+2026-04-28T17:54:49.012+08:00  INFO 62539 --- [movies-service] [nio-8084-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-28T17:54:49.012+08:00  INFO 62539 --- [movies-service] [nio-8084-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-28T17:54:49.016+08:00  INFO 62539 --- [movies-service] [nio-8084-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2026-04-28T17:54:49.061+08:00  INFO 62539 --- [movies-service] [nio-8084-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-28T17:54:49.141+08:00  INFO 62539 --- [movies-service] [nio-8084-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@74c58e36
+2026-04-28T17:54:49.149+08:00  INFO 62539 --- [movies-service] [nio-8084-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-28T17:54:51.829+08:00  INFO 62539 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-04-28T17:54:51.829+08:00  INFO 62539 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-04-28T17:54:51.829+08:00  INFO 62539 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-04-28T17:54:51.829+08:00  INFO 62539 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-04-28T17:54:51.829+08:00  INFO 62539 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-04-28T17:54:51.829+08:00  INFO 62539 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2026-04-28T17:54:51.829+08:00  INFO 62539 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-04-28T17:54:51.852+08:00  INFO 62539 --- [movies-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-04-28T17:59:21.724+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:04:21.750+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:09:21.759+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:14:21.771+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:19:21.781+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:24:21.792+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:29:21.799+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:34:21.809+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:39:21.816+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:44:21.827+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:49:21.837+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:54:21.851+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T18:59:21.861+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:04:21.871+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:09:21.881+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:14:21.895+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:19:21.907+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:24:21.917+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:29:21.934+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:34:21.936+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:39:21.951+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:44:21.963+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:49:21.975+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:54:21.989+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T19:59:22.001+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:04:22.016+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:09:22.024+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:14:22.035+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:19:22.050+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:24:22.059+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:29:22.071+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:34:22.079+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:39:22.084+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:44:22.094+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:49:22.106+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:54:22.115+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T20:59:22.125+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:04:22.132+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:09:22.141+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:14:22.148+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:19:22.159+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:24:22.172+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:29:22.142+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:34:22.152+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:39:22.163+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:44:22.166+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:49:22.171+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:54:22.181+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T21:59:22.192+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T22:04:22.195+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T22:09:22.201+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T22:14:22.208+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T22:19:22.215+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T22:24:22.223+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T22:29:22.226+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T22:34:22.234+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-04-28T22:39:22.239+08:00  INFO 62539 --- [movies-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

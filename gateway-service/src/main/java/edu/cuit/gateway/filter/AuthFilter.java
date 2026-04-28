@@ -36,6 +36,7 @@ public class AuthFilter implements GlobalFilter, Ordered {
     private static final SecretKey KEY = Keys.hmacShaKeyFor(SECRET.getBytes(StandardCharsets.UTF_8));
 
     // 白名单路径（不需要 JWT 验证）
+    // 仅放行公开接口：未登录用户必须能访问的登录/注册页、静态资源、基础设施端点
     private static final List<String> WHITE_LIST = List.of(
             "/auth/login",
             "/auth/register",
@@ -45,7 +46,9 @@ public class AuthFilter implements GlobalFilter, Ordered {
             "/rpc/movie/info",
             "/user/login",
             "/user/register",
-            "/admin/login"
+            "/user/index",      // 登录表单提交
+            "/admin/login",
+            "/admin/index"      // 管理员登录表单提交
     );
 
     @Override
@@ -110,11 +113,11 @@ public class AuthFilter implements GlobalFilter, Ordered {
     /**
      * 检查路径是否在白名单中
      *
-     * 页面端点（/user/, /admin/）使用 Session 认证，不需要 JWT
-     * API 端点（/api/, /rpc/, /recommend/）需要 JWT
+     * 已登录用户携带 jwt_token Cookie，所有非白名单路径均走 JWT 校验
+     * 仅公开接口（登录/注册页、静态资源、基础设施）在白名单中放行
      */
     private boolean isWhiteList(String path) {
-        if (path.equals("/") || path.startsWith("/user/") || path.startsWith("/admin/") || path.startsWith("/recommend/") || path.startsWith("/uploads/")) {
+        if (path.equals("/") || path.startsWith("/uploads/")) {
             return true;
         }
         return WHITE_LIST.stream().anyMatch(path::startsWith);

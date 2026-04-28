@@ -3,5 +3,4 @@ spring:
     config:
       uri: http://localhost:8888
       name: movies-service
-      profile: dev
       label: main
